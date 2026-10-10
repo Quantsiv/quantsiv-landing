@@ -8,8 +8,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 ## What this repository is
 
-- One page: `index.html`, with `style.css`, `script.js` and `assets/`. No build step, no
-  framework, no package manager. `.nojekyll` must stay.
+- One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`
+  and `assets/`. No build step, no framework, no package manager. `.nojekyll` must stay.
 - Pre-launch. The waitlist is not open yet, and the page collects nothing. Use the present tense for what the product
   does today and never for what is planned. Say "Join the waitlist", never "Get started", "Sign up",
   "Download" or "Free trial".
@@ -20,9 +20,11 @@ Write as if a customer, a competitor and a regulator are all reading it.
 - Strategy, pricing, packaging, customer or partner names, logos or numbers, fundraising,
   internal plans, audit or security findings.
 - Names of, or comparisons with, other companies or products. Neutral references to standards,
-  laws and public tools the page cites by name and date are fine.
+  laws and public tools the page cites by name and date are fine, and so is naming a service that
+  handles visitors' data in the privacy notice.
 - Legal text, a privacy policy, terms or company details. The founder supplies them; never invent
-  them.
+  them. The one exception is `privacy.html`, published on the founder's instruction on 10 Oct
+  2026. Change it only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
 
 If in doubt, leave it out and ask the founder.
@@ -164,12 +166,19 @@ Leave out "Audit-Ready Reporting" until it exists, or label it planned.
 
 ## Page status
 
-The page edits listed in earlier versions of this file are applied (10 Oct 2026). Two choices
+The page edits listed in earlier versions of this file are applied (10 Oct 2026). These choices
 stand until the founder changes them:
 
 - The waitlist is not open. The form is disabled and says so, and `script.js` sends nothing.
-  Connecting it to a real store needs a privacy notice first.
-- The footer carries no personal handle or contact address.
+- The privacy notice (`privacy.html`, 10 Oct 2026) is linked from the form and the footer. Its
+  contact is privacy@quantsiv.com. Retention: until the person unsubscribes or asks for deletion,
+  and the whole list is deleted within 6 months if Quantsiv does not go ahead. Consent with
+  double opt-in.
+- Before the form opens, the notice must name the controller (the founder's full name, or the
+  company) and the email service that stores the list, with where it stores the data and whether
+  emails are tracked. The form then posts to that service, with no CAPTCHA and no iframe, and
+  the notice's "Last updated" date changes.
+- The footer carries no personal handle. Its only contact is the privacy notice.
 
 ## Before every commit
 
