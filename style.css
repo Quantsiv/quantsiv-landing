@@ -870,3 +870,68 @@ html {
     }
 }
 
+
+/* --- Privacy notice page --- */
+.legal {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4rem 2rem 5rem;
+    line-height: 1.7;
+}
+
+.legal h1 {
+    font-size: var(--font-size-3xl);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.legal h2 {
+    font-size: var(--font-size-xl);
+    margin: 2.5rem 0 1rem;
+}
+
+.legal h3 {
+    font-size: var(--font-size-lg);
+    margin: 1.75rem 0 0.5rem;
+}
+
+.legal p,
+.legal ul {
+    margin-bottom: 1rem;
+    color: var(--color-gray-dark);
+}
+
+.legal ul {
+    padding-left: 1.5rem;
+}
+
+.legal li {
+    margin-bottom: 0.5rem;
+}
+
+.legal a,
+footer a,
+.newsletter .form-note a {
+    color: var(--color-black);
+    text-decoration: underline;
+}
+
+.legal-updated {
+    font-size: var(--font-size-sm);
+    margin-bottom: 2rem;
+}
+
+.newsletter .form-note {
+    margin-top: 1rem;
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 480px) {
+    .legal {
+        padding: 2.5rem 1rem 3.5rem;
+    }
+
+    .legal h1 {
+        font-size: var(--font-size-2xl);
+    }
+}
