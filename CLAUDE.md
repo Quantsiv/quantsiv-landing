@@ -10,6 +10,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 - One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`
   and `assets/`. No build step, no framework, no package manager. `.nojekyll` must stay.
+- The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
+  github.io address. Pages publishes every file on the branch, this one included.
 - Pre-launch. The waitlist is not open yet, and the page collects nothing. Use the present tense for what the product
   does today and never for what is planned. Say "Join the waitlist", never "Get started", "Sign up",
   "Download" or "Free trial".
@@ -179,6 +181,9 @@ stand until the founder changes them:
   emails are tracked. The form then posts to that service, with no CAPTCHA and no iframe, and
   the notice's "Last updated" date changes.
 - The footer carries no personal handle. Its only contact is the privacy notice.
+- `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
+  with no inline scripts or styles. When the form opens, add the email service's form address
+  to `form-action`, or the browser refuses to submit it.
 
 ## Before every commit
 

@@ -1,22 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    // Navigation links are plain anchors: style.css scrolls smoothly unless the
+    // visitor asks for reduced motion, and the browser moves focus and the URL.
 
     // Form handling
     const form = document.getElementById('contact-form');
@@ -28,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const email = emailInput.value.trim();
 
             // Clear previous messages
-            formMessage.style.display = 'none';
+            formMessage.hidden = true;
             formMessage.textContent = '';
             emailInput.classList.remove('error');
 
@@ -36,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 formMessage.textContent = 'Please enter a valid email address.';
-                formMessage.style.display = 'block';
+                formMessage.hidden = false;
                 formMessage.style.color = 'var(--color-black)';
                 emailInput.classList.add('error');
                 return;
@@ -44,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // The waitlist is not open yet, so nothing is sent or stored
             formMessage.textContent = 'The waitlist is not open yet. Nothing was sent.';
-            formMessage.style.display = 'block';
+            formMessage.hidden = false;
             formMessage.style.color = 'var(--color-black)';
             form.reset();
         });
