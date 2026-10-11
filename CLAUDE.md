@@ -69,10 +69,15 @@ Search the page for every phrase in the first column before each commit.
 | "EU-hosted" or any hosting region | Not true until it is live | Leave out until the founder confirms |
 | Any customer, logo, testimonial or quote | None to show | Leave out |
 | "cryptographic posture management" | Not our category | "cryptographic change control and CBOM evidence" |
+| "quantum-safe wallet", "protects your funds", "secures your crypto" | A post-quantum account depends on each chain; Quantsiv finds and ranks the code | "finds wallet and custody cryptography" |
+| Names of chains, wallets, exchanges or wallet libraries | Names of other products | "wallet and custody code", "secp256k1 and Ed25519 signing keys" |
+| Which keys are exposed on-chain, coins at risk, any on-chain statistic | The scanner reads code, not chains, and no figure is measured and sourced | Leave out |
 
 Quantum risk, said correctly: harvest-now-decrypt-later threatens encryption and key
 establishment. For signatures the risk is future forgery, not retroactive decryption. Never write
-"everything protected by RSA or ECC becomes readable" without that distinction.
+"everything protected by RSA or ECC becomes readable" without that distinction. For a crypto-asset
+wallet whose public key is already on-chain, that forgery means its funds can be moved: still
+forgery, never decryption.
 
 ## Authorities and dates
 
@@ -118,6 +123,11 @@ them. Do not add to them without the founder.
   model of ours in it.
 - Each finding says where the use is clear which standard to move to: ML-KEM (FIPS 203), ML-DSA
   (FIPS 204) or SLH-DSA (FIPS 205), with hybrid key exchange during the transition.
+- Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
+  in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
+  guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
+  signing behind one interface. It reads code, not the chain, so it cannot tell which keys are
+  already exposed on-chain.
 - Flags test code instead of hiding it.
 - States its limits on the page: pattern matching misses aliased and dynamic calls, vendored code
   and dependencies. No separate limits document is public, so never write "we publish" or link to
@@ -163,6 +173,10 @@ Pattern-based, so depth varies by language and some calls are missed."
    the transition."
 8. *Honest limits.* "Pattern matching misses aliased and dynamic calls, vendored code and
    dependencies. We state the limits up front."
+9. *Wallet and custody code.* "Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and
+   ECDH and ECIES key transport in common wallet libraries. Once a wallet's public key is on-chain
+   its risk is forgery, not decryption, and its guidance says what to do until the chain accepts
+   post-quantum signatures. Reads code, not the chain."
 
 Leave out "Audit-Ready Reporting" until it exists, or label it planned.
 

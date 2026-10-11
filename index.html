@@ -131,7 +131,7 @@
         <div class="threat-grid">
             <div class="threat-card">
                 <h3>The attack is storage, not computation</h3>
-                <p>An adversary does not need a quantum computer today. They need only to record your encrypted traffic and exfiltrated data now, then decrypt the archive once a cryptographically relevant quantum computer exists. RSA, ECDSA, Diffie-Hellman and DSA all fall to Shor's algorithm.</p>
+                <p>An adversary does not need a quantum computer today. They need only to record your encrypted traffic and exfiltrated data now, then decrypt the archive once a cryptographically relevant quantum computer exists. RSA, ECDSA, Diffie-Hellman and DSA all fall to Shor's algorithm. For crypto-asset wallets the ledger is the archive: a public key already on-chain is enough to forge a transfer later.</p>
             </div>
             <div class="threat-card">
                 <h3>The real deadline is your data's lifetime</h3>
@@ -278,6 +278,10 @@
             <div class="capability-item">
                 <h3>Keys, certificates and TLS</h3>
                 <p>Reads key and certificate files for algorithm and size. Probes the TLS endpoints you name; the hosted service probes only domains you prove you own with a DNS record.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Wallet and custody code</h3>
+                <p>Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport in common wallet libraries. Once a wallet's public key is on-chain its risk is forgery, not decryption, and its guidance says what to do until the chain accepts post-quantum signatures. Reads code, not the chain.</p>
             </div>
             <div class="capability-item">
                 <h3>For coding assistants</h3>
