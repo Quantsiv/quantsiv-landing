@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
     <link rel="icon" href="assets/logo-symbol-black.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quantsiv finds quantum-vulnerable cryptography in your code, ranks it by how long your data must stay secret, and produces the Cryptographic Bill of Materials that US federal guidance (EO 14412, OMB M-26-15) is built around.">
     <title>Quantsiv - Cryptographic Change Control and CBOM Evidence</title>
+    <link rel="canonical" href="https://quantsiv.com/">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header with three-part layout -->
     <header class="site-header">
-        <div class="brand-center"><img src="assets/logo-symbol-black.png" alt="Quantsiv Logo" class="logo"></div>
-        <nav class="nav-center">
+        <div class="brand-center"><img src="assets/logo-symbol-black.png" alt="Quantsiv" class="logo" width="96" height="96"></div>
+        <nav class="nav-center" aria-label="Main">
             <ul class="nav-list">
                 <li><a href="#threat" class="nav-link">The Threat</a></li>
                 <li><a href="#compliance" class="nav-link">Deadlines</a></li>
@@ -23,6 +25,7 @@
         </nav>
     </header>
 
+    <main id="main">
     <!-- Hero section update-->
     <section class="hero">
         <h1>Quantsiv: Cryptographic Change Control</h1>
@@ -41,8 +44,9 @@
                  times (~8,000px) so the track always outruns the viewport, even
                  on an ultra-wide monitor at low browser zoom - if a half were
                  narrower than the banner, a blank gap would travel through it.
-                 The second half is decorative. -->
-            <div class="banner-group">
+                 Both halves are hidden from screen readers, which read the
+                 short list below once instead. -->
+            <div class="banner-group" aria-hidden="true">
                 <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
                 <span class="banner-item">CycloneDX CBOM</span>
                 <span class="banner-item">EO 14412</span>
@@ -103,6 +107,15 @@
                 <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
             </div>
         </div>
+        <ul class="visually-hidden">
+            <li>NIST FIPS 203 / 204 / 205</li>
+            <li>CycloneDX CBOM</li>
+            <li>EO 14412</li>
+            <li>OMB M-26-15</li>
+            <li>NIST IR 8547</li>
+            <li>NSA CNSA 2.0</li>
+            <li>EU NIS Cooperation Group Roadmap</li>
+        </ul>
     </section>
 
     <!-- Security statement -->
@@ -160,42 +173,42 @@
             <li class="reg-item">
                 <span class="reg-date">13 Aug 2024</span>
                 <div class="reg-body">
-                    <h4>NIST publishes the post-quantum standards</h4>
+                    <h3>NIST publishes the post-quantum standards</h3>
                     <p>FIPS 203 (ML-KEM) for key establishment, FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA) for digital signatures. The replacement algorithms now exist.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">Nov 2024</span>
                 <div class="reg-body">
-                    <h4>NIST IR 8547 proposes the deprecation clock</h4>
+                    <h3>NIST IR 8547 proposes the deprecation clock</h3>
                     <p>In the initial public draft, 112-bit-strength RSA, ECC and DH, such as RSA-2048, are deprecated after 2030. All quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">22 Jun 2026</span>
                 <div class="reg-body">
-                    <h4>Executive Order 14412 names the threat</h4>
+                    <h3>Executive Order 14412 names the threat</h3>
                     <p>The order addresses the harvest-now, decrypt-later threat. It sets 31 Dec 2030 for post-quantum key establishment and 31 Dec 2031 for signatures on high-value assets and high-impact systems.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">24 Jun 2026</span>
                 <div class="reg-body">
-                    <h4>OMB M-26-15 sets the federal migration phases</h4>
+                    <h3>OMB M-26-15 sets the federal migration phases</h3>
                     <p>Five phases from 2026 to 2035. Agencies build an automated inventory whose data "should populate a central Cryptographic Bill of Materials". Agency plans are due 22 Oct 2026.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">~Mar 2027</span>
                 <div class="reg-body">
-                    <h4>CBOM minimum elements published</h4>
+                    <h3>CBOM minimum elements published</h3>
                     <p>CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days of EO 14412, about Mar 2027.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">2030 &ndash; 2035</span>
                 <div class="reg-body">
-                    <h4>Migration deadlines run to 2035</h4>
+                    <h3>Migration deadlines run to 2035</h3>
                     <p>Under EO 14412, key establishment by 31 Dec 2030 and signatures by 31 Dec 2031 on high-value assets and high-impact systems, with a proposed FAR rule for covered contractors. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap (23 Jun 2025, a recommendation) asks for national strategies by end-2026, high-risk use cases by end-2030 and as many systems as feasible by 2035.</p>
                 </div>
             </li>
@@ -347,11 +360,12 @@
         <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. The waitlist is not open yet.</p>
         <form id="contact-form">
             <input type="email" placeholder="Your work email" aria-label="Your work email" required disabled>
-            <div id="form-message" class="form-message" style="display: none; margin-top: 0.5rem; min-height: 2rem;"></div>
+            <div id="form-message" class="form-message" role="status" hidden></div>
             <button type="submit" disabled>Join the Waitlist</button>
         </form>
         <p class="form-note"><a href="privacy.html">Privacy notice</a></p>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>

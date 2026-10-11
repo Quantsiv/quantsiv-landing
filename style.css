@@ -228,13 +228,6 @@ body {
     }
 }
 
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .banner-track {
-        animation: none;
-    }
-}
-
 /* Fade the slider out at both edges on larger screens */
 @media (min-width: 769px) {
     .supported-banner::before,
@@ -424,6 +417,10 @@ body {
     font-size: var(--font-size-sm);
 }
 
+.form-message[hidden] {
+    display: none;
+}
+
 .newsletter button {
     background-color: var(--color-black);
     color: var(--color-white);
@@ -465,9 +462,11 @@ footer div {
     color: var(--color-gray-dark);
 }
 
-/* Smooth Scroll Behavior */
-html {
-    scroll-behavior: smooth;
+/* Smooth Scroll Behavior, only for visitors who have not asked for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 /* Responsive Design */
@@ -742,7 +741,7 @@ html {
     padding-top: 0.25rem;
 }
 
-.reg-body h4 {
+.reg-body h3 {
     font-size: var(--font-size-lg);
     margin-bottom: 0.5rem;
 }
@@ -933,5 +932,27 @@ footer a,
 
     .legal h1 {
         font-size: var(--font-size-2xl);
+    }
+}
+
+/* Text for screen readers only */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Respect reduced motion preferences. Keep this block last: a later rule,
+   such as the narrow-screen banner speed, would otherwise switch the
+   animation back on. */
+@media (prefers-reduced-motion: reduce) {
+    .banner-track {
+        animation: none;
     }
 }
