@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navigation links are plain anchors: style.css scrolls smoothly unless the
     // visitor asks for reduced motion, and the browser moves focus and the URL.
 
-    // Form handling
+    // Form handling. Messages come from the form's data-msg-* attributes,
+    // so each language version of the page supplies its own wording.
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
     if (form) {
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Simple email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.textContent = form.dataset.msgInvalid || 'Please enter a valid email address.';
                 formMessage.hidden = false;
                 formMessage.style.color = 'var(--color-black)';
                 emailInput.classList.add('error');
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // The waitlist is not open yet, so nothing is sent or stored
-            formMessage.textContent = 'The waitlist is not open yet. Nothing was sent.';
+            formMessage.textContent = form.dataset.msgClosed || 'The waitlist is not open yet. Nothing was sent.';
             formMessage.hidden = false;
             formMessage.style.color = 'var(--color-black)';
             form.reset();

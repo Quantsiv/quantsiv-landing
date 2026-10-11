@@ -10,11 +10,33 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 - One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`
   and `assets/`. No build step, no framework, no package manager. `.nojekyll` must stay.
+- Dutch and Italian versions of the page are `nl/index.html` and `it/index.html`. See
+  "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
   github.io address. Pages publishes every file on the branch, this one included.
 - Pre-launch. The waitlist is not open yet, and the page collects nothing. Use the present tense for what the product
   does today and never for what is planned. Say "Join the waitlist", never "Get started", "Sign up",
   "Download" or "Free trial".
+
+## Languages
+
+- English is the default at `/`; Dutch is at `/nl/` and Italian at `/it/`. The translated pages
+  mirror `index.html` line for line, so `diff index.html nl/index.html` shows only wording. Make
+  every change in all three files in the same commit.
+- Every page lists all languages in its `hreflang` links and in the language switcher, which is
+  plain links with no script. The form's messages come from its `data-msg-*` attributes.
+- A translation says what the English says and never more. The wording table below applies in
+  every language: also search the translations for "volledig", "compleet", "alles", "continu",
+  "garandeert", "blokkeert", "dwingt", "uniek", "enige", "autonoom", and for "completo", "tutto",
+  "continuamente", "garantisce", "blocca", "impone", "unico", "autonomo".
+- Keep terms of art in English: Harvest Now, Decrypt Later, Cryptographic Bill of Materials, CBOM,
+  Code Scanning, pull request, high-value assets. Quotations stay in English, marked
+  `lang="en"`, with a translation in brackets that keeps their strength: "should" is "zouden
+  moeten" in Dutch and "dovrebbero" in Italian.
+- Address the reader as "je" in Dutch and "tu" in Italian. The waitlist button says "Zet je op de
+  wachtlijst" and "Entra in lista d'attesa". Write dates as "13 aug 2024" and "13 ago 2024".
+- Until a translated privacy notice exists, the translated pages link to the English one and say
+  so.
 
 ## Never put in this repository
 

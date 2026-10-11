@@ -49,6 +49,17 @@ body {
     line-height: 1.6;
 }
 
+/* Long words, common in Dutch and Italian, wrap inside their box instead of
+   widening the page on a narrow screen */
+body {
+    overflow-wrap: break-word;
+}
+
+html:lang(nl) :is(h1, h2, h3, h4),
+html:lang(it) :is(h1, h2, h3, h4) {
+    hyphens: auto;
+}
+
 /* Header Layout */
 .site-header {
     display: flex;
@@ -385,13 +396,16 @@ body {
 
 .newsletter form {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     max-width: 500px;
     margin: 0 auto;
 }
 
 .newsletter input {
-    flex: 1;
+    flex: 1 1 8rem;
+    min-width: 0;
     padding: 1rem;
     border: 2px solid var(--color-gray-medium);
     border-radius: 0;
@@ -537,7 +551,7 @@ footer div {
     .features-grid,
     .capabilities-grid,
     .process-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 1.5rem;
     }
 
@@ -840,7 +854,7 @@ footer div {
 @media (max-width: 768px) {
     .threat-grid,
     .roadmap-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 1.5rem;
     }
 
@@ -855,7 +869,7 @@ footer div {
     }
 
     .reg-item {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0.5rem;
         padding: 1.5rem 0;
     }
@@ -932,6 +946,44 @@ footer a,
 
     .legal h1 {
         font-size: var(--font-size-2xl);
+    }
+}
+
+/* --- Language switcher --- */
+.lang-switch ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.lang-switch a {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    padding: 1rem 0;
+    display: inline-block;
+}
+
+.lang-switch a:hover {
+    text-decoration: underline;
+}
+
+.lang-switch a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .lang-switch {
+        width: 100%;
+    }
+
+    .lang-switch ul {
+        justify-content: center;
+    }
+
+    .lang-switch a {
+        padding: 0.5rem 0;
     }
 }
 

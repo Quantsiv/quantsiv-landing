@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+    <link rel="icon" href="../assets/logo-symbol-black.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantsiv vindt quantumkwetsbare cryptografie in je code, rangschikt die naar hoe lang je gegevens geheim moeten blijven en maakt de Cryptographic Bill of Materials waar de Amerikaanse federale richtlijnen (EO 14412, OMB M-26-15) omheen zijn opgebouwd.">
+    <title>Quantsiv - Cryptografisch wijzigingsbeheer en CBOM-bewijs</title>
+    <link rel="canonical" href="https://quantsiv.com/nl/">
+    <link rel="alternate" hreflang="en" href="https://quantsiv.com/">
+    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/">
+    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header with three-part layout -->
+    <header class="site-header">
+        <div class="brand-center"><img src="../assets/logo-symbol-black.png" alt="Quantsiv" class="logo" width="96" height="96"></div>
+        <nav class="nav-center" aria-label="Hoofdmenu">
+            <ul class="nav-list">
+                <li><a href="#threat" class="nav-link">De dreiging</a></li>
+                <li><a href="#compliance" class="nav-link">Deadlines</a></li>
+                <li><a href="#how-it-works" class="nav-link">Hoe het werkt</a></li>
+                <li><a href="#capabilities" class="nav-link">Mogelijkheden</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+            </ul>
+        </nav>
+        <nav class="lang-switch" aria-label="Taal">
+            <ul>
+                <li><a href="../index.html" lang="en" hreflang="en">English</a></li>
+                <li><a href="index.html" lang="nl" hreflang="nl" aria-current="page">Nederlands</a></li>
+                <li><a href="../it/index.html" lang="it" hreflang="it">Italiano</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+    <!-- Hero section update-->
+    <section class="hero">
+        <h1>Quantsiv: cryptografisch wijzigingsbeheer</h1>
+        <p class="hero-subheading">Quantsiv vindt quantumkwetsbare cryptografie in je code, rangschikt die naar hoe lang je gegevens geheim moeten blijven en markeert de wijzigingen die er meer van toevoegen. Het scannen draait standaard in je CI en levert een CycloneDX 1.6 Cryptographic Bill of Materials op.</p>
+        <div class="hero-buttons">
+            <a href="#threat" class="cta-primary">Begrijp de dreiging</a>
+            <a href="#roadmap" class="cta-secondary">Bekijk de roadmap</a>
+        </div>
+    </section>
+
+    <!-- Standards and frameworks alignment banner -->
+    <section class="supported-banner" aria-label="Standaarden en kaders waar Quantsiv op aansluit">
+        <div class="banner-track">
+            <!-- Two identical halves. The track slides by exactly one half (-50%),
+                 so the loop is seamless. Each half repeats the list four
+                 times (~8,000px) so the track always outruns the viewport, even
+                 on an ultra-wide monitor at low browser zoom - if a half were
+                 narrower than the banner, a blank gap would travel through it.
+                 Both halves are hidden from screen readers, which read the
+                 short list below once instead. -->
+            <div class="banner-group" aria-hidden="true">
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+            </div>
+            <div class="banner-group" aria-hidden="true">
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">EU NIS Cooperation Group Roadmap</span>
+            </div>
+        </div>
+        <ul class="visually-hidden">
+            <li>NIST FIPS 203 / 204 / 205</li>
+            <li>CycloneDX CBOM</li>
+            <li>EO 14412</li>
+            <li>OMB M-26-15</li>
+            <li>NIST IR 8547</li>
+            <li>NSA CNSA 2.0</li>
+            <li lang="en">EU NIS Cooperation Group Roadmap</li>
+        </ul>
+    </section>
+
+    <!-- Security statement -->
+    <section class="security-statement">
+        <p>De migratiedeadline ligt vast. Je cryptografische inventaris nog niet. Quantsiv dicht dat gat: het scant je code bij elke build, zodat je ziet wat blootligt, hoe lang het blootligt en waarnaar je moet overstappen.</p>
+    </section>
+
+    <!-- The Threat section -->
+    <section id="threat" class="section section-alt">
+        <h2 lang="en">Harvest Now, Decrypt Later</h2>
+        <p class="section-subheading">Het datalek heeft al plaatsgevonden. Het is alleen nog niet leesbaar.</p>
+
+        <div class="threat-grid">
+            <div class="threat-card">
+                <h3>De aanval is opslag, geen rekenkracht</h3>
+                <p>Een aanvaller heeft vandaag geen quantumcomputer nodig. Het volstaat om je versleutelde verkeer en buitgemaakte gegevens nu op te slaan en het archief te ontsleutelen zodra er een cryptografisch relevante quantumcomputer bestaat. RSA, ECDSA, Diffie-Hellman en DSA vallen allemaal voor het algoritme van Shor. Bij wallets voor cryptoactiva is het grootboek het archief: een publieke sleutel die al on-chain staat, is genoeg om later een overdracht te vervalsen.</p>
+            </div>
+            <div class="threat-card">
+                <h3>De echte deadline is de levensduur van je gegevens</h3>
+                <p>Het gaat er niet om wanneer de quantumcomputer komt, maar hoe lang je gegevens geheim moeten blijven. Een systeem met een vertrouwelijkheidseis van 25 jaar is al gecompromitteerd als zijn verkeer gisteren is onderschept. Medische dossiers, financiële gegevens, overheidscommunicatie en bedrijfsgeheimen vallen er vandaag allemaal onder.</p>
+            </div>
+            <div class="threat-card">
+                <h3>Door AI geschreven code kan quantumkwetsbare standaardkeuzes toevoegen</h3>
+                <p>Codeassistenten kiezen cryptografische primitieven door patronen aan te vullen en kunnen zo quantumkwetsbare standaardkeuzes herhalen. De code compileert en slaagt voor de tests, en is toch quantumkwetsbaar.</p>
+            </div>
+        </div>
+
+        <div class="hndl-timeline">
+            <div class="hndl-step">
+                <span class="hndl-year">Vandaag</span>
+                <h4>Onderscheppen</h4>
+                <p>Aanvallers leggen versleuteld verkeer en opgeslagen cijfertekst vast en archiveren die.</p>
+            </div>
+            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+            <div class="hndl-step">
+                <span class="hndl-year">Later</span>
+                <h4>Ontsleutelen</h4>
+                <p>Een cryptografisch relevante quantumcomputer kraakt de gearchiveerde publieke-sleutelcryptografie.</p>
+            </div>
+            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+            <div class="hndl-step">
+                <span class="hndl-year">Daarna</span>
+                <h4>Blootleggen</h4>
+                <p>Gearchiveerde versleuteling en sleuteluitwisseling die op RSA of ECC steunen, kunnen worden ontsleuteld, ook van gegevens die nog jaren vertrouwelijk moeten blijven. Bij handtekeningen is het risico toekomstige vervalsing, geen ontsleuteling achteraf.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory section -->
+    <section id="compliance" class="section">
+        <h2>De deadline staat al vast</h2>
+        <p class="section-subheading">Dit is geen speculatieve tijdlijn. Normalisatie-instellingen en overheden hebben migratierichtlijnen en -eisen met datums gepubliceerd.</p>
+
+        <ol class="reg-timeline">
+            <li class="reg-item">
+                <span class="reg-date">13 aug 2024</span>
+                <div class="reg-body">
+                    <h3>NIST publiceert de post-quantumstandaarden</h3>
+                    <p>FIPS 203 (ML-KEM) voor sleuteluitwisseling, FIPS 204 (ML-DSA) en FIPS 205 (SLH-DSA) voor digitale handtekeningen. De vervangende algoritmen bestaan nu.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">nov 2024</span>
+                <div class="reg-body">
+                    <h3>NIST IR 8547 stelt een uitfaseringsschema voor</h3>
+                    <p>In het eerste openbare concept worden RSA, ECC en DH met een sterkte van 112 bits, zoals RSA-2048, na 2030 afgeraden (<span lang="en">deprecated</span>). Alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, zijn na 2035 niet meer toegestaan (<span lang="en">disallowed</span>).</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">22 jun 2026</span>
+                <div class="reg-body">
+                    <h3>Executive Order 14412 benoemt de dreiging</h3>
+                    <p>Het decreet gaat in op de dreiging van <span lang="en">harvest now, decrypt later</span>. Het stelt 31 dec 2030 als termijn voor post-quantum sleuteluitwisseling en 31 dec 2031 voor handtekeningen, op high-value assets en systemen met hoge impact.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">24 jun 2026</span>
+                <div class="reg-body">
+                    <h3>OMB M-26-15 legt de federale migratiefasen vast</h3>
+                    <p>Vijf fasen van 2026 tot 2035. Federale instanties bouwen een geautomatiseerde inventaris waarvan de gegevens <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">~mrt 2027</span>
+                <div class="reg-body">
+                    <h3>Minimumelementen voor de CBOM gepubliceerd</h3>
+                    <p>CISA publiceert, in afstemming met NIST, binnen 270 dagen na EO 14412 richtlijnen over de minimumelementen van een CBOM, rond maart 2027.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">2030 &ndash; 2035</span>
+                <div class="reg-body">
+                    <h3>Migratiedeadlines lopen tot 2035</h3>
+                    <p>Onder EO 14412: sleuteluitwisseling uiterlijk 31 dec 2030 en handtekeningen uiterlijk 31 dec 2031 op high-value assets en systemen met hoge impact, met een voorgestelde FAR-regel voor betrokken opdrachtnemers. NSA CNSA 2.0 stelt datums voor exclusief gebruik tussen 2030 en 2033, afhankelijk van de categorie. In de EU vraagt de roadmap van de NIS-samenwerkingsgroep (23 jun 2025, een aanbeveling) om nationale strategieën tegen eind 2026, toepassingen met hoog risico tegen eind 2030 en zoveel systemen als haalbaar tegen 2035.</p>
+                </div>
+            </li>
+        </ol>
+
+        <p class="sources">
+            Bronnen:
+            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>,
+            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>,
+            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>,
+            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener" lang="en">CISA Post-Quantum Cryptography Initiative</a>,
+            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>,
+            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>,
+            <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">roadmap van de NIS-samenwerkingsgroep (EU)</a>.
+        </p>
+    </section>
+
+    <!-- How it works section -->
+    <section id="how-it-works" class="section section-alt">
+        <h2>Hoe Quantsiv werkt</h2>
+        <p class="section-subheading">Van het scannen van je code tot een CycloneDX 1.6 CBOM</p>
+        <div class="process-steps">
+            <div class="step">
+                <h3>1. Ontdekken</h3>
+                <p>Quantsiv zoekt naar cryptografisch gebruik in broncode, sleutel- en certificaatbestanden, CI-scripts en TLS-endpoints die je opgeeft of verifieert. Het scannen draait standaard in je CI. Alleen de CBOM en de metadata van bevindingen bereiken Quantsiv, en alleen als je ze uploadt.</p>
+            </div>
+            <div class="step">
+                <h3>2. Analyseren</h3>
+                <p>Elke bevinding wordt getoetst aan de quantumkwetsbare algoritmen (RSA, ECDSA, Diffie-Hellman, DSA) en op twee sporen gerangschikt: blootstelling aan <span lang="en">harvest now, decrypt later</span> voor versleuteling en sleuteluitwisseling, op basis van hoe lang de gegevens volgens jouw opgave vertrouwelijk moeten blijven, en een apart spoor voor handtekeningen, afgezet tegen de deadline voor handtekeningen.</p>
+            </div>
+            <div class="step">
+                <h3>3. Prioriteren</h3>
+                <p>De resultaten worden gerangschikt, zodat het herstel het bedrijfsrisico volgt en niet het aantal bevindingen. Een medisch dossier dat lang bewaard wordt en een sessietoken dat kort leeft, zijn niet even sterk blootgesteld, ook als ze allebei RSA gebruiken. Elke bevinding vermeldt de reden voor haar rangorde en, waar het gebruik duidelijk is, de standaard om naar te migreren.</p>
+            </div>
+            <div class="step">
+                <h3>4. Aantonen</h3>
+                <p>Exporteer een CycloneDX 1.6 CBOM, SARIF en een gerangschikt rapport. Elke build wordt vergeleken met de laatste build van de standaardbranch, en de wijzigingscontrole markeert cryptografie die de wijziging toevoegt, zodat de migratie niet achteruitgaat.</p>
+            </div>
+        </div>
+
+        <div class="process-footer">
+            <p class="process-note"></p>
+        </div>
+    </section>
+
+    <!-- Capabilities section -->
+    <section id="capabilities" class="section">
+        <h2>Mogelijkheden</h2>
+        <p class="section-subheading">Detecteert gangbare cryptografische API's in Python, JavaScript en TypeScript, Go, Java en Kotlin, C#, Rust, Ruby, PHP, C en C++, Objective-C, Swift en Dart, openssl-, ssh-keygen- en keytool-opdrachten in CI- en shellscripts, en sleutels en certificaten in PEM- en SSH-formaat. Patroongebaseerd, dus de diepgang verschilt per taal en sommige aanroepen worden gemist.</p>
+        <div class="capabilities-grid">
+            <div class="capability-item">
+                <h3 lang="en">Cryptographic Bill of Materials</h3>
+                <p>CycloneDX 1.6 die de strikte validatie van het schema doorstaat. Importeer een CBOM van welke producent ook en exporteer je hele landschap als één CBOM.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Rangschikking naar levensduur</h3>
+                <p>Geef per soort gegevens op hoe lang ze vertrouwelijk moeten blijven. Versleuteling en sleuteluitwisseling worden naar die levensduur gerangschikt. Handtekeningen worden apart gevolgd tegen de deadline voor handtekeningen, omdat hun risico vervalsing is, geen ontsleuteling achteraf.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Wijzigingscontrole</h3>
+                <p>Vergelijk elke build met de laatste build van de standaardbranch en markeer de cryptografie die een wijziging toevoegt. Stel beleid in per gegevensklasse en leg uitzonderingen vast met een goedkeurder op naam en een vervaldatum. De resultaten gaan als SARIF naar Code Scanning en, met de template voor GitHub Actions, als commentaar naar de pull request.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Draait in je CI</h3>
+                <p>Een container met templates voor GitHub Actions, GitLab, Jenkins en Azure DevOps. Het scannen werkt offline. Alleen de CBOM en de metadata van bevindingen bereiken Quantsiv, en alleen als je ze uploadt.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Sleutels, certificaten en TLS</h3>
+                <p>Leest sleutel- en certificaatbestanden op algoritme en grootte. Peilt de TLS-endpoints die je opgeeft; de gehoste dienst peilt alleen domeinen waarvan je met een DNS-record aantoont dat ze van jou zijn.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Code voor wallets en custody</h3>
+                <p>Vindt secp256k1- en Ed25519-sleutels voor ondertekening, Schnorr-handtekeningen en sleuteltransport met ECDH en ECIES in gangbare walletbibliotheken. Zodra de publieke sleutel van een wallet on-chain staat, is het risico vervalsing, geen ontsleuteling, en de bijbehorende aanwijzing zegt wat te doen tot de chain post-quantumhandtekeningen accepteert. Leest code, niet de chain.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Voor codeassistenten</h3>
+                <p>Met een alleen-lezen MCP-server kan een AI-codeassistent je beleid en opgegeven levensduren opvragen voordat hij cryptografie schrijft. Dezelfde controle draait bij de gate. De server heeft geen schrijftools en bevat geen model van ons.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Migratieadvies</h3>
+                <p>Waar het gebruik duidelijk is, noemt elke bevinding de standaard om naar over te stappen: ML-KEM (FIPS 203), ML-DSA (FIPS 204) of SLH-DSA (FIPS 205), met hybride sleuteluitwisseling tijdens de overgang.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Eerlijke beperkingen</h3>
+                <p>Patroonherkenning mist aanroepen via aliassen en dynamische aanroepen, code van derden die in je repository is opgenomen, en afhankelijkheden. We noemen de beperkingen vooraf.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap section -->
+    <section id="roadmap" class="section section-alt">
+        <h2>Roadmap</h2>
+        <p class="section-subheading">Zo gepland dat de functies er zijn vóór de deadlines die de migratie afdwingen.</p>
+
+        <div class="roadmap-grid">
+            <article class="roadmap-phase">
+                <span class="phase-tag">Fase 1 &middot; Nu &rarr; 2027</span>
+                <h3>Audit</h3>
+                <p>Uitrollen in CI-pipelines en de cryptografische voetafdruk van elke applicatie in kaart brengen.</p>
+                <ul class="phase-list">
+                    <li>Pipeline-integratie voor scans bij push en pull request</li>
+                    <li>De voetafdruk in kaart brengen over broncode, sleutel- en certificaatbestanden, CI-scripts en TLS-endpoints</li>
+                    <li>HNDL-specifieke identificatie en prioritering van kwetsbaarheden</li>
+                    <li>CBOM-uitvoer afgestemd op de minimumelementen van CISA zodra die verschijnen, rond maart 2027</li>
+                    <li>JavaScript en TypeScript, C en C++, Swift en Dart; container- en cloudinventaris later</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
+                <h3>Migreren</h3>
+                <p>De cirkel sluiten van bevinding tot oplossing, met voorgestelde wijzigingen en hybride cryptografie.</p>
+                <ul class="phase-list">
+                    <li>Voorgestelde wijzigingen als concept-pull requests met de diff, de onderbouwing en de geciteerde autoriteit, ter beoordeling door een mens</li>
+                    <li>Hybride versleuteling die klassieke en post-quantumalgoritmen naast elkaar gebruikt</li>
+                    <li>Validatiesuites die controleren dat updates geen functionaliteit breken</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Fase 3 &middot; 2028 &rarr; 2030</span>
+                <h3>Agentische crypto-agility</h3>
+                <p>Opschalen naar gedistribueerde bedrijfsomgevingen. Agents doen voorstellen; deterministische controles verifiëren; een mens keurt goed. Niets wordt vanzelf gemerged of uitgerold.</p>
+                <ul class="phase-list">
+                    <li>Crypto-agile architectuur over clouds, PKI, KMS en service meshes</li>
+                    <li>Agents die per toepassing een PQC-algoritme voorstellen, ter goedkeuring door een mens</li>
+                    <li>Deterministische verificatie van goedgekeurde migraties voordat er iets wordt gemerged</li>
+                    <li>Crypto-agility-scorecard die de migratiegereedheid meet</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Fase 4 &middot; 2030 &rarr; 2035</span>
+                <h3>Platformconsolidatie</h3>
+                <p>Eén uitrolbare eenheid voor audit, migratie en geoptimaliseerde post-quantumcryptografie.</p>
+                <ul class="phase-list">
+                    <li>Een eigen cryptografisch onderzoeksteam</li>
+                    <li>Implementaties van de gestandaardiseerde primitieven, pas geleverd na validatie onder FIPS 140-3</li>
+                    <li>Eén product dat audit, migratie en review samenbrengt</li>
+                    <li>Beheerde PQC-dienst; SOC 2 en ISO 27001 als doelen voor de lange termijn</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Newsletter section -->
+    <section class="newsletter">
+        <h2>Blijf op de hoogte</h2>
+        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv. De wachtlijst is nog niet open.</p>
+        <form id="contact-form" data-msg-invalid="Vul een geldig e-mailadres in." data-msg-closed="De wachtlijst is nog niet open. Er is niets verstuurd.">
+            <input type="email" placeholder="Je zakelijke e-mailadres" aria-label="Je zakelijke e-mailadres" required disabled>
+            <div id="form-message" class="form-message" role="status" hidden></div>
+            <button type="submit" disabled>Zet je op de wachtlijst</button>
+        </form>
+        <p class="form-note"><a href="../privacy.html" hreflang="en">Privacyverklaring (in het Engels)</a></p>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2026 Quantsiv. Alle rechten voorbehouden.</div>
+        <div><a href="../privacy.html" hreflang="en">Privacyverklaring (in het Engels)</a></div>
+        <div>Stealth-modus</div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

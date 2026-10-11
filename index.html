@@ -8,6 +8,10 @@
     <meta name="description" content="Quantsiv finds quantum-vulnerable cryptography in your code, ranks it by how long your data must stay secret, and produces the Cryptographic Bill of Materials that US federal guidance (EO 14412, OMB M-26-15) is built around.">
     <title>Quantsiv - Cryptographic Change Control and CBOM Evidence</title>
     <link rel="canonical" href="https://quantsiv.com/">
+    <link rel="alternate" hreflang="en" href="https://quantsiv.com/">
+    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/">
+    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +25,13 @@
                 <li><a href="#how-it-works" class="nav-link">How it works</a></li>
                 <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
                 <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+            </ul>
+        </nav>
+        <nav class="lang-switch" aria-label="Language">
+            <ul>
+                <li><a href="index.html" lang="en" hreflang="en" aria-current="page">English</a></li>
+                <li><a href="nl/index.html" lang="nl" hreflang="nl">Nederlands</a></li>
+                <li><a href="it/index.html" lang="it" hreflang="it">Italiano</a></li>
             </ul>
         </nav>
     </header>
@@ -358,7 +369,7 @@
     <section class="newsletter">
         <h2>Stay Informed</h2>
         <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. The waitlist is not open yet.</p>
-        <form id="contact-form">
+        <form id="contact-form" data-msg-invalid="Please enter a valid email address." data-msg-closed="The waitlist is not open yet. Nothing was sent.">
             <input type="email" placeholder="Your work email" aria-label="Your work email" required disabled>
             <div id="form-message" class="form-message" role="status" hidden></div>
             <button type="submit" disabled>Join the Waitlist</button>
