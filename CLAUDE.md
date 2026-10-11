@@ -26,7 +26,7 @@ Write as if a customer, a competitor and a regulator are all reading it.
   handles visitors' data in the privacy notice.
 - Legal text, a privacy policy, terms or company details. The founder supplies them; never invent
   them. The one exception is `privacy.html`, published on the founder's instruction on 10 Oct
-  2026. Change it only with the founder's approval.
+  2026 and updated with his approval on 11 Oct 2026. Change it only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
 
 If in doubt, leave it out and ask the founder.
@@ -172,14 +172,17 @@ The page edits listed in earlier versions of this file are applied (10 Oct 2026)
 stand until the founder changes them:
 
 - The waitlist is not open. The form is disabled and says so, and `script.js` sends nothing.
-- The privacy notice (`privacy.html`, 10 Oct 2026) is linked from the form and the footer. Its
-  contact is privacy@quantsiv.com. Retention: until the person unsubscribes or asks for deletion,
-  and the whole list is deleted within 6 months if Quantsiv does not go ahead. Consent with
-  double opt-in.
-- Before the form opens, the notice must name the controller (the founder's full name, or the
-  company) and the email service that stores the list, with where it stores the data and whether
-  emails are tracked. The form then posts to that service, with no CAPTCHA and no iframe, and
-  the notice's "Last updated" date changes.
+- The privacy notice (`privacy.html`, 11 Oct 2026) is linked from the form and the footer. Its
+  contact is privacy@quantsiv.com. It names the controller, Ludovico Corsini, and covers visits
+  (GitHub Pages) and email to privacy@ (Zoho Corporation B.V., EU data centres, support access
+  from India under standard contractual clauses; general messages kept 12 months after the last
+  reply, rights requests 2 years after closing). Waitlist retention: until the person
+  unsubscribes or asks for deletion, and the whole list is deleted within 6 months if Quantsiv
+  does not go ahead. Consent with double opt-in. It carries the same Content-Security-Policy
+  meta tag as `index.html` and a canonical link.
+- Before the form opens, the notice must name the email service that stores the list, with
+  where it stores the data and whether emails are tracked. The form then posts to that service,
+  with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
 - The footer carries no personal handle. Its only contact is the privacy notice.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
