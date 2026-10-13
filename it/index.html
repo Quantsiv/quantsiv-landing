@@ -47,7 +47,13 @@
                 <a href="#roadmap" class="cta-secondary">Guarda la roadmap</a>
             </div>
         </div>
-        <img src="../assets/hero-iso.svg" alt="" class="hero-art" width="1200" height="640">
+        <div class="hero-figure">
+            <picture>
+                <source srcset="../assets/hero-flow-still.svg" media="(prefers-reduced-motion: reduce)">
+                <img src="../assets/hero-flow.svg" alt="" class="hero-art" id="hero-art" width="1200" height="640" data-motion="../assets/hero-flow.svg" data-still="../assets/hero-flow-still.svg">
+            </picture>
+            <button type="button" class="hero-art-toggle" id="hero-art-toggle" data-label-pause="Pausa animazione" data-label-play="Riproduci animazione" hidden>Pausa animazione</button>
+        </div>
     </section>
 
     <!-- Standards and frameworks alignment banner -->

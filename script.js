@@ -2,6 +2,41 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navigation links are plain anchors: style.css scrolls smoothly unless the
     // visitor asks for reduced motion, and the browser moves focus and the URL.
 
+    // Header menu: fill in the link of the section in view. The hero has no link,
+    // so scrolling back to the top clears the menu.
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const navTargets = [document.querySelector('.hero')].concat(
+        navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    ).filter(Boolean);
+    if ('IntersectionObserver' in window && navLinks.length) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach(function (a) {
+                    if (entry.target.id && a.getAttribute('href') === '#' + entry.target.id) {
+                        a.setAttribute('aria-current', 'true');
+                    } else {
+                        a.removeAttribute('aria-current');
+                    }
+                });
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        navTargets.forEach(function (el) { observer.observe(el); });
+    }
+
+    // Hero drawing: the button swaps the looping drawing for its still frame and back.
+    // Under reduced motion the <picture> already shows the still, so the button stays hidden.
+    const heroArt = document.getElementById('hero-art');
+    const heroToggle = document.getElementById('hero-art-toggle');
+    if (heroArt && heroToggle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroToggle.hidden = false;
+        heroToggle.addEventListener('click', function () {
+            const playing = heroArt.getAttribute('src') === heroArt.dataset.motion;
+            heroArt.setAttribute('src', playing ? heroArt.dataset.still : heroArt.dataset.motion);
+            heroToggle.textContent = playing ? heroToggle.dataset.labelPlay : heroToggle.dataset.labelPause;
+        });
+    }
+
     // Form handling. Messages come from the form's data-msg-* attributes,
     // so each language version of the page supplies its own wording.
     const form = document.getElementById('contact-form');
