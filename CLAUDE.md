@@ -50,8 +50,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
   handles visitors' data in the privacy notice.
 - Legal text, a privacy policy, terms or company details. The founder supplies them; never invent
   them. The one exception is `privacy.html`, published on the founder's instruction on 10 Oct
-  2026 and updated with his approval on 11 Oct 2026, with its translations in `nl/` and `it/`.
-  Change them only with the founder's approval.
+  2026 and updated with his approval on 11 Oct 2026, with its translations in `nl/` and `it/`,
+  approved on 13 Oct 2026. Change them only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
 
 If in doubt, leave it out and ask the founder.
