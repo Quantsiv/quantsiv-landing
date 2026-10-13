@@ -1,0 +1,22 @@
+/* Loaded only when JavaScript is off: the burger button cannot open the menu,
+   so small screens show the menu and the language links as plain rows instead. */
+.menu-toggle {
+    display: none !important;
+}
+
+.site-menu {
+    display: contents !important;
+}
+
+@media (max-width: 900px) {
+    .site-menu .nav-center {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: stretch;
+        overflow-x: auto;
+    }
+
+    .site-menu .nav-list {
+        width: max-content;
+    }
+}
