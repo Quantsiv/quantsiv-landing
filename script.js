@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!emailRegex.test(email)) {
                 formMessage.textContent = form.dataset.msgInvalid || 'Please enter a valid email address.';
                 formMessage.hidden = false;
-                formMessage.style.color = 'var(--color-black)';
                 emailInput.classList.add('error');
                 return;
             }
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // The waitlist is not open yet, so nothing is sent or stored
             formMessage.textContent = form.dataset.msgClosed || 'The waitlist is not open yet. Nothing was sent.';
             formMessage.hidden = false;
-            formMessage.style.color = 'var(--color-black)';
             form.reset();
         });
     }
