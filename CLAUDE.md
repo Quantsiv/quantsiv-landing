@@ -10,7 +10,7 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 - One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`
   and `assets/`. No build step, no framework, no package manager. `.nojekyll` must stay.
-- Dutch and Italian versions of the page are `nl/index.html` and `it/index.html`. See
+- Dutch and Italian versions of the page and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
   github.io address. Pages publishes every file on the branch, this one included.
@@ -35,8 +35,10 @@ Write as if a customer, a competitor and a regulator are all reading it.
   moeten" in Dutch and "dovrebbero" in Italian.
 - Address the reader as "je" in Dutch and "tu" in Italian. The waitlist button says "Zet je op de
   wachtlijst" and "Entra in lista d'attesa". Write dates as "13 aug 2024" and "13 ago 2024".
-- Until a translated privacy notice exists, the translated pages link to the English one and say
-  so.
+- `nl/privacy.html` and `it/privacy.html` translate the privacy notice and follow the same rules
+  as `privacy.html`: change all three together, only with the founder's approval, and keep the
+  same "Last updated" date. GDPR terms follow the regulation's official Dutch and Italian text
+  (AVG, "verwerkingsverantwoordelijke", "titolare del trattamento").
 
 ## Never put in this repository
 
@@ -48,7 +50,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
   handles visitors' data in the privacy notice.
 - Legal text, a privacy policy, terms or company details. The founder supplies them; never invent
   them. The one exception is `privacy.html`, published on the founder's instruction on 10 Oct
-  2026 and updated with his approval on 11 Oct 2026. Change it only with the founder's approval.
+  2026 and updated with his approval on 11 Oct 2026, with its translations in `nl/` and `it/`,
+  approved on 13 Oct 2026. Change them only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
 
 If in doubt, leave it out and ask the founder.
