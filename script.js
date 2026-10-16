@@ -2,6 +2,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navigation links are plain anchors: style.css scrolls smoothly unless the
     // visitor asks for reduced motion, and the browser moves focus and the URL.
 
+    // Small screens: the burger button opens the menu panel. style.css shows the button
+    // only there; noscript.css shows the menu as rows when this script cannot run.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.getElementById('site-menu');
+    if (menuToggle && siteMenu) {
+        const setMenu = function (open) {
+            menuToggle.setAttribute('aria-expanded', String(open));
+            siteMenu.classList.toggle('is-open', open);
+        };
+        const isOpen = function () {
+            return menuToggle.getAttribute('aria-expanded') === 'true';
+        };
+        menuToggle.addEventListener('click', function () {
+            setMenu(!isOpen());
+        });
+        // Following a link, clicking outside the header or pressing Escape closes it.
+        siteMenu.addEventListener('click', function (e) {
+            if (e.target.closest('a')) setMenu(false);
+        });
+        document.addEventListener('click', function (e) {
+            if (isOpen() && !e.target.closest('.site-header')) setMenu(false);
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && isOpen()) {
+                setMenu(false);
+                menuToggle.focus();
+            }
+        });
+    }
+
     // Header menu: fill in the link of the section in view. The hero has no link,
     // so scrolling back to the top clears the menu.
     const navLinks = Array.from(document.querySelectorAll('.nav-link'));
