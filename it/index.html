@@ -325,30 +325,30 @@
     <!-- Roadmap section -->
     <section id="roadmap" class="section section-alt">
         <h2>Roadmap</h2>
-        <p class="section-subheading">Pianificata per rendere disponibili le funzionalità prima delle scadenze che impongono la migrazione.</p>
+        <p class="section-subheading">Pianificata secondo le tempistiche di migrazione statunitensi ed europee citate sopra.</p>
 
         <div class="roadmap-grid">
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 1 &middot; Ora &rarr; 2027</span>
                 <h3>Audit</h3>
-                <p>Integrazione nelle pipeline CI e mappatura dell'impronta crittografica di ogni applicazione.</p>
+                <p>Mappatura dell'impronta crittografica di ogni applicazione dalla CI. Le funzionalità qui sopra sono già realizzate; i prossimi passi di questa fase:</p>
                 <ul class="phase-list">
-                    <li>Integrazione nella pipeline per scansioni su push e pull request</li>
-                    <li>Mappatura dell'impronta su codice sorgente, file di chiavi e certificati, script di CI ed endpoint TLS</li>
-                    <li>Identificazione e prioritizzazione delle vulnerabilità specifiche HNDL</li>
-                    <li>Output CBOM allineato agli elementi minimi CISA una volta pubblicati, intorno a marzo 2027</li>
-                    <li>JavaScript e TypeScript, C e C++, Swift e Dart; inventario di container e cloud in seguito</li>
+                    <li>Crittografia post-quantum e ibrida conteggiata come avanzamento della migrazione, in codice, chiavi, certificati e configurazione</li>
+                    <li>Inventario di dipendenze e lockfile: quali pacchetti introducono crittografia</li>
+                    <li>Report che dichiarano la propria copertura, perché una scansione parziale non venga scambiata per una pulita</li>
+                    <li>Output CBOM allineato agli elementi minimi CISA una volta pubblicati, intorno a marzo 2027, e CycloneDX 1.7 accettato in importazione</li>
+                    <li>Report di evidenza CBOM per gli auditor, con riferimento alle linee guida statunitensi ed europee</li>
                 </ul>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                 <h3>Migrazione</h3>
-                <p>Chiudere il ciclo dal rilevamento alla correzione con modifiche suggerite e crittografia ibrida.</p>
+                <p>Chiudere il ciclo dal rilevamento alla correzione, con una persona che approva ogni modifica.</p>
                 <ul class="phase-list">
                     <li>Modifiche suggerite come bozze di pull request con diff, motivazione e autorità citata, da far revisionare a una persona</li>
-                    <li>Cifrari ibridi che eseguono in parallelo algoritmi classici e post-quantum</li>
-                    <li>Suite di validazione che verificano che gli aggiornamenti non compromettano le funzionalità</li>
+                    <li>Obiettivi di migrazione con scambio di chiavi ibrido come impostazione predefinita, con le versioni di piattaforma richieste da ogni modifica</li>
+                    <li>Suite di validazione che verificano ogni modifica prima che una persona la revisioni</li>
                 </ul>
             </article>
 
