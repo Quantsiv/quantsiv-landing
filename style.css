@@ -299,8 +299,18 @@ a {
     max-width: 62rem;
 }
 
+/* The category line above the plain-language headline */
+.hero-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
 .hero h1 {
-    font-size: clamp(2.5rem, 6.4vw, 5.5rem);
+    font-size: clamp(2.25rem, 5.6vw, 4.75rem);
     font-weight: 700;
     line-height: 1.02;
     letter-spacing: -0.04em;

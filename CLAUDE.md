@@ -223,6 +223,11 @@ stand until the founder changes them:
   where it stores the data and whether emails are tracked. The form then posts to that service,
   with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
 - The footer carries no personal handle. Its only contact is the privacy notice.
+- The page is written for non-technical readers first (17 Oct 2026): each heading and first
+  sentence says what happens in plain words, and the technical terms follow, explained once.
+  The category, "cryptographic change control and CBOM evidence", is the small line above the
+  headline. Keep that order when adding copy, and keep each plain sentence mapped to "What the
+  page may say".
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.
