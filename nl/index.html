@@ -258,7 +258,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Ontdekken</h3>
-                <p>Quantsiv zoekt naar cryptografie in broncode, sleutel- en certificaatbestanden, buildscripts en de beveiligde verbindingen (TLS) van servers die je opgeeft of waarvan je aantoont dat ze van jou zijn. Standaard draait het in je CI, de geautomatiseerde build die draait telkens als je ontwikkelaars code wijzigen. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
+                <p>Quantsiv zoekt naar cryptografie in broncode, sleutel- en certificaatbestanden, configuratie- en infrastructuurbestanden, buildscripts en de beveiligde verbindingen (TLS) van servers die je opgeeft of waarvan je aantoont dat ze van jou zijn. Standaard draait het in je CI, de geautomatiseerde build die draait telkens als je ontwikkelaars code wijzigen. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
             </div>
             <div class="step">
                 <h3>2. Analyseren</h3>
@@ -303,6 +303,10 @@
             <div class="capability-item">
                 <h3>Sleutels, certificaten en beveiligde verbindingen</h3>
                 <p>Leest sleutel- en certificaatbestanden op algoritme en grootte, en bewaart nooit de sleutel zelf. Peilt de beveiligde verbinding (TLS) van servers die je opgeeft; de gehoste dienst peilt alleen domeinen waarvan je met een DNS-record aantoont dat ze van jou zijn.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Server- en infrastructuurinstellingen</h3>
+                <p>Vindt quantumkwetsbare sleutel- en TLS-instellingen in de bestanden die je servers en infrastructuur beschrijven: Terraform-, Kubernetes- en CloudFormation-bestanden, configuratie van webservers en proxy's, en OpenSSL- en OpenSSH-configuratie. Een wijziging die een kwetsbare instelling toevoegt, wordt gemarkeerd. Het leest de bestanden in je repository, niet je cloudaccount.</p>
             </div>
             <div class="capability-item">
                 <h3>Code voor wallets en custody</h3>

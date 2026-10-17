@@ -258,7 +258,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Discover</h3>
-                <p>Quantsiv looks for cryptography in source code, key and certificate files, build scripts, and the secure connections (TLS) of servers you name or prove you own. By default it runs in your CI, the automated build that runs each time your developers change code. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
+                <p>Quantsiv looks for cryptography in source code, key and certificate files, configuration and infrastructure files, build scripts, and the secure connections (TLS) of servers you name or prove you own. By default it runs in your CI, the automated build that runs each time your developers change code. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
             </div>
             <div class="step">
                 <h3>2. Analyze</h3>
@@ -303,6 +303,10 @@
             <div class="capability-item">
                 <h3>Keys, certificates and secure connections</h3>
                 <p>Reads key and certificate files for algorithm and size, and never keeps the key itself. Probes the secure connection (TLS) of servers you name; the hosted service probes only domains you prove you own with a DNS record.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Server and infrastructure settings</h3>
+                <p>Finds quantum-vulnerable key and TLS settings in the files that describe your servers and infrastructure: Terraform, Kubernetes and CloudFormation files, web-server and proxy configuration, and OpenSSL and OpenSSH configuration. A change that adds a vulnerable setting is flagged. It reads the files in your repository, not your cloud account.</p>
             </div>
             <div class="capability-item">
                 <h3>Wallet and custody code</h3>
