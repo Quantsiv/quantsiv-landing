@@ -325,30 +325,30 @@
     <!-- Roadmap section -->
     <section id="roadmap" class="section section-alt">
         <h2>Roadmap</h2>
-        <p class="section-subheading">Zo gepland dat de functies er zijn vóór de deadlines die de migratie afdwingen.</p>
+        <p class="section-subheading">Gefaseerd langs de Amerikaanse en Europese migratietijdlijnen die hierboven zijn geciteerd.</p>
 
         <div class="roadmap-grid">
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 1 &middot; Nu &rarr; 2027</span>
                 <h3>Audit</h3>
-                <p>Uitrollen in CI-pipelines en de cryptografische voetafdruk van elke applicatie in kaart brengen.</p>
+                <p>De cryptografische voetafdruk van elke applicatie in kaart brengen vanuit CI. De mogelijkheden hierboven zijn gebouwd; hierna in deze fase:</p>
                 <ul class="phase-list">
-                    <li>Pipeline-integratie voor scans bij push en pull request</li>
-                    <li>De voetafdruk in kaart brengen over broncode, sleutel- en certificaatbestanden, CI-scripts en TLS-endpoints</li>
-                    <li>HNDL-specifieke identificatie en prioritering van kwetsbaarheden</li>
-                    <li>CBOM-uitvoer afgestemd op de minimumelementen van CISA zodra die verschijnen, rond maart 2027</li>
-                    <li>JavaScript en TypeScript, C en C++, Swift en Dart; container- en cloudinventaris later</li>
+                    <li>Post-quantum- en hybride cryptografie meegeteld als migratievoortgang, in code, sleutels, certificaten en configuratie</li>
+                    <li>Inventaris van afhankelijkheden en lockfiles: welke pakketten cryptografie meebrengen</li>
+                    <li>Rapporten die hun dekking vermelden, zodat een gedeeltelijke scan niet wordt aangezien voor een schone</li>
+                    <li>CBOM-uitvoer afgestemd op de minimumelementen van CISA zodra die verschijnen, rond maart 2027, en CycloneDX 1.7 geaccepteerd bij import</li>
+                    <li>CBOM-bewijsrapporten voor auditors, met verwijzing naar de Amerikaanse en Europese richtlijnen</li>
                 </ul>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                 <h3>Migreren</h3>
-                <p>De cirkel sluiten van bevinding tot oplossing, met voorgestelde wijzigingen en hybride cryptografie.</p>
+                <p>De cirkel sluiten van bevinding tot oplossing, waarbij een mens elke wijziging goedkeurt.</p>
                 <ul class="phase-list">
                     <li>Voorgestelde wijzigingen als concept-pull requests met de diff, de onderbouwing en de geciteerde autoriteit, ter beoordeling door een mens</li>
-                    <li>Hybride versleuteling die klassieke en post-quantumalgoritmen naast elkaar gebruikt</li>
-                    <li>Validatiesuites die controleren dat updates geen functionaliteit breken</li>
+                    <li>Migratiedoelen die standaard hybride sleuteluitwisseling gebruiken, met de platformversies die elke wijziging nodig heeft</li>
+                    <li>Validatiesuites die elke wijziging controleren voordat een mens die beoordeelt</li>
                 </ul>
             </article>
 

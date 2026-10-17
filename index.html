@@ -325,30 +325,30 @@
     <!-- Roadmap section -->
     <section id="roadmap" class="section section-alt">
         <h2>Roadmap</h2>
-        <p class="section-subheading">Sequenced to land capability ahead of the deadlines that force the migration.</p>
+        <p class="section-subheading">Sequenced against the US and EU migration timelines cited above.</p>
 
         <div class="roadmap-grid">
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
                 <h3>Audit</h3>
-                <p>Deploy into CI pipelines and map the cryptographic footprint of each application.</p>
+                <p>Map the cryptographic footprint of each application from CI. The capabilities above are built; next in this phase:</p>
                 <ul class="phase-list">
-                    <li>Pipeline integration for push and pull request scans</li>
-                    <li>Footprint mapping across source code, key and certificate files, CI scripts and TLS endpoints</li>
-                    <li>HNDL-specific vulnerability identification and prioritization</li>
-                    <li>CBOM output aligned to the CISA minimum elements once published, about Mar 2027</li>
-                    <li>JavaScript and TypeScript, C and C++, Swift and Dart; container and cloud inventory later</li>
+                    <li>Post-quantum and hybrid cryptography counted as migration progress, across code, keys, certificates and configuration</li>
+                    <li>Dependency and lockfile inventory: which packages bring cryptography</li>
+                    <li>Reports that state their coverage, so a partial scan is not mistaken for a clean one</li>
+                    <li>CBOM output aligned to the CISA minimum elements once published, about Mar 2027, and CycloneDX 1.7 accepted on import</li>
+                    <li>CBOM evidence reports for auditors, citing the US and EU guidance</li>
                 </ul>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
                 <h3>Migrate</h3>
-                <p>Close the loop from finding to fix with suggested changes and hybrid cryptography.</p>
+                <p>Close the loop from finding to fix, with a person approving each change.</p>
                 <ul class="phase-list">
                     <li>Suggested changes as draft pull requests with the diff, rationale and cited authority, for a person to review</li>
-                    <li>Hybrid ciphers running classical and post-quantum algorithms in parallel</li>
-                    <li>Validation suites that check updates do not break functionality</li>
+                    <li>Migration targets that default to hybrid key exchange, with the platform versions each change needs</li>
+                    <li>Validation suites that check each change before a person reviews it</li>
                 </ul>
             </article>
 
