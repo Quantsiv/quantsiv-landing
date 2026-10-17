@@ -801,6 +801,11 @@ a {
     color: var(--muted);
 }
 
+/* Three columns: a last card alone on its row spans it, so no empty cells show */
+.capability-item:last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+}
+
 /* Roadmap: the current phase is the inverted card */
 .roadmap-grid {
     display: grid;
@@ -1078,6 +1083,10 @@ footer a {
 
     .capabilities-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capability-item:last-child:nth-child(3n + 1) {
+        grid-column: auto;
     }
 
     .capability-item:last-child:nth-child(odd) {

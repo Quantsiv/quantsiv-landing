@@ -258,7 +258,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Individuare</h3>
-                <p>Quantsiv cerca la crittografia nel codice sorgente, nei file di chiavi e certificati, negli script di build e nelle connessioni sicure (TLS) dei server che indichi o di cui dimostri la proprietà. Per impostazione predefinita gira nella tua CI, la build automatica che parte ogni volta che i tuoi sviluppatori modificano il codice. Solo la CBOM e i dettagli di ogni rilevamento arrivano a Quantsiv, e solo se li carichi.</p>
+                <p>Quantsiv cerca la crittografia nel codice sorgente, nei file di chiavi e certificati, nei file di configurazione e di infrastruttura, negli script di build e nelle connessioni sicure (TLS) dei server che indichi o di cui dimostri la proprietà. Per impostazione predefinita gira nella tua CI, la build automatica che parte ogni volta che i tuoi sviluppatori modificano il codice. Solo la CBOM e i dettagli di ogni rilevamento arrivano a Quantsiv, e solo se li carichi.</p>
             </div>
             <div class="step">
                 <h3>2. Analizzare</h3>
@@ -303,6 +303,10 @@
             <div class="capability-item">
                 <h3>Chiavi, certificati e connessioni sicure</h3>
                 <p>Legge i file di chiavi e certificati per ricavarne algoritmo e dimensione, e non conserva mai la chiave stessa. Sonda la connessione sicura (TLS) dei server che indichi; il servizio in hosting sonda solo i domini di cui dimostri la proprietà con un record DNS.</p>
+            </div>
+            <div class="capability-item">
+                <h3>Impostazioni di server e infrastruttura</h3>
+                <p>Trova impostazioni di chiavi e TLS vulnerabili agli attacchi quantistici nei file che descrivono i tuoi server e la tua infrastruttura: file Terraform, Kubernetes e CloudFormation, configurazione di web server e proxy, e configurazione di OpenSSL e OpenSSH. Una modifica che aggiunge un'impostazione vulnerabile viene segnalata. Legge i file nel tuo repository, non il tuo account cloud.</p>
             </div>
             <div class="capability-item">
                 <h3>Codice di wallet e custodia</h3>

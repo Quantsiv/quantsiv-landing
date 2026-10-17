@@ -131,6 +131,10 @@ them. Do not add to them without the founder.
   header line only, never key material.
 - Probes the TLS endpoints you name with one handshake. The hosted service probes only domains
   you prove you own with a DNS record. It is a probe, not a full TLS assessment.
+- Reads key and TLS settings in Terraform, Kubernetes and CloudFormation files, web-server and
+  proxy configuration, and OpenSSL and OpenSSH configuration, and flags a change that adds a
+  vulnerable setting. It reads files in the repository, not a cloud account: never write "scans
+  your cloud" or "all your configuration". Added with the founder's approval on 17 Oct 2026.
 - Writes a CycloneDX 1.6 CBOM that passes the schema's strict validation, plus SARIF and a
   ranked report. Accepts any schema-valid CycloneDX 1.6 CBOM from any producer, and exports the
   latest default-branch CBOM of every repository as one document.
