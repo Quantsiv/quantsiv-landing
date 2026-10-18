@@ -48,7 +48,7 @@
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">vindt de cryptografie die quantumcomputers zouden kunnen kraken</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Waarom het ertoe doet</a>
-                <a href="#roadmap" class="cta-secondary">Bekijk de roadmap</a>
+                <a href="#contact" class="cta-secondary">Neem contact op</a>
             </div>
         </div>
         <div class="hero-figure">
@@ -275,14 +275,21 @@
             </div>
         </div>
 
-        <div class="process-footer">
-            <p class="process-note"></p>
-        </div>
+        <figure class="finding-example">
+            <figcaption><strong>Zo ziet een bevinding eruit.</strong> Echte uitvoer, in het Engels, voor een kort voorbeeldbestand dat voor deze pagina is geschreven.</figcaption>
+            <dl>
+                <div><dt>Je hebt opgegeven</dt><dd>Klantgegevens moeten 25 jaar geheim blijven</dd></div>
+                <div><dt>Gevonden</dt><dd><code>src/billing_export.py:10</code>, <span lang="en">RSA-OAEP encryption</span></dd></div>
+                <div><dt>Rang</dt><dd><span class="finding-severity" lang="en">critical</span>, op het spoor van <span lang="en">harvest now, decrypt later</span></dd></div>
+                <div><dt>Waarom</dt><dd><span lang="en">Protects data that must stay confidential for 25 years.</span> (Beschermt gegevens die 25 jaar vertrouwelijk moeten blijven.)</dd></div>
+                <div><dt>Overstappen naar</dt><dd><span lang="en">Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</span> (Vervang RSA-versleuteling en -sleuteltransport door ML-KEM (FIPS 203) plus een AEAD.)</dd></div>
+            </dl>
+        </figure>
     </section>
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>Krachtige cryptografische beveiliging. Gebouwd voor het quantumtijdperk.</h2>
+        <h2>Vind en rangschik de cryptografie die je moet vervangen. Gebouwd voor het quantumtijdperk.</h2>
         <p class="section-subheading">Ontdek en beoordeel de cryptografie in je code, sleutels en infrastructuurbestanden, zie welke risico's je eerst aanpakt en krijg duidelijke aanwijzingen over waarnaar je overstapt.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
@@ -334,7 +341,7 @@
                 <p>Een AI-agent gaat elke bevinding in haar context lezen, de oplossing opstellen, die bijstellen tot je controles slagen en leren van elke wijziging die je team goedkeurt. Niets wordt gemerged zonder dat een mens het goedkeurt.</p>
             </div>
         </div>
-        <p class="capabilities-note">De detectie werkt met patronen, dus ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, net als code die in een project is gekopieerd en pakketten van derden.</p>
+        <p class="capabilities-note">De detectie werkt met patronen, dus de diepgang verschilt per taal, en ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, net als code die in een project is gekopieerd en pakketten van derden.</p>
     </section>
 
     <!-- Roadmap section -->
@@ -383,10 +390,12 @@
         </div>
     </section>
 
-    <!-- Newsletter section -->
-    <section class="newsletter">
-        <h2>Blijf op de hoogte</h2>
-        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv. De wachtlijst is nog niet open.</p>
+    <!-- Contact and newsletter section -->
+    <section class="newsletter" id="contact">
+        <h2>Neem contact op</h2>
+        <p>Wil je zien wat Quantsiv in je eigen code vindt, nog voor de lancering, of heb je een vraag? Schrijf ons.</p>
+        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
+        <p class="newsletter-later">Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv. De wachtlijst is nog niet open.</p>
         <form id="contact-form" data-msg-invalid="Vul een geldig e-mailadres in." data-msg-closed="De wachtlijst is nog niet open. Er is niets verstuurd.">
             <input type="email" placeholder="Je zakelijke e-mailadres" aria-label="Je zakelijke e-mailadres" required disabled>
             <div id="form-message" class="form-message" role="status" hidden></div>
@@ -400,6 +409,7 @@
     <footer>
         <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
         <div>&copy; 2026 Quantsiv. Alle rechten voorbehouden.</div>
+        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
         <div><a href="privacy.html">Privacyverklaring</a></div>
         <div>Stealth-modus</div>
     </footer>

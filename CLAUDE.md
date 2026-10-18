@@ -231,7 +231,15 @@ stand until the founder changes them:
 - Before the form opens, the notice must name the email service that stores the list, with
   where it stores the data and whether emails are tracked. The form then posts to that service,
   with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
-- The footer carries no personal handle. Its only contact is the privacy notice.
+- The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
+  notice. Since 19 Oct 2026 (the founder's ask), the section above the footer is "Get in Touch"
+  (`#contact`): it invites visitors to see what Quantsiv finds in their own code and links
+  hello@quantsiv.com, and the hero's second button points to it.
+  The privacy notice already covers email to any quantsiv.com address ("When you write to us").
+- "How Quantsiv Works" ends with one real finding: the scanner's own output for a short sample
+  file written for the page, labelled as such. If the scanner's wording changes, run it again on
+  the same sample and update all three languages; never edit the output by hand. In `nl/` and
+  `it/` the output stays in English (`lang="en"`) with a translation in brackets.
 - The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
   small line above the headline, the page title and the first line of the footer, in English on
   every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a capability:
@@ -246,6 +254,10 @@ stand until the founder changes them:
   lines, then "This is where we come in"; the threat section is "Two Quantum Threats" (Harvest
   Now, Decrypt Later, and Signature Forgery with "Trust Now, Forge Later"); the capability grid
   is his short cards, with the detection limits as one note under the grid instead of a card.
+  On 19 Oct 2026 the grid's headline became "Find and rank the cryptography you need to
+  replace. Built for the quantum era." (it was "Powerful cryptographic security. Built for the
+  quantum era.", which read as a "Quantsiv secures" claim), and the limits note says depth
+  varies by language.
   He wants Quantsiv presented as AI-powered once it is: not before an AI capability is merged.
 - The agentic AI card (the founder, 18 Oct 2026) ends the grid with a "Coming soon" label
   ("Binnenkort", "In arrivo") and bold future-tense copy, on his ask for a self-adjusting agent:

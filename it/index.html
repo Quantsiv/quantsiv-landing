@@ -48,7 +48,7 @@
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">trova la crittografia che i computer quantistici potrebbero violare</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Perché è importante</a>
-                <a href="#roadmap" class="cta-secondary">Guarda la roadmap</a>
+                <a href="#contact" class="cta-secondary">Contattaci</a>
             </div>
         </div>
         <div class="hero-figure">
@@ -275,14 +275,21 @@
             </div>
         </div>
 
-        <div class="process-footer">
-            <p class="process-note"></p>
-        </div>
+        <figure class="finding-example">
+            <figcaption><strong>Ecco un rilevamento.</strong> Output reale, in inglese, per un breve file di esempio scritto per questa pagina.</figcaption>
+            <dl>
+                <div><dt>Hai dichiarato</dt><dd>I dati dei clienti devono restare segreti per 25 anni</dd></div>
+                <div><dt>Trovato</dt><dd><code>src/billing_export.py:10</code>, <span lang="en">RSA-OAEP encryption</span></dd></div>
+                <div><dt>Priorità</dt><dd><span class="finding-severity" lang="en">critical</span>, sul binario <span lang="en">harvest now, decrypt later</span></dd></div>
+                <div><dt>Perché</dt><dd><span lang="en">Protects data that must stay confidential for 25 years.</span> (Protegge dati che devono restare riservati per 25 anni.)</dd></div>
+                <div><dt>Verso cosa migrare</dt><dd><span lang="en">Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</span> (Sostituisci la cifratura e il trasporto di chiavi RSA con ML-KEM (FIPS 203) più un AEAD.)</dd></div>
+            </dl>
+        </figure>
     </section>
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>Sicurezza crittografica potente. Pensata per l'era quantistica.</h2>
+        <h2>Trova e ordina la crittografia che devi sostituire. Pensato per l'era quantistica.</h2>
         <p class="section-subheading">Individua e valuta la crittografia nel tuo codice, nelle chiavi e nei file di infrastruttura, scopri quali rischi affrontare per primi e ricevi indicazioni chiare su verso cosa migrare.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
@@ -334,7 +341,7 @@
                 <p>Un agente IA leggerà ogni rilevamento nel suo contesto, scriverà la correzione, la adatterà finché i tuoi controlli non passano e imparerà da ogni modifica approvata dal tuo team. Nulla viene integrato senza l'approvazione di una persona.</p>
             </div>
         </div>
-        <p class="capabilities-note">Il rilevamento si basa su schemi, quindi può non individuare le chiamate fatte con un altro nome o costruite durante l'esecuzione, il codice copiato in un progetto e i pacchetti di terze parti.</p>
+        <p class="capabilities-note">Il rilevamento si basa su schemi, quindi la profondità varia secondo il linguaggio, e può non individuare le chiamate fatte con un altro nome o costruite durante l'esecuzione, il codice copiato in un progetto e i pacchetti di terze parti.</p>
     </section>
 
     <!-- Roadmap section -->
@@ -383,10 +390,12 @@
         </div>
     </section>
 
-    <!-- Newsletter section -->
-    <section class="newsletter">
-        <h2>Resta al passo</h2>
-        <p>Ricevi aggiornamenti sulle scadenze della migrazione post-quantum, sugli standard e sulle release di Quantsiv. La lista d'attesa non è ancora aperta.</p>
+    <!-- Contact and newsletter section -->
+    <section class="newsletter" id="contact">
+        <h2>Contattaci</h2>
+        <p>Vuoi vedere cosa trova Quantsiv nel tuo codice prima del lancio, o hai una domanda? Scrivici.</p>
+        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
+        <p class="newsletter-later">Ricevi aggiornamenti sulle scadenze della migrazione post-quantum, sugli standard e sulle release di Quantsiv. La lista d'attesa non è ancora aperta.</p>
         <form id="contact-form" data-msg-invalid="Inserisci un indirizzo email valido." data-msg-closed="La lista d'attesa non è ancora aperta. Non è stato inviato nulla.">
             <input type="email" placeholder="La tua email di lavoro" aria-label="La tua email di lavoro" required disabled>
             <div id="form-message" class="form-message" role="status" hidden></div>
@@ -400,6 +409,7 @@
     <footer>
         <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
         <div>&copy; 2026 Quantsiv. Tutti i diritti riservati.</div>
+        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
         <div><a href="privacy.html">Informativa sulla privacy</a></div>
         <div>Modalità stealth</div>
     </footer>
