@@ -1010,6 +1010,16 @@ footer a {
     color: var(--muted);
 }
 
+/* The brand tagline: its own row above the small print */
+.footer-tagline {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
 /* Privacy notice */
 .legal {
     max-width: 46rem;
