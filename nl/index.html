@@ -44,9 +44,8 @@
     <!-- Hero section update-->
     <section class="hero">
         <div class="hero-copy">
-            <p class="hero-kicker">Cryptografisch wijzigingsbeheer en CBOM-bewijs</p>
+            <p class="hero-kicker" lang="en">See tomorrow. Secure today.</p>
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">vindt de cryptografie die quantumcomputers zouden kunnen kraken</span></h1>
-            <p class="hero-subheading">Het laat zien wat je eerst moet aanpakken, op basis van hoe lang je gegevens geheim moeten blijven, en markeert wijzigingen die er meer van toevoegen. Het scannen draait standaard in je eigen build-pipeline en levert een standaardoverzicht op van wat het vond: een <span lang="en">Cryptographic Bill of Materials</span> (CBOM).</p>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Waarom het ertoe doet</a>
                 <a href="#roadmap" class="cta-secondary">Bekijk de roadmap</a>
@@ -145,22 +144,24 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>Een toekomstige quantumcomputer zou de publieke-sleutelcryptografie kunnen kraken die vandaag breed wordt gebruikt, en de VS en de EU hebben datums gepubliceerd om die te vervangen. Vervangen begint met weten waar ze zit. Quantsiv scant je code bij elke build en laat zien wat blootligt, hoe lang het blootligt en waarnaar je moet overstappen.</p>
+        <p>Een quantumcomputer zou de publieke-sleutelcryptografie kunnen kraken die vandaag breed wordt gebruikt.<br>Overheden hebben datums gepubliceerd om die te vervangen.<br>Vervangen begint met weten waar ze zit.</p>
+        <p>Daar komen wij in beeld. We scannen je code bij elke build en laten je zien wat blootligt, hoe lang het blootligt en waarnaar je moet overstappen.</p>
     </section>
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
-        <h2 lang="en">Harvest Now, Decrypt Later</h2>
-        <p class="section-subheading">Aanvallers kunnen versleutelde gegevens vandaag kopiëren en bewaren tot een quantumcomputer ze kan ontsleutelen. Voor gegevens die jarenlang geheim moeten blijven, begint het risico nu.</p>
+        <h2>Twee quantumdreigingen</h2>
+        <p class="section-subheading">Een quantumcomputer die groot genoeg is, zou gegevens kunnen lezen die vandaag worden gekopieerd, en de handtekeningen kunnen vervalsen waarop mensen en machines vertrouwen. Elke dreiging heeft haar eigen deadline.</p>
 
         <div class="threat-grid">
             <div class="threat-card">
-                <h3>Nu stelen, later lezen</h3>
-                <p>Een aanvaller heeft vandaag geen quantumcomputer nodig. Het volstaat om je versleutelde verkeer en gestolen gegevens nu op te slaan en ze te ontsleutelen zodra er een quantumcomputer bestaat die groot genoeg is. RSA, ECDSA, Diffie-Hellman en DSA, de gangbare publieke-sleutelmethoden, vallen allemaal voor een bekende quantummethode, het algoritme van Shor. Bij wallets voor cryptoactiva is de blockchain zelf het archief: een publieke sleutel die al on-chain staat, is genoeg om later een overdracht te vervalsen.</p>
+                <h3 lang="en">Harvest Now, Decrypt Later</h3>
+                <p>Aanvallers kunnen vandaag versleuteld verkeer opnemen en versleutelde gegevens kopiëren, en die ontsleutelen zodra er een quantumcomputer bestaat die groot genoeg is. Dit bedreigt versleuteling en sleuteluitwisseling, zoals RSA-versleuteling en Diffie-Hellman. De deadline is hoe lang de gegevens geheim moeten blijven: als ze 25 jaar vertrouwelijk moeten blijven, loopt verkeer dat gisteren is opgenomen al risico.</p>
             </div>
             <div class="threat-card">
-                <h3>De echte deadline is de levensduur van je gegevens</h3>
-                <p>Het gaat er niet om wanneer de quantumcomputer komt, maar hoe lang je gegevens geheim moeten blijven. Moeten de gegevens van een systeem 25 jaar vertrouwelijk blijven, dan loopt verkeer dat gisteren is onderschept nu al risico. Medische dossiers, financiële gegevens, overheidscommunicatie en bedrijfsgeheimen moeten vaak jarenlang geheim blijven.</p>
+                <h3>Vervalsing van handtekeningen</h3>
+                <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
+                <p>Handtekeningen bewijzen dat een software-update, een certificaat, een document of een transactie echt is. Er hoeft eerst niets gestolen te worden, want de publieke sleutel is per definitie openbaar. Een quantumcomputer die groot genoeg is, zou er de privésleutel uit kunnen afleiden en in jouw naam ondertekenen, zodat een vervalsing er echt uitziet. Dit bedreigt handtekeningen zoals RSA, ECDSA en EdDSA. De deadline is hoe lang een handtekening of sleutel vertrouwd moet blijven: sleutels die in apparaten zijn ingebouwd, certificaatautoriteiten en documenten die als bewijs moeten blijven gelden. Bij wallets voor cryptoactiva is een publieke sleutel die al on-chain staat genoeg om een overdracht te vervalsen.</p>
             </div>
             <div class="threat-card">
                 <h3>AI-codeassistenten kunnen kwetsbare standaardkeuzes herhalen</h3>
@@ -184,7 +185,7 @@
             <div class="hndl-step">
                 <span class="hndl-year">Daarna</span>
                 <h4>Blootleggen</h4>
-                <p>Gegevens waarvan de versleuteling op RSA of ECC steunde, kunnen dan worden gelezen, ook gegevens die nog jaren vertrouwelijk moeten blijven. Bij handtekeningen is het risico anders: vervalsing in de toekomst, niet het lezen van oude gegevens.</p>
+                <p>Gegevens waarvan de versleuteling op RSA of elliptische krommen steunde, kunnen dan worden gelezen. Handtekeningen die ermee zijn gemaakt, kunnen worden vervalst.</p>
             </div>
         </div>
     </section>
@@ -206,21 +207,21 @@
                 <span class="reg-date">nov 2024</span>
                 <div class="reg-body">
                     <h3>NIST stelt voor wanneer de huidige algoritmen worden uitgefaseerd</h3>
-                    <p>In het eerste openbare concept van NIST IR 8547 worden RSA, ECC en DH met een sterkte van 112 bits, zoals RSA-2048, na 2030 afgeraden (<span lang="en">deprecated</span>). Alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, zijn na 2035 niet meer toegestaan (<span lang="en">disallowed</span>).</p>
+                    <p>In het eerste openbare concept van NIST IR 8547 zijn alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, na 2035 niet meer toegestaan (<span lang="en">disallowed</span>).</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">22 jun 2026</span>
                 <div class="reg-body">
-                    <h3>Een Amerikaanse Executive Order stelt deadlines voor 2030 en 2031</h3>
-                    <p>Executive Order 14412 gaat in op de dreiging van <span lang="en">harvest now, decrypt later</span>. Het decreet stelt 31 dec 2030 als termijn voor post-quantum sleuteluitwisseling en 31 dec 2031 voor handtekeningen, op high-value assets en systemen met hoge impact.</p>
+                    <h3>Executive Order 14412</h3>
+                    <p>Het decreet gaat in op de dreiging van <span lang="en">harvest now, decrypt later</span>. Het stelt 31 dec 2030 als termijn voor post-quantum sleuteluitwisseling en 31 dec 2031 voor handtekeningen, op high-value assets en systemen met hoge impact.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">24 jun 2026</span>
                 <div class="reg-body">
-                    <h3>OMB M-26-15 plant de federale migratie in fasen</h3>
-                    <p>Vijf fasen van 2026 tot 2035, van het Amerikaanse <span lang="en">Office of Management and Budget</span>. Federale instanties bouwen een geautomatiseerde inventaris waarvan de gegevens <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend.</p>
+                    <h3>OMB M-26-15: de federale migratie in fasen</h3>
+                    <p>Federale instanties bouwen een geautomatiseerde inventaris waarvan de gegevens <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. Vijf fasen van 2026 tot 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
@@ -258,7 +259,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Ontdekken</h3>
-                <p>Quantsiv zoekt naar cryptografie in broncode, sleutel- en certificaatbestanden, configuratie- en infrastructuurbestanden, buildscripts en de beveiligde verbindingen (TLS) van servers die je opgeeft of waarvan je aantoont dat ze van jou zijn. Standaard draait het in je CI, de geautomatiseerde build die draait telkens als je ontwikkelaars code wijzigen. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
+                <p>Quantsiv zoekt naar cryptografie in broncode, sleutel- en certificaatbestanden, configuratie- en infrastructuurbestanden, buildscripts en de beveiligde verbindingen (TLS) van servers die je opgeeft of waarvan je aantoont dat ze van jou zijn. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
             </div>
             <div class="step">
                 <h3>2. Analyseren</h3>
@@ -266,7 +267,7 @@
             </div>
             <div class="step">
                 <h3>3. Prioriteren</h3>
-                <p>De resultaten worden zo gerangschikt dat de belangrijkste oplossingen eerst komen, niet de langste lijst. Een medisch dossier dat jarenlang geheim moet blijven en een inlogtoken dat kort geldig is, zijn niet hetzelfde risico, ook als ze allebei RSA gebruiken. Elke bevinding zegt waarom ze op die plaats staat en, waar het gebruik duidelijk is, naar welke standaard je overstapt.</p>
+                <p>Een medisch dossier dat jarenlang geheim moet blijven en een inlogtoken dat kort geldig is, zijn niet hetzelfde risico, ook als ze allebei RSA gebruiken. Elke bevinding zegt waarom ze op die plaats staat en, waar het gebruik duidelijk is, naar welke standaard je overstapt.</p>
             </div>
             <div class="step">
                 <h3>4. Aantonen</h3>
@@ -281,50 +282,55 @@
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>Wat Quantsiv doet</h2>
-        <p class="section-subheading">Quantsiv vindt cryptografie door bekende patronen in code te herkennen. Het detecteert gangbare cryptografische API's in Python, JavaScript en TypeScript, Go, Java en Kotlin, C#, Rust, Ruby, PHP, C en C++, Objective-C, Swift en Dart, openssl-, ssh-keygen- en keytool-opdrachten in CI- en shellscripts, en sleutels en certificaten in PEM- en SSH-formaat. Omdat het patronen herkent, verschilt de diepgang per taal en worden sommige aanroepen gemist.</p>
+        <h2>Krachtige cryptografische beveiliging. Gebouwd voor het quantumtijdperk.</h2>
+        <p class="section-subheading">Ontdek en beoordeel de cryptografie in je code, sleutels en infrastructuurbestanden, zie welke risico's je eerst aanpakt en krijg duidelijke aanwijzingen over waarnaar je overstapt.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
+                <h3>Ondersteuning voor veel talen</h3>
+                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.</p>
+            </div>
+            <div class="capability-item">
                 <h3 lang="en">Cryptographic Bill of Materials</h3>
-                <p>Een ingrediëntenlijst voor cryptografie: wat er is gevonden en waar. Quantsiv schrijft CycloneDX 1.6 die de strikte validatie van het schema doorstaat, importeert een CycloneDX 1.6 CBOM van elke andere tool en exporteert de laatste CBOM van elke repository als één document.</p>
+                <p>Inventariseer automatisch de cryptografie die in je repository's is gevonden als standaard CycloneDX 1.6 CBOM, en importeer CBOM's van andere tools.</p>
             </div>
             <div class="capability-item">
-                <h3>Gerangschikt naar hoe lang gegevens geheim blijven</h3>
-                <p>Je geeft per soort gegevens op hoe lang ze vertrouwelijk moeten blijven, en versleuteling en sleuteluitwisseling worden naar die levensduur gerangschikt. Handtekeningen worden apart gevolgd tegen de deadline voor handtekeningen, omdat hun risico vervalsing is, niet dat iemand oude gegevens leest.</p>
+                <h3>Beoordeling van het quantumrisico</h3>
+                <p>Prioriteer op hoe lang je gegevens beschermd moeten blijven, zodat de meest kritieke risico's eerst komen. Handtekeningen worden gevolgd tegen hun eigen deadline.</p>
             </div>
             <div class="capability-item">
-                <h3>Markeert wijzigingen die er meer toevoegen</h3>
-                <p>Elke build wordt vergeleken met de laatste build van je hoofdbranch, en cryptografie die een wijziging toevoegt, wordt gemarkeerd. Stel regels in per soort gegevens en leg uitzonderingen vast met een goedkeurder op naam en een vervaldatum. De resultaten gaan als SARIF naar GitHub Code Scanning en, met de template voor GitHub Actions, als commentaar naar de pull request.</p>
+                <h3>Controle bij elke build</h3>
+                <p>Vang quantumkwetsbare cryptografie op die een wijziging toevoegt, bij elke build, met automatische controles en feedback op pull requests in GitHub.</p>
             </div>
             <div class="capability-item">
-                <h3>Draait in je eigen build</h3>
-                <p>Een container, een kant-en-klaar pakket, met templates voor GitHub Actions, GitLab, Jenkins en Azure DevOps. Het scannen werkt offline. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
+                <h3>Naadloze CI/CD-integratie</h3>
+                <p>Gebruik templates voor GitHub Actions, GitLab, Jenkins en Azure DevOps. Scan op je eigen machine of in je bestaande build.</p>
             </div>
             <div class="capability-item">
-                <h3>Sleutels, certificaten en beveiligde verbindingen</h3>
-                <p>Leest sleutel- en certificaatbestanden op algoritme en grootte, en bewaart nooit de sleutel zelf. Peilt de beveiligde verbinding (TLS) van servers die je opgeeft; de gehoste dienst peilt alleen domeinen waarvan je met een DNS-record aantoont dat ze van jou zijn.</p>
+                <h3>Sleutels, certificaten en TLS</h3>
+                <p>Herken het algoritme en de sleutelgrootte in sleutel- en certificaatbestanden, en peil de beveiligde verbindingen (TLS) van servers die je opgeeft.</p>
             </div>
             <div class="capability-item">
-                <h3>Server- en infrastructuurinstellingen</h3>
-                <p>Vindt quantumkwetsbare sleutel- en TLS-instellingen in de bestanden die je servers en infrastructuur beschrijven: Terraform-, Kubernetes- en CloudFormation-bestanden, configuratie van webservers en proxy's, en OpenSSL- en OpenSSH-configuratie. Een wijziging die een kwetsbare instelling toevoegt, wordt gemarkeerd. Het leest de bestanden in je repository, niet je cloudaccount.</p>
+                <h3>Infrastructuurinstellingen</h3>
+                <p>Detecteer kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes-, CloudFormation-, webserver-, OpenSSL- en OpenSSH-bestanden in je repository.</p>
             </div>
             <div class="capability-item">
                 <h3>Code voor wallets en custody</h3>
-                <p>Vindt de ondertekening en sleuteluitwisseling in gangbare walletbibliotheken: secp256k1- en Ed25519-sleutels voor ondertekening, Schnorr-handtekeningen en sleuteltransport met ECDH en ECIES. Zodra de publieke sleutel van een wallet op de blockchain staat, is het risico een vervalste overdracht, geen ontsleuteling, en de aanwijzing bij de bevinding zegt wat te doen tot de chain post-quantumhandtekeningen accepteert. Leest code, niet de blockchain.</p>
+                <p>Vind de sleutels voor ondertekening, de handtekeningen en de sleuteluitwisseling in gangbare walletbibliotheken, met aanwijzingen tot de chain post-quantumhandtekeningen accepteert. Het leest code, niet de blockchain.</p>
             </div>
             <div class="capability-item">
-                <h3>Voor AI-codeassistenten</h3>
-                <p>Met een alleen-lezen koppeling (een MCP-server) kan een AI-codeassistent je regels en opgegeven levensduren van gegevens opvragen voordat hij cryptografie schrijft. Dezelfde controle draait daarna in je build. De koppeling kan niets wijzigen en bevat geen AI-model van ons.</p>
+                <h3>Integratie met AI-codeassistenten</h3>
+                <p>Laat AI-codeassistenten je cryptografieregels controleren terwijl ze code schrijven, via een alleen-lezen koppeling (MCP).</p>
             </div>
             <div class="capability-item">
-                <h3>Waar je naar overstapt</h3>
-                <p>Waar het gebruik duidelijk is, noemt elke bevinding de standaard om naar over te stappen: ML-KEM (FIPS 203), ML-DSA (FIPS 204) of SLH-DSA (FIPS 205), met hybride sleuteluitwisseling, oud en nieuw gecombineerd, tijdens de overgang.</p>
+                <h3>Aanwijzingen voor de post-quantummigratie</h3>
+                <p>Krijg de standaard om naar over te stappen waar het gebruik duidelijk is: ML-KEM, ML-DSA of SLH-DSA, met hybride sleuteluitwisseling tijdens de overgang.</p>
             </div>
             <div class="capability-item">
-                <h3>Eerlijke beperkingen</h3>
-                <p>Patroonherkenning mist aanroepen onder een andere naam of die pas tijdens het draaien ontstaan, code van buiten die in een project is gekopieerd (<span lang="en">vendored code</span>), en pakketten van derden (afhankelijkheden). We noemen de beperkingen vooraf.</p>
+                <h3>Privacy voorop, offline scannen</h3>
+                <p>Houd je broncode in je eigen omgeving: scans draaien standaard offline, en bevindingen bereiken Quantsiv alleen als je ze uploadt.</p>
             </div>
         </div>
+        <p class="capabilities-note">De detectie werkt met patronen, dus ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, net als code die in een project is gekopieerd en pakketten van derden.</p>
     </section>
 
     <!-- Roadmap section -->

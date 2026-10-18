@@ -44,9 +44,8 @@
     <!-- Hero section update-->
     <section class="hero">
         <div class="hero-copy">
-            <p class="hero-kicker">Controllo delle modifiche crittografiche ed evidenze CBOM</p>
+            <p class="hero-kicker" lang="en">See tomorrow. Secure today.</p>
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">trova la crittografia che i computer quantistici potrebbero violare</span></h1>
-            <p class="hero-subheading">Mostra cosa correggere per primo, in base a quanto a lungo i tuoi dati devono restare segreti, e segnala le modifiche che ne aggiungono altra. Per impostazione predefinita la scansione avviene nella tua pipeline di build e produce un inventario standard di ciò che ha trovato: una <span lang="en">Cryptographic Bill of Materials</span> (CBOM).</p>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Perché è importante</a>
                 <a href="#roadmap" class="cta-secondary">Guarda la roadmap</a>
@@ -145,22 +144,24 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>Un futuro computer quantistico potrebbe violare la crittografia a chiave pubblica oggi di uso comune, e Stati Uniti e UE hanno pubblicato le date per sostituirla. Sostituirla comincia dal sapere dove si trova. Quantsiv scansiona il tuo codice a ogni build e mostra cosa è esposto, per quanto tempo resta esposto e verso cosa migrare.</p>
+        <p>Un computer quantistico potrebbe violare la crittografia a chiave pubblica oggi di uso comune.<br>I governi hanno pubblicato le date per sostituirla.<br>Sostituirla comincia dal sapere dove si trova.</p>
+        <p>Ed è qui che entriamo in gioco noi. Scansioniamo il tuo codice a ogni build e ti mostriamo cosa è esposto, per quanto tempo resta esposto e verso cosa migrare.</p>
     </section>
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
-        <h2 lang="en">Harvest Now, Decrypt Later</h2>
-        <p class="section-subheading">Gli attaccanti possono copiare oggi i dati cifrati e conservarli finché un computer quantistico non potrà decifrarli. Per i dati che devono restare segreti per anni, il rischio comincia adesso.</p>
+        <h2>Due minacce quantistiche</h2>
+        <p class="section-subheading">Un computer quantistico abbastanza grande potrebbe leggere i dati copiati oggi e falsificare le firme su cui fanno affidamento persone e macchine. Ogni minaccia ha la sua scadenza.</p>
 
         <div class="threat-grid">
             <div class="threat-card">
-                <h3>Rubare ora, leggere dopo</h3>
-                <p>Oggi a un attaccante non serve un computer quantistico. Gli basta registrare adesso il tuo traffico cifrato e i dati rubati, e decifrarli quando esisterà un computer quantistico abbastanza grande. RSA, ECDSA, Diffie-Hellman e DSA, i metodi a chiave pubblica di uso comune, cedono tutti a un metodo quantistico noto, l'algoritmo di Shor. Per i wallet di cripto-attività la blockchain stessa è l'archivio: una chiave pubblica già on-chain basta per falsificare un trasferimento in futuro.</p>
+                <h3 lang="en">Harvest Now, Decrypt Later</h3>
+                <p>Gli attaccanti possono registrare oggi il traffico cifrato e copiare i dati cifrati, per poi decifrarli quando esisterà un computer quantistico abbastanza grande. Questo minaccia la cifratura e lo scambio di chiavi, come la cifratura RSA e Diffie-Hellman. La scadenza è quanto a lungo i dati devono restare segreti: se devono restare riservati per 25 anni, il traffico registrato ieri è già a rischio.</p>
             </div>
             <div class="threat-card">
-                <h3>La vera scadenza è la vita utile dei tuoi dati</h3>
-                <p>Non conta quando arriverà il computer quantistico, ma per quanto tempo i tuoi dati devono restare segreti. Se i dati di un sistema devono restare riservati per 25 anni, il traffico registrato ieri è già a rischio. Cartelle cliniche, dati finanziari, comunicazioni governative e segreti industriali spesso devono restare segreti per anni.</p>
+                <h3>Falsificazione delle firme</h3>
+                <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
+                <p>Le firme dimostrano che un aggiornamento software, un certificato, un documento o una transazione sono autentici. Non serve rubare nulla prima, perché la chiave pubblica è pubblica per definizione. Un computer quantistico abbastanza grande potrebbe ricavarne la chiave privata e firmare a tuo nome, così un falso sembra autentico. Questo minaccia firme come RSA, ECDSA ed EdDSA. La scadenza è quanto a lungo una firma o una chiave deve restare affidabile: chiavi integrate nei dispositivi, autorità di certificazione e documenti che devono restare una prova. Per i wallet di cripto-attività, una chiave pubblica già on-chain basta per falsificare un trasferimento.</p>
             </div>
             <div class="threat-card">
                 <h3>Gli assistenti di programmazione IA possono ripetere scelte predefinite vulnerabili</h3>
@@ -184,7 +185,7 @@
             <div class="hndl-step">
                 <span class="hndl-year">Poi</span>
                 <h4>Esposizione</h4>
-                <p>I dati la cui cifratura si basava su RSA o ECC possono allora essere letti, compresi quelli che devono restare riservati ancora per anni. Per le firme il rischio è diverso: la falsificazione futura, non la lettura di dati vecchi.</p>
+                <p>I dati la cui cifratura si basava su RSA o sulle curve ellittiche possono allora essere letti. Le firme create con questi algoritmi possono essere falsificate.</p>
             </div>
         </div>
     </section>
@@ -206,21 +207,21 @@
                 <span class="reg-date">nov 2024</span>
                 <div class="reg-body">
                     <h3>Il NIST propone quando dismettere gli algoritmi attuali</h3>
-                    <p>Nella bozza pubblica iniziale di NIST IR 8547, RSA, ECC e DH con sicurezza a 112 bit, come RSA-2048, sono deprecati (<span lang="en">deprecated</span>) dopo il 2030. Tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici, P-256 compreso, non sono più consentiti (<span lang="en">disallowed</span>) dopo il 2035.</p>
+                    <p>Nella bozza pubblica iniziale di NIST IR 8547, tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici, P-256 compreso, non sono più consentiti (<span lang="en">disallowed</span>) dopo il 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">22 giu 2026</span>
                 <div class="reg-body">
-                    <h3>Un ordine esecutivo statunitense fissa scadenze per il 2030 e il 2031</h3>
-                    <p>L'ordine esecutivo 14412 affronta la minaccia <span lang="en">harvest now, decrypt later</span>. Fissa il 31 dic 2030 per lo scambio di chiavi post-quantum e il 31 dic 2031 per le firme, sugli high-value asset e sui sistemi ad alto impatto.</p>
+                    <h3>Ordine esecutivo 14412</h3>
+                    <p>L'ordine affronta la minaccia <span lang="en">harvest now, decrypt later</span>. Fissa il 31 dic 2030 per lo scambio di chiavi post-quantum e il 31 dic 2031 per le firme, sugli high-value asset e sui sistemi ad alto impatto.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">24 giu 2026</span>
                 <div class="reg-body">
-                    <h3>OMB M-26-15 pianifica la migrazione federale in fasi</h3>
-                    <p>Cinque fasi dal 2026 al 2035, dall'<span lang="en">Office of Management and Budget</span> statunitense. Le agenzie federali costruiscono un inventario automatizzato i cui dati <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (dovrebbero alimentare una CBOM centrale). I piani delle agenzie vanno presentati entro il 22 ott 2026.</p>
+                    <h3>OMB M-26-15: la migrazione federale in fasi</h3>
+                    <p>Le agenzie federali costruiscono un inventario automatizzato i cui dati <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (dovrebbero alimentare una CBOM centrale). I piani delle agenzie vanno presentati entro il 22 ott 2026. Cinque fasi dal 2026 al 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
@@ -258,7 +259,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Individuare</h3>
-                <p>Quantsiv cerca la crittografia nel codice sorgente, nei file di chiavi e certificati, nei file di configurazione e di infrastruttura, negli script di build e nelle connessioni sicure (TLS) dei server che indichi o di cui dimostri la proprietà. Per impostazione predefinita gira nella tua CI, la build automatica che parte ogni volta che i tuoi sviluppatori modificano il codice. Solo la CBOM e i dettagli di ogni rilevamento arrivano a Quantsiv, e solo se li carichi.</p>
+                <p>Quantsiv cerca la crittografia nel codice sorgente, nei file di chiavi e certificati, nei file di configurazione e di infrastruttura, negli script di build e nelle connessioni sicure (TLS) dei server che indichi o di cui dimostri la proprietà. Solo la CBOM e i dettagli di ogni rilevamento arrivano a Quantsiv, e solo se li carichi.</p>
             </div>
             <div class="step">
                 <h3>2. Analizzare</h3>
@@ -266,7 +267,7 @@
             </div>
             <div class="step">
                 <h3>3. Dare priorità</h3>
-                <p>I risultati sono ordinati in modo che le correzioni più importanti vengano prima, non la lista più lunga. Una cartella clinica che deve restare segreta per anni e un token di accesso di breve durata non sono lo stesso rischio, anche se entrambi usano RSA. Ogni rilevamento spiega perché occupa quella posizione e, dove l'uso è chiaro, verso quale standard migrare.</p>
+                <p>Una cartella clinica che deve restare segreta per anni e un token di accesso di breve durata non sono lo stesso rischio, anche se entrambi usano RSA. Ogni rilevamento spiega perché occupa quella posizione e, dove l'uso è chiaro, verso quale standard migrare.</p>
             </div>
             <div class="step">
                 <h3>4. Dimostrare</h3>
@@ -281,50 +282,55 @@
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>Cosa fa Quantsiv</h2>
-        <p class="section-subheading">Quantsiv trova la crittografia riconoscendo schemi noti nel codice. Rileva le API crittografiche comuni in Python, JavaScript e TypeScript, Go, Java e Kotlin, C#, Rust, Ruby, PHP, C e C++, Objective-C, Swift e Dart, i comandi openssl, ssh-keygen e keytool negli script di CI e di shell, e chiavi e certificati in formato PEM e SSH. Poiché riconosce schemi, la profondità varia a seconda del linguaggio e alcune chiamate non vengono rilevate.</p>
+        <h2>Sicurezza crittografica potente. Pensata per l'era quantistica.</h2>
+        <p class="section-subheading">Individua e valuta la crittografia nel tuo codice, nelle chiavi e nei file di infrastruttura, scopri quali rischi affrontare per primi e ricevi indicazioni chiare su verso cosa migrare.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
+                <h3>Supporto multilinguaggio</h3>
+                <p>Trova le API crittografiche comuni in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift e altri, oltre ai comandi openssl, ssh-keygen e keytool negli script di build.</p>
+            </div>
+            <div class="capability-item">
                 <h3 lang="en">Cryptographic Bill of Materials</h3>
-                <p>Come una lista di ingredienti per la crittografia: cosa è stato trovato e dove. Quantsiv produce CycloneDX 1.6 che supera la validazione rigorosa dello schema, importa una CBOM CycloneDX 1.6 da qualsiasi altro strumento ed esporta l'ultima CBOM di ogni repository in un solo documento.</p>
+                <p>Inventaria automaticamente la crittografia trovata nei tuoi repository in una CBOM CycloneDX 1.6 standard, e importa CBOM da altri strumenti.</p>
             </div>
             <div class="capability-item">
-                <h3>Ordinata in base a quanto i dati restano segreti</h3>
-                <p>Dichiari per quanto tempo ogni tipo di dato deve restare riservato, e cifratura e scambio di chiavi vengono ordinati in base a quella durata. Le firme sono seguite a parte, rispetto alla scadenza per le firme, perché il loro rischio è la falsificazione, non che qualcuno legga dati vecchi.</p>
+                <h3>Valutazione del rischio quantistico</h3>
+                <p>Dai priorità in base a quanto a lungo i tuoi dati devono restare protetti, così i rischi più critici vengono prima. Le firme sono seguite rispetto alla loro scadenza.</p>
             </div>
             <div class="capability-item">
-                <h3>Segnala le modifiche che ne aggiungono altra</h3>
-                <p>Ogni build viene confrontata con l'ultima build del tuo branch principale, e la crittografia che una modifica aggiunge viene segnalata. Imposta regole per ogni tipo di dato e registra le eccezioni con il nome di chi le approva e una data di scadenza. I risultati arrivano a GitHub Code Scanning come SARIF e, con il template per GitHub Actions, alla pull request come commento.</p>
+                <h3>Controlli a ogni build</h3>
+                <p>Intercetta la crittografia vulnerabile agli attacchi quantistici che una modifica aggiunge, a ogni build, con controlli automatici e feedback sulle pull request di GitHub.</p>
             </div>
             <div class="capability-item">
-                <h3>Gira nella tua build</h3>
-                <p>Un container, un pacchetto pronto all'uso, con template per GitHub Actions, GitLab, Jenkins e Azure DevOps. La scansione funziona offline. Solo la CBOM e i dettagli di ogni rilevamento arrivano a Quantsiv, e solo se li carichi.</p>
+                <h3>Integrazione CI/CD senza attriti</h3>
+                <p>Usa i template per GitHub Actions, GitLab, Jenkins e Azure DevOps. Esegui le scansioni sul tuo computer o nella tua build esistente.</p>
             </div>
             <div class="capability-item">
-                <h3>Chiavi, certificati e connessioni sicure</h3>
-                <p>Legge i file di chiavi e certificati per ricavarne algoritmo e dimensione, e non conserva mai la chiave stessa. Sonda la connessione sicura (TLS) dei server che indichi; il servizio in hosting sonda solo i domini di cui dimostri la proprietà con un record DNS.</p>
+                <h3>Chiavi, certificati e TLS</h3>
+                <p>Riconosci l'algoritmo e la dimensione della chiave nei file di chiavi e certificati, e sonda le connessioni sicure (TLS) dei server che indichi.</p>
             </div>
             <div class="capability-item">
-                <h3>Impostazioni di server e infrastruttura</h3>
-                <p>Trova impostazioni di chiavi e TLS vulnerabili agli attacchi quantistici nei file che descrivono i tuoi server e la tua infrastruttura: file Terraform, Kubernetes e CloudFormation, configurazione di web server e proxy, e configurazione di OpenSSL e OpenSSH. Una modifica che aggiunge un'impostazione vulnerabile viene segnalata. Legge i file nel tuo repository, non il tuo account cloud.</p>
+                <h3>Impostazioni dell'infrastruttura</h3>
+                <p>Rileva le impostazioni vulnerabili di chiavi e TLS nei file Terraform, Kubernetes, CloudFormation, di web server, OpenSSL e OpenSSH del tuo repository.</p>
             </div>
             <div class="capability-item">
                 <h3>Codice di wallet e custodia</h3>
-                <p>Trova la firma e lo scambio di chiavi nelle librerie per wallet comuni: chiavi di firma secp256k1 ed Ed25519, firme Schnorr e trasporto di chiavi ECDH ed ECIES. Una volta che la chiave pubblica di un wallet è sulla blockchain, il suo rischio è un trasferimento falsificato, non la decifratura, e le indicazioni del rilevamento dicono cosa fare finché la chain non accetta firme post-quantum. Legge il codice, non la blockchain.</p>
+                <p>Trova le chiavi di firma, le firme e lo scambio di chiavi nelle librerie per wallet comuni, con indicazioni finché la chain non accetta firme post-quantum. Legge il codice, non la blockchain.</p>
             </div>
             <div class="capability-item">
-                <h3>Per gli assistenti di programmazione IA</h3>
-                <p>Un connettore in sola lettura (un server MCP) permette a un assistente di programmazione basato sull'IA di consultare le tue regole e le durate dichiarate dei dati prima di scrivere crittografia. Lo stesso controllo viene poi eseguito nella tua build. Il connettore non può modificare nulla e non contiene alcun nostro modello di IA.</p>
+                <h3>Integrazione con gli assistenti di programmazione IA</h3>
+                <p>Permetti agli assistenti di programmazione IA di verificare le tue regole crittografiche mentre scrivono codice, tramite un connettore in sola lettura (MCP).</p>
             </div>
             <div class="capability-item">
-                <h3>Verso cosa migrare</h3>
-                <p>Dove l'uso è chiaro, ogni rilevamento indica lo standard verso cui migrare: ML-KEM (FIPS 203), ML-DSA (FIPS 204) o SLH-DSA (FIPS 205), con scambio di chiavi ibrido, vecchio e nuovo combinati, durante la transizione.</p>
+                <h3>Indicazioni per la migrazione post-quantum</h3>
+                <p>Ricevi lo standard verso cui migrare dove l'uso è chiaro: ML-KEM, ML-DSA o SLH-DSA, con scambio di chiavi ibrido durante la transizione.</p>
             </div>
             <div class="capability-item">
-                <h3>Limiti dichiarati</h3>
-                <p>Il pattern matching non rileva le chiamate fatte con un altro nome o costruite durante l'esecuzione, il codice esterno copiato in un progetto (<span lang="en">vendored code</span>) e i pacchetti di terze parti (dipendenze). Dichiariamo i limiti fin dall'inizio.</p>
+                <h3>Privacy al primo posto, scansione offline</h3>
+                <p>Tieni il codice sorgente nel tuo ambiente: le scansioni girano offline per impostazione predefinita, e i rilevamenti arrivano a Quantsiv solo se li carichi.</p>
             </div>
         </div>
+        <p class="capabilities-note">Il rilevamento si basa su schemi, quindi può non individuare le chiamate fatte con un altro nome o costruite durante l'esecuzione, il codice copiato in un progetto e i pacchetti di terze parti.</p>
     </section>
 
     <!-- Roadmap section -->
