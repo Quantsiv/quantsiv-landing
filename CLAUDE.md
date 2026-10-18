@@ -115,7 +115,7 @@ document first.
 | --- | --- |
 | NIST FIPS 203, 204, 205 | Published 13 Aug 2024: ML-KEM, ML-DSA and SLH-DSA |
 | NIST IR 8547, initial public draft, Nov 2024 | 112-bit-strength RSA, ECC and DH, such as RSA-2048, are deprecated after 2030. All quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035 |
-| Executive Order 14412, 22 Jun 2026 | Post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030, and signatures by 31 Dec 2031. A proposed FAR rule for covered contractors. CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days, about Mar 2027 |
+| Executive Order 14412, 22 Jun 2026 | Post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030, and signatures by 31 Dec 2031. Within 180 days, about 19 Dec 2026, the FAR Council proposes a rule requiring covered contractors to comply by 31 Dec 2030 with NIST's FIPS, including those incorporating post-quantum algorithms (Sec. 6(c); 91 FR 38483, 25 Jun 2026). CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days, about Mar 2027 |
 | OMB M-26-15, 24 Jun 2026 | Five phases from 2026 to 2035. Agency plans due 22 Oct 2026. An automated inventory whose data "should populate a central Cryptographic Bill of Materials" |
 | EU NIS Cooperation Group roadmap, 23 Jun 2025, a recommendation | National strategies by end-2026, high-risk use cases by end-2030, as many systems as feasible by 2035 |
 | NSA CNSA 2.0 | Exclusive-use dates between 2030 and 2033, depending on the category. Verify against the current NSA advisory before quoting a single year |
