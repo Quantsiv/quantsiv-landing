@@ -29,8 +29,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
   every language: also search the translations for "volledig", "compleet", "alles", "continu",
   "garandeert", "blokkeert", "dwingt", "uniek", "enige", "autonoom", and for "completo", "tutto",
   "continuamente", "garantisce", "blocca", "impone", "unico", "autonomo".
-- Keep terms of art in English: Harvest Now, Decrypt Later, Cryptographic Bill of Materials, CBOM,
-  Code Scanning, pull request, high-value assets. Quotations stay in English, marked
+- Keep terms of art in English: Harvest Now, Decrypt Later, Trust Now, Forge Later, Cryptographic
+  Bill of Materials, CBOM, Code Scanning, pull request, high-value assets. Quotations stay in English, marked
   `lang="en"`, with a translation in brackets that keeps their strength: "should" is "zouden
   moeten" in Dutch and "dovrebbero" in Italian.
 - Address the reader as "je" in Dutch and "tu" in Italian. The waitlist button says "Zet je op de
@@ -94,6 +94,7 @@ Search the page for every phrase in the first column before each commit.
 | "EU-hosted" or any hosting region | Not true until it is live | Leave out until the founder confirms |
 | Any customer, logo, testimonial or quote | None to show | Leave out |
 | "cryptographic posture management" | Not our category | "cryptographic change control and CBOM evidence" |
+| "AI-powered", "agentic AI", "intelligent analysis", "entire software stack" | No AI model runs in the product today, and the scanner reads code, keys and repository files, not a whole stack | Leave out until an AI capability is merged in the product; say what it finds |
 | "quantum-safe wallet", "protects your funds", "secures your crypto" | A post-quantum account depends on each chain; Quantsiv finds and ranks the code | "finds wallet and custody cryptography" |
 | Names of chains, wallets, exchanges or wallet libraries | Names of other products | "wallet and custody code", "secp256k1 and Ed25519 signing keys" |
 | Which keys are exposed on-chain, coins at risk, any on-chain statistic | The scanner reads code, not chains, and no figure is measured and sourced | Leave out |
@@ -167,7 +168,8 @@ never print rule counts and never headline Java or .NET.
 
 ## Draft copy
 
-Drafts for the founder to edit. Each sentence maps to the list above.
+Drafts for the founder to edit. Each sentence maps to the list above. They are older than the
+live capability grid, which is the founder's 18 Oct 2026 rewrite (see "Page status").
 
 **Hero.** "Quantsiv finds quantum-vulnerable cryptography in your code, ranks it by how long your
 data must stay secret, and flags the changes that add more. Scanning runs in your CI by default
@@ -228,14 +230,20 @@ stand until the founder changes them:
   with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
 - The footer carries no personal handle. Its only contact is the privacy notice.
 - The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
-  page title and the first line of the footer, in English on every language version (`lang="en"`
-  in `nl/` and `it/`). It is a brand line, not a capability: never stretch it into a claim such
-  as "Quantsiv secures your systems". The privacy notices keep their own titles and footers.
+  small line above the headline, the page title and the first line of the footer, in English on
+  every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a capability:
+  never stretch it into a claim such as "Quantsiv secures your systems". The privacy notices keep
+  their own titles and footers.
 - The page is written for non-technical readers first (17 Oct 2026): each heading and first
   sentence says what happens in plain words, and the technical terms follow, explained once.
-  The category, "cryptographic change control and CBOM evidence", is the small line above the
-  headline. Keep that order when adding copy, and keep each plain sentence mapped to "What the
-  page may say".
+  Keep that order when adding copy, and keep each plain sentence mapped to "What the page may
+  say". The category line, "cryptographic change control and CBOM evidence", left the page on
+  18 Oct 2026, when the tagline took its place.
+- The founder's copy of 18 Oct 2026: no paragraph under the headline; the intro is three short
+  lines, then "This is where we come in"; the threat section is "Two Quantum Threats" (Harvest
+  Now, Decrypt Later, and Signature Forgery with "Trust Now, Forge Later"); the capability grid
+  is his short cards, with the detection limits as one note under the grid instead of a card.
+  He wants Quantsiv presented as AI-powered once it is: not before an AI capability is merged.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.

@@ -299,7 +299,7 @@ a {
     max-width: 62rem;
 }
 
-/* The category line above the plain-language headline */
+/* The tagline above the plain-language headline */
 .hero-kicker {
     font-family: var(--font-mono);
     font-size: 0.8125rem;
@@ -504,6 +504,15 @@ a {
     text-wrap: balance;
 }
 
+/* Two parts: the problem, muted, then our answer */
+.security-statement p:first-child {
+    color: var(--muted);
+}
+
+.security-statement p + p {
+    margin-top: 1.75rem;
+}
+
 /* Sections */
 .section {
     padding: 6.5rem var(--gutter);
@@ -576,6 +585,17 @@ a {
 .threat-card p {
     font-size: 0.9375rem;
     line-height: 1.65;
+}
+
+/* A card's small line under its heading, such as "Trust Now, Forge Later" */
+.threat-card .threat-kicker {
+    margin: -0.375rem 0 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 /* HNDL: three boxes joined by connectors */
@@ -801,9 +821,22 @@ a {
     color: var(--muted);
 }
 
-/* Three columns: a last card alone on its row spans it, so no empty cells show */
+/* Three columns: a last card alone on its row spans it, and a last pair
+   shares it, so no empty cells show */
 .capability-item:last-child:nth-child(3n + 1) {
     grid-column: 1 / -1;
+}
+
+.capability-item:last-child:nth-child(3n + 2) {
+    grid-column: span 2;
+}
+
+/* The detection limits, one line under the grid */
+.capabilities-note {
+    max-width: 46rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--faint);
 }
 
 /* Roadmap: the current phase is the inverted card */
@@ -1095,7 +1128,8 @@ footer a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .capability-item:last-child:nth-child(3n + 1) {
+    .capability-item:last-child:nth-child(3n + 1),
+    .capability-item:last-child:nth-child(3n + 2) {
         grid-column: auto;
     }
 

@@ -44,9 +44,8 @@
     <!-- Hero section update-->
     <section class="hero">
         <div class="hero-copy">
-            <p class="hero-kicker">Cryptographic change control and CBOM evidence</p>
+            <p class="hero-kicker">See tomorrow. Secure today.</p>
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">finds the cryptography quantum computers could break</span></h1>
-            <p class="hero-subheading">It shows what to fix first, based on how long your data must stay secret, and flags changes that add more. Scanning runs inside your own build pipeline by default and produces a standard inventory of what it found: a Cryptographic Bill of Materials (CBOM).</p>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Why it matters</a>
                 <a href="#roadmap" class="cta-secondary">See the roadmap</a>
@@ -145,22 +144,24 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>A future quantum computer could break the public-key cryptography in wide use today, and the US and the EU have published dates for replacing it. Replacing it starts with knowing where it is. Quantsiv scans your code on every build and shows what is exposed, how long it stays exposed and what to move to.</p>
+        <p>A quantum computer could break the public-key cryptography in wide use today.<br>Governments have published dates for replacing it.<br>Replacing it starts with knowing where it is.</p>
+        <p>This is where we come in. We scan your code on every build and show you what is exposed, how long it stays exposed and what to move to.</p>
     </section>
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
-        <h2>Harvest Now, Decrypt Later</h2>
-        <p class="section-subheading">Attackers can copy encrypted data today and keep it until a quantum computer can unlock it. For data that must stay secret for years, the risk starts now.</p>
+        <h2>Two Quantum Threats</h2>
+        <p class="section-subheading">A large enough quantum computer could read data copied today and forge the signatures people and machines rely on. Each threat has its own deadline.</p>
 
         <div class="threat-grid">
             <div class="threat-card">
-                <h3>Steal now, read later</h3>
-                <p>An attacker does not need a quantum computer today. They only need to record your encrypted traffic and stolen data now, then decrypt it once a large enough quantum computer exists. RSA, ECDSA, Diffie-Hellman and DSA, the public-key methods in common use, all fall to a known quantum method, Shor's algorithm. For crypto-asset wallets the blockchain itself is the archive: a public key already on-chain is enough to forge a transfer later.</p>
+                <h3>Harvest Now, Decrypt Later</h3>
+                <p>Attackers can record encrypted traffic and copy encrypted data today, then decrypt it once a large enough quantum computer exists. This threatens encryption and key exchange, such as RSA encryption and Diffie-Hellman. The deadline is how long the data must stay secret: if it must stay confidential for 25 years, traffic recorded yesterday is already at risk.</p>
             </div>
             <div class="threat-card">
-                <h3>The real deadline is your data's lifetime</h3>
-                <p>What matters is not when the quantum computer arrives, but how long your data must stay secret. If a system's data must stay confidential for 25 years, traffic recorded yesterday is already at risk. Health records, financial data, government communications and trade secrets often have to stay secret for years.</p>
+                <h3>Signature Forgery</h3>
+                <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
+                <p>Signatures prove that a software update, a certificate, a document or a transaction is genuine. Nothing has to be stolen first, because the public key is public by design. A large enough quantum computer could work out the private key from it and sign in your name, so a fake looks genuine. This threatens signatures such as RSA, ECDSA and EdDSA. The deadline is how long a signature or key must stay trusted: keys built into devices, certificate authorities, and records that must remain proof. For crypto-asset wallets, a public key already on-chain is enough to forge a transfer.</p>
             </div>
             <div class="threat-card">
                 <h3>AI coding assistants can repeat vulnerable defaults</h3>
@@ -184,7 +185,7 @@
             <div class="hndl-step">
                 <span class="hndl-year">Then</span>
                 <h4>Expose</h4>
-                <p>Data whose encryption relied on RSA or ECC can then be read, including data that must stay confidential for years more. For signatures the risk is different: future forgery, not reading old data.</p>
+                <p>Data whose encryption relied on RSA or elliptic curves can then be read. Signatures made with them can be forged.</p>
             </div>
         </div>
     </section>
@@ -206,21 +207,21 @@
                 <span class="reg-date">Nov 2024</span>
                 <div class="reg-body">
                     <h3>NIST proposes when today's algorithms retire</h3>
-                    <p>In the initial public draft of NIST IR 8547, 112-bit-strength RSA, ECC and DH, such as RSA-2048, are deprecated after 2030. All quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035.</p>
+                    <p>In the initial public draft of NIST IR 8547, all quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">22 Jun 2026</span>
                 <div class="reg-body">
-                    <h3>A US Executive Order sets deadlines for 2030 and 2031</h3>
-                    <p>Executive Order 14412 addresses the harvest-now, decrypt-later threat. It sets 31 Dec 2030 for post-quantum key establishment and 31 Dec 2031 for signatures on high-value assets and high-impact systems.</p>
+                    <h3>Executive Order 14412</h3>
+                    <p>The order addresses the harvest-now, decrypt-later threat. It sets 31 Dec 2030 for post-quantum key establishment and 31 Dec 2031 for signatures on high-value assets and high-impact systems.</p>
                 </div>
             </li>
             <li class="reg-item">
                 <span class="reg-date">24 Jun 2026</span>
                 <div class="reg-body">
-                    <h3>OMB M-26-15 plans the federal migration in phases</h3>
-                    <p>Five phases from 2026 to 2035, from the US Office of Management and Budget. Federal agencies build an automated inventory whose data "should populate a central Cryptographic Bill of Materials". Agency plans are due 22 Oct 2026.</p>
+                    <h3>OMB M-26-15: the federal migration in phases</h3>
+                    <p>Federal agencies build an automated inventory whose data "should populate a central Cryptographic Bill of Materials". Agency plans are due 22 Oct 2026. Five phases from 2026 to 2035.</p>
                 </div>
             </li>
             <li class="reg-item">
@@ -258,7 +259,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Discover</h3>
-                <p>Quantsiv looks for cryptography in source code, key and certificate files, configuration and infrastructure files, build scripts, and the secure connections (TLS) of servers you name or prove you own. By default it runs in your CI, the automated build that runs each time your developers change code. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
+                <p>Quantsiv looks for cryptography in source code, key and certificate files, configuration and infrastructure files, build scripts, and the secure connections (TLS) of servers you name or prove you own. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
             </div>
             <div class="step">
                 <h3>2. Analyze</h3>
@@ -266,7 +267,7 @@
             </div>
             <div class="step">
                 <h3>3. Prioritize</h3>
-                <p>Results are ranked so the fixes that matter most come first, not the longest list. A health record that must stay secret for years and a short-lived login token are not the same risk, even when both use RSA. Each finding says why it ranks where it does and, where the use is clear, which standard to move to.</p>
+                <p>A health record that must stay secret for years and a short-lived login token are not the same risk, even when both use RSA. Each finding says why it ranks where it does and, where the use is clear, which standard to move to.</p>
             </div>
             <div class="step">
                 <h3>4. Prove</h3>
@@ -281,50 +282,55 @@
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>What Quantsiv does</h2>
-        <p class="section-subheading">Quantsiv finds cryptography by matching known patterns in code. It detects common cryptographic APIs in Python, JavaScript and TypeScript, Go, Java and Kotlin, C#, Rust, Ruby, PHP, C and C++, Objective-C, Swift and Dart, openssl, ssh-keygen and keytool commands in CI and shell scripts, and keys and certificates in PEM and SSH formats. Because it matches patterns, depth varies by language and some calls are missed.</p>
+        <h2>Powerful cryptographic security. Built for the quantum era.</h2>
+        <p class="section-subheading">Discover and assess the cryptography in your code, keys and infrastructure files, see which risks to fix first, and get clear guidance on what to move to.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
+                <h3>Multi-language support</h3>
+                <p>Find common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift and more, plus openssl, ssh-keygen and keytool commands in build scripts.</p>
+            </div>
+            <div class="capability-item">
                 <h3>Cryptographic Bill of Materials</h3>
-                <p>Like an ingredients list for cryptography: what was found and where. Quantsiv writes CycloneDX 1.6 that passes the schema's strict validation, imports a CycloneDX 1.6 CBOM from any other tool, and exports the latest CBOM of every repository as one document.</p>
+                <p>Automatically inventory the cryptography found in your repositories as a standard CycloneDX 1.6 CBOM, and import CBOMs from other tools.</p>
             </div>
             <div class="capability-item">
-                <h3>Ranked by how long data stays secret</h3>
-                <p>You declare how long each kind of data must stay confidential, and encryption and key exchange are ranked by that lifetime. Signatures are tracked separately against the signature deadline, because their risk is forgery, not someone reading old data.</p>
+                <h3>Quantum risk assessment</h3>
+                <p>Prioritize by how long your data needs protection, so the most critical risks come first. Signatures are tracked against their own deadline.</p>
             </div>
             <div class="capability-item">
-                <h3>Flags changes that add more</h3>
-                <p>Each build is compared with the latest build of your main branch, and cryptography a change adds is flagged. Set rules for each kind of data and record exceptions with a named approver and an expiry date. Results go to GitHub Code Scanning as SARIF and, with the GitHub Actions template, to the pull request as a comment.</p>
+                <h3>Checks on every build</h3>
+                <p>Catch quantum-vulnerable cryptography a change adds, on every build, with automated checks and feedback on GitHub pull requests.</p>
             </div>
             <div class="capability-item">
-                <h3>Runs inside your own build</h3>
-                <p>A container, a ready-to-run package, with templates for GitHub Actions, GitLab, Jenkins and Azure DevOps. Scanning works offline. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
+                <h3>Seamless CI/CD integration</h3>
+                <p>Use templates for GitHub Actions, GitLab, Jenkins and Azure DevOps. Run scans on your own machine or inside your existing build.</p>
             </div>
             <div class="capability-item">
-                <h3>Keys, certificates and secure connections</h3>
-                <p>Reads key and certificate files for algorithm and size, and never keeps the key itself. Probes the secure connection (TLS) of servers you name; the hosted service probes only domains you prove you own with a DNS record.</p>
+                <h3>Keys, certificates and TLS</h3>
+                <p>Identify the algorithm and key size in key and certificate files, and probe the secure connections (TLS) of servers you name.</p>
             </div>
             <div class="capability-item">
-                <h3>Server and infrastructure settings</h3>
-                <p>Finds quantum-vulnerable key and TLS settings in the files that describe your servers and infrastructure: Terraform, Kubernetes and CloudFormation files, web-server and proxy configuration, and OpenSSL and OpenSSH configuration. A change that adds a vulnerable setting is flagged. It reads the files in your repository, not your cloud account.</p>
+                <h3>Infrastructure settings</h3>
+                <p>Detect vulnerable key and TLS settings in Terraform, Kubernetes, CloudFormation, web-server, OpenSSL and OpenSSH files in your repository.</p>
             </div>
             <div class="capability-item">
                 <h3>Wallet and custody code</h3>
-                <p>Finds the signing and key exchange in common wallet libraries: secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport. Once a wallet's public key is on the blockchain, its risk is a forged transfer, not decryption, and the finding's guidance says what to do until the chain accepts post-quantum signatures. Reads code, not the blockchain.</p>
+                <p>Find the signing keys, signatures and key exchange in common wallet libraries, with guidance until the chain accepts post-quantum signatures. It reads code, not the blockchain.</p>
             </div>
             <div class="capability-item">
-                <h3>For AI coding assistants</h3>
-                <p>A read-only connector (an MCP server) lets an AI coding assistant ask your rules and declared data lifetimes before it writes cryptography. The same check then runs in your build. The connector cannot change anything, and there is no AI model of ours in it.</p>
+                <h3>AI coding assistant integration</h3>
+                <p>Let AI coding assistants check your cryptography rules while they write code, through a read-only connector (MCP).</p>
             </div>
             <div class="capability-item">
-                <h3>What to move to</h3>
-                <p>Where the use is clear, each finding names the standard to move to: ML-KEM (FIPS 203), ML-DSA (FIPS 204) or SLH-DSA (FIPS 205), with hybrid key exchange, old and new combined, during the transition.</p>
+                <h3>Post-quantum migration guidance</h3>
+                <p>Get the standard to move to where the use is clear: ML-KEM, ML-DSA or SLH-DSA, with hybrid key exchange during the transition.</p>
             </div>
             <div class="capability-item">
-                <h3>Honest limits</h3>
-                <p>Pattern matching misses calls made under another name or built at run time, outside code copied into a project (vendored code), and third-party packages (dependencies). We state the limits up front.</p>
+                <h3>Privacy-first, offline scanning</h3>
+                <p>Keep your source code in your environment: scans run offline by default, and findings reach Quantsiv only if you upload them.</p>
             </div>
         </div>
+        <p class="capabilities-note">Detection is pattern-based, so it can miss calls made under another name or built at run time, code copied into a project, and third-party packages.</p>
     </section>
 
     <!-- Roadmap section -->
