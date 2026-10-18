@@ -140,7 +140,10 @@ them. Do not add to them without the founder.
   ranked report. Accepts any schema-valid CycloneDX 1.6 CBOM from any producer, and exports the
   latest default-branch CBOM of every repository as one document.
 - Ranks encryption and key exchange by how long the data must stay confidential, which you
-  declare. Tracks signatures separately against the signature deadline.
+  declare. Ranks signatures on their own track by how long they must stay trusted, which you
+  can declare, against the signature deadline; without it, by the kind of key. Approved by the
+  founder on 18 Oct 2026 with the line "Two quantum threats, two clocks. Quantsiv ranks your
+  cryptography against both, on every build."
 - Compares each build with the latest default-branch build and flags cryptography the change
   adds. Policy can be set per data class. Exceptions record a named approver and an expiry.
   Results go to Code Scanning as SARIF and, with the GitHub Actions template, to the pull request
@@ -251,6 +254,10 @@ stand until the founder changes them:
   the agent's code is merged in the product, drop the label, move to the present tense and add it
   to "What the page may say". Never name the model's vendor, and never say where the model runs
   until the product decides it: source code must not go to a hosted model.
+- The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
+  both, on every build." (the founder, 18 Oct 2026) ends the threat section's sub-line, in
+  translation on `nl/` and `it/`. It is a narrative line, not the tagline. Keep threat examples
+  generic: no company names and no counts that were not measured and sourced.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.
