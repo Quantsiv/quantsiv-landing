@@ -772,9 +772,63 @@ a {
     color: var(--muted);
 }
 
-.process-note:empty,
-.process-footer:has(.process-note:empty) {
-    display: none;
+/* How it works: one real finding from the scanner, as label and value */
+.finding-example {
+    max-width: 46rem;
+    margin: 2.5rem 0 0;
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius);
+    background-color: var(--bg);
+    box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.finding-example figcaption {
+    margin-bottom: 1.25rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+}
+
+.finding-example figcaption strong {
+    color: var(--text);
+}
+
+.finding-example dl {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.finding-example dl > div {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.finding-example dt {
+    padding-top: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+.finding-example dd {
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    overflow-wrap: anywhere;
+}
+
+.finding-example code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--text);
+}
+
+.finding-example .finding-severity {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--accent-2);
 }
 
 /* Capabilities: a hairline grid, each cell led by a short coloured dash */
@@ -956,6 +1010,12 @@ a {
 .newsletter > p {
     max-width: 34rem;
     color: var(--muted);
+}
+
+/* The waitlist line sits under the contact address, set apart from it */
+.newsletter .newsletter-later {
+    margin-top: 1.5rem;
+    font-size: 0.9375rem;
 }
 
 .newsletter form {
@@ -1262,6 +1322,15 @@ footer a {
     .roadmap-grid,
     .capabilities-grid {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .finding-example {
+        padding: 1.25rem;
+    }
+
+    .finding-example dl > div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.25rem;
     }
 
     .newsletter {

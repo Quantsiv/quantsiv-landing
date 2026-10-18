@@ -48,7 +48,7 @@
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">finds the cryptography quantum computers could break</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Why it matters</a>
-                <a href="#roadmap" class="cta-secondary">See the roadmap</a>
+                <a href="#contact" class="cta-secondary">Get in touch</a>
             </div>
         </div>
         <div class="hero-figure">
@@ -275,14 +275,21 @@
             </div>
         </div>
 
-        <div class="process-footer">
-            <p class="process-note"></p>
-        </div>
+        <figure class="finding-example">
+            <figcaption><strong>What a finding looks like.</strong> Real output for a short sample file written for this page.</figcaption>
+            <dl>
+                <div><dt>You declared</dt><dd>Customer records must stay secret for 25 years</dd></div>
+                <div><dt>Found</dt><dd><code>src/billing_export.py:10</code>, RSA-OAEP encryption</dd></div>
+                <div><dt>Rank</dt><dd><span class="finding-severity">critical</span>, on the harvest-now-decrypt-later track</dd></div>
+                <div><dt>Why</dt><dd>Protects data that must stay confidential for 25 years.</dd></div>
+                <div><dt>Move to</dt><dd>Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</dd></div>
+            </dl>
+        </figure>
     </section>
 
     <!-- Capabilities section -->
     <section id="capabilities" class="section">
-        <h2>Powerful cryptographic security. Built for the quantum era.</h2>
+        <h2>Find and rank the cryptography you need to replace. Built for the quantum era.</h2>
         <p class="section-subheading">Discover and assess the cryptography in your code, keys and infrastructure files, see which risks to fix first, and get clear guidance on what to move to.</p>
         <div class="capabilities-grid">
             <div class="capability-item">
@@ -334,7 +341,7 @@
                 <p>An AI agent will read each finding in context, draft the fix, adjust it until your checks pass, and learn from every change your team approves. Nothing merges without a person's approval.</p>
             </div>
         </div>
-        <p class="capabilities-note">Detection is pattern-based, so it can miss calls made under another name or built at run time, code copied into a project, and third-party packages.</p>
+        <p class="capabilities-note">Detection is pattern-based, so depth varies by language, and it can miss calls made under another name or built at run time, code copied into a project, and third-party packages.</p>
     </section>
 
     <!-- Roadmap section -->
@@ -383,10 +390,12 @@
         </div>
     </section>
 
-    <!-- Newsletter section -->
-    <section class="newsletter">
-        <h2>Stay Informed</h2>
-        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. The waitlist is not open yet.</p>
+    <!-- Contact and newsletter section -->
+    <section class="newsletter" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Want to see what Quantsiv finds in your own code before launch, or have a question? Write to us.</p>
+        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
+        <p class="newsletter-later">Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. The waitlist is not open yet.</p>
         <form id="contact-form" data-msg-invalid="Please enter a valid email address." data-msg-closed="The waitlist is not open yet. Nothing was sent.">
             <input type="email" placeholder="Your work email" aria-label="Your work email" required disabled>
             <div id="form-message" class="form-message" role="status" hidden></div>
@@ -400,6 +409,7 @@
     <footer>
         <div class="footer-tagline">See tomorrow. Secure today.</div>
         <div>&copy; 2026 Quantsiv. All rights reserved.</div>
+        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
         <div><a href="privacy.html">Privacy notice</a></div>
         <div>Stealth Mode</div>
     </footer>
