@@ -227,6 +227,10 @@ stand until the founder changes them:
   where it stores the data and whether emails are tracked. The form then posts to that service,
   with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
 - The footer carries no personal handle. Its only contact is the privacy notice.
+- The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
+  page title and the first line of the footer, in English on every language version (`lang="en"`
+  in `nl/` and `it/`). It is a brand line, not a capability: never stretch it into a claim such
+  as "Quantsiv secures your systems". The privacy notices keep their own titles and footers.
 - The page is written for non-technical readers first (17 Oct 2026): each heading and first
   sentence says what happens in plain words, and the technical terms follow, explained once.
   The category, "cryptographic change control and CBOM evidence", is the small line above the
