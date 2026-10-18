@@ -247,9 +247,11 @@ stand until the founder changes them:
   Now, Decrypt Later, and Signature Forgery with "Trust Now, Forge Later"); the capability grid
   is his short cards, with the detection limits as one note under the grid instead of a card.
   He wants Quantsiv presented as AI-powered once it is: not before an AI capability is merged.
-- The agentic AI card (the founder, 18 Oct 2026) leads the grid with a "Coming soon" label
-  ("Binnenkort", "In arrivo") and future-tense copy: an agent that reviews each finding in context
-  and suggests code changes for a person to approve, with deterministic checks deciding. Phase 1
+- The agentic AI card (the founder, 18 Oct 2026) ends the grid with a "Coming soon" label
+  ("Binnenkort", "In arrivo") and bold future-tense copy, on his ask for a self-adjusting agent:
+  it will read each finding in context, draft the fix, adjust it until the checks pass and learn
+  from the changes the team approves; nothing merges without a person's approval. Keep that last
+  clause, and never stretch "adjusts" into "self-healing", "autonomous" or "auto-fix". Phase 1
   of the roadmap lists the same agent, and its intro excepts the labelled card from "built". When
   the agent's code is merged in the product, drop the label, move to the present tense and add it
   to "What the page may say". Never name the model's vendor, and never say where the model runs
