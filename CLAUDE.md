@@ -94,7 +94,7 @@ Search the page for every phrase in the first column before each commit.
 | "EU-hosted" or any hosting region | Not true until it is live | Leave out until the founder confirms |
 | Any customer, logo, testimonial or quote | None to show | Leave out |
 | "cryptographic posture management" | Not our category | "cryptographic change control and CBOM evidence" |
-| "AI-powered", "agentic AI", "intelligent analysis", "entire software stack" | No AI model runs in the product today, and the scanner reads code, keys and repository files, not a whole stack | Leave out until an AI capability is merged in the product; say what it finds |
+| "AI-powered", "agentic AI" in the present tense, "intelligent analysis", "entire software stack" | No AI model runs in the product today, and the scanner reads code, keys and repository files, not a whole stack | Say what it finds. The one exception is the "Agentic AI analysis" card and its roadmap line: labelled "Coming soon", in the future tense, until the agent's code is merged in the product |
 | "quantum-safe wallet", "protects your funds", "secures your crypto" | A post-quantum account depends on each chain; Quantsiv finds and ranks the code | "finds wallet and custody cryptography" |
 | Names of chains, wallets, exchanges or wallet libraries | Names of other products | "wallet and custody code", "secp256k1 and Ed25519 signing keys" |
 | Which keys are exposed on-chain, coins at risk, any on-chain statistic | The scanner reads code, not chains, and no figure is measured and sourced | Leave out |
@@ -244,6 +244,13 @@ stand until the founder changes them:
   Now, Decrypt Later, and Signature Forgery with "Trust Now, Forge Later"); the capability grid
   is his short cards, with the detection limits as one note under the grid instead of a card.
   He wants Quantsiv presented as AI-powered once it is: not before an AI capability is merged.
+- The agentic AI card (the founder, 18 Oct 2026) leads the grid with a "Coming soon" label
+  ("Binnenkort", "In arrivo") and future-tense copy: an agent that reviews each finding in context
+  and suggests code changes for a person to approve, with deterministic checks deciding. Phase 1
+  of the roadmap lists the same agent, and its intro excepts the labelled card from "built". When
+  the agent's code is merged in the product, drop the label, move to the present tense and add it
+  to "What the page may say". Never name the model's vendor, and never say where the model runs
+  until the product decides it: source code must not go to a hosted model.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.
