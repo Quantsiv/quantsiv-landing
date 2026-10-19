@@ -94,7 +94,7 @@ Search the page for every phrase in the first column before each commit.
 | "EU-hosted" or any hosting region | Not true until it is live | Leave out until the founder confirms |
 | Any customer, logo, testimonial or quote | None to show | Leave out |
 | "cryptographic posture management" | Not our category | "cryptographic change control and CBOM evidence" |
-| "AI-powered", "agentic AI" in the present tense, "intelligent analysis", "entire software stack" | No AI model runs in the product today, and the scanner reads code, keys and repository files, not a whole stack | Say what it finds. The one exception is the "Agentic AI analysis" card and its roadmap line: labelled "Coming soon", in the future tense, until the agent's code is merged in the product |
+| "AI-powered", "intelligent analysis", "entire software stack", "agentic AI" outside the agent card | Finding, ranking and the change check are pattern rules and fixed checks. The one AI capability is an optional agent that drafts fixes in your build, and the scanner reads code, keys and repository files, not a whole stack | Say what it finds. The "Agentic AI analysis" card says what the agent does, in the words of "What the page may say" |
 | "quantum-safe wallet", "protects your funds", "secures your crypto" | A post-quantum account depends on each chain; Quantsiv finds and ranks the code | "finds wallet and custody cryptography" |
 | Names of chains, wallets, exchanges or wallet libraries | Names of other products | "wallet and custody code", "secp256k1 and Ed25519 signing keys" |
 | Which keys are exposed on-chain, coins at risk, any on-chain statistic | The scanner reads code, not chains, and no figure is measured and sourced | Leave out |
@@ -156,6 +156,14 @@ them. Do not add to them without the founder.
   model of ours in it.
 - Each finding says where the use is clear which standard to move to: ML-KEM (FIPS 203), ML-DSA
   (FIPS 204) or SLH-DSA (FIPS 205), with hybrid key exchange during the transition.
+- An AI agent reads each finding in context and drafts a fix. Quantsiv's checks (the change is
+  scanned again, the finding is gone, nothing quantum-vulnerable is added, the policy passes) and
+  your tests, if you set them, must pass the draft; a rejected draft is revised, and only fixes
+  that pass are shown. It is an optional step in your build, off unless you turn it on, on a model
+  you choose. It never commits or pushes. Nothing merges without a person's approval. Quote no
+  pass rate (none is measured) and name no model vendor. Learning from approved changes is not
+  built: roadmap only, in the future. Added on 19 Oct 2026, when the agent's code merged, under
+  the founder's rule of 18 Oct 2026.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
@@ -258,16 +266,17 @@ stand until the founder changes them:
   replace. Built for the quantum era." (it was "Powerful cryptographic security. Built for the
   quantum era.", which read as a "Quantsiv secures" claim), and the limits note says depth
   varies by language.
-  He wants Quantsiv presented as AI-powered once it is: not before an AI capability is merged.
-- The agentic AI card (the founder, 18 Oct 2026) ends the grid with a "Coming soon" label
-  ("Binnenkort", "In arrivo") and bold future-tense copy, on his ask for a self-adjusting agent:
-  it will read each finding in context, draft the fix, adjust it until the checks pass and learn
-  from the changes the team approves; nothing merges without a person's approval. Keep that last
-  clause, and never stretch "adjusts" into "self-healing", "autonomous" or "auto-fix". Phase 1
-  of the roadmap lists the same agent, and its intro excepts the labelled card from "built". When
-  the agent's code is merged in the product, drop the label, move to the present tense and add it
-  to "What the page may say". Never name the model's vendor, and never say where the model runs
-  until the product decides it: source code must not go to a hosted model.
+  He wants Quantsiv presented as AI-powered once it is. Since 19 Oct 2026 the agent card is
+  the AI capability on the page; calling the whole product "AI-powered" waits for his word,
+  because the agent is optional and everything else is pattern rules and fixed checks.
+- The agentic AI card (the founder, 18 Oct 2026) ends the grid. It carried a "Coming soon"
+  label and future-tense copy until the agent's code merged in the product on 19 Oct 2026; since
+  then it says in the present tense what the agent does (see "What the page may say"): reads
+  each finding in context, drafts a fix, revises a draft the checks reject, shows only fixes that
+  pass, runs as an optional step in your build on a model you choose; nothing merges without a
+  person's approval. Keep that last clause, and never stretch "revises" into "self-healing",
+  "autonomous" or "auto-fix". Learning from approved changes is the first Phase 1 roadmap line,
+  in the future, until it is built. Never name the model's vendor.
 - The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
   both, on every build." (the founder, 18 Oct 2026) ends the threat section's sub-line, in
   translation on `nl/` and `it/`. It is a narrative line, not the tagline. Keep threat examples
