@@ -2,7 +2,7 @@
 <html lang="en" itemscope itemtype="https://schema.org/WebSite">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' https://c58bed8a.sibforms.com; upgrade-insecure-requests">
     <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -664,11 +664,14 @@
         <h2>Get in Touch</h2>
         <p>Want to see what Quantsiv finds in your own code before launch, or have a question? Write to us.</p>
         <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
-        <p class="newsletter-later">Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. The waitlist is not open yet.</p>
-        <form id="contact-form" data-msg-invalid="Please enter a valid email address." data-msg-closed="The waitlist is not open yet. Nothing was sent.">
-            <input type="email" placeholder="Your work email" aria-label="Your work email" required disabled>
+        <p class="newsletter-later">Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. Join the waitlist and we will email you to confirm your address.</p>
+        <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Please enter a valid email address.">
+            <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
+            <label class="form-consent"><input type="checkbox" name="OPT_IN" value="1" required><span>I agree to receive emails from Quantsiv about its launch and occasional updates. I have read the <a href="privacy.html">privacy notice</a>.</span></label>
+            <div hidden><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
+            <input type="hidden" name="locale" value="en">
             <div id="form-message" class="form-message" role="status" hidden></div>
-            <button type="submit" disabled>Join the Waitlist</button>
+            <button type="submit">Join the Waitlist</button>
         </form>
         <p class="form-note"><a href="privacy.html">Privacy notice</a></p>
     </section>

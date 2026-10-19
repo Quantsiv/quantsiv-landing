@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const formMessage = document.getElementById('form-message');
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
             const emailInput = form.querySelector('input[type="email"]');
             const email = emailInput.value.trim();
 
@@ -88,13 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 formMessage.textContent = form.dataset.msgInvalid || 'Please enter a valid email address.';
                 formMessage.hidden = false;
                 emailInput.classList.add('error');
-                return;
+                e.preventDefault();
             }
-
-            // The waitlist is not open yet, so nothing is sent or stored
-            formMessage.textContent = form.dataset.msgClosed || 'The waitlist is not open yet. Nothing was sent.';
-            formMessage.hidden = false;
-            form.reset();
+            // A valid address goes on to the form's own action: the browser posts it to the
+            // email service named in the privacy notice. This script sends nothing itself.
         });
     }
 
