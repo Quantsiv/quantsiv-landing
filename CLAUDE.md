@@ -265,10 +265,15 @@ stand until the founder changes them:
   Without JavaScript every panel shows in order (`noscript.css`); the tabs follow the WAI-ARIA
   tabs pattern in `script.js`.
 - The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
-  small line above the headline, the page title and the first line of the footer, in English on
-  every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a capability:
-  never stretch it into a claim such as "Quantsiv secures your systems". The privacy notices keep
-  their own titles and footers.
+  small line above the headline, the share title (`og:title`) and the first line of the footer, in
+  English on every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a
+  capability: never stretch it into a claim such as "Quantsiv secures your systems". The privacy
+  notices keep their own titles and footers.
+- The search title and description (the founder's pick, 19 Oct 2026) name what Quantsiv finds,
+  because the tagline names no product category: `<title>` "Quantsiv - Find quantum-vulnerable
+  cryptography in your code" and a description of about 155 characters, translated in `nl/` and
+  `it/`. Keep each description short enough not to be cut mid-sentence, and mapped to "What the
+  page may say". The Open Graph tags keep the tagline and the longer description.
 - The page is written for non-technical readers first (17 Oct 2026): each heading and first
   sentence says what happens in plain words, and the technical terms follow, explained once.
   Keep that order when adding copy, and keep each plain sentence mapped to "What the page may
