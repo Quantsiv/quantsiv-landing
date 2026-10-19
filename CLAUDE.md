@@ -12,7 +12,12 @@ Write as if a customer, a competitor and a regulator are all reading it.
   `noscript.css` and `assets/`. No build step, no framework, no package manager. `.nojekyll` must
   stay. `404.html` uses root-absolute paths because Pages serves it at any address. `robots.txt` and
   `sitemap.xml` list every page; add a page to the sitemap, with its language alternates, when you
-  add one. `ROADMAP.md` is the website's own roadmap (done and left), public like everything here.
+  add one, and change a page's `lastmod` when its content changes. Internal links point at the
+  address in the canonical tag (`./`, `nl/`, `../it/`), never at `index.html`, so search engines
+  see one address per page. The home pages carry WebSite microdata (the site name in search
+  results) and the footer Organization microdata; keep them as microdata, because the
+  Content-Security-Policy allows no inline scripts. `ROADMAP.md` is the website's own roadmap
+  (done and left), public like everything here.
 - Dutch and Italian versions of the page and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the

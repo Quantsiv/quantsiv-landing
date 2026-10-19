@@ -18,6 +18,9 @@ The work on quantsiv.com itself: what is done and what is left. Product plans ar
   Organization microdata in the footer.
 - **Speed.** The text font is preloaded, the script loads deferred from the head, the logo is served
   at its display size (34 KB to 5 KB) and the favicon is 1 KB instead of 122 KB.
+- **Search, second pass.** Language links point at the canonical addresses instead of
+  `index.html`, the sitemap carries `lastmod` dates, and the home pages carry WebSite microdata so
+  search results can show "Quantsiv" as the site name.
 - **Accessibility.** The standards banner has a pause button (WCAG success criterion 2.2.2, Pause,
   Stop, Hide), shown only when motion is allowed, and pauses on hover and focus.
 - **Checks run on this branch** (local server, lab figures, not field data): axe-core reported no
@@ -28,12 +31,17 @@ The work on quantsiv.com itself: what is done and what is left. Product plans ar
 
 ## B. Left to do
 
+**P0, now (needs the founder's accounts)**
+- Verify the site in the search engines' webmaster tools by DNS record and submit the
+  sitemap. On 19 Oct 2026 the web search we checked listed no page of quantsiv.com, which is
+  normal for a new site that nothing links to yet.
+- Make the redirect domains' forwarding permanent (301) instead of temporary (302).
+
 **P0, before the waitlist opens**
 - Name the email service in the privacy notice, point the form at it and add it to `form-action`.
 - Legal and company details, when the founder supplies them.
 
 **P1, soon after launch**
-- Verify the site in search engine webmaster tools by DNS record and submit the sitemap.
 - Measure Core Web Vitals in the field (including interaction to next paint, which a lab run cannot
   measure) without adding tracking to the page.
 - Give the hero image `fetchpriority="high"` with the next hero change.
