@@ -2,7 +2,7 @@
 <html lang="it" itemscope itemtype="https://schema.org/WebSite">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' https://c58bed8a.sibforms.com; upgrade-insecure-requests">
     <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -677,11 +677,14 @@
         <h2>Contattaci</h2>
         <p>Vuoi vedere cosa trova Quantsiv nel tuo codice prima del lancio, o hai una domanda? Scrivici.</p>
         <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
-        <p class="newsletter-later">Ricevi aggiornamenti sulle scadenze della migrazione post-quantum, sugli standard e sulle release di Quantsiv. La lista d'attesa non è ancora aperta.</p>
-        <form id="contact-form" data-msg-invalid="Inserisci un indirizzo email valido." data-msg-closed="La lista d'attesa non è ancora aperta. Non è stato inviato nulla.">
-            <input type="email" placeholder="La tua email di lavoro" aria-label="La tua email di lavoro" required disabled>
+        <p class="newsletter-later">Ricevi aggiornamenti sulle scadenze della migrazione post-quantum, sugli standard e sulle release di Quantsiv. Entra in lista d'attesa e ti scriveremo per confermare il tuo indirizzo.</p>
+        <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Inserisci un indirizzo email valido.">
+            <input type="email" name="EMAIL" autocomplete="email" placeholder="La tua email di lavoro" aria-label="La tua email di lavoro" required>
+            <label class="form-consent"><input type="checkbox" name="OPT_IN" value="1" required><span>Accetto di ricevere email da Quantsiv sul lancio e qualche aggiornamento occasionale. Ho letto l'<a href="privacy.html">informativa sulla privacy</a>.</span></label>
+            <div hidden><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
+            <input type="hidden" name="locale" value="it">
             <div id="form-message" class="form-message" role="status" hidden></div>
-            <button type="submit" disabled>Entra in lista d'attesa</button>
+            <button type="submit">Entra in lista d'attesa</button>
         </form>
         <p class="form-note"><a href="privacy.html">Informativa sulla privacy</a></p>
     </section>
