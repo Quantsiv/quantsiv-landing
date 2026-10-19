@@ -307,7 +307,7 @@
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
                 <h3 id="demo-title">Zo ziet een bevinding eruit</h3>
-                <p>De scan, de rangschikking en de controles zijn echte uitvoer van Quantsiv, in het Engels, voor een voorbeeldrepository die voor deze pagina is geschreven. De analyse en de conceptwijziging van de agent zijn gesimuleerd, om te laten zien hoe de agent een bevinding afhandelt.</p>
+                <p>De scan, de rangschikking en de controles zijn echte uitvoer van Quantsiv, in het Engels, voor een voorbeeldrepository die voor deze pagina is geschreven. In echte code missen de regels sommige aanroepen; zie <a href="#detection-limits">de opmerking onder de mogelijkheden</a>. De analyse en de conceptwijziging van de agent zijn gesimuleerd, om te laten zien hoe de agent een bevinding afhandelt.</p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -561,7 +561,7 @@
         <div class="capabilities-grid">
             <div class="capability-item">
                 <h3>Ondersteuning voor veel talen</h3>
-                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.</p>
+                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.</p>
             </div>
             <div class="capability-item">
                 <h3 lang="en">Cryptographic Bill of Materials</h3>
@@ -573,7 +573,7 @@
             </div>
             <div class="capability-item">
                 <h3>Controle bij elke build</h3>
-                <p>Vang quantumkwetsbare cryptografie op die een wijziging toevoegt, bij elke build, met automatische controles en feedback op pull requests in GitHub.</p>
+                <p>Markeer quantumkwetsbare cryptografie die een wijziging toevoegt, bij elke build, met automatische controles en feedback op pull requests in GitHub.</p>
             </div>
             <div class="capability-item">
                 <h3>Naadloze CI/CD-integratie</h3>
@@ -608,7 +608,7 @@
                 <p>Een AI-agent leest elke bevinding in haar context en stelt een oplossing op. Wijzen de controles van Quantsiv of je tests het concept af, dan past de agent het aan, en je ziet alleen oplossingen die slagen. Het is een optionele stap in je build, met een model dat je zelf kiest. Niets wordt gemerged zonder dat een mens het goedkeurt.</p>
             </div>
         </div>
-        <p class="capabilities-note">De detectie werkt met patronen, dus de diepgang verschilt per taal, en ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, net als code die in een project is gekopieerd en pakketten van derden.</p>
+        <p class="capabilities-note" id="detection-limits">De detectie werkt met patronen, dus de diepgang verschilt per taal, en de regels voor Rust, Ruby en PHP staan nog aan het begin. Ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, en aanroepen naar sleuteldiensten in de cloud, net als code die in een project is gekopieerd en pakketten van derden.</p>
     </section>
 
     <!-- Roadmap section -->

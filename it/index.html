@@ -307,7 +307,7 @@
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
                 <h3 id="demo-title">Ecco un rilevamento</h3>
-                <p>La scansione, la priorità e i controlli sono output reale di Quantsiv, in inglese, per un repository di esempio scritto per questa pagina. L'analisi e la modifica proposta dall'agente sono simulate, per mostrare come l'agente lavora su un rilevamento.</p>
+                <p>La scansione, la priorità e i controlli sono output reale di Quantsiv, in inglese, per un repository di esempio scritto per questa pagina. Sul codice reale le regole non individuano alcune chiamate; vedi <a href="#detection-limits">la nota sotto le funzionalità</a>. L'analisi e la modifica proposta dall'agente sono simulate, per mostrare come l'agente lavora su un rilevamento.</p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -561,7 +561,7 @@
         <div class="capabilities-grid">
             <div class="capability-item">
                 <h3>Supporto multilinguaggio</h3>
-                <p>Trova le API crittografiche comuni in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift e altri, oltre ai comandi openssl, ssh-keygen e keytool negli script di build.</p>
+                <p>Trova le API crittografiche comuni in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift e altri, oltre ai comandi openssl, ssh-keygen e keytool negli script di build.</p>
             </div>
             <div class="capability-item">
                 <h3 lang="en">Cryptographic Bill of Materials</h3>
@@ -573,7 +573,7 @@
             </div>
             <div class="capability-item">
                 <h3>Controlli a ogni build</h3>
-                <p>Intercetta la crittografia vulnerabile agli attacchi quantistici che una modifica aggiunge, a ogni build, con controlli automatici e feedback sulle pull request di GitHub.</p>
+                <p>Segnala la crittografia vulnerabile agli attacchi quantistici che una modifica aggiunge, a ogni build, con controlli automatici e feedback sulle pull request di GitHub.</p>
             </div>
             <div class="capability-item">
                 <h3>Integrazione CI/CD senza attriti</h3>
@@ -608,7 +608,7 @@
                 <p>Un agente IA legge ogni rilevamento nel suo contesto e scrive una correzione. Se i controlli di Quantsiv o i tuoi test la respingono, l'agente la rivede, e vedi solo le correzioni che li superano. È un passaggio facoltativo della tua build, con un modello scelto da te. Nulla viene integrato senza l'approvazione di una persona.</p>
             </div>
         </div>
-        <p class="capabilities-note">Il rilevamento si basa su schemi, quindi la profondità varia secondo il linguaggio, e può non individuare le chiamate fatte con un altro nome o costruite durante l'esecuzione, il codice copiato in un progetto e i pacchetti di terze parti.</p>
+        <p class="capabilities-note" id="detection-limits">Il rilevamento si basa su schemi, quindi la profondità varia secondo il linguaggio, e le regole per Rust, Ruby e PHP sono ancora iniziali. Può non individuare le chiamate fatte con un altro nome o costruite durante l'esecuzione, le chiamate ai servizi di gestione delle chiavi nel cloud, il codice copiato in un progetto e i pacchetti di terze parti.</p>
     </section>
 
     <!-- Roadmap section -->

@@ -298,6 +298,11 @@ stand until the founder changes them:
   genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
   1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
   `nl/` and `it/`. Change them only with his word.
+- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust (it
+  falls under "and more"); the note under the grid (`#detection-limits`) says the rules for Rust,
+  Ruby and PHP are early and names calls to cloud key services among what can be missed; the
+  demo caption says real code has misses and links to that note; the checks card says "Flag".
+  Keep these until measured detection in those languages improves and the founder says so.
 - The standards banner has a pause button, shown only when motion is allowed (WCAG success
   criterion 2.2.2, Pause, Stop, Hide), and pauses on hover and keyboard focus. Its labels come from `data-label-pause` and
   `data-label-play`.

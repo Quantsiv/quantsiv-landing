@@ -307,7 +307,7 @@
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
                 <h3 id="demo-title">What a finding looks like</h3>
-                <p>The scan, the ranking and the checks are Quantsiv's real output for a sample repository written for this page. The agent's analysis and draft change are simulated, to show how the agent works through a finding.</p>
+                <p>The scan, the ranking and the checks are Quantsiv's real output for a sample repository written for this page. On real code the rules miss some calls; see <a href="#detection-limits">the note under the capabilities</a>. The agent's analysis and draft change are simulated, to show how the agent works through a finding.</p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -561,7 +561,7 @@
         <div class="capabilities-grid">
             <div class="capability-item">
                 <h3>Multi-language support</h3>
-                <p>Find common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Rust, Swift and more, plus openssl, ssh-keygen and keytool commands in build scripts.</p>
+                <p>Find common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift and more, plus openssl, ssh-keygen and keytool commands in build scripts.</p>
             </div>
             <div class="capability-item">
                 <h3>Cryptographic Bill of Materials</h3>
@@ -573,7 +573,7 @@
             </div>
             <div class="capability-item">
                 <h3>Checks on every build</h3>
-                <p>Catch quantum-vulnerable cryptography a change adds, on every build, with automated checks and feedback on GitHub pull requests.</p>
+                <p>Flag quantum-vulnerable cryptography a change adds, on every build, with automated checks and feedback on GitHub pull requests.</p>
             </div>
             <div class="capability-item">
                 <h3>Seamless CI/CD integration</h3>
@@ -608,7 +608,7 @@
                 <p>An AI agent reads each finding in context and drafts a fix. If Quantsiv's checks or your tests reject the draft, the agent revises it, and you see only fixes that pass. It runs as an optional step in your build, on a model you choose. Nothing merges without a person's approval.</p>
             </div>
         </div>
-        <p class="capabilities-note">Detection is pattern-based, so depth varies by language, and it can miss calls made under another name or built at run time, code copied into a project, and third-party packages.</p>
+        <p class="capabilities-note" id="detection-limits">Detection is pattern-based, so depth varies by language, and rules for Rust, Ruby and PHP are early. It can miss calls made under another name or built at run time, calls to cloud key services, code copied into a project, and third-party packages.</p>
     </section>
 
     <!-- Roadmap section -->
