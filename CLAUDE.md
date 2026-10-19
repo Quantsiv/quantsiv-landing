@@ -308,14 +308,24 @@ stand until the founder changes them:
   genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
   1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
   `nl/` and `it/`. Change them only with his word.
-- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust (it
-  falls under "and more"); the note under the grid (`#detection-limits`) says the rules for Rust,
-  Ruby and PHP are early and names calls to cloud key services among what can be missed; the
-  demo caption says real code has misses and links to that note; the checks card says "Flag".
-  Keep these until measured detection in those languages improves and the founder says so.
-- The standards banner has a pause button, shown only when motion is allowed (WCAG success
-  criterion 2.2.2, Pause, Stop, Hide), and pauses on hover and keyboard focus. Its labels come from `data-label-pause` and
-  `data-label-play`.
+- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust; the
+  limits are the last section of the page (`#detection-limits`), after the roadmap, and say the
+  rules for Rust, Ruby and PHP are early and name calls to cloud key services among what can be
+  missed; a short footnote under the features (`#coverage-note`) links to it. The demo is
+  labelled "Output" with a footnote (`#demo-footnote`) saying the results are Quantsiv's own on
+  a demo repository. Keep these until measured detection in those languages improves and the
+  founder says so.
+- The page reads in order (the founder's ask, 19 Oct 2026): the menu and each section carry a
+  number (01 to 05), each section ends with a "Next" link to the following one, and a thin bar
+  under the header shows how far the page has been read where the browser supports it. The
+  deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past and
+  future dates and places a "Today" marker. The features are cards that open one by one, two
+  with chips of the languages and CI systems they cover (`assets/logos/`, Simple Icons, CC0;
+  the marks belong to their owners; a name without a usable icon is a text chip).
+- One play/pause button at the hero pauses both the hero animation and the standards banner
+  (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
+  its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
+  hover and keyboard focus.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.
