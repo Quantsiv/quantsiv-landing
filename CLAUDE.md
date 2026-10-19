@@ -253,9 +253,11 @@ stand until the founder changes them:
   Updated 19 Oct 2026 with the founder's approval. Unconfirmed sign-ups stay in Brevo's logs until the
   founder deletes them, and the notice promises that after the 30-day link expiry.
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
-  notice. Since 19 Oct 2026 (the founder's ask), the section above the footer is "Get in Touch"
-  (`#contact`): it invites visitors to see what Quantsiv finds in their own code and links
-  hello@quantsiv.com, and the hero's second button points to it.
+  notice. Since 19 Oct 2026 (the founder's ask), the section above the detection limits is "Get in
+  Touch" (`#contact`), and the hero's second button points to it. On his later ask the same day it
+  opens with the waitlist line, then the form (the field and the button in one box, the consent
+  line under it), then hello@quantsiv.com; the line inviting visitors to see what Quantsiv finds in
+  their own code is gone.
   The privacy notice already covers email to any quantsiv.com address ("When you write to us").
 - "How Quantsiv Works" ends with "What a finding looks like", an interactive preview (19 Oct
   2026, the founder's brief): a scan overview, three findings, and three tabs each (the finding,

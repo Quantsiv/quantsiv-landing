@@ -169,20 +169,20 @@
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
         <p class="section-kicker"><span class="section-num">01</span> The problem</p>
-        <h2>Two threats in the quantum era</h2>
+        <h2>Two threats</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
                 <h3>Harvest now, decrypt later</h3>
-                <p>Today hackers can intercept and store encrypted data, then decrypt it in the future with sufficiently powerful quantum computers. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at risk. The level of risk also depends on how long the data must stay secret. <strong>If it must stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
+                <p>Today hackers can intercept and store encrypted data, then decrypt it in the future with sufficiently powerful quantum computers. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at a risk that depends on how long the data must stay secret. <strong>If it must stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
             </div>
             <div class="threat-card">
                 <h3>Digital signature forgery</h3>
-                <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and, as a result, forge signatures. Keys and signatures must stay trustworthy, including in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could make unauthorised transfers possible.</p>
+                <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and forge signatures. They must stay trustworthy, including in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could make unauthorised transfers possible.</p>
             </div>
             <div class="threat-card">
                 <h3>Error-prone AI agents</h3>
-                <p>When they generate code, coding assistants tend to fall back on patterns and defaults they already know. If those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
+                <p>When they generate code, coding assistants tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
             </div>
         </div>
 
@@ -215,7 +215,7 @@
     <section id="compliance" class="section">
         <p class="section-kicker"><span class="section-num">02</span> Deadlines</p>
         <h2>The deadlines are already set</h2>
-        <p class="section-subheading">These are not just forecasts: in the US and the EU, standards bodies and public institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
+        <p class="section-subheading">These are not just predictions. In the US and the EU, public institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
 
         <ol class="deadlines" data-label-now="Today">
             <li class="deadline" data-date="2024-08-13">
@@ -293,11 +293,11 @@
             </div>
             <div class="step">
                 <h3>3. Rank</h3>
-                <p>For each finding, Quantsiv explains why it got its priority and, where the use is clear enough, names the standard to migrate to.</p>
+                <p>For each finding, Quantsiv explains the priority and the standard to migrate to.</p>
             </div>
             <div class="step">
                 <h3>4. Document</h3>
-                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. AI agents can also use this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous build, preventing regressions.</p>
+                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous build, preventing regressions.</p>
             </div>
         </div>
 
@@ -617,7 +617,7 @@
             </details>
             <details class="capability-item">
                 <summary><h3>AI agent analysis</h3></summary>
-                <p>An AI agent analyzes each finding in its context and proposes a fix. It supports all models (ChatGPT, Claude, DeepSeek, Grok). No change is merged without the user's approval.</p>
+                <p>An AI agent analyzes each finding in its context and proposes a fix. Works with the model you choose (ChatGPT, Claude, DeepSeek, Grok), including one you host yourself. No change is merged without the user's approval.</p>
             </details>
         </div>
         <p class="section-footnote" id="coverage-note">*Coverage varies by language, cloud key-management services and third-party packages. <a href="#detection-limits">Detection limits</a></p>
@@ -636,17 +636,12 @@
                 <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
                 <h3>Audit</h3>
                 <p>Show where each application uses cryptography, from inside its build.</p>
-                <ul class="phase-list">
-                    <li>CBOM evidence reports for auditors, citing the US and EU guidance</li>
-                    <li>An inventory of third-party packages (dependencies): which ones bring cryptography</li>
-                    <li>Reports that state their coverage, so a partial scan is not mistaken for a clean one</li>
-                </ul>
                 <h4 class="phase-label">In development</h4>
                 <ul class="phase-list">
                     <li>Training the AI agent to learn from the changes the team approves</li>
-                    <li>Post-quantum and hybrid cryptography counted as migration progress, across code, keys, certificates and configuration</li>
-                    <li>COBOL code on mainframes, common in banks: its calls to the mainframe's cryptography service, and the mainframe's certificate and secure-connection settings</li>
-                    <li>CBOM output aligned to the CISA minimum elements once published, about March 2027, and CycloneDX 1.7 accepted on import</li>
+                    <li>Post-quantum and hybrid cryptography</li>
+                    <li>COBOL code on mainframes</li>
+                    <li>CycloneDX 1.7</li>
                 </ul>
             </article>
 
@@ -665,7 +660,7 @@
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 4 &middot; 2030 &rarr; 2035</span>
                 <h3>Platform Consolidation</h3>
-                <p>One product to install, covering audit, migration and review.</p>
+                <p>An all-in-one product to install, covering audit, migration and review.</p>
             </article>
         </div>
 
@@ -675,17 +670,18 @@
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">
         <h2>Get in Touch</h2>
-        <p>Want to see what Quantsiv finds in your own code before launch, or have a question? Write to us.</p>
-        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
-        <p class="newsletter-later">Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. Join the waitlist and we will email you to confirm your address.</p>
+        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. Join the waitlist and we will email you to confirm your address.</p>
         <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Please enter a valid email address.">
-            <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
+            <div class="form-row">
+                <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
+                <button type="submit">Join the Waitlist</button>
+            </div>
             <label class="form-consent"><input type="checkbox" name="OPT_IN" value="1" required><span>I agree to receive emails from Quantsiv about its launch and occasional updates. I have read the <a href="privacy.html">privacy notice</a>.</span></label>
             <div hidden><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
             <input type="hidden" name="locale" value="en">
             <div id="form-message" class="form-message" role="status" hidden></div>
-            <button type="submit">Join the Waitlist</button>
         </form>
+        <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
         <p class="form-note"><a href="privacy.html">Privacy notice</a></p>
     </section>
 
