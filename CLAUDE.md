@@ -8,8 +8,11 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 ## What this repository is
 
-- One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`
-  and `assets/`. No build step, no framework, no package manager. `.nojekyll` must stay.
+- One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`,
+  `noscript.css` and `assets/`. No build step, no framework, no package manager. `.nojekyll` must
+  stay. `404.html` uses root-absolute paths because Pages serves it at any address. `robots.txt` and
+  `sitemap.xml` list every page; add a page to the sitemap, with its language alternates, when you
+  add one. `ROADMAP.md` is the website's own roadmap (done and left), public like everything here.
 - Dutch and Italian versions of the page and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
@@ -244,10 +247,18 @@ stand until the founder changes them:
   (`#contact`): it invites visitors to see what Quantsiv finds in their own code and links
   hello@quantsiv.com, and the hero's second button points to it.
   The privacy notice already covers email to any quantsiv.com address ("When you write to us").
-- "How Quantsiv Works" ends with one real finding: the scanner's own output for a short sample
-  file written for the page, labelled as such. If the scanner's wording changes, run it again on
-  the same sample and update all three languages; never edit the output by hand. In `nl/` and
-  `it/` the output stays in English (`lang="en"`) with a translation in brackets.
+- "How Quantsiv Works" ends with "What a finding looks like", an interactive preview (19 Oct
+  2026, the founder's brief): a scan overview, three findings, and three tabs each (the finding,
+  the AI migration analysis, the validation). The scan, the ranking, the "Move to" lines, the
+  checks and the gate are the scanner's own output for a sample repository written for the page,
+  and the caption says so. The agent's analysis and draft are simulated, written by hand, and
+  carry "Simulated output" and the "Illustrative preview" badge: keep both labels, never present
+  the agent text as a measured result, and keep ML-KEM as key establishment with AES-GCM still
+  encrypting the data, never as a drop-in for RSA encryption. If the scanner's wording changes,
+  run it again on the same sample and update all three languages; never edit tool output by hand.
+  In `nl/` and `it/` tool output stays in English (`lang="en"`) with a translation in brackets.
+  Without JavaScript every panel shows in order (`noscript.css`); the tabs follow the WAI-ARIA
+  tabs pattern in `script.js`.
 - The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
   small line above the headline, the page title and the first line of the footer, in English on
   every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a capability:
@@ -278,9 +289,23 @@ stand until the founder changes them:
   "autonomous" or "auto-fix". Learning from approved changes is the first Phase 1 roadmap line,
   in the future, until it is built. Never name the model's vendor.
 - The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
-  both, on every build." (the founder, 18 Oct 2026) ends the threat section's sub-line, in
-  translation on `nl/` and `it/`. It is a narrative line, not the tagline. Keep threat examples
-  generic: no company names and no counts that were not measured and sourced.
+  both, on every build." (the founder, 18 Oct 2026) is a narrative line, not the tagline. On 19
+  Oct 2026 the founder removed the threat section's intro paragraph that carried it, so the
+  section goes from its heading straight to the two cards. Keep threat examples generic: no
+  company names and no counts that were not measured and sourced.
+- The founder's text of 19 Oct 2026, on the page as he wrote it: the Signature Forgery card
+  ("Digital signatures prove that software, certificates, documents and transactions are
+  genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
+  1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
+  `nl/` and `it/`. Change them only with his word.
+- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust (it
+  falls under "and more"); the note under the grid (`#detection-limits`) says the rules for Rust,
+  Ruby and PHP are early and names calls to cloud key services among what can be missed; the
+  demo caption says real code has misses and links to that note; the checks card says "Flag".
+  Keep these until measured detection in those languages improves and the founder says so.
+- The standards banner has a pause button, shown only when motion is allowed (WCAG success
+  criterion 2.2.2, Pause, Stop, Hide), and pauses on hover and keyboard focus. Its labels come from `data-label-pause` and
+  `data-label-play`.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. When the form opens, add the email service's form address
   to `form-action`, or the browser refuses to submit it.

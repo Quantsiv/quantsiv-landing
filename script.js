@@ -98,18 +98,99 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Marquee effect for supported companies banner
-    // The track already holds two identical groups in the markup, so the
-    // -50% keyframe loops seamlessly without cloning anything in here.
-    const bannerTrack = document.querySelector('.banner-track');
-    if (bannerTrack) {
-        // Pause on hover
-        bannerTrack.addEventListener('mouseenter', () => {
-            bannerTrack.style.animationPlayState = 'paused';
+    // Standards banner. The track already holds two identical groups in the markup, so the
+    // -50% keyframe loops seamlessly without cloning anything in here. style.css pauses it on
+    // hover; the button stops and restarts it (WCAG 2.2.2). Under reduced motion it never moves,
+    // so the button stays hidden.
+    const banner = document.querySelector('.supported-banner');
+    const bannerToggle = document.getElementById('banner-toggle');
+    if (banner && bannerToggle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        bannerToggle.hidden = false;
+        bannerToggle.addEventListener('click', function () {
+            const paused = banner.classList.toggle('is-paused');
+            bannerToggle.textContent = paused ? bannerToggle.dataset.labelPlay : bannerToggle.dataset.labelPause;
+        });
+    }
+
+    // Product preview in "How Quantsiv Works". The finding links pick a finding and the three
+    // step tabs pick its panel. Without this script every panel shows (noscript.css) and the
+    // links jump to each finding.
+    const demo = document.getElementById('demo');
+    if (demo) {
+        const items = Array.from(demo.querySelectorAll('.demo-item'));
+        const links = Array.from(demo.querySelectorAll('.demo-finding-link'));
+        const tabs = Array.from(demo.querySelectorAll('.demo-step'));
+        const announce = demo.querySelector('.demo-announce');
+        const detail = demo.querySelector('.demo-detail');
+        const state = { item: items[0].id, panel: tabs[0].dataset.panel };
+
+        tabs.forEach(function (tab) {
+            tab.id = 'demo-tab-' + tab.dataset.panel;
+        });
+        items.forEach(function (item) {
+            item.querySelectorAll('.demo-panel').forEach(function (panel) {
+                panel.setAttribute('role', 'tabpanel');
+                panel.tabIndex = 0;
+            });
         });
 
-        bannerTrack.addEventListener('mouseleave', () => {
-            bannerTrack.style.animationPlayState = 'running';
+        const render = function () {
+            items.forEach(function (item) {
+                const current = item.id === state.item;
+                item.classList.toggle('is-current', current);
+                item.querySelectorAll('.demo-panel').forEach(function (panel) {
+                    panel.classList.toggle('is-current', current && panel.dataset.panel === state.panel);
+                });
+            });
+            links.forEach(function (link) {
+                if (link.dataset.finding === state.item) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
+            });
+            let before = true;
+            tabs.forEach(function (tab) {
+                const selected = tab.dataset.panel === state.panel;
+                if (selected) before = false;
+                tab.setAttribute('aria-selected', String(selected));
+                tab.setAttribute('aria-controls', state.item + '-' + tab.dataset.panel);
+                tab.tabIndex = selected ? 0 : -1;
+                tab.classList.toggle('is-done', before && !selected);
+            });
+        };
+
+        links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                state.item = link.dataset.finding;
+                render();
+                const title = document.getElementById(state.item + '-' + state.panel + '-title');
+                if (announce && title) announce.textContent = title.textContent;
+                // Narrow screens stack the list above the finding: bring the finding into view
+                if (detail && detail.getBoundingClientRect().top > window.innerHeight * 0.6) {
+                    detail.scrollIntoView({ block: 'start' });
+                }
+            });
         });
+
+        const select = function (tab) {
+            state.panel = tab.dataset.panel;
+            render();
+            tab.focus();
+        };
+        tabs.forEach(function (tab, i) {
+            tab.addEventListener('click', function () { select(tab); });
+            // Arrow keys, Home and End move between the steps (WAI-ARIA tabs pattern)
+            tab.addEventListener('keydown', function (e) {
+                let next = null;
+                if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+                else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+                else if (e.key === 'Home') next = tabs[0];
+                else if (e.key === 'End') next = tabs[tabs.length - 1];
+                if (next) {
+                    e.preventDefault();
+                    select(next);
+                }
+            });
+        });
+        render();
     }
 });
