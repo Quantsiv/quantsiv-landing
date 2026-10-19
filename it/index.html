@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
-    <link rel="icon" href="../assets/logo-symbol-black.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quantsiv trova nel tuo codice la crittografia che un futuro computer quantistico potrebbe violare, mostra cosa correggere per primo in base a quanto a lungo i tuoi dati devono restare segreti e produce la Cryptographic Bill of Materials attorno a cui sono costruite le linee guida federali statunitensi (EO 14412, OMB M-26-15).">
     <title>Quantsiv - See tomorrow. Secure today.</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Quantsiv">
+    <meta property="og:title" content="Quantsiv - See tomorrow. Secure today.">
+    <meta property="og:description" content="Quantsiv trova nel tuo codice la crittografia che un futuro computer quantistico potrebbe violare, mostra cosa correggere per primo in base a quanto a lungo i tuoi dati devono restare segreti e produce la Cryptographic Bill of Materials attorno a cui sono costruite le linee guida federali statunitensi (EO 14412, OMB M-26-15).">
+    <meta property="og:url" content="https://quantsiv.com/it/">
+    <meta property="og:image" content="https://quantsiv.com/assets/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Quantsiv. See tomorrow. Secure today.">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="nl_NL">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://quantsiv.com/it/">
     <link rel="alternate" hreflang="en" href="https://quantsiv.com/">
     <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/">
     <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/">
     <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/">
+    <link rel="preload" href="../assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
     <noscript><link rel="stylesheet" href="../noscript.css"></noscript>
 </head>
 <body>
     <!-- Header with three-part layout -->
     <header class="site-header">
-        <div class="brand-center"><img src="../assets/logo-horizontal-light.png" alt="Quantsiv" class="logo" width="560" height="140"></div>
+        <div class="brand-center"><img src="../assets/logo-horizontal-light-360.png" alt="Quantsiv" class="logo" width="360" height="90"></div>
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu"><span class="menu-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span></button>
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Menu principale">
@@ -140,6 +156,7 @@
             <li>NSA CNSA 2.0</li>
             <li lang="en">EU NIS Cooperation Group Roadmap</li>
         </ul>
+        <button type="button" class="banner-toggle" id="banner-toggle" data-label-pause="Metti in pausa il banner" data-label-play="Riproduci il banner" hidden>Metti in pausa il banner</button>
     </section>
 
     <!-- Security statement -->
@@ -151,7 +168,6 @@
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
         <h2>Due minacce quantistiche</h2>
-        <p class="section-subheading">Un computer quantistico abbastanza grande potrebbe leggere i dati copiati oggi e falsificare le firme su cui fanno affidamento persone e macchine. Due minacce quantistiche, due orologi. Quantsiv ordina la tua crittografia rispetto a entrambe, a ogni build.</p>
 
         <div class="threat-grid">
             <div class="threat-card">
@@ -161,7 +177,7 @@
             <div class="threat-card">
                 <h3>Falsificazione delle firme</h3>
                 <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
-                <p>Le firme dimostrano che un aggiornamento software, un certificato, un documento o una transazione sono autentici. Non serve rubare nulla prima, perché la chiave pubblica è pubblica per definizione. Un computer quantistico abbastanza grande potrebbe ricavarne la chiave privata e firmare a tuo nome, così un falso sembra autentico. Questo minaccia firme come RSA, ECDSA ed EdDSA. La scadenza è quanto a lungo una firma o una chiave deve restare affidabile: chiavi integrate nei dispositivi, autorità di certificazione e documenti che devono restare una prova. Per i wallet di cripto-attività, una chiave pubblica già on-chain basta per falsificare un trasferimento.</p>
+                <p>Le firme digitali dimostrano che software, certificati, documenti e transazioni sono autentici. Un computer quantistico sufficientemente potente potrebbe ricavare le chiavi private dalle chiavi pubbliche e falsificare le firme, minacciando RSA, ECDSA ed EdDSA. Il rischio dipende da quanto a lungo chiavi e firme devono restare affidabili, anche in dispositivi, autorità di certificazione e registri permanenti. Nei wallet di cripto-attività, una chiave pubblica esposta on-chain potrebbe consentire trasferimenti falsificati.</p>
             </div>
             <div class="threat-card">
                 <h3>Gli assistenti di programmazione IA possono ripetere scelte predefinite vulnerabili</h3>
@@ -279,19 +295,262 @@
             </div>
             <div class="step">
                 <h3>4. Dimostrare</h3>
-                <p>Quantsiv produce una CBOM CycloneDX 1.6, un file SARIF per gli strumenti di analisi del codice e un report ordinato. Ogni build viene confrontata con l'ultima build del tuo branch principale, e il controllo delle modifiche segnala la crittografia che una modifica aggiunge, così la migrazione non torna indietro.</p>
+                <p>Quantsiv genera una CBOM CycloneDX 1.6, un file SARIF per gli strumenti di analisi del codice e un report ordinato. Un agente IA può usare questo contesto per guidare la migrazione: individuare la crittografia vulnerabile, consigliare sostituti resistenti ai computer quantistici e stabilire le priorità delle modifiche. Ogni build viene confrontata con l'ultima build del branch principale, e la crittografia appena introdotta viene segnalata per evitare regressioni.</p>
             </div>
         </div>
 
-        <figure class="finding-example">
-            <figcaption><strong>Ecco un rilevamento.</strong> Output reale, in inglese, per un breve file di esempio scritto per questa pagina.</figcaption>
-            <dl>
-                <div><dt>Hai dichiarato</dt><dd>I dati dei clienti devono restare segreti per 25 anni</dd></div>
-                <div><dt>Trovato</dt><dd><code>src/billing_export.py:10</code>, <span lang="en">RSA-OAEP encryption</span></dd></div>
-                <div><dt>Priorità</dt><dd><span class="finding-severity" lang="en">critical</span>, sul binario <span lang="en">harvest now, decrypt later</span></dd></div>
-                <div><dt>Perché</dt><dd><span lang="en">Protects data that must stay confidential for 25 years.</span> (Protegge dati che devono restare riservati per 25 anni.)</dd></div>
-                <div><dt>Verso cosa migrare</dt><dd><span lang="en">Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</span> (Sostituisci la cifratura e il trasporto di chiavi RSA con ML-KEM (FIPS 203) più un AEAD.)</dd></div>
-            </dl>
+        <!-- Product preview. The scan, the ranking, the checks and the gate result are Quantsiv's
+             real output for a sample repository written for this page; the agent's analysis
+             and its draft change are written for the page. Without scripts every panel shows,
+             one after another; script.js turns the finding list and the three steps into
+             controls. -->
+        <figure class="demo" id="demo" aria-labelledby="demo-title">
+            <figcaption class="demo-caption">
+                <h3 id="demo-title">Ecco un rilevamento</h3>
+                <p>La scansione, la priorità e i controlli sono output reale di Quantsiv, in inglese, per un repository di esempio scritto per questa pagina. L'analisi e la modifica proposta dall'agente sono simulate, per mostrare come l'agente lavora su un rilevamento.</p>
+            </figcaption>
+            <div class="demo-window">
+                <div class="demo-bar">
+                    <span class="demo-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="demo-repo">example/billing-service</span>
+                    <span class="demo-ref"><span class="demo-ref-label">branch</span> main <span class="demo-ref-label">commit</span> 1e94656</span>
+                    <span class="demo-status">Scansione completata</span>
+                    <span class="demo-badge">Anteprima illustrativa</span>
+                </div>
+                <div class="demo-body">
+                    <div class="demo-overview">
+                        <h4 class="demo-label">Inventario crittografico</h4>
+                        <dl class="demo-stats">
+                            <div><dt>Asset trovati</dt><dd>10</dd></div>
+                            <div class="is-vulnerable"><dt>Vulnerabili agli attacchi quantistici</dt><dd>9</dd></div>
+                            <div class="is-safe"><dt>Resistenti agli attacchi quantistici</dt><dd>1</dd></div>
+                            <div><dt>File analizzati</dt><dd>8</dd></div>
+                        </dl>
+
+                        <h4 class="demo-label">Gravità</h4>
+                        <div class="demo-meter demo-meter-severity" aria-hidden="true"><span class="seg-critical"></span><span class="seg-high"></span></div>
+                        <ul class="demo-legend">
+                            <li class="key-critical">Critica <strong>4</strong></li>
+                            <li class="key-high">Alta <strong>5</strong></li>
+                        </ul>
+
+                        <h4 class="demo-label">Esposizione</h4>
+                        <div class="demo-meter demo-meter-track" aria-hidden="true"><span class="seg-hndl"></span><span class="seg-sig"></span><span class="seg-other"></span></div>
+                        <ul class="demo-legend">
+                            <li class="key-hndl"><span lang="en">Harvest Now, Decrypt Later</span> <strong>4</strong></li>
+                            <li class="key-sig">Falsificazione delle firme <strong>4</strong></li>
+                            <li class="key-other">Uso non classificato <strong>1</strong></li>
+                        </ul>
+
+                        <h4 class="demo-label" id="demo-findings-label">Rilevamenti</h4>
+                        <ul class="demo-findings" aria-labelledby="demo-findings-label">
+                            <li><a class="demo-finding-link" href="#demo-f1" data-finding="demo-f1" aria-current="true"><span class="sev sev-critical">critico</span><span class="demo-finding-name" lang="en">RSA-OAEP encryption</span><code>src/billing_export.py:10</code></a></li>
+                            <li><a class="demo-finding-link" href="#demo-f2" data-finding="demo-f2"><span class="sev sev-critical">critico</span><span class="demo-finding-name">Gruppi TLS per lo scambio di chiavi</span><code>deploy/nginx.conf:6</code></a></li>
+                            <li><a class="demo-finding-link" href="#demo-f3" data-finding="demo-f3"><span class="sev sev-high">alto</span><span class="demo-finding-name" lang="en">JWT signing</span><code>src/auth/session_tokens.py:6</code></a></li>
+                        </ul>
+                        <details class="demo-more">
+                            <summary>Altri 6 asset</summary>
+                            <ul>
+                                <li><span class="sev sev-critical">critico</span><span lang="en">ECDH-256</span>, accordo di chiavi <code>web/src/card-vault.ts:3</code></li>
+                                <li><span class="sev sev-high">alto</span><span lang="en">ECDSA-256</span>, chiave del certificato <code>certs/api.crt:1</code></li>
+                                <li><span class="sev sev-high">alto</span><span lang="en">ECDSA-256</span>, generazione di chiavi <code>services/ledger/sign.go:12</code></li>
+                                <li><span class="sev sev-high">alto</span><span lang="en">ECDSA</span>, firma <code>services/ledger/sign.go:17</code></li>
+                                <li><span class="sev sev-high">alto</span><span lang="en">RSA-3072</span>, uso non classificato <code>scripts/make-release-key.sh:3</code></li>
+                                <li><span class="sev sev-safe">sicuro</span><span lang="en">X25519MLKEM768</span>, scambio di chiavi ibrido <code>deploy/nginx.conf:6</code></li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <div class="demo-detail">
+                        <div class="demo-steps" role="tablist" aria-label="Dal rilevamento alla correzione">
+                            <button type="button" class="demo-step" role="tab" data-panel="finding" aria-selected="true"><span class="demo-step-n" aria-hidden="true">1</span><span class="demo-step-text">Rilevamento<small>Trovato e spiegato</small></span></button>
+                            <button type="button" class="demo-step" role="tab" data-panel="agent"><span class="demo-step-n" aria-hidden="true">2</span><span class="demo-step-text">Analisi di migrazione IA<small>Raccomandazione e piano</small></span></button>
+                            <button type="button" class="demo-step" role="tab" data-panel="checks"><span class="demo-step-n" aria-hidden="true">3</span><span class="demo-step-text">Validazione<small>Controlli, poi ogni build</small></span></button>
+                        </div>
+                        <p class="demo-announce visually-hidden" aria-live="polite"></p>
+
+                        <!-- Finding 1: RSA-OAEP -->
+                        <article class="demo-item is-current" id="demo-f1">
+                            <section class="demo-panel is-current" data-panel="finding" id="demo-f1-finding" aria-labelledby="demo-f1-finding-title">
+                                <h4 class="demo-panel-title" id="demo-f1-finding-title">Rilevamento: <span lang="en">RSA-OAEP encryption</span></h4>
+                                <div class="demo-chips">
+                                    <span class="sev sev-critical">critico</span>
+                                    <span class="track track-hndl" lang="en">Harvest Now, Decrypt Later</span>
+                                    <code>src/billing_export.py:10</code>
+                                </div>
+                                <dl class="demo-facts">
+                                    <div><dt>Contesto aziendale</dt><dd>I dati dei clienti devono restare segreti per 25 anni (dichiarato nel file <code>quantsiv.yml</code> del repository)</dd></div>
+                                    <div><dt>Perché questa priorità</dt><dd><span lang="en">Protects data that must stay confidential for 25 years.</span> (Protegge dati che devono restare riservati per 25 anni.)</dd></div>
+                                    <div><dt>Il rischio</dt><dd>La crittografia a chiave pubblica basata su RSA è vulnerabile a computer quantistici sufficientemente potenti. I dati intercettati oggi potrebbero diventare decifrabili in futuro, se i meccanismi di cifratura o di scambio di chiavi usati vengono compromessi.</dd></div>
+                                    <div><dt>Verso cosa migrare</dt><dd><span lang="en">Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</span> (Sostituisci la cifratura e il trasporto di chiavi RSA con ML-KEM (FIPS 203) più un AEAD.)</dd></div>
+                                    <div><dt>Riferimenti normativi</dt><dd><span lang="en">EO 14412 (22 Jun 2026): post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030. NIST IR 8547 (ipd): 112-bit RSA/ECC/DH deprecated after 2030, all quantum-vulnerable public-key algorithms disallowed after 2035.</span> (EO 14412 (22 giu 2026): scambio di chiavi post-quantistico sugli high-value assets e sui sistemi ad alto impatto entro il 31 dic 2030. NIST IR 8547 (bozza pubblica iniziale): RSA, ECC e DH con sicurezza a 112 bit deprecati dopo il 2030, tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici non consentiti dopo il 2035.)</dd></div>
+                                </dl>
+                            </section>
+                            <section class="demo-panel demo-agent" data-panel="agent" id="demo-f1-agent" aria-labelledby="demo-f1-agent-title">
+                                <h4 class="demo-panel-title" id="demo-f1-agent-title">Quantsiv AI: analisi di migrazione</h4>
+                                <p class="demo-agent-status"><span class="demo-done">Analisi completata</span> <span class="demo-where">Nella tua CI, con il modello che scegli</span> <span class="demo-sim">Output simulato</span></p>
+                                <p>L'implementazione attuale usa RSA-OAEP per proteggere i dati dei clienti esportati, che devono restare riservati per 25 anni.</p>
+                                <p class="demo-callout"><strong>Non è una sostituzione diretta.</strong> Qui RSA-OAEP cifra la chiave AES che protegge ogni esportazione. ML-KEM non cifra una chiave scelta: stabilisce un segreto condiviso, da cui si ricava la chiave dei dati. AES-256-GCM continua a cifrare i dati.</p>
+                                <h5 class="demo-label">Migrazione consigliata</h5>
+                                <ol class="demo-plan">
+                                    <li>Esamina l'attuale cifratura RSA-OAEP e il flusso di gestione delle chiavi.</li>
+                                    <li>Valuta ML-KEM (FIPS 203) per lo scambio di chiavi post-quantistico, anche con approcci ibridi dove opportuno.</li>
+                                    <li>Usa uno schema di cifratura simmetrica autenticata come AES-GCM per cifrare i dati.</li>
+                                    <li>Individua le dipendenze, le integrazioni, i certificati e i requisiti di compatibilità coinvolti.</li>
+                                    <li>Stabilisci la priorità della migrazione in base alla durata di riservatezza e all'esposizione crittografica.</li>
+                                    <li>Convalida l'implementazione aggiornata ed esegui i controlli di regressione.</li>
+                                </ol>
+                                <dl class="demo-grid">
+                                    <div><dt>Priorità</dt><dd>Critica, riservatezza per 25 anni</dd></div>
+                                    <div><dt>Coinvolti</dt><dd><code>src/billing_export.py</code> e il codice di decifratura del partner, fuori da questo repository</dd></div>
+                                    <div><dt>Standard</dt><dd>FIPS 203 (ML-KEM-768) per lo scambio di chiavi; AES-256-GCM per i dati</dd></div>
+                                    <div><dt>Compatibilità</dt><dd>Il formato di esportazione cambia, e il partner ha bisogno di una coppia di chiavi ML-KEM. Le esportazioni già inviate restano come erano.</dd></div>
+                                </dl>
+                                <h5 class="demo-label">Modifica proposta</h5>
+                                <pre class="demo-diff" tabindex="0" aria-label="Modifica proposta a src/billing_export.py" lang="en"><code><span class="diff-meta">--- a/src/billing_export.py</span>
+<span class="diff-meta">+++ b/src/billing_export.py</span>
+<span class="diff-hunk">@@ -4,10 +4,11 @@</span>
+<span class="diff-ctx"> from cryptography.hazmat.primitives import hashes</span>
+<span class="diff-ctx"> from cryptography.hazmat.primitives.ciphers.aead import AESGCM</span>
+<span class="diff-del">-from cryptography.hazmat.primitives.asymmetric import padding</span>
+<span class="diff-add">+from cryptography.hazmat.primitives.kdf.hkdf import HKDF</span>
+<span class="diff-ctx"> </span>
+<span class="diff-ctx"> def seal_export(records, partner_key, export_id):</span>
+<span class="diff-del">-    data_key = AESGCM.generate_key(bit_length=256)</span>
+<span class="diff-del">-    wrapped_key = partner_key.encrypt(data_key, padding.OAEP(mgf=padding.MGF1(hashes.SHA256()), algorithm=hashes.SHA256(), label=None))</span>
+<span class="diff-add">+    # Key establishment: ML-KEM-768 (FIPS 203); the records stay encrypted with AES-256-GCM</span>
+<span class="diff-add">+    kem_ciphertext, shared_secret = partner_key.encapsulate()</span>
+<span class="diff-add">+    data_key = HKDF(algorithm=hashes.SHA256(), length=32, salt=None, info=b"billing-export v2").derive(shared_secret)</span>
+<span class="diff-ctx">     nonce = os.urandom(12)</span>
+<span class="diff-ctx">     body = AESGCM(data_key).encrypt(nonce, json.dumps(records).encode(), export_id.encode())</span>
+<span class="diff-del">-    return {"wrapped_key": wrapped_key, "nonce": nonce, "body": body}</span>
+<span class="diff-add">+    return {"kem_ciphertext": kem_ciphertext, "nonce": nonce, "body": body}</span></code></pre>
+                            </section>
+                            <section class="demo-panel" data-panel="checks" id="demo-f1-checks" aria-labelledby="demo-f1-checks-title">
+                                <h4 class="demo-panel-title" id="demo-f1-checks-title">Validazione</h4>
+                                <h5 class="demo-label">Controlli sulla modifica proposta</h5>
+                                <ul class="demo-checks" lang="en">
+                                    <li class="is-pass">target is a post-quantum alternative: ML-KEM-768</li>
+                                    <li class="is-pass">rescanned: RSA is gone</li>
+                                    <li class="is-pass">nothing quantum-vulnerable added</li>
+                                    <li class="is-pass">policy passes</li>
+                                </ul>
+                                <p class="demo-note">Output reale dei controlli di Quantsiv per la modifica qui sopra. Anche i tuoi test vengono eseguiti se imposti un comando di controllo; questo esempio non ne imposta. Una persona esamina la modifica, e non viene fatto alcun commit.</p>
+                                <h5 class="demo-label">A ogni build successiva</h5>
+                                <p>Una pull request successiva aggiunge una chiave RSA. Il controllo delle modifiche la confronta con l'ultima build del branch principale:</p>
+                                <dl class="demo-gate" lang="en">
+                                    <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                    <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                </dl>
+                            </section>
+                        </article>
+
+                        <!-- Finding 2: classical TLS groups -->
+                        <article class="demo-item" id="demo-f2">
+                            <section class="demo-panel" data-panel="finding" id="demo-f2-finding" aria-labelledby="demo-f2-finding-title">
+                                <h4 class="demo-panel-title" id="demo-f2-finding-title">Rilevamento: gruppi TLS per lo scambio di chiavi</h4>
+                                <div class="demo-chips">
+                                    <span class="sev sev-critical">critico</span>
+                                    <span class="track track-hndl" lang="en">Harvest Now, Decrypt Later</span>
+                                    <code>deploy/nginx.conf:6</code>
+                                </div>
+                                <dl class="demo-facts">
+                                    <div><dt>Trovato</dt><dd><code>ssl_ecdh_curve X25519MLKEM768:X25519:prime256v1;</code> <span lang="en">X25519MLKEM768</span> è registrato come resistente agli attacchi quantistici; <span lang="en">X25519</span> ed <span lang="en">ECDH-256</span> (P-256) no.</dd></div>
+                                    <div><dt>Contesto aziendale</dt><dd>I dati dei clienti devono restare segreti per 25 anni (dichiarato nel file <code>quantsiv.yml</code> del repository)</dd></div>
+                                    <div><dt>Perché questa priorità</dt><dd><span lang="en">Protects data that must stay confidential for 25 years.</span> (Protegge dati che devono restare riservati per 25 anni.)</dd></div>
+                                    <div><dt>Il rischio</dt><dd>Un client che non può usare il gruppo ibrido ripiega su uno classico. Il traffico su quelle connessioni può essere registrato oggi e decifrato in seguito.</dd></div>
+                                    <div><dt>Verso cosa migrare</dt><dd><span lang="en">Migrate key establishment to ML-KEM (FIPS 203), deployed as a hybrid with X25519 (e.g. X25519MLKEM768 in TLS) during the transition.</span> (Migra lo scambio di chiavi a ML-KEM (FIPS 203), adottato in forma ibrida con X25519 (ad es. X25519MLKEM768 in TLS) durante la transizione.)</dd></div>
+                                </dl>
+                            </section>
+                            <section class="demo-panel demo-agent" data-panel="agent" id="demo-f2-agent" aria-labelledby="demo-f2-agent-title">
+                                <h4 class="demo-panel-title" id="demo-f2-agent-title">Quantsiv AI: analisi di migrazione</h4>
+                                <p class="demo-agent-status"><span class="demo-done">Analisi completata</span> <span class="demo-where">Nella tua CI, con il modello che scegli</span> <span class="demo-sim">Output simulato</span></p>
+                                <p>Il server offre già per primo il gruppo ibrido, quindi il lavoro riguarda i client che non possono usarlo. Un file di configurazione riceve indicazioni, non una modifica del codice.</p>
+                                <h5 class="demo-label">Migrazione consigliata</h5>
+                                <ol class="demo-plan">
+                                    <li>Trova, nei log TLS del server, i client che negoziano ancora X25519 o P-256.</li>
+                                    <li>Aggiorna o dismetti quei client, a partire da quelli che trasmettono dati dei clienti.</li>
+                                    <li>Rimuovi i gruppi classici da <code>ssl_ecdh_curve</code> quando il traffico lo consente.</li>
+                                    <li>Sonda di nuovo l'endpoint per confermare che venga negoziato il gruppo ibrido.</li>
+                                </ol>
+                                <dl class="demo-grid">
+                                    <div><dt>Priorità</dt><dd>Critica, riservatezza per 25 anni</dd></div>
+                                    <div><dt>Coinvolti</dt><dd><code>deploy/nginx.conf</code> e i client di <code>api.example.com</code></dd></div>
+                                    <div><dt>Standard</dt><dd>FIPS 203 (ML-KEM-768) nel gruppo ibrido X25519MLKEM768</dd></div>
+                                    <div><dt>Compatibilità</dt><dd>I client che non supportano nessuno dei gruppi rimasti non possono più connettersi una volta rimosse le alternative classiche.</dd></div>
+                                </dl>
+                            </section>
+                            <section class="demo-panel" data-panel="checks" id="demo-f2-checks" aria-labelledby="demo-f2-checks-title">
+                                <h4 class="demo-panel-title" id="demo-f2-checks-title">Validazione</h4>
+                                <h5 class="demo-label">Controlli sulle indicazioni</h5>
+                                <ul class="demo-checks" lang="en">
+                                    <li class="is-pass">target is a post-quantum alternative: X25519MLKEM768</li>
+                                    <li class="is-pass">no other classical algorithm named</li>
+                                </ul>
+                                <p class="demo-note">Output reale dei controlli di Quantsiv per le indicazioni qui sopra. Le modifiche a configurazione, chiavi, certificati e formati dei token ricevono indicazioni, mai un diff.</p>
+                                <h5 class="demo-label">A ogni build successiva</h5>
+                                <p>Una pull request successiva aggiunge una chiave RSA. Il controllo delle modifiche la confronta con l'ultima build del branch principale:</p>
+                                <dl class="demo-gate" lang="en">
+                                    <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                    <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                </dl>
+                            </section>
+                        </article>
+
+                        <!-- Finding 3: JWT signing -->
+                        <article class="demo-item" id="demo-f3">
+                            <section class="demo-panel" data-panel="finding" id="demo-f3-finding" aria-labelledby="demo-f3-finding-title">
+                                <h4 class="demo-panel-title" id="demo-f3-finding-title">Rilevamento: <span lang="en">JWT signing</span></h4>
+                                <div class="demo-chips">
+                                    <span class="sev sev-high">alto</span>
+                                    <span class="track track-sig">Falsificazione delle firme</span>
+                                    <code>src/auth/session_tokens.py:6</code>
+                                </div>
+                                <dl class="demo-facts">
+                                    <div><dt>Contesto aziendale</dt><dd>Le firme devono restare affidabili per 10 anni (dichiarato nel file <code>quantsiv.yml</code> del repository)</dd></div>
+                                    <div><dt>Perché questa priorità</dt><dd><span lang="en">Signatures must stay trusted for 10 years; deadline 31 Dec 2031.</span> (Le firme devono restare affidabili per 10 anni; scadenza 31 dic 2031.)</dd></div>
+                                    <div><dt>Il rischio</dt><dd>Un computer quantistico potrebbe ricavare la chiave di firma dalla sua chiave pubblica ed emettere token che ogni servizio accetta. Non serve registrare nulla prima: la chiave pubblica è pubblica per definizione.</dd></div>
+                                    <div><dt>Verso cosa migrare</dt><dd><span lang="en">Migrate to ML-DSA (FIPS 204) or SLH-DSA (FIPS 205). Prioritise long-lived signing keys: code/firmware signing, CA and token-issuer keys.</span> (Migra a ML-DSA (FIPS 204) o SLH-DSA (FIPS 205). Dai priorità alle chiavi di firma di lunga durata: firma di codice e firmware, chiavi delle CA e degli emittenti di token.)</dd></div>
+                                    <div><dt>Riferimenti normativi</dt><dd><span lang="en">EO 14412 (22 Jun 2026): post-quantum digital signatures on high-value assets and high-impact systems by 31 Dec 2031. NIST IR 8547 (ipd): disallowed after 2035.</span> (EO 14412 (22 giu 2026): firme digitali post-quantistiche sugli high-value assets e sui sistemi ad alto impatto entro il 31 dic 2031. NIST IR 8547 (bozza pubblica iniziale): non consentite dopo il 2035.)</dd></div>
+                                </dl>
+                            </section>
+                            <section class="demo-panel demo-agent" data-panel="agent" id="demo-f3-agent" aria-labelledby="demo-f3-agent-title">
+                                <h4 class="demo-panel-title" id="demo-f3-agent-title">Quantsiv AI: analisi di migrazione</h4>
+                                <p class="demo-agent-status"><span class="demo-done">Analisi completata</span> <span class="demo-where">Nella tua CI, con il modello che scegli</span> <span class="demo-sim">Output simulato</span></p>
+                                <p>Questi token di sessione sono firmati con RS256, e altri servizi li verificano. Cambiare algoritmo cambia il formato del token, quindi l'agente dà indicazioni invece di una modifica del codice.</p>
+                                <h5 class="demo-label">Migrazione consigliata</h5>
+                                <ol class="demo-plan">
+                                    <li>Elenca ogni servizio e libreria che verifica questi token.</li>
+                                    <li>Verifica che ciascuno possa verificare firme ML-DSA (FIPS 204) prima che l'emittente cambi.</li>
+                                    <li>Emetti i token con una nuova chiave ML-DSA, e accetta entrambi gli algoritmi durante il passaggio.</li>
+                                    <li>Ritira la chiave RS256 quando nessun verificatore ne dipende più.</li>
+                                </ol>
+                                <dl class="demo-grid">
+                                    <div><dt>Priorità</dt><dd>Alta, scadenza per le firme 31 dic 2031</dd></div>
+                                    <div><dt>Coinvolti</dt><dd><code>src/auth/session_tokens.py</code> e ogni servizio che verifica i token</dd></div>
+                                    <div><dt>Standard</dt><dd>FIPS 204 (ML-DSA)</dd></div>
+                                    <div><dt>Compatibilità</dt><dd>I token crescono: una firma ML-DSA-65 occupa 3.309 byte (FIPS 204), più di dieci volte una firma RS256 con una chiave a 2048 bit. Controlla i limiti di dimensione di cookie e header.</dd></div>
+                                </dl>
+                            </section>
+                            <section class="demo-panel" data-panel="checks" id="demo-f3-checks" aria-labelledby="demo-f3-checks-title">
+                                <h4 class="demo-panel-title" id="demo-f3-checks-title">Validazione</h4>
+                                <h5 class="demo-label">Controlli sulle indicazioni</h5>
+                                <ul class="demo-checks" lang="en">
+                                    <li class="is-pass">target is a post-quantum alternative: ML-DSA-65</li>
+                                    <li class="is-pass">no other classical algorithm named</li>
+                                </ul>
+                                <p class="demo-note">Output reale dei controlli di Quantsiv per le indicazioni qui sopra. Le modifiche a configurazione, chiavi, certificati e formati dei token ricevono indicazioni, mai un diff.</p>
+                                <h5 class="demo-label">A ogni build successiva</h5>
+                                <p>Una pull request successiva aggiunge una chiave RSA. Il controllo delle modifiche la confronta con l'ultima build del branch principale:</p>
+                                <dl class="demo-gate" lang="en">
+                                    <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                    <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                </dl>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </figure>
     </section>
 
@@ -414,7 +673,11 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Quantsiv">
+        <link itemprop="url" href="https://quantsiv.com/">
+        <link itemprop="logo" href="https://quantsiv.com/assets/apple-touch-icon.png">
+        <meta itemprop="email" content="hello@quantsiv.com">
         <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
         <div>&copy; 2026 Quantsiv. Tutti i diritti riservati.</div>
         <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
@@ -422,6 +685,5 @@
         <div>Modalità stealth</div>
     </footer>
 
-    <script src="../script.js"></script>
 </body>
 </html>
