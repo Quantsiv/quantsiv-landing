@@ -20,7 +20,9 @@ The work on quantsiv.com itself: what is done and what is left. Product plans ar
   at its display size (34 KB to 5 KB) and the favicon is 1 KB instead of 122 KB.
 - **Search, second pass.** Language links point at the canonical addresses instead of
   `index.html`, the sitemap carries `lastmod` dates, and the home pages carry WebSite microdata so
-  search results can show "Quantsiv" as the site name.
+  search results can show "Quantsiv" as the site name. On the founder's pick, the search title and
+  description now say what Quantsiv finds, in all three languages; the share title keeps the
+  tagline.
 - **Accessibility.** The standards banner has a pause button (WCAG success criterion 2.2.2, Pause,
   Stop, Hide), shown only when motion is allowed, and pauses on hover and focus.
 - **Checks run on this branch** (local server, lab figures, not field data): axe-core reported no
