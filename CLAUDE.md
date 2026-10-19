@@ -17,7 +17,7 @@ Write as if a customer, a competitor and a regulator are all reading it.
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
   github.io address. Pages publishes every file on the branch, this one included.
-- Pre-launch. The waitlist is not open yet, and the page collects nothing. Use the present tense for what the product
+- Pre-launch. The waitlist form posts to Brevo and the page collects nothing else. Use the present tense for what the product
   does today and never for what is planned. Say "Join the waitlist", never "Get started", "Sign up",
   "Download" or "Free trial".
 
@@ -230,7 +230,11 @@ Leave out "Audit-Ready Reporting" until it exists, or label it planned.
 The page edits listed in earlier versions of this file are applied (10 Oct 2026). These choices
 stand until the founder changes them:
 
-- The waitlist is not open. The form is disabled and says so, and `script.js` sends nothing.
+- The waitlist is open from the merge of the Brevo form (19 Oct 2026). The form is plain HTML that posts to
+  Brevo's form address with a required consent checkbox, Brevo's hidden spam-trap field and the language
+  code, and `script.js` only checks the address and sends nothing itself. No Brevo script, stylesheet or
+  iframe is loaded. Brevo's double opt-in sends the confirmation email, and the confirmation page
+  redirects to https://quantsiv.com/.
 - The privacy notice (`privacy.html`, 11 Oct 2026) is linked from the form and the footer. Its
   contact is privacy@quantsiv.com. It names the controller, Ludovico Corsini, and covers visits
   (GitHub Pages) and email to privacy@ (Zoho Corporation B.V., EU data centres, support access
@@ -239,9 +243,10 @@ stand until the founder changes them:
   unsubscribes or asks for deletion, and the whole list is deleted within 6 months if Quantsiv
   does not go ahead. Consent with double opt-in. It carries the same Content-Security-Policy
   meta tag as `index.html` and a canonical link.
-- Before the form opens, the notice must name the email service that stores the list, with
-  where it stores the data and whether emails are tracked. The form then posts to that service,
-  with no CAPTCHA and no iframe, and the notice's "Last updated" date changes.
+- The notice names Brevo, where it says it stores the data (France, Germany, Belgium) and that its
+  anonymous open and click tracking is on (Brevo's setting; if it is switched off the notice is wrong).
+  Updated 19 Oct 2026 with the founder's approval. Unconfirmed sign-ups stay in Brevo's logs until the
+  founder deletes them, and the notice promises that after the 30-day link expiry.
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
   notice. Since 19 Oct 2026 (the founder's ask), the section above the footer is "Get in Touch"
   (`#contact`): it invites visitors to see what Quantsiv finds in their own code and links
@@ -307,8 +312,8 @@ stand until the founder changes them:
   criterion 2.2.2, Pause, Stop, Hide), and pauses on hover and keyboard focus. Its labels come from `data-label-pause` and
   `data-label-play`.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
-  with no inline scripts or styles. When the form opens, add the email service's form address
-  to `form-action`, or the browser refuses to submit it.
+  with no inline scripts or styles. `form-action` allows this site and Brevo's form address
+  (c58bed8a.sibforms.com); change it if the form moves to another service.
 
 ## Before every commit
 
