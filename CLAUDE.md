@@ -169,7 +169,10 @@ them. Do not add to them without the founder.
   your tests, if you set them, must pass the draft; a rejected draft is revised, and only fixes
   that pass are shown. It is an optional step in your build, off unless you turn it on, on a model
   you choose. It never commits or pushes. Nothing merges without a person's approval. Quote no
-  pass rate (none is measured) and name no model vendor. Learning from approved changes is not
+  pass rate (none is measured) and never present a vendor as Quantsiv's model. The card's example
+  list of models a customer can pick (ChatGPT, Claude, DeepSeek, Grok, or one they host) is the
+  founder's (19-20 Oct 2026); the agent calls any chat-completions endpoint the customer sets, and
+  no real model's results are measured yet. Learning from approved changes is not
   built: roadmap only, in the future. Added on 19 Oct 2026, when the agent's code merged, under
   the founder's rule of 18 Oct 2026.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
@@ -305,7 +308,7 @@ stand until the founder changes them:
   pass, runs as an optional step in your build on a model you choose; nothing merges without a
   person's approval. Keep that last clause, and never stretch "revises" into "self-healing",
   "autonomous" or "auto-fix". Learning from approved changes is the first Phase 1 roadmap line,
-  in the future, until it is built. Never name the model's vendor.
+  in the future, until it is built. Name no other vendor than the founder's example list above.
 - The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
   both, on every build." (the founder, 18 Oct 2026) is a narrative line, not the tagline. On 19
   Oct 2026 the founder removed the threat section's intro paragraph that carried it, so the
