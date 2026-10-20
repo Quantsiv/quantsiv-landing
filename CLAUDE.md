@@ -240,9 +240,13 @@ stand until the founder changes them:
 
 - The waitlist is open from the merge of the Brevo form (19 Oct 2026). The form is plain HTML that posts to
   Brevo's form address with a required consent checkbox, Brevo's hidden spam-trap field and the language
-  code, and `script.js` only checks the address and sends nothing itself. No Brevo script, stylesheet or
-  iframe is loaded. Brevo's double opt-in sends the confirmation email, and the confirmation page
-  redirects to https://quantsiv.com/.
+  code. Without scripts the browser posts it and leaves the page. With scripts, `script.js` checks the
+  address and, since 20 Oct 2026 (the founder's ask: a confirmation in place instead of a jump to the
+  top of the page), sends the same post into a hidden frame with the `sandbox` attribute, created only
+  at sign-up, so the page stays put and the `data-msg-sent` confirmation replaces the form. The script
+  never reads Brevo's reply, and the sandbox runs none of its scripts. No Brevo script or stylesheet is
+  loaded. Brevo's double opt-in sends the confirmation email, and the confirmation page redirects to
+  https://quantsiv.com/.
 - The privacy notice (`privacy.html`, 11 Oct 2026) is linked from the form and the footer. Its
   contact is privacy@quantsiv.com. It names the controller, Ludovico Corsini, and covers visits
   (GitHub Pages) and email to privacy@ (Zoho Corporation B.V., EU data centres, support access
@@ -342,7 +346,8 @@ stand until the founder changes them:
   hover and keyboard focus.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. `form-action` allows this site and Brevo's form address
-  (c58bed8a.sibforms.com); change it if the form moves to another service.
+  (c58bed8a.sibforms.com), and `frame-src` allows only that address, for the hidden frame the
+  sign-up posts into; change both if the form moves to another service.
 
 ## Before every commit
 

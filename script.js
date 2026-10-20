@@ -114,9 +114,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 formMessage.hidden = false;
                 emailInput.classList.add('error');
                 e.preventDefault();
+                return;
             }
-            // A valid address goes on to the form's own action: the browser posts it to the
-            // email service named in the privacy notice. This script sends nothing itself.
+
+            // A valid address goes to the form's own action, the email service named in the
+            // privacy notice, as the same post the browser sends without this script. The post
+            // goes to a hidden, sandboxed frame instead of replacing the page, so the page stays
+            // where it is and the confirmation takes the form's place. The service's reply is
+            // never read or run here.
+            let sink = document.getElementById('form-sink');
+            if (!sink) {
+                sink = document.createElement('iframe');
+                sink.id = 'form-sink';
+                sink.name = 'form-sink';
+                sink.hidden = true;
+                sink.tabIndex = -1;
+                sink.title = '';
+                sink.setAttribute('aria-hidden', 'true');
+                sink.setAttribute('sandbox', '');
+                document.body.appendChild(sink);
+            }
+            form.target = sink.name;
+            window.setTimeout(function () {
+                form.classList.add('is-sent');
+                formMessage.textContent = form.dataset.msgSent || 'Thanks! Check your inbox and confirm your address to join the waitlist.';
+                formMessage.tabIndex = -1;
+                formMessage.hidden = false;
+                formMessage.focus({ preventScroll: true });
+            }, 0);
         });
     }
 
