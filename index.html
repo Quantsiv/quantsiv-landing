@@ -194,19 +194,19 @@
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
-                <span class="hndl-year">In the future</span>
+                <span class="hndl-year">Tomorrow</span>
                 <h4>Decrypt</h4>
                 <p>Quantum computers break the public-key algorithms used to protect the stored copies.</p>
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
-                <span class="hndl-year">At that point</span>
+                <span class="hndl-year">Then</span>
                 <h4>Exposure</h4>
-                <p>Data protected with RSA, ECC and digital signatures becomes readable.</p>
+                <p>Data encrypted with RSA or ECC becomes readable, and digital signatures can be forged.</p>
             </div>
         </div>
 
-        <a class="next-section" href="#compliance"><span class="next-label">Next</span> <span class="section-num">02</span> Deadlines</a>
+        <a class="next-section" href="#compliance" aria-label="Next: Deadlines"></a>
     </section>
 
     <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
@@ -274,7 +274,7 @@
             <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">EU NIS Cooperation Group roadmap</a>.
         </p>
 
-        <a class="next-section" href="#how-it-works"><span class="next-label">Next</span> <span class="section-num">03</span> How it works</a>
+        <a class="next-section" href="#how-it-works" aria-label="Next: How it works"></a>
     </section>
 
     <!-- How it works section -->
@@ -309,7 +309,7 @@
              steps into controls. -->
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
-                <h3 id="demo-title">An example finding</h3>
+                <h3 id="demo-title">Example finding</h3>
                 <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Note on the results">*</a></p>
             </figcaption>
             <div class="demo-window">
@@ -557,7 +557,7 @@
         </figure>
         <p class="section-footnote" id="demo-footnote">* Real Quantsiv results from a demo repository</p>
 
-        <a class="next-section" href="#capabilities"><span class="next-label">Next</span> <span class="section-num">04</span> Features</a>
+        <a class="next-section" href="#capabilities" aria-label="Next: Features"></a>
     </section>
 
     <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
@@ -567,12 +567,11 @@
     <section id="capabilities" class="section">
         <p class="section-kicker"><span class="section-num">04</span> Features</p>
         <h2>Built for the quantum era.</h2>
-        <p class="section-subheading">Analyze the cryptography in your code, keys and infrastructure files. See which risks to tackle first, and get clear guidance on which standards to adopt for the migration.</p>
         <div class="capabilities-grid">
             <details class="capability-item">
                 <summary><h3>Support for many languages</h3></summary>
                 <p>Detects the most common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C# and Swift, plus openssl, ssh-keygen and keytool commands in build scripts.<a href="#coverage-note" class="footnote-ref" aria-label="Note on coverage">*</a></p>
-                <ul class="tool-list" aria-label="Languages and commands"><li><img src="assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li><li>Swift</li><li class="is-mono">openssl</li><li class="is-mono">ssh-keygen</li><li class="is-mono">keytool</li></ul>
+                <ul class="tool-list" aria-label="Languages and commands"><li><img src="assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
             </details>
             <details class="capability-item">
                 <summary><h3>Cryptographic inventory (CBOM)</h3></summary>
@@ -601,7 +600,7 @@
             </details>
             <details class="capability-item">
                 <summary><h3>Crypto wallet support</h3></summary>
-                <p>Analyzes the code, not the blockchain. Finds digital-signature keys and key-exchange mechanisms in the most common wallets (libraries such as ethers, web3.js, bitcoinjs-lib, @solana/web3.js, go-ethereum, bitcoinj, web3j and NBitcoin). Gives migration guidance until the blockchain supports post-quantum signatures.</p>
+                <p>Analyzes the code, not the blockchain. Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key exchange in common wallet libraries. Gives migration guidance until the blockchain supports post-quantum signatures.</p>
             </details>
             <details class="capability-item">
                 <summary><h3>MCP support</h3></summary>
@@ -620,9 +619,9 @@
                 <p>An AI agent analyzes each finding in its context and proposes a fix. Works with the model you choose (ChatGPT, Claude, DeepSeek, Grok), including one you host yourself. No change is merged without the user's approval.</p>
             </details>
         </div>
-        <p class="section-footnote" id="coverage-note">*Coverage varies by language, cloud key-management services and third-party packages. <a href="#detection-limits">Detection limits</a></p>
+        <p class="section-footnote" id="coverage-note">*Coverage varies by language, cloud key-management services and third-party packages.</p>
 
-        <a class="next-section" href="#roadmap"><span class="next-label">Next</span> <span class="section-num">05</span> Roadmap</a>
+        <a class="next-section" href="#roadmap" aria-label="Next: Roadmap"></a>
     </section>
 
     <!-- Roadmap section -->
@@ -664,13 +663,13 @@
             </article>
         </div>
 
-        <a class="next-section" href="#contact"><span class="next-label">Next</span> Get in touch</a>
+        <a class="next-section" href="#contact" aria-label="Next: Get in touch"></a>
     </section>
 
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">
         <h2>Get in Touch</h2>
-        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. Join the waitlist and we will email you to confirm your address.</p>
+        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases.</p>
         <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Please enter a valid email address.">
             <div class="form-row">
                 <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
@@ -685,11 +684,6 @@
         <p class="form-note"><a href="privacy.html">Privacy notice</a></p>
     </section>
 
-    <!-- Detection limits: the full note that the footnote under the capabilities points to -->
-    <section class="fine-print" id="detection-limits" aria-labelledby="detection-limits-title">
-        <h2 id="detection-limits-title">Detection limits</h2>
-        <p>Detection is based on code patterns, so coverage varies by language. The rules for Rust, Ruby and PHP are still at an early stage. Some calls may not be detected, for example when they use other names or are built at run time. Calls to cloud key-management services, code copied into a project and code inside third-party packages may also be missed.</p>
-    </section>
     </main>
 
     <!-- Footer -->

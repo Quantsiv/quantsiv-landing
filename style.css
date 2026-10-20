@@ -607,17 +607,13 @@ a {
 }
 
 .next-section {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    width: fit-content;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
     margin: 4rem auto 0;
-    padding: 0.625rem 1.125rem 0.625rem 1rem;
-    border-radius: 999px;
-    font-size: 0.9375rem;
-    font-weight: 700;
+    border-radius: 50%;
     color: var(--text);
-    text-decoration: none;
     box-shadow: inset 0 0 0 1px var(--line-strong);
 }
 
@@ -626,27 +622,18 @@ a {
 }
 
 .next-section:focus-visible {
-    border-radius: 999px;
+    border-radius: 50%;
 }
 
-/* A small chevron pointing down the page */
+/* The chevron pointing down to the next section; its name is in aria-label */
 .next-section::after {
     content: '';
-    width: 0.4375rem;
-    height: 0.4375rem;
-    margin: -0.25rem 0 0 0.25rem;
+    width: 0.5625rem;
+    height: 0.5625rem;
+    margin-top: -0.25rem;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     transform: rotate(45deg);
-}
-
-.next-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
 }
 
 /* Footnotes under a chapter, and the mark that points to them */
@@ -1781,6 +1768,11 @@ a {
     align-items: start;
 }
 
+/* The features headline has no subheading, so the grid keeps the subheading's space */
+.section h2 + .capabilities-grid {
+    margin-top: 3rem;
+}
+
 .capability-item {
     padding: 1.5rem 1.5rem 1.625rem;
     border-radius: var(--radius);
@@ -1902,12 +1894,6 @@ a {
 .tool-list img {
     width: 18px;
     height: 18px;
-}
-
-.tool-list .is-mono {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 400;
 }
 
 /* Roadmap: the current phase is the inverted card */
@@ -2175,31 +2161,6 @@ footer a {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--text);
-}
-
-/* Detection limits: small print at the end of the page, where the footnotes point */
-.fine-print {
-    padding: 0 var(--gutter) 4rem;
-}
-
-.fine-print h2,
-.fine-print p {
-    max-width: 46rem;
-}
-
-.fine-print h2 {
-    margin-bottom: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.fine-print p {
-    font-size: 0.875rem;
-    color: var(--faint);
 }
 
 /* Privacy notice */

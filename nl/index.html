@@ -195,7 +195,7 @@
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
-                <span class="hndl-year">Later</span>
+                <span class="hndl-year">Morgen</span>
                 <h4>Ontsleutelen</h4>
                 <p>Een quantumcomputer die groot genoeg is, kraakt de publieke-sleutelcryptografie die de bewaarde kopieën beschermde.</p>
             </div>
@@ -207,7 +207,7 @@
             </div>
         </div>
 
-        <a class="next-section" href="#compliance"><span class="next-label">Volgende</span> <span class="section-num">02</span> Deadlines</a>
+        <a class="next-section" href="#compliance" aria-label="Volgende: Deadlines"></a>
     </section>
 
     <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
@@ -275,7 +275,7 @@
             <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">roadmap van de NIS-samenwerkingsgroep (EU)</a>.
         </p>
 
-        <a class="next-section" href="#how-it-works"><span class="next-label">Volgende</span> <span class="section-num">03</span> Hoe het werkt</a>
+        <a class="next-section" href="#how-it-works" aria-label="Volgende: Hoe het werkt"></a>
     </section>
 
     <!-- How it works section -->
@@ -309,8 +309,8 @@
              controls. -->
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
-                <h3 id="demo-title">Zo ziet een bevinding eruit</h3>
-                <p>De scan, de rangschikking en de controles zijn echte uitvoer van Quantsiv, in het Engels, voor een voorbeeldrepository die voor deze pagina is geschreven. In echte code missen de regels sommige aanroepen; zie <a href="#detection-limits">de opmerking onder de mogelijkheden</a>. De analyse en de conceptwijziging van de agent zijn gesimuleerd, om te laten zien hoe de agent een bevinding afhandelt.</p>
+                <h3 id="demo-title">Voorbeeld van een bevinding</h3>
+                <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Opmerking over de resultaten">*</a></p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -555,8 +555,9 @@
                 </div>
             </div>
         </figure>
+        <p class="section-footnote" id="demo-footnote">* Echte resultaten van Quantsiv op een demorepository</p>
 
-        <a class="next-section" href="#capabilities"><span class="next-label">Volgende</span> <span class="section-num">04</span> Wat het doet</a>
+        <a class="next-section" href="#capabilities" aria-label="Volgende: Wat het doet"></a>
     </section>
 
     <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
@@ -566,12 +567,11 @@
     <section id="capabilities" class="section">
         <p class="section-kicker"><span class="section-num">04</span> Wat het doet</p>
         <h2>Vind en rangschik de cryptografie die je moet vervangen. Gebouwd voor het quantumtijdperk.</h2>
-        <p class="section-subheading">Ontdek en beoordeel de cryptografie in je code, sleutels en infrastructuurbestanden, zie welke risico's je eerst aanpakt en krijg duidelijke aanwijzingen over waarnaar je overstapt.</p>
         <div class="capabilities-grid">
             <details class="capability-item">
                 <summary><h3>Ondersteuning voor veel talen</h3></summary>
-                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.</p>
-                <ul class="tool-list" aria-label="Talen en commando's"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li><li>Swift</li><li class="is-mono">openssl</li><li class="is-mono">ssh-keygen</li><li class="is-mono">keytool</li></ul>
+                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.<a href="#coverage-note" class="footnote-ref" aria-label="Opmerking over de dekking">*</a></p>
+                <ul class="tool-list" aria-label="Talen en commando's"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
             </details>
             <details class="capability-item">
                 <summary><h3 lang="en">Cryptographic Bill of Materials</h3></summary>
@@ -619,9 +619,9 @@
                 <p>Een AI-agent leest elke bevinding in haar context en stelt een oplossing op. Wijzen de controles van Quantsiv of je tests het concept af, dan past de agent het aan, en je ziet alleen oplossingen die slagen. Het is een optionele stap in je build, met een model dat je zelf kiest. Niets wordt gemerged zonder dat een mens het goedkeurt.</p>
             </details>
         </div>
-        <p class="section-footnote" id="detection-limits">De detectie werkt met patronen, dus de diepgang verschilt per taal, en de regels voor Rust, Ruby en PHP staan nog aan het begin. Ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, en aanroepen naar sleuteldiensten in de cloud, net als code die in een project is gekopieerd en pakketten van derden.</p>
+        <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal en hangt af van clouddiensten voor sleutelbeheer en pakketten van derden.</p>
 
-        <a class="next-section" href="#roadmap"><span class="next-label">Volgende</span> <span class="section-num">05</span> Roadmap</a>
+        <a class="next-section" href="#roadmap" aria-label="Volgende: Roadmap"></a>
     </section>
 
     <!-- Roadmap section -->
@@ -670,13 +670,13 @@
             </article>
         </div>
 
-        <a class="next-section" href="#contact"><span class="next-label">Volgende</span> Neem contact op</a>
+        <a class="next-section" href="#contact" aria-label="Volgende: Neem contact op"></a>
     </section>
 
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">
         <h2>Neem contact op</h2>
-        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv. Zet je op de wachtlijst en we mailen je om je adres te bevestigen.</p>
+        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv.</p>
         <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Vul een geldig e-mailadres in.">
             <div class="form-row">
                 <input type="email" name="EMAIL" autocomplete="email" placeholder="Je zakelijke e-mailadres" aria-label="Je zakelijke e-mailadres" required>

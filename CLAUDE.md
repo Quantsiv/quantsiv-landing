@@ -253,11 +253,12 @@ stand until the founder changes them:
   Updated 19 Oct 2026 with the founder's approval. Unconfirmed sign-ups stay in Brevo's logs until the
   founder deletes them, and the notice promises that after the 30-day link expiry.
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
-  notice. Since 19 Oct 2026 (the founder's ask), the section above the detection limits is "Get in
-  Touch" (`#contact`), and the hero's second button points to it. On his later ask the same day it
+  notice. Since 19 Oct 2026 (the founder's ask), the last section of the page is "Get in Touch"
+  (`#contact`), and the hero's second button points to it. On his later ask the same day it
   opens with the waitlist line, then the form (the field and the button in one box, the consent
   line under it), then hello@quantsiv.com; the line inviting visitors to see what Quantsiv finds in
-  their own code is gone.
+  their own code is gone. Since 20 Oct 2026 the waitlist line is one sentence: "Get updates on
+  post-quantum migration deadlines, standards, and Quantsiv releases."
   The privacy notice already covers email to any quantsiv.com address ("When you write to us").
 - "How Quantsiv Works" ends with "What a finding looks like", an interactive preview (19 Oct
   2026, the founder's brief): a scan overview, three findings, and three tabs each (the finding,
@@ -315,20 +316,23 @@ stand until the founder changes them:
   genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
   1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
   `nl/` and `it/`. Change them only with his word.
-- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust; the
-  limits are the last section of the page (`#detection-limits`), after the roadmap, and say the
-  rules for Rust, Ruby and PHP are early and name calls to cloud key services among what can be
-  missed; a short footnote under the features (`#coverage-note`) links to it. The demo is
-  labelled "Output" with a footnote (`#demo-footnote`) saying the results are Quantsiv's own on
-  a demo repository. Keep these until measured detection in those languages improves and the
-  founder says so.
+- Detection limits (the founder's pick, 19 Oct 2026; shortened on his ask, 20 Oct 2026): the
+  language card does not list Rust, and the limits are one footnote under the features
+  (`#coverage-note`): coverage varies by language, cloud key-management services and third-party
+  packages. The separate limits section is gone. The demo is labelled "Output" with a footnote
+  (`#demo-footnote`) saying the results are Quantsiv's own on a demo repository. Keep these until
+  measured detection improves and the founder says so.
 - The page reads in order (the founder's ask, 19 Oct 2026): the menu and each section carry a
-  number (01 to 05), each section ends with a "Next" link to the following one, and a thin bar
+  number (01 to 05), each section ends with a round chevron link pointing down to the following
+  one (its name is in `aria-label`, no visible text, since 20 Oct 2026), and a thin bar
   under the header shows how far the page has been read where the browser supports it. The
   deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past and
   future dates and places a "Today" marker. The features are cards that open one by one, two
   with chips of the languages and CI systems they cover (`assets/logos/`, Simple Icons, CC0;
-  the marks belong to their owners; a name without a usable icon is a text chip).
+  the marks belong to their owners; a name without a usable icon is a text chip). On 20 Oct 2026
+  the founder chose layout B (cards that open) and removed the Swift, openssl, ssh-keygen and
+  keytool chips; the card's sentence still names them. Since then the features section has no
+  sentence under its heading. In Italian the hero's first button reads "Missione".
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
