@@ -162,27 +162,27 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>A quantum computer could break the public-key cryptography in wide use today.<br>Governments have published dates for replacing it.<br>Replacing it starts with knowing where it is.</p>
-        <p>This is where we come in. We scan your code on every build and show you what is exposed, how long it stays exposed and what to move to.</p>
+        <p>A quantum computer could break the public-key cryptography in wide use today.<br>Governments have published dates for replacing it.<br>Replacement starts with knowing where it is.</p>
+        <p>This is where we come in. We scan your code on every build and show you what is exposed, how long it stays exposed for and what solution to move to.</p>
     </section>
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
         <p class="section-kicker"><span class="section-num">01</span> The problem</p>
-        <h2>Two threats</h2>
+        <h2>The dual threat</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
                 <h3>Harvest now, decrypt later</h3>
-                <p>Today hackers can intercept and store encrypted data, then decrypt it in the future with sufficiently powerful quantum computers. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at a risk that depends on how long the data must stay secret. <strong>If it must stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
+                <p>Today, hackers can intercept and store encrypted data, then decrypt it with sufficiently powerful quantum computers in the future. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at risk. It all depends on how long the data must stay secret. <strong>If it has to stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
             </div>
             <div class="threat-card">
                 <h3>Digital signature forgery</h3>
-                <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and forge signatures. They must stay trustworthy, including in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could make unauthorised transfers possible.</p>
+                <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and forge signatures. Signatures must stay trustworthy, including those in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could also make unauthorized transfers possible.</p>
             </div>
             <div class="threat-card">
                 <h3>Error-prone AI agents</h3>
-                <p>When they generate code, coding assistants tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
+                <p>When AI agents generate code, they tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
             </div>
         </div>
 
@@ -215,7 +215,7 @@
     <section id="compliance" class="section">
         <p class="section-kicker"><span class="section-num">02</span> Deadlines</p>
         <h2>The deadlines are already set</h2>
-        <p class="section-subheading">These are not just predictions. In the US and the EU, public institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
+        <p class="section-subheading">These are not just predictions. In the US and the EU, institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
 
         <ol class="deadlines" data-label-now="Today">
             <li class="deadline" data-date="2024-08-13">
@@ -285,7 +285,7 @@
         <div class="process-steps">
             <div class="step">
                 <h3>1. Discover</h3>
-                <p>Quantsiv looks for cryptography in your source code. Your source code stays in your environment. Quantsiv receives the CBOM and the finding details only if you choose to upload them.</p>
+                <p>Quantsiv looks for cryptography in your source code. Your code stays in your environment by default. Quantsiv receives the CBOM and the finding details only if you choose to upload them.</p>
             </div>
             <div class="step">
                 <h3>2. Analyze</h3>
@@ -297,7 +297,7 @@
             </div>
             <div class="step">
                 <h3>4. Document</h3>
-                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous build, preventing regressions.</p>
+                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous one, flagging regressions.</p>
             </div>
         </div>
 
