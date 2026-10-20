@@ -54,16 +54,42 @@ document.addEventListener('DOMContentLoaded', function () {
         navTargets.forEach(function (el) { observer.observe(el); });
     }
 
-    // Hero drawing: the button swaps the looping drawing for its still frame and back.
-    // Under reduced motion the <picture> already shows the still, so the button stays hidden.
+    // Motion: one button pauses the hero drawing, by swapping in its still frame, and the
+    // standards banner together (WCAG 2.2.2), and plays them again. style.css also pauses the
+    // banner on hover. Under reduced motion neither moves, so the button stays hidden.
+    const motionToggle = document.getElementById('motion-toggle');
     const heroArt = document.getElementById('hero-art');
-    const heroToggle = document.getElementById('hero-art-toggle');
-    if (heroArt && heroToggle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        heroToggle.hidden = false;
-        heroToggle.addEventListener('click', function () {
-            const playing = heroArt.getAttribute('src') === heroArt.dataset.motion;
-            heroArt.setAttribute('src', playing ? heroArt.dataset.still : heroArt.dataset.motion);
-            heroToggle.textContent = playing ? heroToggle.dataset.labelPlay : heroToggle.dataset.labelPause;
+    const banner = document.querySelector('.supported-banner');
+    if (motionToggle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        motionToggle.hidden = false;
+        motionToggle.addEventListener('click', function () {
+            const paused = !motionToggle.classList.contains('is-paused');
+            motionToggle.classList.toggle('is-paused', paused);
+            motionToggle.setAttribute('aria-label', paused ? motionToggle.dataset.labelPlay : motionToggle.dataset.labelPause);
+            if (heroArt) heroArt.setAttribute('src', paused ? heroArt.dataset.still : heroArt.dataset.motion);
+            if (banner) banner.classList.toggle('is-paused', paused);
+        });
+    }
+
+    // Deadlines: the dates already past get a filled marker and later ones an open one, with
+    // a "today" marker between them on the line. Without this script the line is plain.
+    const deadlines = document.querySelector('.deadlines');
+    if (deadlines) {
+        const today = new Date().toISOString().slice(0, 10);
+        let marked = false;
+        deadlines.querySelectorAll('.deadline').forEach(function (item) {
+            const future = item.dataset.date > today;
+            item.classList.add(future ? 'is-future' : 'is-past');
+            if (future && !marked) {
+                marked = true;
+                const now = document.createElement('li');
+                const label = document.createElement('span');
+                now.className = 'deadline-now';
+                now.setAttribute('aria-hidden', 'true');
+                label.textContent = deadlines.dataset.labelNow || 'Today';
+                now.appendChild(label);
+                item.before(now);
+            }
         });
     }
 
@@ -91,20 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             // A valid address goes on to the form's own action: the browser posts it to the
             // email service named in the privacy notice. This script sends nothing itself.
-        });
-    }
-
-    // Standards banner. The track already holds two identical groups in the markup, so the
-    // -50% keyframe loops seamlessly without cloning anything in here. style.css pauses it on
-    // hover; the button stops and restarts it (WCAG 2.2.2). Under reduced motion it never moves,
-    // so the button stays hidden.
-    const banner = document.querySelector('.supported-banner');
-    const bannerToggle = document.getElementById('banner-toggle');
-    if (banner && bannerToggle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        bannerToggle.hidden = false;
-        bannerToggle.addEventListener('click', function () {
-            const paused = banner.classList.toggle('is-paused');
-            bannerToggle.textContent = paused ? bannerToggle.dataset.labelPlay : bannerToggle.dataset.labelPause;
         });
     }
 

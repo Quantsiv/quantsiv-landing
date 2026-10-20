@@ -41,11 +41,11 @@
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Hoofdmenu">
             <ul class="nav-list">
-                <li><a href="#threat" class="nav-link">Het risico</a></li>
-                <li><a href="#compliance" class="nav-link">Deadlines</a></li>
-                <li><a href="#how-it-works" class="nav-link">Hoe het werkt</a></li>
-                <li><a href="#capabilities" class="nav-link">Wat het doet</a></li>
-                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het risico</a></li>
+                <li><a href="#compliance" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
+                <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Hoe het werkt</a></li>
+                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Wat het doet</a></li>
+                <li><a href="#roadmap" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
             </ul>
         </nav>
         <nav class="lang-switch" aria-label="Taal">
@@ -74,7 +74,7 @@
                 <source srcset="../assets/hero-flow-still.svg" media="(prefers-reduced-motion: reduce)">
                 <img src="../assets/hero-flow.svg" alt="" class="hero-art" id="hero-art" width="1200" height="640" data-motion="../assets/hero-flow.svg" data-still="../assets/hero-flow-still.svg">
             </picture>
-            <button type="button" class="hero-art-toggle" id="hero-art-toggle" data-label-pause="Animatie pauzeren" data-label-play="Animatie afspelen" hidden>Animatie pauzeren</button>
+            <button type="button" class="motion-toggle" id="motion-toggle" aria-label="Animaties pauzeren" data-label-pause="Animaties pauzeren" data-label-play="Animaties afspelen" hidden><span class="motion-toggle-icon" aria-hidden="true"></span></button>
         </div>
     </section>
 
@@ -158,7 +158,6 @@
             <li>NSA CNSA 2.0</li>
             <li lang="en">EU NIS Cooperation Group Roadmap</li>
         </ul>
-        <button type="button" class="banner-toggle" id="banner-toggle" data-label-pause="Banner pauzeren" data-label-play="Banner afspelen" hidden>Banner pauzeren</button>
     </section>
 
     <!-- Security statement -->
@@ -169,6 +168,7 @@
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
+        <p class="section-kicker"><span class="section-num">01</span> Het risico</p>
         <h2>Twee quantumdreigingen</h2>
 
         <div class="threat-grid">
@@ -195,7 +195,7 @@
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
-                <span class="hndl-year">Later</span>
+                <span class="hndl-year">Morgen</span>
                 <h4>Ontsleutelen</h4>
                 <p>Een quantumcomputer die groot genoeg is, kraakt de publieke-sleutelcryptografie die de bewaarde kopieën beschermde.</p>
             </div>
@@ -206,62 +206,60 @@
                 <p>Gegevens waarvan de versleuteling op RSA of elliptische krommen steunde, kunnen dan worden gelezen. Handtekeningen die ermee zijn gemaakt, kunnen worden vervalst.</p>
             </div>
         </div>
+
+        <a class="next-section" href="#compliance" aria-label="Volgende: Deadlines"></a>
     </section>
 
-    <!-- Regulatory section -->
+    <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
+         the section stays short. script.js marks the dates already past and puts a "today"
+         marker on the line; without scripts the dates still open and close. -->
     <section id="compliance" class="section">
+        <p class="section-kicker"><span class="section-num">02</span> Deadlines</p>
         <h2>De deadline staat al vast</h2>
         <p class="section-subheading">Dit zijn gepubliceerde datums, geen voorspellingen. Normalisatie-instellingen en overheden in de VS en de EU hebben richtlijnen en eisen met datums uitgebracht om de kwetsbare cryptografie te vervangen.</p>
 
-        <ol class="reg-timeline">
-            <li class="reg-item">
-                <span class="reg-date">13 aug 2024</span>
-                <div class="reg-body">
-                    <h3>NIST publiceert de vervangende standaarden</h3>
+        <ol class="deadlines" data-label-now="Vandaag">
+            <li class="deadline" data-date="2024-08-13">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">13 aug 2024</span> <h3 class="deadline-title">NIST publiceert de vervangende standaarden</h3></summary>
                     <p>Het Amerikaanse standaardeninstituut publiceert drie nieuwe algoritmen: FIPS 203 (ML-KEM) om de sleutels af te spreken waarmee gegevens worden versleuteld, en FIPS 204 (ML-DSA) en FIPS 205 (SLH-DSA) voor digitale handtekeningen. De vervangers bestaan nu.</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">nov 2024</span>
-                <div class="reg-body">
-                    <h3>NIST stelt voor wanneer de huidige algoritmen worden uitgefaseerd</h3>
+            <li class="deadline" data-date="2024-11-01">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">nov 2024</span> <h3 class="deadline-title">NIST stelt voor wanneer de huidige algoritmen worden uitgefaseerd</h3></summary>
                     <p>In het eerste openbare concept van NIST IR 8547 zijn alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, na 2035 niet meer toegestaan (<span lang="en">disallowed</span>).</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">22 jun 2026</span>
-                <div class="reg-body">
-                    <h3>Executive Order 14412</h3>
+            <li class="deadline" data-date="2026-06-22">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">22 jun 2026</span> <h3 class="deadline-title">Executive Order 14412</h3></summary>
                     <p>Het decreet gaat in op de dreiging van <span lang="en">harvest now, decrypt later</span>. Het stelt 31 dec 2030 als termijn voor post-quantum sleuteluitwisseling en 31 dec 2031 voor handtekeningen, op high-value assets en systemen met hoge impact.</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">24 jun 2026</span>
-                <div class="reg-body">
-                    <h3>OMB M-26-15: de federale migratie in fasen</h3>
+            <li class="deadline" data-date="2026-06-24">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">24 jun 2026</span> <h3 class="deadline-title">OMB M-26-15: de federale migratie in fasen</h3></summary>
                     <p>Federale instanties bouwen een geautomatiseerde inventaris waarvan de gegevens <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. Vijf fasen van 2026 tot 2035.</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">~dec 2026</span>
-                <div class="reg-body">
-                    <h3>Een voorgestelde regel voor federale opdrachtnemers</h3>
+            <li class="deadline" data-date="2026-12-19">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">~dec 2026</span> <h3 class="deadline-title">Een voorgestelde regel voor federale opdrachtnemers</h3></summary>
                     <p>EO 14412 geeft de FAR Council 180 dagen, tot rond 19 dec 2026, om een FAR-regel (<span lang="en">Federal Acquisition Regulation</span>) voor te stellen die betrokken opdrachtnemers verplicht om uiterlijk 31 dec 2030 te voldoen aan de FIPS-standaarden van NIST, ook die met post-quantumalgoritmen.</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">~mrt 2027</span>
-                <div class="reg-body">
-                    <h3>Richtlijnen over wat een CBOM zou moeten bevatten</h3>
+            <li class="deadline" data-date="2027-03-19">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">~mrt 2027</span> <h3 class="deadline-title">Richtlijnen over wat een CBOM zou moeten bevatten</h3></summary>
                     <p>CISA, het Amerikaanse agentschap voor cyberveiligheid, publiceert in afstemming met NIST binnen 270 dagen na EO 14412 richtlijnen over de minimumelementen van een CBOM, rond maart 2027.</p>
-                </div>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">2030 &ndash; 2035</span>
-                <div class="reg-body">
-                    <h3>Migratiedeadlines lopen tot 2035</h3>
+            <li class="deadline" data-date="2030-12-31">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">2030 &ndash; 2035</span> <h3 class="deadline-title">Migratiedeadlines lopen tot 2035</h3></summary>
                     <p>Onder EO 14412: sleuteluitwisseling uiterlijk 31 dec 2030 en handtekeningen uiterlijk 31 dec 2031 op high-value assets en systemen met hoge impact, en, zodra de FAR-regel waar het besluit om vraagt is aangenomen, 31 dec 2030 voor betrokken opdrachtnemers. NSA CNSA 2.0 stelt datums voor exclusief gebruik tussen 2030 en 2033, afhankelijk van de categorie. In de EU vraagt de roadmap van de NIS-samenwerkingsgroep (23 jun 2025, een aanbeveling) om nationale strategieën tegen eind 2026, toepassingen met hoog risico tegen eind 2030 en zoveel systemen als haalbaar tegen 2035.</p>
-                </div>
+                </details>
             </li>
         </ol>
 
@@ -276,10 +274,13 @@
             <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>,
             <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">roadmap van de NIS-samenwerkingsgroep (EU)</a>.
         </p>
+
+        <a class="next-section" href="#how-it-works" aria-label="Volgende: Hoe het werkt"></a>
     </section>
 
     <!-- How it works section -->
     <section id="how-it-works" class="section section-alt">
+        <p class="section-kicker"><span class="section-num">03</span> Hoe het werkt</p>
         <h2>Hoe Quantsiv werkt</h2>
         <p class="section-subheading">Vier stappen, van het scannen van je code tot een standaardoverzicht van de cryptografie erin (een CycloneDX 1.6 CBOM).</p>
         <div class="process-steps">
@@ -308,8 +309,8 @@
              controls. -->
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
-                <h3 id="demo-title">Zo ziet een bevinding eruit</h3>
-                <p>De scan, de rangschikking en de controles zijn echte uitvoer van Quantsiv, in het Engels, voor een voorbeeldrepository die voor deze pagina is geschreven. In echte code missen de regels sommige aanroepen; zie <a href="#detection-limits">de opmerking onder de mogelijkheden</a>. De analyse en de conceptwijziging van de agent zijn gesimuleerd, om te laten zien hoe de agent een bevinding afhandelt.</p>
+                <h3 id="demo-title">Voorbeeld van een bevinding</h3>
+                <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Opmerking over de resultaten">*</a></p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -554,67 +555,78 @@
                 </div>
             </div>
         </figure>
+        <p class="section-footnote" id="demo-footnote">* Echte resultaten van Quantsiv op een demorepository</p>
+
+        <a class="next-section" href="#capabilities" aria-label="Volgende: Wat het doet"></a>
     </section>
 
-    <!-- Capabilities section -->
+    <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
+         text and, for languages and CI, a list of what it works with. Logos are simple-icons
+         paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
+         has no logo we may safely show. -->
     <section id="capabilities" class="section">
+        <p class="section-kicker"><span class="section-num">04</span> Wat het doet</p>
         <h2>Vind en rangschik de cryptografie die je moet vervangen. Gebouwd voor het quantumtijdperk.</h2>
-        <p class="section-subheading">Ontdek en beoordeel de cryptografie in je code, sleutels en infrastructuurbestanden, zie welke risico's je eerst aanpakt en krijg duidelijke aanwijzingen over waarnaar je overstapt.</p>
         <div class="capabilities-grid">
-            <div class="capability-item">
-                <h3>Ondersteuning voor veel talen</h3>
-                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.</p>
-            </div>
-            <div class="capability-item">
-                <h3 lang="en">Cryptographic Bill of Materials</h3>
+            <details class="capability-item">
+                <summary><h3>Ondersteuning voor veel talen</h3></summary>
+                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.<a href="#coverage-note" class="footnote-ref" aria-label="Opmerking over de dekking">*</a></p>
+                <ul class="tool-list" aria-label="Talen en commando's"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
+            </details>
+            <details class="capability-item">
+                <summary><h3 lang="en">Cryptographic Bill of Materials</h3></summary>
                 <p>Inventariseer automatisch de cryptografie die in je repository's is gevonden als standaard CycloneDX 1.6 CBOM, en importeer CBOM's van andere tools.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Beoordeling van het quantumrisico</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Beoordeling van het quantumrisico</h3></summary>
                 <p>Rangschik beide quantumdreigingen: versleuteling naar hoe lang je gegevens geheim moeten blijven, handtekeningen naar hoe lang ze vertrouwd moeten blijven. De meest kritieke risico's komen eerst.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Controle bij elke build</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Controle bij elke build</h3></summary>
                 <p>Markeer quantumkwetsbare cryptografie die een wijziging toevoegt, bij elke build, met automatische controles en feedback op pull requests in GitHub.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Naadloze CI/CD-integratie</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Naadloze CI/CD-integratie</h3></summary>
                 <p>Gebruik templates voor GitHub Actions, GitLab, Jenkins en Azure DevOps. Scan op je eigen machine of in je bestaande build.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Sleutels, certificaten en TLS</h3>
+                <ul class="tool-list" aria-label="CI-systemen"><li><img src="../assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="../assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Sleutels, certificaten en TLS</h3></summary>
                 <p>Herken het algoritme en de sleutelgrootte in sleutel- en certificaatbestanden, en peil de beveiligde verbindingen (TLS) van servers die je opgeeft.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Infrastructuurinstellingen</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Infrastructuurinstellingen</h3></summary>
                 <p>Detecteer kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes-, CloudFormation-, webserver-, OpenSSL- en OpenSSH-bestanden in je repository.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Code voor wallets en custody</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Code voor wallets en custody</h3></summary>
                 <p>Vind de sleutels voor ondertekening, de handtekeningen en de sleuteluitwisseling in gangbare walletbibliotheken, met aanwijzingen tot de chain post-quantumhandtekeningen accepteert. Het leest code, niet de blockchain.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Integratie met AI-codeassistenten</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Integratie met AI-codeassistenten</h3></summary>
                 <p>Laat AI-codeassistenten je cryptografieregels controleren terwijl ze code schrijven, via een alleen-lezen koppeling (MCP).</p>
-            </div>
-            <div class="capability-item">
-                <h3>Aanwijzingen voor de post-quantummigratie</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Aanwijzingen voor de post-quantummigratie</h3></summary>
                 <p>Krijg de standaard om naar over te stappen waar het gebruik duidelijk is: ML-KEM, ML-DSA of SLH-DSA, met hybride sleuteluitwisseling tijdens de overgang.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Privacy voorop, offline scannen</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Privacy voorop, offline scannen</h3></summary>
                 <p>Houd je broncode in je eigen omgeving: scans draaien standaard offline, en bevindingen bereiken Quantsiv alleen als je ze uploadt.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Agentische AI-analyse</h3>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Agentische AI-analyse</h3></summary>
                 <p>Een AI-agent leest elke bevinding in haar context en stelt een oplossing op. Wijzen de controles van Quantsiv of je tests het concept af, dan past de agent het aan, en je ziet alleen oplossingen die slagen. Het is een optionele stap in je build, met een model dat je zelf kiest. Niets wordt gemerged zonder dat een mens het goedkeurt.</p>
-            </div>
+            </details>
         </div>
-        <p class="capabilities-note" id="detection-limits">De detectie werkt met patronen, dus de diepgang verschilt per taal, en de regels voor Rust, Ruby en PHP staan nog aan het begin. Ze kan aanroepen missen die een andere naam hebben of pas tijdens het draaien ontstaan, en aanroepen naar sleuteldiensten in de cloud, net als code die in een project is gekopieerd en pakketten van derden.</p>
+        <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal en hangt af van clouddiensten voor sleutelbeheer en pakketten van derden.</p>
+
+        <a class="next-section" href="#roadmap" aria-label="Volgende: Roadmap"></a>
     </section>
 
     <!-- Roadmap section -->
     <section id="roadmap" class="section section-alt">
+        <p class="section-kicker"><span class="section-num">05</span> Roadmap</p>
         <h2>Roadmap</h2>
         <p class="section-subheading">Afgestemd op de Amerikaanse en Europese deadlines hierboven.</p>
 
@@ -657,22 +669,25 @@
                 <p>Eén product om te installeren, voor audit, migratie en review.</p>
             </article>
         </div>
+
+        <a class="next-section" href="#contact" aria-label="Volgende: Neem contact op"></a>
     </section>
 
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">
         <h2>Neem contact op</h2>
-        <p>Wil je zien wat Quantsiv in je eigen code vindt, nog voor de lancering, of heb je een vraag? Schrijf ons.</p>
-        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
-        <p class="newsletter-later">Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv. Zet je op de wachtlijst en we mailen je om je adres te bevestigen.</p>
+        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv.</p>
         <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Vul een geldig e-mailadres in.">
-            <input type="email" name="EMAIL" autocomplete="email" placeholder="Je zakelijke e-mailadres" aria-label="Je zakelijke e-mailadres" required>
+            <div class="form-row">
+                <input type="email" name="EMAIL" autocomplete="email" placeholder="Je zakelijke e-mailadres" aria-label="Je zakelijke e-mailadres" required>
+                <button type="submit">Zet je op de wachtlijst</button>
+            </div>
             <label class="form-consent"><input type="checkbox" name="OPT_IN" value="1" required><span>Ik ga ermee akkoord e-mails van Quantsiv te ontvangen over de lancering en af en toe een update. Ik heb de <a href="privacy.html">privacyverklaring</a> gelezen.</span></label>
             <div hidden><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
             <input type="hidden" name="locale" value="nl">
             <div id="form-message" class="form-message" role="status" hidden></div>
-            <button type="submit">Zet je op de wachtlijst</button>
         </form>
+        <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
         <p class="form-note"><a href="privacy.html">Privacyverklaring</a></p>
     </section>
     </main>

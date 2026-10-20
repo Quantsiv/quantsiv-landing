@@ -41,11 +41,11 @@
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Main">
             <ul class="nav-list">
-                <li><a href="#threat" class="nav-link">The risk</a></li>
-                <li><a href="#compliance" class="nav-link">Deadlines</a></li>
-                <li><a href="#how-it-works" class="nav-link">How it works</a></li>
-                <li><a href="#capabilities" class="nav-link">What it does</a></li>
-                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>The problem</a></li>
+                <li><a href="#compliance" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
+                <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>How it works</a></li>
+                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Features</a></li>
+                <li><a href="#roadmap" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
             </ul>
         </nav>
         <nav class="lang-switch" aria-label="Language">
@@ -74,7 +74,7 @@
                 <source srcset="assets/hero-flow-still.svg" media="(prefers-reduced-motion: reduce)">
                 <img src="assets/hero-flow.svg" alt="" class="hero-art" id="hero-art" width="1200" height="640" data-motion="assets/hero-flow.svg" data-still="assets/hero-flow-still.svg">
             </picture>
-            <button type="button" class="hero-art-toggle" id="hero-art-toggle" data-label-pause="Pause animation" data-label-play="Play animation" hidden>Pause animation</button>
+            <button type="button" class="motion-toggle" id="motion-toggle" aria-label="Pause animations" data-label-pause="Pause animations" data-label-play="Play animations" hidden><span class="motion-toggle-icon" aria-hidden="true"></span></button>
         </div>
     </section>
 
@@ -158,7 +158,6 @@
             <li>NSA CNSA 2.0</li>
             <li>EU NIS Cooperation Group Roadmap</li>
         </ul>
-        <button type="button" class="banner-toggle" id="banner-toggle" data-label-pause="Pause banner" data-label-play="Play banner" hidden>Pause banner</button>
     </section>
 
     <!-- Security statement -->
@@ -169,147 +168,149 @@
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
-        <h2>Two Quantum Threats</h2>
+        <p class="section-kicker"><span class="section-num">01</span> The problem</p>
+        <h2>Two threats</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
-                <h3>Harvest Now, Decrypt Later</h3>
-                <p>Attackers can record encrypted traffic and copy encrypted data today, then decrypt it once a large enough quantum computer exists. This threatens encryption and key exchange, such as RSA encryption and Diffie-Hellman. The deadline is how long the data must stay secret: if it must stay confidential for 25 years, traffic recorded yesterday is already at risk.</p>
+                <h3>Harvest now, decrypt later</h3>
+                <p>Today hackers can intercept and store encrypted data, then decrypt it in the future with sufficiently powerful quantum computers. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at a risk that depends on how long the data must stay secret. <strong>If it must stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
             </div>
             <div class="threat-card">
-                <h3>Signature Forgery</h3>
-                <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
-                <p>Digital signatures prove that software, certificates, documents and transactions are genuine. A sufficiently powerful quantum computer could derive private keys from public keys and forge signatures, threatening RSA, ECDSA and EdDSA. The risk depends on how long keys and signatures must remain trusted, including in devices, certificate authorities and permanent records. In crypto wallets, an exposed on-chain public key could enable forged transfers.</p>
+                <h3>Digital signature forgery</h3>
+                <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and forge signatures. They must stay trustworthy, including in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could make unauthorised transfers possible.</p>
             </div>
             <div class="threat-card">
-                <h3>AI coding assistants can repeat vulnerable defaults</h3>
-                <p>Code assistants choose cryptography by completing familiar patterns, so they can repeat old defaults that a quantum computer could break. The code works and passes its tests, and it is still vulnerable.</p>
+                <h3>Error-prone AI agents</h3>
+                <p>When they generate code, coding assistants tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
             </div>
         </div>
 
         <div class="hndl-timeline">
             <div class="hndl-step">
                 <span class="hndl-year">Today</span>
-                <h4>Capture</h4>
-                <p>Attackers record encrypted traffic, copy encrypted data and store it.</p>
+                <h4>Harvest</h4>
+                <p>Encrypted traffic is intercepted, and data is copied and stored.</p>
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
-                <span class="hndl-year">Later</span>
+                <span class="hndl-year">Tomorrow</span>
                 <h4>Decrypt</h4>
-                <p>A large enough quantum computer breaks the public-key cryptography that protected the stored copies.</p>
+                <p>Quantum computers break the public-key algorithms used to protect the stored copies.</p>
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
                 <span class="hndl-year">Then</span>
-                <h4>Expose</h4>
-                <p>Data whose encryption relied on RSA or elliptic curves can then be read. Signatures made with them can be forged.</p>
+                <h4>Exposure</h4>
+                <p>Data encrypted with RSA or ECC becomes readable, and digital signatures can be forged.</p>
             </div>
         </div>
+
+        <a class="next-section" href="#compliance" aria-label="Next: Deadlines"></a>
     </section>
 
-    <!-- Regulatory section -->
+    <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
+         the section stays short. script.js marks the dates already past and puts a "today"
+         marker on the line; without scripts the dates still open and close. -->
     <section id="compliance" class="section">
-        <h2>The Deadline Is Already Set</h2>
-        <p class="section-subheading">These are published dates, not predictions. Standards bodies and governments in the US and the EU have issued dated guidance and requirements for replacing the vulnerable cryptography.</p>
+        <p class="section-kicker"><span class="section-num">02</span> Deadlines</p>
+        <h2>The deadlines are already set</h2>
+        <p class="section-subheading">These are not just predictions. In the US and the EU, public institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
 
-        <ol class="reg-timeline">
-            <li class="reg-item">
-                <span class="reg-date">13 Aug 2024</span>
-                <div class="reg-body">
-                    <h3>NIST publishes the replacement standards</h3>
-                    <p>The US standards institute publishes three new algorithms: FIPS 203 (ML-KEM) to agree the keys that encrypt data, and FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA) for digital signatures. The replacements now exist.</p>
-                </div>
+        <ol class="deadlines" data-label-now="Today">
+            <li class="deadline" data-date="2024-08-13">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">13 August 2024</span> <h3 class="deadline-title">NIST publishes the new standards</h3></summary>
+                    <p>The US standards institute publishes three new standards: FIPS 203 (ML-KEM), to establish the keys used to encrypt data, and FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA), for digital signatures. Alternatives to today's algorithms are therefore available.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">Nov 2024</span>
-                <div class="reg-body">
-                    <h3>NIST proposes when today's algorithms retire</h3>
-                    <p>In the initial public draft of NIST IR 8547, all quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035.</p>
-                </div>
+            <li class="deadline" data-date="2024-11-01">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">November 2024</span> <h3 class="deadline-title">NIST proposes deadlines for retiring today's algorithms</h3></summary>
+                    <p>In the initial public draft of NIST IR 8547, all quantum-vulnerable public-key algorithms, including P-256, are listed as disallowed after 2035.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">22 Jun 2026</span>
-                <div class="reg-body">
-                    <h3>Executive Order 14412</h3>
-                    <p>The order addresses the harvest-now, decrypt-later threat. It sets 31 Dec 2030 for post-quantum key establishment and 31 Dec 2031 for signatures on high-value assets and high-impact systems.</p>
-                </div>
+            <li class="deadline" data-date="2026-06-22">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">22 June 2026</span> <h3 class="deadline-title">Executive Order 14412</h3></summary>
+                    <p>The order addresses the risk known as &ldquo;harvest now, decrypt later&rdquo;. For high-value assets and high-impact systems, it sets 31 December 2030 as the deadline for post-quantum key establishment and 31 December 2031 for digital signatures.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">24 Jun 2026</span>
-                <div class="reg-body">
-                    <h3>OMB M-26-15: the federal migration in phases</h3>
-                    <p>Federal agencies build an automated inventory whose data "should populate a central Cryptographic Bill of Materials". Agency plans are due 22 Oct 2026. Five phases from 2026 to 2035.</p>
-                </div>
+            <li class="deadline" data-date="2026-06-24">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">24 June 2026</span> <h3 class="deadline-title">OMB M-26-15: a phased federal migration</h3></summary>
+                    <p>Federal agencies must build an automated inventory whose data &ldquo;should populate a central Cryptographic Bill of Materials&rdquo; (CBOM). Agency plans are due by 22 October 2026. The migration runs in five phases, from 2026 to 2035.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">~Dec 2026</span>
-                <div class="reg-body">
-                    <h3>A proposed rule for federal contractors</h3>
-                    <p>EO 14412 gives the FAR Council 180 days, about 19 Dec 2026, to propose a Federal Acquisition Regulation (FAR) rule requiring covered contractors to comply by 31 Dec 2030 with NIST's FIPS standards, including those that use post-quantum algorithms.</p>
-                </div>
+            <li class="deadline" data-date="2026-12-19">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">About December 2026</span> <h3 class="deadline-title">A proposed rule for federal contractors</h3></summary>
+                    <p>EO 14412 gives the FAR Council 180 days, until about 19 December 2026, to propose a rule under the Federal Acquisition Regulation (FAR). The rule would require covered contractors to comply by 31 December 2030 with NIST's FIPS standards, including those based on post-quantum algorithms.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">~Mar 2027</span>
-                <div class="reg-body">
-                    <h3>Guidance on what a CBOM should contain</h3>
-                    <p>CISA, the US cybersecurity agency, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days of EO 14412, about Mar 2027.</p>
-                </div>
+            <li class="deadline" data-date="2027-03-19">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">About March 2027</span> <h3 class="deadline-title">Guidance on what a CBOM should contain</h3></summary>
+                    <p>Within 270 days of EO 14412, around March 2027, CISA, in coordination with NIST, is due to publish guidance on the minimum elements a CBOM should include.</p>
+                </details>
             </li>
-            <li class="reg-item">
-                <span class="reg-date">2030 &ndash; 2035</span>
-                <div class="reg-body">
-                    <h3>Migration deadlines run to 2035</h3>
-                    <p>Under EO 14412, key establishment by 31 Dec 2030 and signatures by 31 Dec 2031 on high-value assets and high-impact systems, and, once the FAR rule the order calls for is adopted, 31 Dec 2030 for covered contractors. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap (23 Jun 2025, a recommendation) asks for national strategies by end-2026, high-risk use cases by end-2030 and as many systems as feasible by 2035.</p>
-                </div>
+            <li class="deadline" data-date="2030-12-31">
+                <details name="deadlines">
+                    <summary><span class="deadline-date">2030 to 2035</span> <h3 class="deadline-title">The migration deadlines</h3></summary>
+                    <p>Under EO 14412, post-quantum key establishment must be adopted by 31 December 2030, and digital signatures by 31 December 2031, on high-value assets and high-impact systems. If the FAR rule the order calls for is adopted, covered contractors must comply by 31 December 2030. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap of 23 June 2025, a recommendation, asks member states to set national strategies by the end of 2026, address high-risk use cases by the end of 2030 and migrate as many systems as feasible by 2035.</p>
+                </details>
             </li>
         </ol>
 
         <p class="sources">
             Sources:
-            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>,
-            <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in the Federal Register</a>,
-            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>,
-            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>,
-            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>,
-            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>,
-            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>,
+            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
+            <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in the Federal Register</a>;
+            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
+            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
+            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
+            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
             <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">EU NIS Cooperation Group roadmap</a>.
         </p>
+
+        <a class="next-section" href="#how-it-works" aria-label="Next: How it works"></a>
     </section>
 
     <!-- How it works section -->
     <section id="how-it-works" class="section section-alt">
+        <p class="section-kicker"><span class="section-num">03</span> How it works</p>
         <h2>How Quantsiv Works</h2>
-        <p class="section-subheading">Four steps, from scanning your code to a standard record of its cryptography (a CycloneDX 1.6 CBOM).</p>
+        <p class="section-subheading">Four steps, from scanning your code to a standard record (a CycloneDX 1.6 CBOM).</p>
         <div class="process-steps">
             <div class="step">
                 <h3>1. Discover</h3>
-                <p>Quantsiv looks for cryptography in source code, key and certificate files, configuration and infrastructure files, build scripts, and the secure connections (TLS) of servers you name or prove you own. Only the CBOM and the details of each finding reach Quantsiv, and only if you upload them.</p>
+                <p>Quantsiv looks for cryptography in your source code. Your source code stays in your environment. Quantsiv receives the CBOM and the finding details only if you choose to upload them.</p>
             </div>
             <div class="step">
                 <h3>2. Analyze</h3>
-                <p>Each finding is checked against the algorithms a quantum computer could break: RSA, ECDSA, Diffie-Hellman and DSA. Encryption and key exchange are ranked by how long you say the data must stay secret, the harvest-now-decrypt-later risk. Signatures are ranked on their own track, by how long you say they must stay trusted, against the signature deadline.</p>
+                <p>Each finding is checked against quantum-vulnerable algorithms and ranked by its retention period.</p>
             </div>
             <div class="step">
-                <h3>3. Prioritize</h3>
-                <p>A health record that must stay secret for years and a short-lived login token are not the same risk, even when both use RSA. Each finding says why it ranks where it does and, where the use is clear, which standard to move to.</p>
+                <h3>3. Rank</h3>
+                <p>For each finding, Quantsiv explains the priority and the standard to migrate to.</p>
             </div>
             <div class="step">
-                <h3>4. Prove</h3>
-                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. An AI agent can use this context to guide migration by identifying vulnerable cryptography, recommending quantum-safe replacements, and prioritising changes. Each build is compared with the latest main-branch build, flagging newly introduced cryptography to prevent regression.</p>
+                <h3>4. Document</h3>
+                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous build, preventing regressions.</p>
             </div>
         </div>
 
         <!-- Product preview. The scan, the ranking, the checks and the gate result are Quantsiv's
-             real output for a sample repository written for this page; the agent's analysis
-             and its draft change are written for the page. Without scripts every panel shows,
-             one after another; script.js turns the finding list and the three steps into
-             controls. -->
+             real output for a sample repository written for this page (the footnote under the
+             window says so); the agent's analysis and its draft change are written for the page
+             and carry "Simulated output" and the "Illustrative preview" badge. Without scripts
+             every panel shows, one after another; script.js turns the finding list and the three
+             steps into controls. -->
         <figure class="demo" id="demo" aria-labelledby="demo-title">
             <figcaption class="demo-caption">
-                <h3 id="demo-title">What a finding looks like</h3>
-                <p>The scan, the ranking and the checks are Quantsiv's real output for a sample repository written for this page. On real code the rules miss some calls; see <a href="#detection-limits">the note under the capabilities</a>. The agent's analysis and draft change are simulated, to show how the agent works through a finding.</p>
+                <h3 id="demo-title">Example finding</h3>
+                <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Note on the results">*</a></p>
             </figcaption>
             <div class="demo-window">
                 <div class="demo-bar">
@@ -554,127 +555,135 @@
                 </div>
             </div>
         </figure>
+        <p class="section-footnote" id="demo-footnote">* Real Quantsiv results from a demo repository</p>
+
+        <a class="next-section" href="#capabilities" aria-label="Next: Features"></a>
     </section>
 
-    <!-- Capabilities section -->
+    <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
+         text and, for languages and CI, a list of what it works with. Logos are simple-icons
+         paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
+         has no logo we may safely show. -->
     <section id="capabilities" class="section">
-        <h2>Find and rank the cryptography you need to replace. Built for the quantum era.</h2>
-        <p class="section-subheading">Discover and assess the cryptography in your code, keys and infrastructure files, see which risks to fix first, and get clear guidance on what to move to.</p>
+        <p class="section-kicker"><span class="section-num">04</span> Features</p>
+        <h2>Built for the quantum era.</h2>
         <div class="capabilities-grid">
-            <div class="capability-item">
-                <h3>Multi-language support</h3>
-                <p>Find common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift and more, plus openssl, ssh-keygen and keytool commands in build scripts.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Cryptographic Bill of Materials</h3>
-                <p>Automatically inventory the cryptography found in your repositories as a standard CycloneDX 1.6 CBOM, and import CBOMs from other tools.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Quantum risk assessment</h3>
-                <p>Rank both quantum threats: encryption by how long your data must stay secret, signatures by how long they must stay trusted. The most critical risks come first.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Checks on every build</h3>
-                <p>Flag quantum-vulnerable cryptography a change adds, on every build, with automated checks and feedback on GitHub pull requests.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Seamless CI/CD integration</h3>
-                <p>Use templates for GitHub Actions, GitLab, Jenkins and Azure DevOps. Run scans on your own machine or inside your existing build.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Keys, certificates and TLS</h3>
-                <p>Identify the algorithm and key size in key and certificate files, and probe the secure connections (TLS) of servers you name.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Infrastructure settings</h3>
-                <p>Detect vulnerable key and TLS settings in Terraform, Kubernetes, CloudFormation, web-server, OpenSSL and OpenSSH files in your repository.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Wallet and custody code</h3>
-                <p>Find the signing keys, signatures and key exchange in common wallet libraries, with guidance until the chain accepts post-quantum signatures. It reads code, not the blockchain.</p>
-            </div>
-            <div class="capability-item">
-                <h3>AI coding assistant integration</h3>
-                <p>Let AI coding assistants check your cryptography rules while they write code, through a read-only connector (MCP).</p>
-            </div>
-            <div class="capability-item">
-                <h3>Post-quantum migration guidance</h3>
-                <p>Get the standard to move to where the use is clear: ML-KEM, ML-DSA or SLH-DSA, with hybrid key exchange during the transition.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Privacy-first, offline scanning</h3>
-                <p>Keep your source code in your environment: scans run offline by default, and findings reach Quantsiv only if you upload them.</p>
-            </div>
-            <div class="capability-item">
-                <h3>Agentic AI analysis</h3>
-                <p>An AI agent reads each finding in context and drafts a fix. If Quantsiv's checks or your tests reject the draft, the agent revises it, and you see only fixes that pass. It runs as an optional step in your build, on a model you choose. Nothing merges without a person's approval.</p>
-            </div>
+            <details class="capability-item">
+                <summary><h3>Support for many languages</h3></summary>
+                <p>Detects the most common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C# and Swift, plus openssl, ssh-keygen and keytool commands in build scripts.<a href="#coverage-note" class="footnote-ref" aria-label="Note on coverage">*</a></p>
+                <ul class="tool-list" aria-label="Languages and commands"><li><img src="assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Cryptographic inventory (CBOM)</h3></summary>
+                <p>Automatically creates a standard CycloneDX 1.6 CBOM of the cryptography found in your repositories, or imports CBOMs generated by other tools.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Risk assessment</h3></summary>
+                <p>Ranks encryption by how long the data must stay secret, and digital signatures by how long they must be trusted. The most urgent issues are highlighted first.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Checks on every build</h3></summary>
+                <p>Automatically flags, on every build, the vulnerable cryptography a change introduces. Brings the checks into pull requests for early feedback.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Simple CI/CD integration</h3></summary>
+                <p>Works with GitHub Actions, GitLab, Jenkins and Azure DevOps. Run scans on your own computer or inside the pipeline you already use.</p>
+                <ul class="tool-list" aria-label="CI systems"><li><img src="assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Keys, certificates and TLS</h3></summary>
+                <p>Recognizes the algorithms and key sizes in key and certificate files, and checks the TLS connections of the servers you name.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Infrastructure configuration</h3></summary>
+                <p>Finds vulnerable key and TLS settings in Terraform, Kubernetes and CloudFormation files, and in web-server, OpenSSL and OpenSSH configuration files in your repository.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Crypto wallet support</h3></summary>
+                <p>Analyzes the code, not the blockchain. Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key exchange in common wallet libraries. Gives migration guidance until the blockchain supports post-quantum signatures.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>MCP support</h3></summary>
+                <p>Through a read-only MCP connector, lets AI coding assistants check your cryptography rules while they write code.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Post-quantum migration suggestions</h3></summary>
+                <p>Suggests the best-fitting standard: ML-KEM, ML-DSA or SLH-DSA, or a hybrid key exchange.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>Offline scanning</h3></summary>
+                <p>Your source code stays in your environment: by default, scans run offline. Results reach Quantsiv only if you choose to upload them.</p>
+            </details>
+            <details class="capability-item">
+                <summary><h3>AI agent analysis</h3></summary>
+                <p>An AI agent analyzes each finding in its context and proposes a fix. Works with the model you choose (ChatGPT, Claude, DeepSeek, Grok), including one you host yourself. No change is merged without the user's approval.</p>
+            </details>
         </div>
-        <p class="capabilities-note" id="detection-limits">Detection is pattern-based, so depth varies by language, and rules for Rust, Ruby and PHP are early. It can miss calls made under another name or built at run time, calls to cloud key services, code copied into a project, and third-party packages.</p>
+        <p class="section-footnote" id="coverage-note">*Coverage varies by language, cloud key-management services and third-party packages.</p>
+
+        <a class="next-section" href="#roadmap" aria-label="Next: Roadmap"></a>
     </section>
 
     <!-- Roadmap section -->
     <section id="roadmap" class="section section-alt">
+        <p class="section-kicker"><span class="section-num">05</span> Roadmap</p>
         <h2>Roadmap</h2>
-        <p class="section-subheading">Timed to the US and EU deadlines above.</p>
+        <p class="section-subheading">A roadmap planned for the years ahead.</p>
 
         <div class="roadmap-grid">
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
                 <h3>Audit</h3>
-                <p>Show where each application uses cryptography, from inside its build. The features above are built; next in this phase:</p>
+                <p>Show where each application uses cryptography, from inside its build.</p>
+                <h4 class="phase-label">In development</h4>
                 <ul class="phase-list">
-                    <li>The AI agent learning from the changes your team approves</li>
-                    <li>Post-quantum and hybrid cryptography counted as migration progress, across code, keys, certificates and configuration</li>
-                    <li>An inventory of third-party packages (dependencies): which ones bring cryptography</li>
-                    <li>COBOL code on mainframes, common in banks: its calls to the mainframe's cryptography service, and the mainframe's certificate and secure-connection settings</li>
-                    <li>Reports that state their coverage, so a partial scan is not mistaken for a clean one</li>
-                    <li>CBOM output aligned to the CISA minimum elements once published, about Mar 2027, and CycloneDX 1.7 accepted on import</li>
-                    <li>CBOM evidence reports for auditors, citing the US and EU guidance</li>
+                    <li>Training the AI agent to learn from the changes the team approves</li>
+                    <li>Post-quantum and hybrid cryptography</li>
+                    <li>COBOL code on mainframes</li>
+                    <li>CycloneDX 1.7</li>
                 </ul>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
                 <h3>Migrate</h3>
-                <p>Close the loop from finding to fix, with a person approving each change.</p>
-                <ul class="phase-list">
-                    <li>Suggested fixes as draft pull requests with the code change, the reasoning and the guidance cited, for a person to review</li>
-                    <li>Migration targets that default to hybrid key exchange, with the platform versions each change needs</li>
-                    <li>Tests that check each change before a person reviews it</li>
-                </ul>
+                <p>Test coverage and suggestions with human review, with migration targets that default to hybrid key exchange.</p>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 3 &middot; 2028 &rarr; 2030</span>
                 <h3>Agentic Crypto-Agility</h3>
-                <p>Agents propose and check each other's work; deterministic checks verify; a person approves. Nothing merges or deploys on its own.</p>
+                <p>Agents propose and check each other's work; deterministic checks; human approval.</p>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Phase 4 &middot; 2030 &rarr; 2035</span>
                 <h3>Platform Consolidation</h3>
-                <p>One product to install, covering audit, migration and review.</p>
+                <p>An all-in-one product to install, covering audit, migration and review.</p>
             </article>
         </div>
+
+        <a class="next-section" href="#contact" aria-label="Next: Get in touch"></a>
     </section>
 
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">
         <h2>Get in Touch</h2>
-        <p>Want to see what Quantsiv finds in your own code before launch, or have a question? Write to us.</p>
-        <a href="mailto:hello@quantsiv.com" class="cta-primary">hello@quantsiv.com</a>
-        <p class="newsletter-later">Get updates on post-quantum migration deadlines, standards, and Quantsiv releases. Join the waitlist and we will email you to confirm your address.</p>
+        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases.</p>
         <form id="contact-form" method="POST" action="https://c58bed8a.sibforms.com/serve/MUIFAFOmwOaK_aCfaHqQ9ejQfbrgVR4N9D_y4XbKsSGi_tR7c5Iv50xqtiHDuhyHV5cjqOWkZejAH0ry2GOKv509XDhtcCZOgdvJ-yRgt40eE58Gj6wdrbu6MSXSTSYg9NENCDlzmO0F3dd2l9Q4n3wGCLVOHbhgwBwU_XlhILcIn_qLB7c6ZN-qOWKU3tB5axy0N2ZAWhEfOLt8Qg==" data-msg-invalid="Please enter a valid email address.">
-            <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
+            <div class="form-row">
+                <input type="email" name="EMAIL" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required>
+                <button type="submit">Join the Waitlist</button>
+            </div>
             <label class="form-consent"><input type="checkbox" name="OPT_IN" value="1" required><span>I agree to receive emails from Quantsiv about its launch and occasional updates. I have read the <a href="privacy.html">privacy notice</a>.</span></label>
             <div hidden><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
             <input type="hidden" name="locale" value="en">
             <div id="form-message" class="form-message" role="status" hidden></div>
-            <button type="submit">Join the Waitlist</button>
         </form>
+        <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
         <p class="form-note"><a href="privacy.html">Privacy notice</a></p>
     </section>
+
     </main>
 
     <!-- Footer -->

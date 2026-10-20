@@ -169,7 +169,10 @@ them. Do not add to them without the founder.
   your tests, if you set them, must pass the draft; a rejected draft is revised, and only fixes
   that pass are shown. It is an optional step in your build, off unless you turn it on, on a model
   you choose. It never commits or pushes. Nothing merges without a person's approval. Quote no
-  pass rate (none is measured) and name no model vendor. Learning from approved changes is not
+  pass rate (none is measured) and never present a vendor as Quantsiv's model. The card's example
+  list of models a customer can pick (ChatGPT, Claude, DeepSeek, Grok, or one they host) is the
+  founder's (19-20 Oct 2026); the agent calls any chat-completions endpoint the customer sets, and
+  no real model's results are measured yet. Learning from approved changes is not
   built: roadmap only, in the future. Added on 19 Oct 2026, when the agent's code merged, under
   the founder's rule of 18 Oct 2026.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
@@ -253,9 +256,12 @@ stand until the founder changes them:
   Updated 19 Oct 2026 with the founder's approval. Unconfirmed sign-ups stay in Brevo's logs until the
   founder deletes them, and the notice promises that after the 30-day link expiry.
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
-  notice. Since 19 Oct 2026 (the founder's ask), the section above the footer is "Get in Touch"
-  (`#contact`): it invites visitors to see what Quantsiv finds in their own code and links
-  hello@quantsiv.com, and the hero's second button points to it.
+  notice. Since 19 Oct 2026 (the founder's ask), the last section of the page is "Get in Touch"
+  (`#contact`), and the hero's second button points to it. On his later ask the same day it
+  opens with the waitlist line, then the form (the field and the button in one box, the consent
+  line under it), then hello@quantsiv.com; the line inviting visitors to see what Quantsiv finds in
+  their own code is gone. Since 20 Oct 2026 the waitlist line is one sentence: "Get updates on
+  post-quantum migration deadlines, standards, and Quantsiv releases."
   The privacy notice already covers email to any quantsiv.com address ("When you write to us").
 - "How Quantsiv Works" ends with "What a finding looks like", an interactive preview (19 Oct
   2026, the founder's brief): a scan overview, three findings, and three tabs each (the finding,
@@ -302,7 +308,7 @@ stand until the founder changes them:
   pass, runs as an optional step in your build on a model you choose; nothing merges without a
   person's approval. Keep that last clause, and never stretch "revises" into "self-healing",
   "autonomous" or "auto-fix". Learning from approved changes is the first Phase 1 roadmap line,
-  in the future, until it is built. Never name the model's vendor.
+  in the future, until it is built. Name no other vendor than the founder's example list above.
 - The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
   both, on every build." (the founder, 18 Oct 2026) is a narrative line, not the tagline. On 19
   Oct 2026 the founder removed the threat section's intro paragraph that carried it, so the
@@ -313,14 +319,27 @@ stand until the founder changes them:
   genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
   1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
   `nl/` and `it/`. Change them only with his word.
-- Detection limits (the founder's pick, 19 Oct 2026): the language card does not list Rust (it
-  falls under "and more"); the note under the grid (`#detection-limits`) says the rules for Rust,
-  Ruby and PHP are early and names calls to cloud key services among what can be missed; the
-  demo caption says real code has misses and links to that note; the checks card says "Flag".
-  Keep these until measured detection in those languages improves and the founder says so.
-- The standards banner has a pause button, shown only when motion is allowed (WCAG success
-  criterion 2.2.2, Pause, Stop, Hide), and pauses on hover and keyboard focus. Its labels come from `data-label-pause` and
-  `data-label-play`.
+- Detection limits (the founder's pick, 19 Oct 2026; shortened on his ask, 20 Oct 2026): the
+  language card does not list Rust, and the limits are one footnote under the features
+  (`#coverage-note`): coverage varies by language, cloud key-management services and third-party
+  packages. The separate limits section is gone. The demo is labelled "Output" with a footnote
+  (`#demo-footnote`) saying the results are Quantsiv's own on a demo repository. Keep these until
+  measured detection improves and the founder says so.
+- The page reads in order (the founder's ask, 19 Oct 2026): the menu and each section carry a
+  number (01 to 05), each section ends with a round chevron link pointing down to the following
+  one (its name is in `aria-label`, no visible text, since 20 Oct 2026), and a thin bar
+  under the header shows how far the page has been read where the browser supports it. The
+  deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past and
+  future dates and places a "Today" marker. The features are cards that open one by one, two
+  with chips of the languages and CI systems they cover (`assets/logos/`, Simple Icons, CC0;
+  the marks belong to their owners; a name without a usable icon is a text chip). On 20 Oct 2026
+  the founder chose layout B (cards that open) and removed the Swift, openssl, ssh-keygen and
+  keytool chips; the card's sentence still names them. Since then the features section has no
+  sentence under its heading. In Italian the hero's first button reads "Missione".
+- One play/pause button at the hero pauses both the hero animation and the standards banner
+  (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
+  its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
+  hover and keyboard focus.
 - `index.html` carries a Content-Security-Policy meta tag that allows only this site's own files,
   with no inline scripts or styles. `form-action` allows this site and Brevo's form address
   (c58bed8a.sibforms.com); change it if the form moves to another service.
