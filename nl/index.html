@@ -41,10 +41,10 @@
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Hoofdmenu">
             <ul class="nav-list">
-                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het risico</a></li>
+                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het probleem</a></li>
                 <li><a href="#compliance" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
                 <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Hoe het werkt</a></li>
-                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Wat het doet</a></li>
+                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Functies</a></li>
                 <li><a href="#roadmap" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
             </ul>
         </nav>
@@ -79,7 +79,7 @@
     </section>
 
     <!-- Standards and frameworks alignment banner -->
-    <section class="supported-banner" aria-label="Standaarden en kaders waar Quantsiv op aansluit">
+    <section class="supported-banner" aria-label="Standaarden en kaders waarop Quantsiv aansluit">
         <div class="banner-track">
             <!-- Two identical halves. The track slides by exactly one half (-50%),
                  so the loop is seamless. Each half repeats the list four
@@ -156,7 +156,7 @@
             <li>OMB M-26-15</li>
             <li>NIST IR 8547</li>
             <li>NSA CNSA 2.0</li>
-            <li lang="en">EU NIS Cooperation Group Roadmap</li>
+            <li>EU NIS Cooperation Group Roadmap</li>
         </ul>
     </section>
 
@@ -168,42 +168,41 @@
 
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
-        <p class="section-kicker"><span class="section-num">01</span> Het risico</p>
-        <h2>Twee quantumdreigingen</h2>
+        <p class="section-kicker"><span class="section-num">01</span> Het probleem</p>
+        <h2>Twee quantumdreigingen, en nieuwe code die ze vergroot</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
-                <h3 lang="en">Harvest Now, Decrypt Later</h3>
-                <p>Aanvallers kunnen vandaag versleuteld verkeer opnemen en versleutelde gegevens kopiëren, en die ontsleutelen zodra er een quantumcomputer bestaat die groot genoeg is. Dit bedreigt versleuteling en sleuteluitwisseling, zoals RSA-versleuteling en Diffie-Hellman. De deadline is hoe lang de gegevens geheim moeten blijven: als ze 25 jaar vertrouwelijk moeten blijven, loopt verkeer dat gisteren is opgenomen al risico.</p>
+                <h3 lang="en">Harvest now, decrypt later</h3>
+                <p>Aanvallers kunnen vandaag versleutelde gegevens onderscheppen en bewaren, en die in de toekomst ontsleutelen met een voldoende krachtige quantumcomputer. Dat brengt de huidige versleuteling en sleuteluitwisseling, zoals RSA en Diffie-Hellman, in gevaar. Het hangt ervan af hoe lang de gegevens geheim moeten blijven. <strong>Moeten ze 25 jaar vertrouwelijk blijven, dan loopt verkeer dat gisteren is opgenomen nu al risico.</strong></p>
             </div>
             <div class="threat-card">
-                <h3>Vervalsing van handtekeningen</h3>
-                <p class="threat-kicker" lang="en">Trust Now, Forge Later</p>
-                <p>Digitale handtekeningen bewijzen dat software, certificaten, documenten en transacties echt zijn. Een quantumcomputer die krachtig genoeg is, zou privésleutels uit publieke sleutels kunnen afleiden en handtekeningen kunnen vervalsen, wat RSA, ECDSA en EdDSA bedreigt. Het risico hangt af van hoe lang sleutels en handtekeningen vertrouwd moeten blijven, ook in apparaten, certificaatautoriteiten en blijvende registers. Bij cryptowallets kan een publieke sleutel die on-chain zichtbaar is, vervalste overdrachten mogelijk maken.</p>
+                <h3>Vervalsing van digitale handtekeningen</h3>
+                <p>Digitale handtekeningen maken het mogelijk te controleren of software, certificaten, documenten en transacties echt zijn. Een quantumcomputer zou uit publieke sleutels de privésleutels kunnen afleiden en handtekeningen vervalsen. Handtekeningen moeten betrouwbaar blijven, ook die in apparaten, bij certificaatautoriteiten en in permanente registers. Bij wallets voor cryptoactiva kan een publieke sleutel die on-chain zichtbaar is bovendien ongeautoriseerde overboekingen mogelijk maken.</p>
             </div>
             <div class="threat-card">
-                <h3>AI-codeassistenten kunnen kwetsbare standaardkeuzes herhalen</h3>
-                <p>Codeassistenten kiezen cryptografie door bekende patronen aan te vullen, en kunnen zo oude standaardkeuzes herhalen die een quantumcomputer zou kunnen kraken. De code werkt en slaagt voor de tests, en is toch kwetsbaar.</p>
+                <h3>Foutgevoelige AI-agents</h3>
+                <p>Wanneer AI-agents code genereren, vallen ze vaak terug op patronen en standaardinstellingen die ze al kennen. Berusten die patronen op kwetsbare algoritmen, dan kan de code goed werken en de tests doorstaan en toch blootliggen. In een gecontroleerde studie schreven ontwikkelaars met een AI-assistent minder veilige code (Perry, Srivastava, Kumar en Boneh, ACM CCS 2023).</p>
             </div>
         </div>
 
         <div class="hndl-timeline">
             <div class="hndl-step">
                 <span class="hndl-year">Vandaag</span>
-                <h4>Onderscheppen</h4>
-                <p>Aanvallers leggen versleuteld verkeer vast, kopiëren versleutelde gegevens en bewaren die.</p>
+                <h4>Verzamelen</h4>
+                <p>Versleuteld verkeer wordt onderschept, en gegevens worden gekopieerd en bewaard.</p>
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
                 <span class="hndl-year">Morgen</span>
                 <h4>Ontsleutelen</h4>
-                <p>Een quantumcomputer die groot genoeg is, kraakt de publieke-sleutelcryptografie die de bewaarde kopieën beschermde.</p>
+                <p>Quantumcomputers kraken de publieke-sleutelalgoritmen die de bewaarde kopieën beschermen.</p>
             </div>
             <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
             <div class="hndl-step">
                 <span class="hndl-year">Daarna</span>
-                <h4>Blootleggen</h4>
-                <p>Gegevens waarvan de versleuteling op RSA of elliptische krommen steunde, kunnen dan worden gelezen. Handtekeningen die ermee zijn gemaakt, kunnen worden vervalst.</p>
+                <h4>Blootstelling</h4>
+                <p>Gegevens die met RSA of ECC zijn versleuteld worden leesbaar, en digitale handtekeningen kunnen worden vervalst.</p>
             </div>
         </div>
 
@@ -215,63 +214,63 @@
          marker on the line; without scripts the dates still open and close. -->
     <section id="compliance" class="section">
         <p class="section-kicker"><span class="section-num">02</span> Deadlines</p>
-        <h2>De deadline staat al vast</h2>
-        <p class="section-subheading">Dit zijn gepubliceerde datums, geen voorspellingen. Normalisatie-instellingen en overheden in de VS en de EU hebben richtlijnen en eisen met datums uitgebracht om de kwetsbare cryptografie te vervangen.</p>
+        <h2>De deadlines staan al vast</h2>
+        <p class="section-subheading">Dit zijn geen voorspellingen. In de VS en de EU hebben instellingen richtlijnen en eisen gepubliceerd met vaste datums voor het vervangen van kwetsbare cryptografie.</p>
 
         <ol class="deadlines" data-label-now="Vandaag">
             <li class="deadline" data-date="2024-08-13">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">13 aug 2024</span> <h3 class="deadline-title">NIST publiceert de vervangende standaarden</h3></summary>
-                    <p>Het Amerikaanse standaardeninstituut publiceert drie nieuwe algoritmen: FIPS 203 (ML-KEM) om de sleutels af te spreken waarmee gegevens worden versleuteld, en FIPS 204 (ML-DSA) en FIPS 205 (SLH-DSA) voor digitale handtekeningen. De vervangers bestaan nu.</p>
+                    <summary><span class="deadline-date">13 aug 2024</span> <h3 class="deadline-title">NIST publiceert de nieuwe standaarden</h3></summary>
+                    <p>Het Amerikaanse standaardeninstituut publiceert drie nieuwe standaarden: FIPS 203 (ML-KEM), om de sleutels af te spreken waarmee gegevens worden versleuteld, en FIPS 204 (ML-DSA) en FIPS 205 (SLH-DSA), voor digitale handtekeningen. Er zijn dus alternatieven voor de huidige algoritmen beschikbaar.</p>
                 </details>
             </li>
             <li class="deadline" data-date="2024-11-01">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">nov 2024</span> <h3 class="deadline-title">NIST stelt voor wanneer de huidige algoritmen worden uitgefaseerd</h3></summary>
-                    <p>In het eerste openbare concept van NIST IR 8547 zijn alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, na 2035 niet meer toegestaan (<span lang="en">disallowed</span>).</p>
+                    <summary><span class="deadline-date">nov 2024</span> <h3 class="deadline-title">NIST stelt deadlines voor om de huidige algoritmen uit te faseren</h3></summary>
+                    <p>In het eerste openbare concept van NIST IR 8547 staan alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, na 2035 als niet meer toegestaan (<span lang="en">disallowed</span>).</p>
                 </details>
             </li>
             <li class="deadline" data-date="2026-06-22">
                 <details name="deadlines">
                     <summary><span class="deadline-date">22 jun 2026</span> <h3 class="deadline-title">Executive Order 14412</h3></summary>
-                    <p>Het decreet gaat in op de dreiging van <span lang="en">harvest now, decrypt later</span>. Het stelt 31 dec 2030 als termijn voor post-quantum sleuteluitwisseling en 31 dec 2031 voor handtekeningen, op high-value assets en systemen met hoge impact.</p>
+                    <p>Het decreet gaat in op het risico dat bekendstaat als &ldquo;<span lang="en">harvest now, decrypt later</span>&rdquo;. Voor high-value assets en systemen met hoge impact stelt het 31 dec 2030 als deadline voor post-quantum sleuteluitwisseling en 31 dec 2031 voor digitale handtekeningen.</p>
                 </details>
             </li>
             <li class="deadline" data-date="2026-06-24">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">24 jun 2026</span> <h3 class="deadline-title">OMB M-26-15: de federale migratie in fasen</h3></summary>
-                    <p>Federale instanties bouwen een geautomatiseerde inventaris waarvan de gegevens <span lang="en">"should populate a central Cryptographic Bill of Materials"</span> (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. Vijf fasen van 2026 tot 2035.</p>
+                    <summary><span class="deadline-date">24 jun 2026</span> <h3 class="deadline-title">OMB M-26-15: een federale migratie in fasen</h3></summary>
+                    <p>Federale instanties moeten een geautomatiseerde inventaris bouwen waarvan de gegevens &ldquo;<span lang="en">should populate a central Cryptographic Bill of Materials</span>&rdquo; (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. De migratie verloopt in vijf fasen, van 2026 tot 2035.</p>
                 </details>
             </li>
             <li class="deadline" data-date="2026-12-19">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">~dec 2026</span> <h3 class="deadline-title">Een voorgestelde regel voor federale opdrachtnemers</h3></summary>
-                    <p>EO 14412 geeft de FAR Council 180 dagen, tot rond 19 dec 2026, om een FAR-regel (<span lang="en">Federal Acquisition Regulation</span>) voor te stellen die betrokken opdrachtnemers verplicht om uiterlijk 31 dec 2030 te voldoen aan de FIPS-standaarden van NIST, ook die met post-quantumalgoritmen.</p>
+                    <summary><span class="deadline-date">Rond dec 2026</span> <h3 class="deadline-title">Een voorgestelde regel voor federale opdrachtnemers</h3></summary>
+                    <p>EO 14412 geeft de FAR Council 180 dagen, tot rond 19 dec 2026, om een regel voor te stellen onder de Federal Acquisition Regulation (FAR). Die regel zou betrokken opdrachtnemers verplichten om uiterlijk 31 dec 2030 te voldoen aan de FIPS-standaarden van NIST, ook die op basis van post-quantumalgoritmen.</p>
                 </details>
             </li>
             <li class="deadline" data-date="2027-03-19">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">~mrt 2027</span> <h3 class="deadline-title">Richtlijnen over wat een CBOM zou moeten bevatten</h3></summary>
-                    <p>CISA, het Amerikaanse agentschap voor cyberveiligheid, publiceert in afstemming met NIST binnen 270 dagen na EO 14412 richtlijnen over de minimumelementen van een CBOM, rond maart 2027.</p>
+                    <summary><span class="deadline-date">Rond mrt 2027</span> <h3 class="deadline-title">Richtlijnen over wat een CBOM zou moeten bevatten</h3></summary>
+                    <p>Binnen 270 dagen na EO 14412, rond maart 2027, publiceert CISA in afstemming met NIST richtlijnen over de minimumelementen die een CBOM zou moeten bevatten.</p>
                 </details>
             </li>
             <li class="deadline" data-date="2030-12-31">
                 <details name="deadlines">
-                    <summary><span class="deadline-date">2030 &ndash; 2035</span> <h3 class="deadline-title">Migratiedeadlines lopen tot 2035</h3></summary>
-                    <p>Onder EO 14412: sleuteluitwisseling uiterlijk 31 dec 2030 en handtekeningen uiterlijk 31 dec 2031 op high-value assets en systemen met hoge impact, en, zodra de FAR-regel waar het besluit om vraagt is aangenomen, 31 dec 2030 voor betrokken opdrachtnemers. NSA CNSA 2.0 stelt datums voor exclusief gebruik tussen 2030 en 2033, afhankelijk van de categorie. In de EU vraagt de roadmap van de NIS-samenwerkingsgroep (23 jun 2025, een aanbeveling) om nationale strategieën tegen eind 2026, toepassingen met hoog risico tegen eind 2030 en zoveel systemen als haalbaar tegen 2035.</p>
+                    <summary><span class="deadline-date">2030 tot 2035</span> <h3 class="deadline-title">De migratiedeadlines</h3></summary>
+                    <p>Onder EO 14412 moet post-quantum sleuteluitwisseling uiterlijk 31 dec 2030 zijn ingevoerd, en digitale handtekeningen uiterlijk 31 dec 2031, op high-value assets en systemen met hoge impact. Wordt de FAR-regel waar het decreet om vraagt aangenomen, dan moeten betrokken opdrachtnemers uiterlijk 31 dec 2030 voldoen. NSA CNSA 2.0 stelt datums voor exclusief gebruik tussen 2030 en 2033, afhankelijk van de categorie. In de EU vraagt de roadmap van de NIS-samenwerkingsgroep van 23 jun 2025, een aanbeveling, de lidstaten om nationale strategieën tegen eind 2026, toepassingen met hoog risico tegen eind 2030 en zoveel systemen als haalbaar tegen 2035.</p>
                 </details>
             </li>
         </ol>
 
         <p class="sources">
             Bronnen:
-            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>,
-            <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in het Federal Register</a>,
-            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>,
-            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>,
-            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener" lang="en">CISA Post-Quantum Cryptography Initiative</a>,
-            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>,
-            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>,
+            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
+            <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in het Federal Register</a>;
+            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
+            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
+            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
+            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
             <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">roadmap van de NIS-samenwerkingsgroep (EU)</a>.
         </p>
 
@@ -282,23 +281,23 @@
     <section id="how-it-works" class="section section-alt">
         <p class="section-kicker"><span class="section-num">03</span> Hoe het werkt</p>
         <h2>Hoe Quantsiv werkt</h2>
-        <p class="section-subheading">Vier stappen, van het scannen van je code tot een standaardoverzicht van de cryptografie erin (een CycloneDX 1.6 CBOM).</p>
+        <p class="section-subheading">Vier stappen, van het scannen van je code tot een standaardregister (een CycloneDX 1.6 CBOM).</p>
         <div class="process-steps">
             <div class="step">
                 <h3>1. Ontdekken</h3>
-                <p>Quantsiv zoekt naar cryptografie in broncode, sleutel- en certificaatbestanden, configuratie- en infrastructuurbestanden, buildscripts en de beveiligde verbindingen (TLS) van servers die je opgeeft of waarvan je aantoont dat ze van jou zijn. Alleen de CBOM en de gegevens van elke bevinding bereiken Quantsiv, en alleen als je ze uploadt.</p>
+                <p>Quantsiv zoekt cryptografie in je broncode. Je code blijft standaard in je eigen omgeving. Quantsiv ontvangt de CBOM en de details van de bevindingen alleen als je ze uploadt.</p>
             </div>
             <div class="step">
                 <h3>2. Analyseren</h3>
-                <p>Elke bevinding wordt getoetst aan de algoritmen die een quantumcomputer zou kunnen kraken: RSA, ECDSA, Diffie-Hellman en DSA. Versleuteling en sleuteluitwisseling worden gerangschikt naar hoe lang de gegevens volgens jou geheim moeten blijven, het risico van <span lang="en">harvest now, decrypt later</span>. Handtekeningen worden op een eigen spoor gerangschikt, naar hoe lang ze volgens jou vertrouwd moeten blijven, afgezet tegen de deadline voor handtekeningen.</p>
+                <p>Elke bevinding wordt getoetst aan quantumkwetsbare algoritmen en gerangschikt naar de bewaartermijn.</p>
             </div>
             <div class="step">
                 <h3>3. Prioriteren</h3>
-                <p>Een medisch dossier dat jarenlang geheim moet blijven en een inlogtoken dat kort geldig is, zijn niet hetzelfde risico, ook als ze allebei RSA gebruiken. Elke bevinding zegt waarom ze op die plaats staat en, waar het gebruik duidelijk is, naar welke standaard je overstapt.</p>
+                <p>Bij elke bevinding legt Quantsiv de prioriteit uit en noemt het de standaard om naar te migreren.</p>
             </div>
             <div class="step">
-                <h3>4. Aantonen</h3>
-                <p>Quantsiv maakt een CycloneDX 1.6 CBOM, een SARIF-bestand voor code-scantools en een gerangschikt rapport. Een AI-agent kan die context gebruiken om de migratie te sturen: kwetsbare cryptografie aanwijzen, quantumveilige vervangers aanbevelen en wijzigingen prioriteren. Elke build wordt vergeleken met de laatste build van de hoofdbranch, en nieuw toegevoegde cryptografie wordt gemarkeerd om terugval te voorkomen.</p>
+                <h3>4. Documenteren</h3>
+                <p>Quantsiv maakt een CycloneDX 1.6 CBOM, een SARIF-bestand dat werkt met code-analysetools, en een rapport met de bevindingen op prioriteit gerangschikt. Een AI-agent gebruikt deze informatie om quantumveilige alternatieven voor te stellen en de wijzigingen te helpen plannen. Quantsiv vergelijkt de resultaten van elke build met de laatste build van de hoofdbranch en markeert terugval.</p>
             </div>
         </div>
 
@@ -557,7 +556,7 @@
         </figure>
         <p class="section-footnote" id="demo-footnote">* Echte resultaten van Quantsiv op een demorepository</p>
 
-        <a class="next-section" href="#capabilities" aria-label="Volgende: Wat het doet"></a>
+        <a class="next-section" href="#capabilities" aria-label="Volgende: Functies"></a>
     </section>
 
     <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
@@ -565,61 +564,61 @@
          paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
          has no logo we may safely show. -->
     <section id="capabilities" class="section">
-        <p class="section-kicker"><span class="section-num">04</span> Wat het doet</p>
-        <h2>Vind en rangschik de cryptografie die je moet vervangen. Gebouwd voor het quantumtijdperk.</h2>
+        <p class="section-kicker"><span class="section-num">04</span> Functies</p>
+        <h2>Gebouwd voor het quantumtijdperk.</h2>
         <div class="capabilities-grid">
             <details class="capability-item">
                 <summary><h3>Ondersteuning voor veel talen</h3></summary>
-                <p>Vind gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C#, Swift en meer, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.<a href="#coverage-note" class="footnote-ref" aria-label="Opmerking over de dekking">*</a></p>
-                <ul class="tool-list" aria-label="Talen en commando's"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
+                <p>Herkent de meest gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C# en Swift, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.<a href="#coverage-note" class="footnote-ref" aria-label="Noot over de dekking">*</a></p>
+                <ul class="tool-list" aria-label="Talen en opdrachten"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
             </details>
             <details class="capability-item">
-                <summary><h3 lang="en">Cryptographic Bill of Materials</h3></summary>
-                <p>Inventariseer automatisch de cryptografie die in je repository's is gevonden als standaard CycloneDX 1.6 CBOM, en importeer CBOM's van andere tools.</p>
+                <summary><h3>Cryptografische inventaris (CBOM)</h3></summary>
+                <p>Maakt automatisch een standaard CycloneDX 1.6 CBOM van de cryptografie die in je repository's is gevonden, of importeert CBOM's van andere tools.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Beoordeling van het quantumrisico</h3></summary>
-                <p>Rangschik beide quantumdreigingen: versleuteling naar hoe lang je gegevens geheim moeten blijven, handtekeningen naar hoe lang ze vertrouwd moeten blijven. De meest kritieke risico's komen eerst.</p>
+                <summary><h3>Risicobeoordeling</h3></summary>
+                <p>Rangschikt versleuteling naar hoe lang de gegevens geheim moeten blijven, en digitale handtekeningen naar hoe lang ze vertrouwd moeten blijven. De meest urgente punten komen eerst.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Controle bij elke build</h3></summary>
-                <p>Markeer quantumkwetsbare cryptografie die een wijziging toevoegt, bij elke build, met automatische controles en feedback op pull requests in GitHub.</p>
+                <summary><h3>Controles bij elke build</h3></summary>
+                <p>Markeert automatisch, bij elke build, de kwetsbare cryptografie die een wijziging toevoegt. Brengt de controles naar pull requests voor vroege feedback.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Naadloze CI/CD-integratie</h3></summary>
-                <p>Gebruik templates voor GitHub Actions, GitLab, Jenkins en Azure DevOps. Scan op je eigen machine of in je bestaande build.</p>
+                <summary><h3>Eenvoudige CI/CD-integratie</h3></summary>
+                <p>Werkt met GitHub Actions, GitLab, Jenkins en Azure DevOps. Scan op je eigen computer of in de pipeline die je al gebruikt.</p>
                 <ul class="tool-list" aria-label="CI-systemen"><li><img src="../assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="../assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
             </details>
             <details class="capability-item">
                 <summary><h3>Sleutels, certificaten en TLS</h3></summary>
-                <p>Herken het algoritme en de sleutelgrootte in sleutel- en certificaatbestanden, en peil de beveiligde verbindingen (TLS) van servers die je opgeeft.</p>
+                <p>Herkent de algoritmen en sleutelgroottes in sleutel- en certificaatbestanden, en peilt met één handshake de TLS-verbindingen van de servers die je opgeeft.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Infrastructuurinstellingen</h3></summary>
-                <p>Detecteer kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes-, CloudFormation-, webserver-, OpenSSL- en OpenSSH-bestanden in je repository.</p>
+                <summary><h3>Infrastructuurconfiguratie</h3></summary>
+                <p>Vindt kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes- en CloudFormation-bestanden, en in configuratiebestanden van webservers, OpenSSL en OpenSSH in je repository.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Code voor wallets en custody</h3></summary>
-                <p>Vind de sleutels voor ondertekening, de handtekeningen en de sleuteluitwisseling in gangbare walletbibliotheken, met aanwijzingen tot de chain post-quantumhandtekeningen accepteert. Het leest code, niet de blockchain.</p>
+                <summary><h3>Ondersteuning voor cryptowallets</h3></summary>
+                <p>Analyseert de code, niet de blockchain. Vindt secp256k1- en Ed25519-ondertekeningssleutels, Schnorr-handtekeningen en ECDH- en ECIES-sleuteluitwisseling in gangbare walletbibliotheken. Geeft migratieaanwijzingen tot de blockchain post-quantumhandtekeningen ondersteunt.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Integratie met AI-codeassistenten</h3></summary>
-                <p>Laat AI-codeassistenten je cryptografieregels controleren terwijl ze code schrijven, via een alleen-lezen koppeling (MCP).</p>
+                <summary><h3>MCP-ondersteuning</h3></summary>
+                <p>Laat AI-codeassistenten via een alleen-lezen MCP-koppeling je cryptografieregels controleren terwijl ze code schrijven.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Aanwijzingen voor de post-quantummigratie</h3></summary>
-                <p>Krijg de standaard om naar over te stappen waar het gebruik duidelijk is: ML-KEM, ML-DSA of SLH-DSA, met hybride sleuteluitwisseling tijdens de overgang.</p>
+                <summary><h3>Suggesties voor de post-quantummigratie</h3></summary>
+                <p>Stelt de best passende standaard voor: ML-KEM, ML-DSA of SLH-DSA, of een hybride sleuteluitwisseling.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Privacy voorop, offline scannen</h3></summary>
-                <p>Houd je broncode in je eigen omgeving: scans draaien standaard offline, en bevindingen bereiken Quantsiv alleen als je ze uploadt.</p>
+                <summary><h3>Offline scannen</h3></summary>
+                <p>Je broncode blijft in je eigen omgeving: scans draaien standaard offline. Resultaten bereiken Quantsiv alleen als je ze uploadt.</p>
             </details>
             <details class="capability-item">
-                <summary><h3>Agentische AI-analyse</h3></summary>
-                <p>Een AI-agent leest elke bevinding in haar context en stelt een oplossing op. Wijzen de controles van Quantsiv of je tests het concept af, dan past de agent het aan, en je ziet alleen oplossingen die slagen. Het is een optionele stap in je build, met een model dat je zelf kiest. Niets wordt gemerged zonder dat een mens het goedkeurt.</p>
+                <summary><h3>Analyse door een AI-agent</h3></summary>
+                <p>Een AI-agent analyseert elke bevinding in haar context en stelt een oplossing voor. Hij maakt verbinding met het model dat je kiest via zijn chat-completions-endpoint, bijvoorbeeld ChatGPT, Claude, DeepSeek of Grok, of een model dat je zelf host. Geen wijziging wordt gemerged zonder goedkeuring van de gebruiker.</p>
             </details>
         </div>
-        <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal en hangt af van clouddiensten voor sleutelbeheer en pakketten van derden.</p>
+        <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal. Patroonherkenning mist aanroepen via een alias of dynamische aanroepen, meegeleverde code en afhankelijkheden, en leest clouddiensten voor sleutelbeheer niet.</p>
 
         <a class="next-section" href="#roadmap" aria-label="Volgende: Roadmap"></a>
     </section>
@@ -628,39 +627,32 @@
     <section id="roadmap" class="section section-alt">
         <p class="section-kicker"><span class="section-num">05</span> Roadmap</p>
         <h2>Roadmap</h2>
-        <p class="section-subheading">Afgestemd op de Amerikaanse en Europese deadlines hierboven.</p>
+        <p class="section-subheading">Een roadmap voor de komende jaren.</p>
 
         <div class="roadmap-grid">
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 1 &middot; Nu &rarr; 2027</span>
                 <h3>Audit</h3>
-                <p>Laten zien waar elke applicatie cryptografie gebruikt, vanuit haar eigen build. De functies hierboven zijn gebouwd; hierna in deze fase:</p>
+                <p>Laten zien waar elke applicatie cryptografie gebruikt, vanuit haar eigen build.</p>
+                <h4 class="phase-label">In ontwikkeling</h4>
                 <ul class="phase-list">
-                    <li>De AI-agent die leert van de wijzigingen die je team goedkeurt</li>
-                    <li>Post-quantum- en hybride cryptografie meegeteld als migratievoortgang, in code, sleutels, certificaten en configuratie</li>
-                    <li>Een inventaris van pakketten van derden (afhankelijkheden): welke cryptografie meebrengen</li>
-                    <li>COBOL-code op mainframes, veel gebruikt bij banken: de aanroepen naar de cryptografiedienst van het mainframe, en de instellingen voor certificaten en beveiligde verbindingen</li>
-                    <li>Rapporten die hun dekking vermelden, zodat een gedeeltelijke scan niet wordt aangezien voor een schone</li>
-                    <li>CBOM-uitvoer afgestemd op de minimumelementen van CISA zodra die verschijnen, rond maart 2027, en CycloneDX 1.7 geaccepteerd bij import</li>
-                    <li>CBOM-bewijsrapporten voor auditors, met verwijzing naar de Amerikaanse en Europese richtlijnen</li>
+                    <li>De AI-agent trainen om te leren van de wijzigingen die het team goedkeurt</li>
+                    <li>Post-quantum- en hybride cryptografie</li>
+                    <li>COBOL-code op mainframes</li>
+                    <li>CycloneDX 1.7</li>
                 </ul>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                 <h3>Migreren</h3>
-                <p>De cirkel sluiten van bevinding tot oplossing, waarbij een mens elke wijziging goedkeurt.</p>
-                <ul class="phase-list">
-                    <li>Voorgestelde oplossingen als concept-pull requests met de codewijziging, de onderbouwing en de geciteerde richtlijn, ter beoordeling door een mens</li>
-                    <li>Migratiedoelen die standaard hybride sleuteluitwisseling gebruiken, met de platformversies die elke wijziging nodig heeft</li>
-                    <li>Tests die elke wijziging controleren voordat een mens die beoordeelt</li>
-                </ul>
+                <p>Testdekking en suggesties met menselijke beoordeling, met migratiedoelen die standaard hybride sleuteluitwisseling gebruiken.</p>
             </article>
 
             <article class="roadmap-phase">
                 <span class="phase-tag">Fase 3 &middot; 2028 &rarr; 2030</span>
                 <h3>Agentische crypto-agility</h3>
-                <p>Agents doen voorstellen en controleren elkaars werk; deterministische controles verifiëren; een mens keurt goed. Niets wordt vanzelf gemerged of uitgerold.</p>
+                <p>Agents doen voorstellen en controleren elkaars werk; deterministische controles; goedkeuring door een mens.</p>
             </article>
 
             <article class="roadmap-phase">
@@ -690,6 +682,7 @@
         <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
         <p class="form-note"><a href="privacy.html">Privacyverklaring</a></p>
     </section>
+
     </main>
 
     <!-- Footer -->
