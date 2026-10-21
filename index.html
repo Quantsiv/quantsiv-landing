@@ -169,7 +169,7 @@
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
         <p class="section-kicker"><span class="section-num">01</span> The problem</p>
-        <h2>The dual threat</h2>
+        <h2>Two quantum threats, and new code that adds to them</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
@@ -182,7 +182,7 @@
             </div>
             <div class="threat-card">
                 <h3>Error-prone AI agents</h3>
-                <p>When AI agents generate code, they tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed.</p>
+                <p>When AI agents generate code, they tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed. In a controlled study, developers using an AI assistant wrote less secure code (Perry, Srivastava, Kumar and Boneh, ACM CCS 2023).</p>
             </div>
         </div>
 
@@ -297,7 +297,7 @@
             </div>
             <div class="step">
                 <h3>4. Document</h3>
-                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the previous one, flagging regressions.</p>
+                <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the latest main-branch build, flagging regressions.</p>
             </div>
         </div>
 
@@ -592,7 +592,7 @@
             </details>
             <details class="capability-item">
                 <summary><h3>Keys, certificates and TLS</h3></summary>
-                <p>Recognizes the algorithms and key sizes in key and certificate files, and checks the TLS connections of the servers you name.</p>
+                <p>Recognizes the algorithms and key sizes in key and certificate files, and probes the TLS connections of the servers you name with one handshake.</p>
             </details>
             <details class="capability-item">
                 <summary><h3>Infrastructure configuration</h3></summary>
@@ -616,10 +616,10 @@
             </details>
             <details class="capability-item">
                 <summary><h3>AI agent analysis</h3></summary>
-                <p>An AI agent analyzes each finding in its context and proposes a fix. Works with the model you choose (ChatGPT, Claude, DeepSeek, Grok), including one you host yourself. No change is merged without the user's approval.</p>
+                <p>An AI agent analyzes each finding in its context and proposes a fix. It connects to the model you choose through its chat-completions endpoint, for example ChatGPT, Claude, DeepSeek or Grok, or one you host yourself. No change is merged without the user's approval.</p>
             </details>
         </div>
-        <p class="section-footnote" id="coverage-note">*Coverage varies by language, cloud key-management services and third-party packages.</p>
+        <p class="section-footnote" id="coverage-note">*Coverage varies by language. Pattern matching misses aliased and dynamic calls, vendored code and dependencies, and does not read cloud key-management services.</p>
 
         <a class="next-section" href="#roadmap" aria-label="Next: Roadmap"></a>
     </section>
