@@ -169,7 +169,7 @@
     <!-- The Threat section -->
     <section id="threat" class="section section-alt">
         <p class="section-kicker"><span class="section-num">01</span> Il problema</p>
-        <h2>Due minacce</h2>
+        <h2>Due minacce quantistiche, e nuovo codice che le alimenta</h2>
 
         <div class="threat-grid">
             <div class="threat-card">
@@ -182,7 +182,7 @@
             </div>
             <div class="threat-card">
                 <h3>Agenti AI erronei</h3>
-                <p>Quando generano codice, gli assistenti di programmazione tendono a ricorrere a schemi e impostazioni predefiniti che conoscono già. Se questi pattern si basano su algoritmi vulnerabili, il codice può funzionare correttamente e superare i test, pur restando esposto al rischio.</p>
+                <p>Quando generano codice, gli assistenti di programmazione tendono a ricorrere a schemi e impostazioni predefiniti che conoscono già. Se questi pattern si basano su algoritmi vulnerabili, il codice può funzionare correttamente e superare i test, pur restando esposto al rischio. In uno studio controllato, gli sviluppatori che usavano un assistente IA hanno scritto codice meno sicuro (Perry, Srivastava, Kumar e Boneh, ACM CCS 2023).</p>
             </div>
         </div>
 
@@ -297,7 +297,7 @@
             </div>
             <div class="step">
                 <h3>4. Documentare</h3>
-                <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Inoltre gli agenti di IA possono utilizzare queste informazioni per suggerire alternative resistenti agli attacchi quantistici e aiutare a pianificare le modifiche. Quantsiv confronta i risultati di ogni build con quella precedente, evitando regressioni.</p>
+                <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Inoltre gli agenti di IA possono utilizzare queste informazioni per suggerire alternative resistenti agli attacchi quantistici e aiutare a pianificare le modifiche. Quantsiv confronta i risultati di ogni build con l'ultima build del ramo principale, segnalando le regressioni.</p>
             </div>
         </div>
 
@@ -592,7 +592,7 @@
             </details>
             <details class="capability-item">
                 <summary><h3>Chiavi, certificati e TLS</h3></summary>
-                <p>Riconosce gli algoritmi e la dimensione delle chiavi nei file di chiavi e certificati e verifica le connessioni TLS dei server che indichi.</p>
+                <p>Riconosce gli algoritmi e la dimensione delle chiavi nei file di chiavi e certificati e sonda con un solo handshake le connessioni TLS dei server che indichi.</p>
             </details>
             <details class="capability-item">
                 <summary><h3>Configurazioni dell'infrastruttura</h3></summary>
@@ -616,10 +616,10 @@
             </details>
             <details class="capability-item">
                 <summary><h3>Analisi con agenti IA</h3></summary>
-                <p>Un agente IA analizza ogni rilevamento nel suo contesto e propone una correzione. Funziona con il modello che scegli (ChatGPT, Claude, DeepSeek, Grok), anche ospitato da te. Nessuna modifica viene integrata senza l'approvazione dell'utente.</p>
+                <p>Un agente IA analizza ogni rilevamento nel suo contesto e propone una correzione. Si collega al modello che scegli tramite il suo endpoint chat-completions, per esempio ChatGPT, Claude, DeepSeek o Grok, oppure uno ospitato da te. Nessuna modifica viene integrata senza l'approvazione dell'utente.</p>
             </details>
         </div>
-        <p class="section-footnote" id="coverage-note">*Il livello di copertura varia in base al linguaggio, ai servizi cloud di gestione delle chiavi e pacchetti di terze parti.</p>
+        <p class="section-footnote" id="coverage-note">*Il livello di copertura varia in base al linguaggio. Il riconoscimento per pattern non rileva le chiamate con alias o dinamiche, il codice vendorizzato e le dipendenze, e non legge i servizi cloud di gestione delle chiavi.</p>
 
         <a class="next-section" href="#roadmap" aria-label="Avanti: Roadmap"></a>
     </section>

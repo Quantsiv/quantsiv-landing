@@ -322,11 +322,31 @@ stand until the founder changes them:
   ("Digital signatures prove that software, certificates, documents and transactions are
   genuine. ...") and the fourth step of "How Quantsiv Works" ("Quantsiv generates a CycloneDX
   1.6 CBOM, a SARIF file for code-scanning tools, and a ranked report. ..."), in translation on
-  `nl/` and `it/`. Change them only with his word.
-- Detection limits (the founder's pick, 19 Oct 2026; shortened on his ask, 20 Oct 2026): the
-  language card does not list Rust, and the limits are one footnote under the features
-  (`#coverage-note`): coverage varies by language, cloud key-management services and third-party
-  packages. The separate limits section is gone. The demo is labelled "Output" with a footnote
+  `nl/` and `it/`. Change them only with his word. On his word of 21 Oct 2026 (the review's
+  fixes) the fourth step says "with the latest main-branch build", which is what the change
+  check does, instead of "with the previous one"; the Italian says "segnalando le regressioni",
+  because the check flags.
+- The threat section (21 Oct 2026, the review's fixes on the founder's word): its heading is
+  "Two quantum threats, and new code that adds to them", because the section has three cards,
+  and the third card, "Error-prone AI agents", ends with the one sourced sentence on the page
+  outside the deadlines: in a controlled study, developers using an AI assistant wrote less
+  secure code (Perry, Srivastava, Kumar and Boneh, "Do Users Write More Insecure Code with AI
+  Assistants?", ACM CCS 2023). Keep the citation with the card; it is the card's only source.
+- The keys card says "probes the TLS connections of the servers you name with one handshake"
+  (21 Oct 2026), never "checks", because one handshake is a probe (see "What the page may say").
+- The agent card says the agent "connects to the model you choose through its chat-completions
+  endpoint, for example ChatGPT, Claude, DeepSeek or Grok, or one you host yourself" (21 Oct
+  2026): the names are examples of endpoints, not tested models. Write no "works with" or
+  "tested with" a named model until a run against it exists.
+- The Dutch page was rebuilt from the English on 21 Oct 2026, because it had kept the copy
+  from before landing #29; its demo block keeps the earlier translation. From then on the three
+  pages mirror again, and every change goes into all three in the same commit.
+- Detection limits (the founder's pick, 19 Oct 2026; shortened on his ask, 20 Oct 2026; the
+  limits sentence restored on his word in the review thread, 21 Oct 2026): the language card
+  does not list Rust, and the limits are one footnote under the features (`#coverage-note`):
+  coverage varies by language, and pattern matching misses aliased and dynamic calls, vendored
+  code and dependencies, and does not read cloud key-management services. The separate limits
+  section is gone. The demo is labelled "Output" with a footnote
   (`#demo-footnote`) saying the results are Quantsiv's own on a demo repository. Keep these until
   measured detection improves and the founder says so.
 - The page reads in order (the founder's ask, 19 Oct 2026): the menu and each section carry a
