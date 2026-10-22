@@ -280,6 +280,10 @@ stand until the founder changes them:
   In `nl/` and `it/` tool output stays in English (`lang="en"`) with a translation in brackets.
   Without JavaScript every panel shows in order (`noscript.css`); the tabs follow the WAI-ARIA
   tabs pattern in `script.js`.
+- The text font is Geist (the founder's pick, 22 Oct 2026), self-hosted in `assets/fonts/` under the SIL
+  Open Font License with its licence file; labels, dates and tags stay IBM Plex Mono. Headings are light:
+  300 for the hero and section headings, 400 for the others. Load no font from another host: the
+  Content-Security-Policy allows only this site's files.
 - The brand tagline is "See tomorrow. Secure today." (the founder's, 18 Oct 2026). It is the
   small line above the headline, the share title (`og:title`) and the first line of the footer, in
   English on every language version (`lang="en"` in `nl/` and `it/`). It is a brand line, not a
