@@ -94,7 +94,7 @@ Search the page for every phrase in the first column before each commit.
 | "AST-level", "type-resolved", "deep analysis" | The rules are line patterns | "pattern-based detection" |
 | "enforces", "blocks", "tamper-proof", "audit-grade", "guarantees" | The change check flags and gates; it does not guarantee | "flags", "gates" |
 | "one-click compliance report", "audit-ready report" | Not built | "CycloneDX CBOM, SARIF and a ranked report" |
-| "your code never leaves" | Too absolute | "Scanning runs in your CI by default. Only the CBOM and finding metadata reach Quantsiv, and only if you upload." |
+| "your code never leaves" | Too absolute | "Scanning runs in your CI by default. Only the CBOM and finding metadata reach Quantsiv, and only if you upload. Quantsiv also scans public repositories on its own servers; private ones are not scanned there." |
 | "regulators require the CBOM", "mandates a central CBOM" | See the citations below: guidance and "should", not a rule for private companies | The exact wording in the citations |
 | "SOC 2", "ISO 27001", "penetration tested", "certified", "FIPS validated" | Not held. On the long-term roadmap they are goals, never status | Leave out, or label as a future goal |
 | "GitHub Action", "Marketplace", "plugin" | Not published | "CI templates for GitHub Actions, GitLab, Jenkins and Azure DevOps" |
@@ -158,7 +158,8 @@ them. Do not add to them without the founder.
   as a comment.
 - Runs in your CI by default, offline, as a container with templates for GitHub Actions, GitLab,
   Jenkins and Azure DevOps. Only the CBOM and finding metadata reach Quantsiv, and only if you
-  upload.
+  upload. Quantsiv also scans public repositories on its own servers, for demos; private ones are
+  not scanned there (the founder's word, 22 Oct 2026).
 - A read-only MCP server lets an AI coding assistant ask your policy and declared lifetimes
   before it writes cryptography. The same check runs at the gate. It has no write tools and no
   model of ours in it.
@@ -368,6 +369,11 @@ stand until the founder changes them:
   with no inline scripts or styles. `form-action` allows this site and Brevo's form address
   (c58bed8a.sibforms.com), and `frame-src` allows only that address, for the hidden frame the
   sign-up posts into; change both if the form moves to another service.
+- The source-code sentences (step 1 and the "Offline scanning" card, 22 Oct 2026, the founder's
+  word) say that scans run in your CI by default and that public repositories can also be scanned
+  on Quantsiv's servers, private ones not, because the hosted service clones public repositories.
+  Keep that caveat wherever "only if you upload" appears; the decks and the product's claims sheet
+  say the same.
 
 ## Before every commit
 
