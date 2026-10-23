@@ -2,127 +2,19 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
-    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <!-- Each chapter had its own page from 23 Oct 2026 for a few hours; it now opens in place on
+         the home page. This address sends visitors there. -->
+    <meta http-equiv="refresh" content="0; url=./#roadmap">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="De roadmap van Quantsiv in vier fasen, van nu tot 2035: Audit, Migreren, Agentische crypto-agility en Platformconsolidatie.">
     <title>Roadmap - Quantsiv</title>
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Quantsiv">
-    <meta property="og:title" content="Roadmap - Quantsiv">
-    <meta property="og:description" content="De roadmap van Quantsiv in vier fasen, van nu tot 2035: Audit, Migreren, Agentische crypto-agility en Platformconsolidatie.">
-    <meta property="og:url" content="https://quantsiv.com/nl/roadmap.html">
-    <meta property="og:image" content="https://quantsiv.com/assets/social-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Quantsiv. See tomorrow. Secure today.">
-    <meta property="og:locale" content="nl_NL">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="it_IT">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://quantsiv.com/nl/roadmap.html">
-    <link rel="alternate" hreflang="en" href="https://quantsiv.com/roadmap.html">
-    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/roadmap.html">
-    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/roadmap.html">
-    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/roadmap.html">
-    <link rel="preload" href="../assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="canonical" href="https://quantsiv.com/nl/">
+    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
-    <noscript><link rel="stylesheet" href="../noscript.css"></noscript>
 </head>
 <body>
-    <!-- Header with three-part layout -->
-    <header class="site-header">
-        <div class="brand-center"><img src="../assets/logo-horizontal-light-360.png" alt="Quantsiv" class="logo" width="360" height="90"></div>
-        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu"><span class="menu-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span></button>
-        <div class="site-menu" id="site-menu">
-        <nav class="nav-center" aria-label="Hoofdmenu">
-            <ul class="nav-list">
-                <li><a href="problem.html" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het probleem</a></li>
-                <li><a href="deadlines.html" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
-                <li><a href="how-it-works.html" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Hoe het werkt</a></li>
-                <li><a href="features.html" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Functies</a></li>
-                <li><a href="roadmap.html" class="nav-link" aria-current="page"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
-            </ul>
-        </nav>
-        <nav class="lang-switch" aria-label="Taal">
-            <ul>
-                <li><a href="../roadmap.html" lang="en" hreflang="en">English</a></li>
-                <li><a href="roadmap.html" lang="nl" hreflang="nl" aria-current="page">Nederlands</a></li>
-                <li><a href="../it/roadmap.html" lang="it" hreflang="it">Italiano</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <main id="main">
-    <!-- Roadmap section -->
-    <section id="roadmap" class="section section-alt">
-        <h1 class="section-kicker"><span class="section-num">05</span> Roadmap</h1>
-        <h2>Roadmap</h2>
-        <p class="section-subheading">Een roadmap voor de komende jaren.</p>
-
-        <div class="roadmap-grid">
-            <article class="roadmap-phase">
-                <span class="phase-tag">Fase 1 &middot; Nu &rarr; 2027</span>
-                <h3>Audit</h3>
-                <p>Laten zien waar elke applicatie cryptografie gebruikt, vanuit haar eigen build.</p>
-                <h4 class="phase-label">In ontwikkeling</h4>
-                <ul class="phase-list">
-                    <li>De AI-agent trainen om te leren van de wijzigingen die het team goedkeurt</li>
-                    <li>Post-quantum- en hybride cryptografie</li>
-                    <li>COBOL-code op mainframes</li>
-                    <li>CycloneDX 1.7</li>
-                </ul>
-            </article>
-
-            <article class="roadmap-phase">
-                <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
-                <h3>Migreren</h3>
-                <p>Testdekking en suggesties met menselijke beoordeling, met migratiedoelen die standaard hybride sleuteluitwisseling gebruiken.</p>
-            </article>
-
-            <article class="roadmap-phase">
-                <span class="phase-tag">Fase 3 &middot; 2028 &rarr; 2030</span>
-                <h3>Agentische crypto-agility</h3>
-                <p>Agents doen voorstellen en controleren elkaars werk; deterministische controles; goedkeuring door een mens.</p>
-            </article>
-
-            <article class="roadmap-phase">
-                <span class="phase-tag">Fase 4 &middot; 2030 &rarr; 2035</span>
-                <h3>Platformconsolidatie</h3>
-                <p>Eén product om te installeren, voor audit, migratie en review.</p>
-            </article>
-        </div>
-
-        <a class="next-section" href="#contact" aria-label="Volgende: Neem contact op"></a>
-    </section>
-
-    <!-- Contact: the waitlist form is on the home page -->
-    <section class="newsletter" id="contact">
-        <h2>Neem contact op</h2>
-        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv.</p>
-        <div class="hero-buttons">
-            <a href="./#contact" class="cta-primary">Zet je op de wachtlijst</a>
-            <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
-        </div>
-    </section>
-
+    <main class="legal">
+        <p>Dit onderdeel staat nu op de <a href="./#roadmap">startpagina</a>.</p>
     </main>
-
-    <!-- Footer -->
-    <footer itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Quantsiv">
-        <link itemprop="url" href="https://quantsiv.com/">
-        <link itemprop="logo" href="https://quantsiv.com/assets/apple-touch-icon.png">
-        <meta itemprop="email" content="hello@quantsiv.com">
-        <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
-        <div>&copy; 2026 Quantsiv. Alle rechten voorbehouden.</div>
-        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
-        <div><a href="privacy.html">Privacyverklaring</a></div>
-        <div>Stealth-modus</div>
-    </footer>
-
 </body>
 </html>

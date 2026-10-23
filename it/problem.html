@@ -2,128 +2,19 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
-    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <!-- Each chapter had its own page from 23 Oct 2026 for a few hours; it now opens in place on
+         the home page. This address sends visitors there. -->
+    <meta http-equiv="refresh" content="0; url=./#threat">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I dati cifrati intercettati oggi potranno essere decifrati quando i computer quantistici saranno abbastanza potenti, e le firme digitali falsificate.">
     <title>Due minacce quantistiche alla crittografia di oggi - Quantsiv</title>
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Quantsiv">
-    <meta property="og:title" content="Due minacce quantistiche alla crittografia di oggi - Quantsiv">
-    <meta property="og:description" content="I dati cifrati intercettati oggi potranno essere decifrati quando i computer quantistici saranno abbastanza potenti, e le firme digitali falsificate.">
-    <meta property="og:url" content="https://quantsiv.com/it/problem.html">
-    <meta property="og:image" content="https://quantsiv.com/assets/social-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Quantsiv. See tomorrow. Secure today.">
-    <meta property="og:locale" content="it_IT">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="nl_NL">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://quantsiv.com/it/problem.html">
-    <link rel="alternate" hreflang="en" href="https://quantsiv.com/problem.html">
-    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/problem.html">
-    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/problem.html">
-    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/problem.html">
-    <link rel="preload" href="../assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="canonical" href="https://quantsiv.com/it/">
+    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
-    <noscript><link rel="stylesheet" href="../noscript.css"></noscript>
 </head>
 <body>
-    <!-- Header with three-part layout -->
-    <header class="site-header">
-        <div class="brand-center"><img src="../assets/logo-horizontal-light-360.png" alt="Quantsiv" class="logo" width="360" height="90"></div>
-        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu"><span class="menu-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span></button>
-        <div class="site-menu" id="site-menu">
-        <nav class="nav-center" aria-label="Menu principale">
-            <ul class="nav-list">
-                <li><a href="problem.html" class="nav-link" aria-current="page"><span class="nav-num" aria-hidden="true">01</span>Il problema</a></li>
-                <li><a href="deadlines.html" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Le scadenze</a></li>
-                <li><a href="how-it-works.html" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Come funziona</a></li>
-                <li><a href="features.html" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Le funzionalità</a></li>
-                <li><a href="roadmap.html" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
-            </ul>
-        </nav>
-        <nav class="lang-switch" aria-label="Lingua">
-            <ul>
-                <li><a href="../problem.html" lang="en" hreflang="en">English</a></li>
-                <li><a href="../nl/problem.html" lang="nl" hreflang="nl">Nederlands</a></li>
-                <li><a href="problem.html" lang="it" hreflang="it" aria-current="page">Italiano</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <main id="main">
-    <!-- The Threat section -->
-    <section id="threat" class="section section-alt">
-        <h1 class="section-kicker"><span class="section-num">01</span> Il problema</h1>
-        <h2>Due minacce quantistiche, e nuovo codice che le alimenta</h2>
-
-        <div class="threat-grid">
-            <div class="threat-card">
-                <h3 lang="en">Harvest now, decrypt later</h3>
-                <p>Oggi gli hacker possono intercettare e conservare dati cifrati, per poi decriptarli in futuro, grazie a computer quantistici sufficientemente potenti. Questo scenario mette a rischio gli attuali sistemi di cifratura e di scambio delle chiavi, come RSA e Diffie-Hellman. Il livello di rischio dipende anche da quanto a lungo i dati devono restare segreti. <strong>Se la privacy è per 25 anni, il traffico registrato ieri è già a rischio.</strong></p>
-            </div>
-            <div class="threat-card">
-                <h3>Falsificazione delle firme digitali</h3>
-                <p>Le firme digitali permettono di verificare l'autenticità di software, certificati, documenti e transazioni. Un computer quantistico potrebbe ricavare le chiavi private a partire da quelle pubbliche e, di conseguenza, falsificare le firme. Chiavi e firme devono restare affidabili, anche nei dispositivi, nelle autorità di certificazione e nei registri permanenti. Nel caso dei wallet di cripto-attività, l'esposizione on-chain di una chiave pubblica potrebbe rendere possibili trasferimenti non autorizzati.</p>
-            </div>
-            <div class="threat-card">
-                <h3>Agenti AI erronei</h3>
-                <p>Quando generano codice, gli assistenti di programmazione tendono a ricorrere a schemi e impostazioni predefiniti che conoscono già. Se questi pattern si basano su algoritmi vulnerabili, il codice può funzionare correttamente e superare i test, pur restando esposto al rischio. In uno studio controllato, gli sviluppatori che usavano un assistente IA hanno scritto codice meno sicuro (Perry, Srivastava, Kumar e Boneh, ACM CCS 2023).</p>
-            </div>
-        </div>
-
-        <div class="hndl-timeline">
-            <div class="hndl-step">
-                <span class="hndl-year">Oggi</span>
-                <h4>Raccolta</h4>
-                <p>Intercettazione del traffico cifrato, copia dei dati e conservazione.</p>
-            </div>
-            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
-            <div class="hndl-step">
-                <span class="hndl-year">Domani</span>
-                <h4>Decifratura</h4>
-                <p>Computer quantistici compromettono gli algoritmi a chiave pubblica usati per proteggere le copie conservate.</p>
-            </div>
-            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
-            <div class="hndl-step">
-                <span class="hndl-year">Poi</span>
-                <h4>Esposizione</h4>
-                <p>I dati cifrati con RSA o ECC diventano leggibili e le firme digitali possono essere falsificate.</p>
-            </div>
-        </div>
-
-        <a class="next-section next-page" href="deadlines.html" aria-label="Avanti: Le scadenze"></a>
-    </section>
-
-    <!-- Contact: the waitlist form is on the home page -->
-    <section class="newsletter" id="contact">
-        <h2>Contattaci</h2>
-        <p>Ricevi aggiornamenti sulle scadenze della migrazione post-quantum, sugli standard e sulle release di Quantsiv.</p>
-        <div class="hero-buttons">
-            <a href="./#contact" class="cta-primary">Entra in lista d'attesa</a>
-            <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
-        </div>
-    </section>
-
+    <main class="legal">
+        <p>Questa sezione ora si trova nella <a href="./#threat">pagina iniziale</a>.</p>
     </main>
-
-    <!-- Footer -->
-    <footer itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Quantsiv">
-        <link itemprop="url" href="https://quantsiv.com/">
-        <link itemprop="logo" href="https://quantsiv.com/assets/apple-touch-icon.png">
-        <meta itemprop="email" content="hello@quantsiv.com">
-        <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
-        <div>&copy; 2026 Quantsiv. Tutti i diritti riservati.</div>
-        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
-        <div><a href="privacy.html">Informativa sulla privacy</a></div>
-        <div>Modalità stealth</div>
-    </footer>
-
 </body>
 </html>

@@ -2,149 +2,19 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
-    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <!-- Each chapter had its own page from 23 Oct 2026 for a few hours; it now opens in place on
+         the home page. This address sends visitors there. -->
+    <meta http-equiv="refresh" content="0; url=./#capabilities">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wat Quantsiv vindt: gangbare cryptografische API's in veel talen, sleutel- en certificaatbestanden, configuratiebestanden en walletcode, bij elke build.">
     <title>Functies - Quantsiv</title>
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Quantsiv">
-    <meta property="og:title" content="Functies - Quantsiv">
-    <meta property="og:description" content="Wat Quantsiv vindt: gangbare cryptografische API's in veel talen, sleutel- en certificaatbestanden, configuratiebestanden en walletcode, bij elke build.">
-    <meta property="og:url" content="https://quantsiv.com/nl/features.html">
-    <meta property="og:image" content="https://quantsiv.com/assets/social-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Quantsiv. See tomorrow. Secure today.">
-    <meta property="og:locale" content="nl_NL">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="it_IT">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://quantsiv.com/nl/features.html">
-    <link rel="alternate" hreflang="en" href="https://quantsiv.com/features.html">
-    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/features.html">
-    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/features.html">
-    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/features.html">
-    <link rel="preload" href="../assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="canonical" href="https://quantsiv.com/nl/">
+    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
-    <noscript><link rel="stylesheet" href="../noscript.css"></noscript>
 </head>
 <body>
-    <!-- Header with three-part layout -->
-    <header class="site-header">
-        <div class="brand-center"><img src="../assets/logo-horizontal-light-360.png" alt="Quantsiv" class="logo" width="360" height="90"></div>
-        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu"><span class="menu-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span></button>
-        <div class="site-menu" id="site-menu">
-        <nav class="nav-center" aria-label="Hoofdmenu">
-            <ul class="nav-list">
-                <li><a href="problem.html" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het probleem</a></li>
-                <li><a href="deadlines.html" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
-                <li><a href="how-it-works.html" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Hoe het werkt</a></li>
-                <li><a href="features.html" class="nav-link" aria-current="page"><span class="nav-num" aria-hidden="true">04</span>Functies</a></li>
-                <li><a href="roadmap.html" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
-            </ul>
-        </nav>
-        <nav class="lang-switch" aria-label="Taal">
-            <ul>
-                <li><a href="../features.html" lang="en" hreflang="en">English</a></li>
-                <li><a href="features.html" lang="nl" hreflang="nl" aria-current="page">Nederlands</a></li>
-                <li><a href="../it/features.html" lang="it" hreflang="it">Italiano</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <main id="main">
-    <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
-         text and, for languages and CI, a list of what it works with. Logos are simple-icons
-         paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
-         has no logo we may safely show. -->
-    <section id="capabilities" class="section">
-        <h1 class="section-kicker"><span class="section-num">04</span> Functies</h1>
-        <h2>Gebouwd voor het quantumtijdperk.</h2>
-        <div class="capabilities-grid">
-            <details class="capability-item">
-                <summary><h3>Ondersteuning voor veel talen</h3></summary>
-                <p>Herkent de meest gangbare cryptografische API's in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C# en Swift, plus openssl-, ssh-keygen- en keytool-opdrachten in buildscripts.<a href="#coverage-note" class="footnote-ref" aria-label="Noot over de dekking">*</a></p>
-                <ul class="tool-list" aria-label="Talen en opdrachten"><li><img src="../assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="../assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="../assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="../assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="../assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="../assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="../assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Cryptografische inventaris (CBOM)</h3></summary>
-                <p>Maakt automatisch een standaard CycloneDX 1.6 CBOM van de cryptografie die in je repository's is gevonden, of importeert CBOM's van andere tools.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Risicobeoordeling</h3></summary>
-                <p>Rangschikt versleuteling naar hoe lang de gegevens geheim moeten blijven, en digitale handtekeningen naar hoe lang ze vertrouwd moeten blijven. De meest urgente punten komen eerst.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Controles bij elke build</h3></summary>
-                <p>Markeert automatisch, bij elke build, de kwetsbare cryptografie die een wijziging toevoegt. Brengt de controles naar pull requests voor vroege feedback.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Eenvoudige CI/CD-integratie</h3></summary>
-                <p>Werkt met GitHub Actions, GitLab, Jenkins en Azure DevOps. Scan op je eigen computer of in de pipeline die je al gebruikt.</p>
-                <ul class="tool-list" aria-label="CI-systemen"><li><img src="../assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="../assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Sleutels, certificaten en TLS</h3></summary>
-                <p>Herkent de algoritmen en sleutelgroottes in sleutel- en certificaatbestanden, en peilt met één handshake de TLS-verbindingen van de servers die je opgeeft.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Infrastructuurconfiguratie</h3></summary>
-                <p>Vindt kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes- en CloudFormation-bestanden, en in configuratiebestanden van webservers, OpenSSL en OpenSSH in je repository.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Ondersteuning voor cryptowallets</h3></summary>
-                <p>Analyseert de code, niet de blockchain. Vindt secp256k1- en Ed25519-ondertekeningssleutels, Schnorr-handtekeningen en ECDH- en ECIES-sleuteluitwisseling in gangbare walletbibliotheken. Geeft migratieaanwijzingen tot de blockchain post-quantumhandtekeningen ondersteunt.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>MCP-ondersteuning</h3></summary>
-                <p>Laat AI-codeassistenten via een alleen-lezen MCP-koppeling je cryptografieregels controleren terwijl ze code schrijven.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Suggesties voor de post-quantummigratie</h3></summary>
-                <p>Stelt de best passende standaard voor: ML-KEM, ML-DSA of SLH-DSA, of een hybride sleuteluitwisseling.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Offline scannen</h3></summary>
-                <p>Standaard draaien scans offline in je CI en blijft je broncode in je eigen omgeving. Resultaten bereiken Quantsiv alleen als je ze uploadt. Openbare repositories kunnen ook op de servers van Quantsiv worden gescand; private niet.</p>
-            </details>
-            <details class="capability-item">
-                <summary><h3>Analyse door een AI-agent</h3></summary>
-                <p>Een AI-agent analyseert elke bevinding in haar context en stelt een oplossing voor. Hij maakt verbinding met het model dat je kiest via zijn chat-completions-endpoint, bijvoorbeeld ChatGPT, Claude, DeepSeek of Grok, of een model dat je zelf host. Geen wijziging wordt gemerged zonder goedkeuring van de gebruiker.</p>
-            </details>
-        </div>
-        <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal. Patroonherkenning mist aanroepen via een alias of dynamische aanroepen, meegeleverde code en afhankelijkheden, en leest clouddiensten voor sleutelbeheer niet.</p>
-
-        <a class="next-section next-page" href="roadmap.html" aria-label="Volgende: Roadmap"></a>
-    </section>
-
-    <!-- Contact: the waitlist form is on the home page -->
-    <section class="newsletter" id="contact">
-        <h2>Neem contact op</h2>
-        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv.</p>
-        <div class="hero-buttons">
-            <a href="./#contact" class="cta-primary">Zet je op de wachtlijst</a>
-            <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
-        </div>
-    </section>
-
+    <main class="legal">
+        <p>Dit onderdeel staat nu op de <a href="./#capabilities">startpagina</a>.</p>
     </main>
-
-    <!-- Footer -->
-    <footer itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Quantsiv">
-        <link itemprop="url" href="https://quantsiv.com/">
-        <link itemprop="logo" href="https://quantsiv.com/assets/apple-touch-icon.png">
-        <meta itemprop="email" content="hello@quantsiv.com">
-        <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
-        <div>&copy; 2026 Quantsiv. Alle rechten voorbehouden.</div>
-        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
-        <div><a href="privacy.html">Privacyverklaring</a></div>
-        <div>Stealth-modus</div>
-    </footer>
-
 </body>
 </html>

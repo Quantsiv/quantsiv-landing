@@ -41,11 +41,11 @@
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Main">
             <ul class="nav-list">
-                <li><a href="problem.html" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>The problem</a></li>
-                <li><a href="deadlines.html" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
-                <li><a href="how-it-works.html" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>How it works</a></li>
-                <li><a href="features.html" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Features</a></li>
-                <li><a href="roadmap.html" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
+                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>The problem</a></li>
+                <li><a href="#compliance" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
+                <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>How it works</a></li>
+                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Features</a></li>
+                <li><a href="#roadmap" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
             </ul>
         </nav>
         <nav class="lang-switch" aria-label="Language">
@@ -65,7 +65,7 @@
             <p class="hero-kicker">See tomorrow. Secure today.</p>
             <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">finds the cryptography quantum computers could break</span></h1>
             <div class="hero-buttons">
-                <a href="problem.html" class="cta-primary">Why it matters</a>
+                <a href="#threat" class="cta-primary">Why it matters</a>
                 <a href="#contact" class="cta-secondary">Get in touch</a>
             </div>
         </div>
@@ -166,43 +166,562 @@
         <p>This is where we come in. We scan your code on every build and show you what is exposed, how long it stays exposed for and what solution to move to.</p>
     </section>
 
-    <!-- Overview: one short summary per chapter. Each chapter has its own page, opened from
-         here or from the menu. -->
-    <section class="overview" aria-labelledby="overview-title">
-        <h2 class="visually-hidden" id="overview-title">Overview</h2>
-        <ol class="overview-list">
-            <li class="overview-item">
+    <!-- Chapters: one row per chapter, with its number, name and a short summary. Each row is a
+         <details> that holds the whole chapter and opens in place. script.js slides it open,
+         keeps one open at a time, scrolls to it, and lets the menu, the hero button and the
+         chevrons at the end of each chapter open their chapter; without scripts the rows still
+         open and the links jump to them. -->
+    <div class="overview">
+        <details class="chapter" id="threat">
+            <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">01</span>
-                <h3 class="overview-title"><a href="problem.html">The problem</a></h3>
-                <p class="overview-text">Encrypted data can be recorded today and decrypted once quantum computers are powerful enough, and digital signatures can be forged. New code, including code written with AI assistants, can add to the risk.</p>
+                <h2 class="overview-title">The problem</h2>
+                <span class="overview-text">Encrypted data can be recorded today and decrypted once quantum computers are powerful enough, and digital signatures can be forged. New code, including code written with AI assistants, can add to the risk.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
-            </li>
-            <li class="overview-item">
+            </summary>
+            <div class="chapter-body">
+                <!-- The Threat section -->
+                <section class="section">
+                    <h2>Two quantum threats, and new code that adds to them</h2>
+
+                    <div class="threat-grid">
+                        <div class="threat-card">
+                            <h3>Harvest now, decrypt later</h3>
+                            <p>Today, hackers can intercept and store encrypted data, then decrypt it with sufficiently powerful quantum computers in the future. This puts today's encryption and key-exchange systems, such as RSA and Diffie-Hellman, at risk. It all depends on how long the data must stay secret. <strong>If it has to stay private for 25 years, traffic recorded yesterday is already at risk.</strong></p>
+                        </div>
+                        <div class="threat-card">
+                            <h3>Digital signature forgery</h3>
+                            <p>Digital signatures make it possible to check that software, certificates, documents and transactions are genuine. A quantum computer could derive private keys from the public ones and forge signatures. Signatures must stay trustworthy, including those in devices, certificate authorities and permanent records. For crypto-asset wallets, a public key exposed on-chain could also make unauthorized transfers possible.</p>
+                        </div>
+                        <div class="threat-card">
+                            <h3>Error-prone AI agents</h3>
+                            <p>When AI agents generate code, they tend to fall back on patterns and defaults they already know. When those patterns rely on vulnerable algorithms, the code can work correctly and pass its tests while still being exposed. In a controlled study, developers using an AI assistant wrote less secure code (Perry, Srivastava, Kumar and Boneh, ACM CCS 2023).</p>
+                        </div>
+                    </div>
+
+                    <div class="hndl-timeline">
+                        <div class="hndl-step">
+                            <span class="hndl-year">Today</span>
+                            <h4>Harvest</h4>
+                            <p>Encrypted traffic is intercepted, and data is copied and stored.</p>
+                        </div>
+                        <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+                        <div class="hndl-step">
+                            <span class="hndl-year">Tomorrow</span>
+                            <h4>Decrypt</h4>
+                            <p>Quantum computers break the public-key algorithms used to protect the stored copies.</p>
+                        </div>
+                        <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+                        <div class="hndl-step">
+                            <span class="hndl-year">Then</span>
+                            <h4>Exposure</h4>
+                            <p>Data encrypted with RSA or ECC becomes readable, and digital signatures can be forged.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="chapter-nav">
+                    <a class="chapter-step chapter-next" href="#compliance" aria-label="Next: Deadlines"></a>
+                </div>
+            </div>
+        </details>
+        <details class="chapter" id="compliance">
+            <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">02</span>
-                <h3 class="overview-title"><a href="deadlines.html">Deadlines</a></h3>
-                <p class="overview-text">Institutions in the US and the EU have published dates for replacing vulnerable cryptography, with migration deadlines between 2030 and 2035. Executive Order 14412 (22 June 2026), for example, sets 31 December 2030 for post-quantum key establishment on high-value assets and high-impact systems.</p>
+                <h2 class="overview-title">Deadlines</h2>
+                <span class="overview-text">Institutions in the US and the EU have published dates for replacing vulnerable cryptography, with migration deadlines between 2030 and 2035. Executive Order 14412 (22 June 2026), for example, sets 31 December 2030 for post-quantum key establishment on high-value assets and high-impact systems.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
-            </li>
-            <li class="overview-item">
+            </summary>
+            <div class="chapter-body">
+                <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
+                     the section stays short. script.js marks the dates already past and puts a "today"
+                     marker on the line; without scripts the dates still open and close. -->
+                <section class="section">
+                    <h2>The deadlines are already set</h2>
+                    <p class="section-subheading">These are not just predictions. In the US and the EU, institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
+
+                    <ol class="deadlines" data-label-now="Today">
+                        <li class="deadline" data-date="2024-08-13">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">13 August 2024</span> <h3 class="deadline-title">NIST publishes the new standards</h3></summary>
+                                <p>The US standards institute publishes three new standards: FIPS 203 (ML-KEM), to establish the keys used to encrypt data, and FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA), for digital signatures. Alternatives to today's algorithms are therefore available.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2024-11-01">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">November 2024</span> <h3 class="deadline-title">NIST proposes deadlines for retiring today's algorithms</h3></summary>
+                                <p>In the initial public draft of NIST IR 8547, all quantum-vulnerable public-key algorithms, including P-256, are listed as disallowed after 2035.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2026-06-22">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">22 June 2026</span> <h3 class="deadline-title">Executive Order 14412</h3></summary>
+                                <p>The order addresses the risk known as &ldquo;harvest now, decrypt later&rdquo;. For high-value assets and high-impact systems, it sets 31 December 2030 as the deadline for post-quantum key establishment and 31 December 2031 for digital signatures.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2026-06-24">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">24 June 2026</span> <h3 class="deadline-title">OMB M-26-15: a phased federal migration</h3></summary>
+                                <p>Federal agencies must build an automated inventory whose data &ldquo;should populate a central Cryptographic Bill of Materials&rdquo; (CBOM). Agency plans are due by 22 October 2026. The migration runs in five phases, from 2026 to 2035.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2026-12-19">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">About December 2026</span> <h3 class="deadline-title">A proposed rule for federal contractors</h3></summary>
+                                <p>EO 14412 gives the FAR Council 180 days, until about 19 December 2026, to propose a rule under the Federal Acquisition Regulation (FAR). The rule would require covered contractors to comply by 31 December 2030 with NIST's FIPS standards, including those based on post-quantum algorithms.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2027-03-19">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">About March 2027</span> <h3 class="deadline-title">Guidance on what a CBOM should contain</h3></summary>
+                                <p>Within 270 days of EO 14412, around March 2027, CISA, in coordination with NIST, is due to publish guidance on the minimum elements a CBOM should include.</p>
+                            </details>
+                        </li>
+                        <li class="deadline" data-date="2030-12-31">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">2030 to 2035</span> <h3 class="deadline-title">The migration deadlines</h3></summary>
+                                <p>Under EO 14412, post-quantum key establishment must be adopted by 31 December 2030, and digital signatures by 31 December 2031, on high-value assets and high-impact systems. If the FAR rule the order calls for is adopted, covered contractors must comply by 31 December 2030. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap of 23 June 2025, a recommendation, asks member states to set national strategies by the end of 2026, address high-risk use cases by the end of 2030 and migrate as many systems as feasible by 2035.</p>
+                            </details>
+                        </li>
+                    </ol>
+
+                    <p class="sources">
+                        Sources:
+                        <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
+                        <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in the Federal Register</a>;
+                        <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+                        <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
+                        <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
+                        <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
+                        <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
+                        <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">EU NIS Cooperation Group roadmap</a>.
+                    </p>
+                </section>
+                <div class="chapter-nav">
+                    <a class="chapter-step chapter-prev" href="#threat" aria-label="Previous: The problem"></a>
+                    <a class="chapter-step chapter-next" href="#how-it-works" aria-label="Next: How it works"></a>
+                </div>
+            </div>
+        </details>
+        <details class="chapter" id="how-it-works">
+            <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">03</span>
-                <h3 class="overview-title"><a href="how-it-works.html">How it works</a></h3>
-                <p class="overview-text">Quantsiv finds the cryptography in your code, ranks each finding by how long the data must stay secret or a signature must stay trusted, names the standard to move to, and writes a CycloneDX 1.6 CBOM. An example finding shows each step.</p>
+                <h2 class="overview-title">How it works</h2>
+                <span class="overview-text">Quantsiv finds the cryptography in your code, ranks each finding by how long the data must stay secret or a signature must stay trusted, names the standard to move to, and writes a CycloneDX 1.6 CBOM. An example finding shows each step.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
-            </li>
-            <li class="overview-item">
+            </summary>
+            <div class="chapter-body">
+                <!-- How it works section -->
+                <section class="section">
+                    <h2>How Quantsiv Works</h2>
+                    <p class="section-subheading">Four steps, from scanning your code to a standard record (a CycloneDX 1.6 CBOM).</p>
+                    <div class="process-steps">
+                        <div class="step">
+                            <h3>1. Discover</h3>
+                            <p>Quantsiv looks for cryptography in your source code. Scans run in your CI by default, so your code stays in your environment, and Quantsiv receives the CBOM and the finding details only if you choose to upload them. You can also have Quantsiv scan a public repository on its own servers; private repositories are not scanned there.</p>
+                        </div>
+                        <div class="step">
+                            <h3>2. Analyze</h3>
+                            <p>Each finding is checked against quantum-vulnerable algorithms and ranked by its retention period.</p>
+                        </div>
+                        <div class="step">
+                            <h3>3. Rank</h3>
+                            <p>For each finding, Quantsiv explains the priority and the standard to migrate to.</p>
+                        </div>
+                        <div class="step">
+                            <h3>4. Document</h3>
+                            <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes. Quantsiv compares each build's results with the latest main-branch build, flagging regressions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product preview. The scan, the ranking, the checks and the gate result are Quantsiv's
+                         real output for a sample repository written for this page (the footnote under the
+                         window says so); the agent's analysis and its draft change are written for the page
+                         and carry "Simulated output" and the "Illustrative preview" badge. Without scripts
+                         every panel shows, one after another; script.js turns the finding list and the three
+                         steps into controls. -->
+                    <figure class="demo" id="demo" aria-labelledby="demo-title">
+                        <figcaption class="demo-caption">
+                            <h3 id="demo-title">Example finding</h3>
+                            <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Note on the results">*</a></p>
+                        </figcaption>
+                        <div class="demo-window">
+                            <div class="demo-bar">
+                                <span class="demo-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                                <span class="demo-repo">example/billing-service</span>
+                                <span class="demo-ref"><span class="demo-ref-label">branch</span> main <span class="demo-ref-label">commit</span> 1e94656</span>
+                                <span class="demo-status">Scan complete</span>
+                                <span class="demo-badge">Illustrative preview</span>
+                            </div>
+                            <div class="demo-body">
+                                <div class="demo-overview">
+                                    <h4 class="demo-label">Cryptographic inventory</h4>
+                                    <dl class="demo-stats">
+                                        <div><dt>Assets found</dt><dd>10</dd></div>
+                                        <div class="is-vulnerable"><dt>Quantum-vulnerable</dt><dd>9</dd></div>
+                                        <div class="is-safe"><dt>Quantum-safe</dt><dd>1</dd></div>
+                                        <div><dt>Files scanned</dt><dd>8</dd></div>
+                                    </dl>
+
+                                    <h4 class="demo-label">Severity</h4>
+                                    <div class="demo-meter demo-meter-severity" aria-hidden="true"><span class="seg-critical"></span><span class="seg-high"></span></div>
+                                    <ul class="demo-legend">
+                                        <li class="key-critical">Critical <strong>4</strong></li>
+                                        <li class="key-high">High <strong>5</strong></li>
+                                    </ul>
+
+                                    <h4 class="demo-label">Exposure</h4>
+                                    <div class="demo-meter demo-meter-track" aria-hidden="true"><span class="seg-hndl"></span><span class="seg-sig"></span><span class="seg-other"></span></div>
+                                    <ul class="demo-legend">
+                                        <li class="key-hndl"><span lang="en">Harvest Now, Decrypt Later</span> <strong>4</strong></li>
+                                        <li class="key-sig">Signature forgery <strong>4</strong></li>
+                                        <li class="key-other">Use not classified <strong>1</strong></li>
+                                    </ul>
+
+                                    <h4 class="demo-label" id="demo-findings-label">Findings</h4>
+                                    <ul class="demo-findings" aria-labelledby="demo-findings-label">
+                                        <li><a class="demo-finding-link" href="#demo-f1" data-finding="demo-f1" aria-current="true"><span class="sev sev-critical">critical</span><span class="demo-finding-name">RSA-OAEP encryption</span><code>src/billing_export.py:10</code></a></li>
+                                        <li><a class="demo-finding-link" href="#demo-f2" data-finding="demo-f2"><span class="sev sev-critical">critical</span><span class="demo-finding-name">TLS key exchange groups</span><code>deploy/nginx.conf:6</code></a></li>
+                                        <li><a class="demo-finding-link" href="#demo-f3" data-finding="demo-f3"><span class="sev sev-high">high</span><span class="demo-finding-name">JWT signing</span><code>src/auth/session_tokens.py:6</code></a></li>
+                                    </ul>
+                                    <details class="demo-more">
+                                        <summary>6 more assets</summary>
+                                        <ul>
+                                            <li><span class="sev sev-critical">critical</span><span lang="en">ECDH-256</span>, key agreement <code>web/src/card-vault.ts:3</code></li>
+                                            <li><span class="sev sev-high">high</span><span lang="en">ECDSA-256</span>, certificate key <code>certs/api.crt:1</code></li>
+                                            <li><span class="sev sev-high">high</span><span lang="en">ECDSA-256</span>, key generation <code>services/ledger/sign.go:12</code></li>
+                                            <li><span class="sev sev-high">high</span><span lang="en">ECDSA</span>, signature <code>services/ledger/sign.go:17</code></li>
+                                            <li><span class="sev sev-high">high</span><span lang="en">RSA-3072</span>, use not classified <code>scripts/make-release-key.sh:3</code></li>
+                                            <li><span class="sev sev-safe">safe</span><span lang="en">X25519MLKEM768</span>, hybrid key exchange <code>deploy/nginx.conf:6</code></li>
+                                        </ul>
+                                    </details>
+                                </div>
+
+                                <div class="demo-detail">
+                                    <div class="demo-steps" role="tablist" aria-label="From finding to fix">
+                                        <button type="button" class="demo-step" role="tab" data-panel="finding" aria-selected="true"><span class="demo-step-n" aria-hidden="true">1</span><span class="demo-step-text">Finding<small>Detected and explained</small></span></button>
+                                        <button type="button" class="demo-step" role="tab" data-panel="agent"><span class="demo-step-n" aria-hidden="true">2</span><span class="demo-step-text">AI migration analysis<small>Recommendation and plan</small></span></button>
+                                        <button type="button" class="demo-step" role="tab" data-panel="checks"><span class="demo-step-n" aria-hidden="true">3</span><span class="demo-step-text">Validation<small>Checks, then every build</small></span></button>
+                                    </div>
+                                    <p class="demo-announce visually-hidden" aria-live="polite"></p>
+
+                                    <!-- Finding 1: RSA-OAEP -->
+                                    <article class="demo-item is-current" id="demo-f1">
+                                        <section class="demo-panel is-current" data-panel="finding" id="demo-f1-finding" aria-labelledby="demo-f1-finding-title">
+                                            <h4 class="demo-panel-title" id="demo-f1-finding-title">Finding: RSA-OAEP encryption</h4>
+                                            <div class="demo-chips">
+                                                <span class="sev sev-critical">critical</span>
+                                                <span class="track track-hndl" lang="en">Harvest Now, Decrypt Later</span>
+                                                <code>src/billing_export.py:10</code>
+                                            </div>
+                                            <dl class="demo-facts">
+                                                <div><dt>Business context</dt><dd>Customer records must stay secret for 25 years (declared in the repository's <code>quantsiv.yml</code>)</dd></div>
+                                                <div><dt>Why it ranks here</dt><dd>Protects data that must stay confidential for 25 years.</dd></div>
+                                                <div><dt>The risk</dt><dd>RSA-based public-key cryptography is vulnerable to sufficiently capable quantum computers. Data intercepted today may become decryptable in the future if the relevant encryption or key-establishment mechanisms are compromised.</dd></div>
+                                                <div><dt>Move to</dt><dd>Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</dd></div>
+                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030. NIST IR 8547 (ipd): 112-bit RSA/ECC/DH deprecated after 2030, all quantum-vulnerable public-key algorithms disallowed after 2035.</dd></div>
+                                            </dl>
+                                        </section>
+                                        <section class="demo-panel demo-agent" data-panel="agent" id="demo-f1-agent" aria-labelledby="demo-f1-agent-title">
+                                            <h4 class="demo-panel-title" id="demo-f1-agent-title">Quantsiv AI: migration analysis</h4>
+                                            <p class="demo-agent-status"><span class="demo-done">Analysis complete</span> <span class="demo-where">In your CI, on the model you choose</span> <span class="demo-sim">Simulated output</span></p>
+                                            <p>The current implementation uses RSA-OAEP to protect exported customer records with a 25-year confidentiality requirement.</p>
+                                            <p class="demo-callout"><strong>Not a drop-in swap.</strong> Here RSA-OAEP wraps the AES key that encrypts each export. ML-KEM does not encrypt a chosen key: it establishes a shared secret, and the data key is derived from it. AES-256-GCM keeps encrypting the records.</p>
+                                            <h5 class="demo-label">Recommended migration</h5>
+                                            <ol class="demo-plan">
+                                                <li>Review the existing RSA-OAEP encryption and key-management flow.</li>
+                                                <li>Evaluate ML-KEM (FIPS 203) for post-quantum key establishment, including hybrid approaches where appropriate.</li>
+                                                <li>Use an authenticated symmetric encryption scheme such as AES-GCM for payload encryption.</li>
+                                                <li>Identify affected dependencies, integrations, certificates, and compatibility requirements.</li>
+                                                <li>Prioritise the migration based on confidentiality lifetime and cryptographic exposure.</li>
+                                                <li>Validate the updated implementation and run regression checks.</li>
+                                            </ol>
+                                            <dl class="demo-grid">
+                                                <div><dt>Priority</dt><dd>Critical, 25-year confidentiality</dd></div>
+                                                <div><dt>Affected</dt><dd><code>src/billing_export.py</code> and the partner's decryption code, outside this repository</dd></div>
+                                                <div><dt>Standards</dt><dd>FIPS 203 (ML-KEM-768) for key establishment; AES-256-GCM for the records</dd></div>
+                                                <div><dt>Compatibility</dt><dd>The export format changes, and the partner needs an ML-KEM key pair. Exports already sent stay as they were.</dd></div>
+                                            </dl>
+                                            <h5 class="demo-label">Draft change</h5>
+                                            <pre class="demo-diff" tabindex="0" aria-label="Draft change to src/billing_export.py" lang="en"><code><span class="diff-meta">--- a/src/billing_export.py</span>
+<span class="diff-meta">+++ b/src/billing_export.py</span>
+<span class="diff-hunk">@@ -4,10 +4,11 @@</span>
+<span class="diff-ctx"> from cryptography.hazmat.primitives import hashes</span>
+<span class="diff-ctx"> from cryptography.hazmat.primitives.ciphers.aead import AESGCM</span>
+<span class="diff-del">-from cryptography.hazmat.primitives.asymmetric import padding</span>
+<span class="diff-add">+from cryptography.hazmat.primitives.kdf.hkdf import HKDF</span>
+<span class="diff-ctx"> </span>
+<span class="diff-ctx"> def seal_export(records, partner_key, export_id):</span>
+<span class="diff-del">-    data_key = AESGCM.generate_key(bit_length=256)</span>
+<span class="diff-del">-    wrapped_key = partner_key.encrypt(data_key, padding.OAEP(mgf=padding.MGF1(hashes.SHA256()), algorithm=hashes.SHA256(), label=None))</span>
+<span class="diff-add">+    # Key establishment: ML-KEM-768 (FIPS 203); the records stay encrypted with AES-256-GCM</span>
+<span class="diff-add">+    kem_ciphertext, shared_secret = partner_key.encapsulate()</span>
+<span class="diff-add">+    data_key = HKDF(algorithm=hashes.SHA256(), length=32, salt=None, info=b"billing-export v2").derive(shared_secret)</span>
+<span class="diff-ctx">     nonce = os.urandom(12)</span>
+<span class="diff-ctx">     body = AESGCM(data_key).encrypt(nonce, json.dumps(records).encode(), export_id.encode())</span>
+<span class="diff-del">-    return {"wrapped_key": wrapped_key, "nonce": nonce, "body": body}</span>
+<span class="diff-add">+    return {"kem_ciphertext": kem_ciphertext, "nonce": nonce, "body": body}</span></code></pre>
+                                        </section>
+                                        <section class="demo-panel" data-panel="checks" id="demo-f1-checks" aria-labelledby="demo-f1-checks-title">
+                                            <h4 class="demo-panel-title" id="demo-f1-checks-title">Validation</h4>
+                                            <h5 class="demo-label">Checks on the draft change</h5>
+                                            <ul class="demo-checks" lang="en">
+                                                <li class="is-pass">target is a post-quantum alternative: ML-KEM-768</li>
+                                                <li class="is-pass">rescanned: RSA is gone</li>
+                                                <li class="is-pass">nothing quantum-vulnerable added</li>
+                                                <li class="is-pass">policy passes</li>
+                                            </ul>
+                                            <p class="demo-note">Real output of Quantsiv's checks for the draft above. Your own tests run too when you set a check command; this sample sets none. A person reviews the change, and nothing is committed.</p>
+                                            <h5 class="demo-label">On every later build</h5>
+                                            <p>A later pull request adds an RSA key. The change check compares it with the latest main-branch build:</p>
+                                            <dl class="demo-gate" lang="en">
+                                                <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                                <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                            </dl>
+                                        </section>
+                                    </article>
+
+                                    <!-- Finding 2: classical TLS groups -->
+                                    <article class="demo-item" id="demo-f2">
+                                        <section class="demo-panel" data-panel="finding" id="demo-f2-finding" aria-labelledby="demo-f2-finding-title">
+                                            <h4 class="demo-panel-title" id="demo-f2-finding-title">Finding: TLS key exchange groups</h4>
+                                            <div class="demo-chips">
+                                                <span class="sev sev-critical">critical</span>
+                                                <span class="track track-hndl" lang="en">Harvest Now, Decrypt Later</span>
+                                                <code>deploy/nginx.conf:6</code>
+                                            </div>
+                                            <dl class="demo-facts">
+                                                <div><dt>Found</dt><dd><code>ssl_ecdh_curve X25519MLKEM768:X25519:prime256v1;</code> <span lang="en">X25519MLKEM768</span> is recorded as quantum-safe; <span lang="en">X25519</span> and <span lang="en">ECDH-256</span> (P-256) are not.</dd></div>
+                                                <div><dt>Business context</dt><dd>Customer records must stay secret for 25 years (declared in the repository's <code>quantsiv.yml</code>)</dd></div>
+                                                <div><dt>Why it ranks here</dt><dd>Protects data that must stay confidential for 25 years.</dd></div>
+                                                <div><dt>The risk</dt><dd>A client that cannot use the hybrid group falls back to a classical one. Traffic on those connections can be recorded today and decrypted later.</dd></div>
+                                                <div><dt>Move to</dt><dd>Migrate key establishment to ML-KEM (FIPS 203), deployed as a hybrid with X25519 (e.g. X25519MLKEM768 in TLS) during the transition.</dd></div>
+                                            </dl>
+                                        </section>
+                                        <section class="demo-panel demo-agent" data-panel="agent" id="demo-f2-agent" aria-labelledby="demo-f2-agent-title">
+                                            <h4 class="demo-panel-title" id="demo-f2-agent-title">Quantsiv AI: migration analysis</h4>
+                                            <p class="demo-agent-status"><span class="demo-done">Analysis complete</span> <span class="demo-where">In your CI, on the model you choose</span> <span class="demo-sim">Simulated output</span></p>
+                                            <p>The server already offers the hybrid group first, so the work is in the clients that cannot use it. A configuration file gets guidance, not a code change.</p>
+                                            <h5 class="demo-label">Recommended migration</h5>
+                                            <ol class="demo-plan">
+                                                <li>Find the clients that still negotiate X25519 or P-256, from the server's TLS logs.</li>
+                                                <li>Upgrade or retire those clients, starting with the ones that carry customer records.</li>
+                                                <li>Remove the classical groups from <code>ssl_ecdh_curve</code> once traffic allows.</li>
+                                                <li>Probe the endpoint again to confirm that the hybrid group is negotiated.</li>
+                                            </ol>
+                                            <dl class="demo-grid">
+                                                <div><dt>Priority</dt><dd>Critical, 25-year confidentiality</dd></div>
+                                                <div><dt>Affected</dt><dd><code>deploy/nginx.conf</code> and the clients of <code>api.example.com</code></dd></div>
+                                                <div><dt>Standards</dt><dd>FIPS 203 (ML-KEM-768) in the hybrid X25519MLKEM768 group</dd></div>
+                                                <div><dt>Compatibility</dt><dd>Clients that support no remaining group cannot connect once the fallbacks are removed.</dd></div>
+                                            </dl>
+                                        </section>
+                                        <section class="demo-panel" data-panel="checks" id="demo-f2-checks" aria-labelledby="demo-f2-checks-title">
+                                            <h4 class="demo-panel-title" id="demo-f2-checks-title">Validation</h4>
+                                            <h5 class="demo-label">Checks on the guidance</h5>
+                                            <ul class="demo-checks" lang="en">
+                                                <li class="is-pass">target is a post-quantum alternative: X25519MLKEM768</li>
+                                                <li class="is-pass">no other classical algorithm named</li>
+                                            </ul>
+                                            <p class="demo-note">Real output of Quantsiv's checks for the guidance above. Changes to configuration, keys, certificates and token formats get guidance, never a diff.</p>
+                                            <h5 class="demo-label">On every later build</h5>
+                                            <p>A later pull request adds an RSA key. The change check compares it with the latest main-branch build:</p>
+                                            <dl class="demo-gate" lang="en">
+                                                <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                                <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                            </dl>
+                                        </section>
+                                    </article>
+
+                                    <!-- Finding 3: JWT signing -->
+                                    <article class="demo-item" id="demo-f3">
+                                        <section class="demo-panel" data-panel="finding" id="demo-f3-finding" aria-labelledby="demo-f3-finding-title">
+                                            <h4 class="demo-panel-title" id="demo-f3-finding-title">Finding: JWT signing</h4>
+                                            <div class="demo-chips">
+                                                <span class="sev sev-high">high</span>
+                                                <span class="track track-sig">Signature forgery</span>
+                                                <code>src/auth/session_tokens.py:6</code>
+                                            </div>
+                                            <dl class="demo-facts">
+                                                <div><dt>Business context</dt><dd>Signatures must stay trusted for 10 years (declared in the repository's <code>quantsiv.yml</code>)</dd></div>
+                                                <div><dt>Why it ranks here</dt><dd>Signatures must stay trusted for 10 years; deadline 31 Dec 2031.</dd></div>
+                                                <div><dt>The risk</dt><dd>A quantum computer could derive the signing key from its public key and issue tokens that every service accepts. Nothing has to be recorded first: the public key is public by design.</dd></div>
+                                                <div><dt>Move to</dt><dd>Migrate to ML-DSA (FIPS 204) or SLH-DSA (FIPS 205). Prioritise long-lived signing keys: code/firmware signing, CA and token-issuer keys.</dd></div>
+                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum digital signatures on high-value assets and high-impact systems by 31 Dec 2031. NIST IR 8547 (ipd): disallowed after 2035.</dd></div>
+                                            </dl>
+                                        </section>
+                                        <section class="demo-panel demo-agent" data-panel="agent" id="demo-f3-agent" aria-labelledby="demo-f3-agent-title">
+                                            <h4 class="demo-panel-title" id="demo-f3-agent-title">Quantsiv AI: migration analysis</h4>
+                                            <p class="demo-agent-status"><span class="demo-done">Analysis complete</span> <span class="demo-where">In your CI, on the model you choose</span> <span class="demo-sim">Simulated output</span></p>
+                                            <p>These session tokens are signed with RS256, and other services verify them. Changing the algorithm changes the token format, so the agent gives guidance instead of a code change.</p>
+                                            <h5 class="demo-label">Recommended migration</h5>
+                                            <ol class="demo-plan">
+                                                <li>List every service and library that verifies these tokens.</li>
+                                                <li>Confirm that each one can verify ML-DSA (FIPS 204) signatures before the issuer changes.</li>
+                                                <li>Issue tokens with a new ML-DSA key, and accept both algorithms during the switch.</li>
+                                                <li>Retire the RS256 key once no verifier depends on it.</li>
+                                            </ol>
+                                            <dl class="demo-grid">
+                                                <div><dt>Priority</dt><dd>High, signature deadline 31 Dec 2031</dd></div>
+                                                <div><dt>Affected</dt><dd><code>src/auth/session_tokens.py</code> and every service that verifies the tokens</dd></div>
+                                                <div><dt>Standards</dt><dd>FIPS 204 (ML-DSA)</dd></div>
+                                                <div><dt>Compatibility</dt><dd>Tokens grow: an ML-DSA-65 signature is 3,309 bytes (FIPS 204), more than ten times an RS256 signature with a 2048-bit key. Check cookie and header size limits.</dd></div>
+                                            </dl>
+                                        </section>
+                                        <section class="demo-panel" data-panel="checks" id="demo-f3-checks" aria-labelledby="demo-f3-checks-title">
+                                            <h4 class="demo-panel-title" id="demo-f3-checks-title">Validation</h4>
+                                            <h5 class="demo-label">Checks on the guidance</h5>
+                                            <ul class="demo-checks" lang="en">
+                                                <li class="is-pass">target is a post-quantum alternative: ML-DSA-65</li>
+                                                <li class="is-pass">no other classical algorithm named</li>
+                                            </ul>
+                                            <p class="demo-note">Real output of Quantsiv's checks for the guidance above. Changes to configuration, keys, certificates and token formats get guidance, never a diff.</p>
+                                            <h5 class="demo-label">On every later build</h5>
+                                            <p>A later pull request adds an RSA key. The change check compares it with the latest main-branch build:</p>
+                                            <dl class="demo-gate" lang="en">
+                                                <div><dt>gate</dt><dd class="is-fail">fail</dd></div>
+                                                <div><dt>new asset</dt><dd><code>RSA-2048</code> at <code>src/partner_upload.py:6</code>, high</dd></div>
+                                            </dl>
+                                        </section>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                    <p class="section-footnote" id="demo-footnote">* Real Quantsiv results from a demo repository</p>
+                </section>
+                <div class="chapter-nav">
+                    <a class="chapter-step chapter-prev" href="#compliance" aria-label="Previous: Deadlines"></a>
+                    <a class="chapter-step chapter-next" href="#capabilities" aria-label="Next: Features"></a>
+                </div>
+            </div>
+        </details>
+        <details class="chapter" id="capabilities">
+            <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">04</span>
-                <h3 class="overview-title"><a href="features.html">Features</a></h3>
-                <p class="overview-text">Finds common cryptographic APIs in many languages, key and certificate files, infrastructure configuration files and wallet code. On every build it flags the vulnerable cryptography a change adds, and an optional AI agent drafts fixes for a person to approve.</p>
+                <h2 class="overview-title">Features</h2>
+                <span class="overview-text">Finds common cryptographic APIs in many languages, key and certificate files, infrastructure configuration files and wallet code. On every build it flags the vulnerable cryptography a change adds, and an optional AI agent drafts fixes for a person to approve.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
-            </li>
-            <li class="overview-item">
+            </summary>
+            <div class="chapter-body">
+                <!-- Capabilities section. Each card is a <details>: the title shows, and opening it shows the
+                     text and, for languages and CI, a list of what it works with. Logos are simple-icons
+                     paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
+                     has no logo we may safely show. -->
+                <section class="section">
+                    <h2>Built for the quantum era.</h2>
+                    <div class="capabilities-grid">
+                        <details class="capability-item">
+                            <summary><h3>Support for many languages</h3></summary>
+                            <p>Detects the most common cryptographic APIs in Python, JavaScript, TypeScript, Java, Kotlin, Go, C, C++, C# and Swift, plus openssl, ssh-keygen and keytool commands in build scripts.<a href="#coverage-note" class="footnote-ref" aria-label="Note on coverage">*</a></p>
+                            <ul class="tool-list" aria-label="Languages and commands"><li><img src="assets/logos/python.svg" alt="" width="16" height="16" loading="lazy">Python</li><li><img src="assets/logos/javascript.svg" alt="" width="16" height="16" loading="lazy">JavaScript</li><li><img src="assets/logos/typescript.svg" alt="" width="16" height="16" loading="lazy">TypeScript</li><li>Java</li><li><img src="assets/logos/kotlin.svg" alt="" width="16" height="16" loading="lazy">Kotlin</li><li><img src="assets/logos/go.svg" alt="" width="16" height="16" loading="lazy">Go</li><li><img src="assets/logos/c.svg" alt="" width="16" height="16" loading="lazy">C</li><li><img src="assets/logos/cplusplus.svg" alt="" width="16" height="16" loading="lazy">C++</li><li>C#</li></ul>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Cryptographic inventory (CBOM)</h3></summary>
+                            <p>Automatically creates a standard CycloneDX 1.6 CBOM of the cryptography found in your repositories, or imports CBOMs generated by other tools.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Risk assessment</h3></summary>
+                            <p>Ranks encryption by how long the data must stay secret, and digital signatures by how long they must be trusted. The most urgent issues are highlighted first.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Checks on every build</h3></summary>
+                            <p>Automatically flags, on every build, the vulnerable cryptography a change introduces. Brings the checks into pull requests for early feedback.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Simple CI/CD integration</h3></summary>
+                            <p>Works with GitHub Actions, GitLab, Jenkins and Azure DevOps. Run scans on your own computer or inside the pipeline you already use.</p>
+                            <ul class="tool-list" aria-label="CI systems"><li><img src="assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Keys, certificates and TLS</h3></summary>
+                            <p>Recognizes the algorithms and key sizes in key and certificate files, and probes the TLS connections of the servers you name with one handshake.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Infrastructure configuration</h3></summary>
+                            <p>Finds vulnerable key and TLS settings in Terraform, Kubernetes and CloudFormation files, and in web-server, OpenSSL and OpenSSH configuration files in your repository.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Crypto wallet support</h3></summary>
+                            <p>Analyzes the code, not the blockchain. Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key exchange in common wallet libraries. Gives migration guidance until the blockchain supports post-quantum signatures.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>MCP support</h3></summary>
+                            <p>Through a read-only MCP connector, lets AI coding assistants check your cryptography rules while they write code.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Post-quantum migration suggestions</h3></summary>
+                            <p>Suggests the best-fitting standard: ML-KEM, ML-DSA or SLH-DSA, or a hybrid key exchange.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Offline scanning</h3></summary>
+                            <p>By default, scans run offline in your CI and your source code stays in your environment. Results reach Quantsiv only if you choose to upload them. Public repositories can also be scanned on Quantsiv's servers; private ones are not.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>AI agent analysis</h3></summary>
+                            <p>An AI agent analyzes each finding in its context and proposes a fix. It connects to the model you choose through its chat-completions endpoint, for example ChatGPT, Claude, DeepSeek or Grok, or one you host yourself. No change is merged without the user's approval.</p>
+                        </details>
+                    </div>
+                    <p class="section-footnote" id="coverage-note">*Coverage varies by language. Pattern matching misses aliased and dynamic calls, vendored code and dependencies, and does not read cloud key-management services.</p>
+                </section>
+                <div class="chapter-nav">
+                    <a class="chapter-step chapter-prev" href="#how-it-works" aria-label="Previous: How it works"></a>
+                    <a class="chapter-step chapter-next" href="#roadmap" aria-label="Next: Roadmap"></a>
+                </div>
+            </div>
+        </details>
+        <details class="chapter" id="roadmap">
+            <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">05</span>
-                <h3 class="overview-title"><a href="roadmap.html">Roadmap</a></h3>
-                <p class="overview-text">Four phases planned for the years ahead: Audit (now to 2027), Migrate (2027 to 2028), Agentic Crypto-Agility (2028 to 2030) and Platform Consolidation (2030 to 2035).</p>
+                <h2 class="overview-title">Roadmap</h2>
+                <span class="overview-text">Four phases planned for the years ahead: Audit (now to 2027), Migrate (2027 to 2028), Agentic Crypto-Agility (2028 to 2030) and Platform Consolidation (2030 to 2035).</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
-            </li>
-        </ol>
-    </section>
+            </summary>
+            <div class="chapter-body">
+                <!-- Roadmap section -->
+                <section class="section">
+                    <h2>Roadmap</h2>
+                    <p class="section-subheading">A roadmap planned for the years ahead.</p>
+
+                    <div class="roadmap-grid">
+                        <article class="roadmap-phase">
+                            <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
+                            <h3>Audit</h3>
+                            <p>Show where each application uses cryptography, from inside its build.</p>
+                            <h4 class="phase-label">In development</h4>
+                            <ul class="phase-list">
+                                <li>Training the AI agent to learn from the changes the team approves</li>
+                                <li>Post-quantum and hybrid cryptography</li>
+                                <li>COBOL code on mainframes</li>
+                                <li>CycloneDX 1.7</li>
+                            </ul>
+                        </article>
+
+                        <article class="roadmap-phase">
+                            <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
+                            <h3>Migrate</h3>
+                            <p>Test coverage and suggestions with human review, with migration targets that default to hybrid key exchange.</p>
+                        </article>
+
+                        <article class="roadmap-phase">
+                            <span class="phase-tag">Phase 3 &middot; 2028 &rarr; 2030</span>
+                            <h3>Agentic Crypto-Agility</h3>
+                            <p>Agents propose and check each other's work; deterministic checks; human approval.</p>
+                        </article>
+
+                        <article class="roadmap-phase">
+                            <span class="phase-tag">Phase 4 &middot; 2030 &rarr; 2035</span>
+                            <h3>Platform Consolidation</h3>
+                            <p>An all-in-one product to install, covering audit, migration and review.</p>
+                        </article>
+                    </div>
+                </section>
+                <div class="chapter-nav">
+                    <a class="chapter-step chapter-prev" href="#capabilities" aria-label="Previous: Features"></a>
+                    <a class="chapter-step chapter-next" href="#contact" aria-label="Next: Get in touch"></a>
+                </div>
+            </div>
+        </details>
+    </div>
 
     <!-- Contact and newsletter section -->
     <section class="newsletter" id="contact">

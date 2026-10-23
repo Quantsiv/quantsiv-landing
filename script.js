@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // The menu links to each chapter's own page, and each page marks its own link with
-    // aria-current, so the menu needs no script beyond the burger below.
+    // The menu, the hero's first button and the chevrons at the end of each chapter are plain
+    // links to a chapter's row; the chapter code below opens the row they point to.
 
     // Small screens: the burger button opens the menu panel. style.css shows the button
     // only there; noscript.css shows the menu as rows when this script cannot run.
@@ -30,6 +30,114 @@ document.addEventListener('DOMContentLoaded', function () {
                 menuToggle.focus();
             }
         });
+    }
+
+    // Chapters: each row of the overview is a <details> holding the whole chapter. One opens at a
+    // time: the chapter slides open, the one before slides shut, and the page scrolls to the row
+    // that opens. Links to a row open it the same way, and the menu marks the open chapter.
+    // Without this script the rows still open and close, and the links jump to them.
+    const chapters = Array.from(document.querySelectorAll('.chapter'));
+    if (chapters.length) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const menuLinks = Array.from(document.querySelectorAll('.nav-link'));
+        const isOpen = function (chapter) {
+            return chapter.open && !chapter.classList.contains('is-closing');
+        };
+
+        const markMenu = function () {
+            const open = chapters.find(isOpen);
+            menuLinks.forEach(function (a) {
+                if (open && a.getAttribute('href') === '#' + open.id) a.setAttribute('aria-current', 'true');
+                else a.removeAttribute('aria-current');
+            });
+        };
+
+        // The <details> element opens and shuts at once, so its body is animated from or to
+        // zero height around that.
+        const slide = function (chapter, open) {
+            const body = chapter.querySelector('.chapter-body');
+            // Start from where a slide still running has got to
+            const from = chapter.open ? body.getBoundingClientRect().height : 0;
+            body.getAnimations().forEach(function (a) { a.cancel(); });
+            chapter.classList.remove('is-closing');
+            if (reducedMotion.matches) {
+                chapter.open = open;
+                return;
+            }
+            chapter.open = true;
+            const to = open ? body.offsetHeight : 0;
+            chapter.classList.add('is-sliding');
+            if (!open) chapter.classList.add('is-closing');
+            const animation = body.animate(
+                { height: [from + 'px', to + 'px'], opacity: open ? [0, 1] : [1, 0] },
+                { duration: open ? 450 : 350, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' }
+            );
+            animation.onfinish = function () {
+                chapter.classList.remove('is-sliding', 'is-closing');
+                if (!open) chapter.open = false;
+                markMenu();
+            };
+            animation.oncancel = function () {
+                chapter.classList.remove('is-sliding');
+            };
+        };
+
+        // Scroll so the row lands under the header, allowing for the open chapter above it,
+        // which shuts while the page scrolls
+        const scrollToRow = function (chapter, closing) {
+            let top = chapter.getBoundingClientRect().top + window.scrollY;
+            if (closing && closing.compareDocumentPosition(chapter) & Node.DOCUMENT_POSITION_FOLLOWING) {
+                top -= closing.querySelector('.chapter-body').offsetHeight;
+            }
+            const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+            window.scrollTo({ top: top - offset, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        };
+
+        const openChapter = function (chapter) {
+            const closing = chapters.find(function (c) { return c !== chapter && isOpen(c); });
+            scrollToRow(chapter, closing);
+            if (closing) slide(closing, false);
+            if (!isOpen(chapter)) slide(chapter, true);
+            history.replaceState(null, '', '#' + chapter.id);
+            markMenu();
+        };
+
+        chapters.forEach(function (chapter) {
+            chapter.querySelector('summary').addEventListener('click', function (e) {
+                e.preventDefault();
+                if (isOpen(chapter)) {
+                    slide(chapter, false);
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                    markMenu();
+                } else {
+                    openChapter(chapter);
+                }
+            });
+            // Find in page can open a row on its own
+            chapter.addEventListener('toggle', markMenu);
+        });
+
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href^="#"]');
+            const chapter = link && document.getElementById(link.getAttribute('href').slice(1));
+            if (!chapter || !chapter.classList.contains('chapter')) return;
+            e.preventDefault();
+            openChapter(chapter);
+            chapter.querySelector('summary').focus({ preventScroll: true });
+        });
+
+        // An address that names a chapter, or something inside one, opens it
+        const fromAddress = function () {
+            const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+            const chapter = target && target.closest('.chapter');
+            if (!chapter) return;
+            // The browser may already have opened it; shut the others either way
+            chapters.forEach(function (c) { c.open = c === chapter; });
+            markMenu();
+            target.scrollIntoView();
+        };
+        fromAddress();
+        window.addEventListener('hashchange', fromAddress);
     }
 
     // Motion: one button pauses the hero drawing, by swapping in its still frame, and the
