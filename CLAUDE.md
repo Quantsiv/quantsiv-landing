@@ -8,7 +8,9 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 ## What this repository is
 
-- One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`,
+- A home page, `index.html`, five chapter pages (`problem.html`, `deadlines.html`,
+  `how-it-works.html`, `features.html`, `roadmap.html`) and a privacy notice, `privacy.html`,
+  with `style.css`, `script.js`,
   `noscript.css` and `assets/`. No build step, no framework, no package manager. `.nojekyll` must
   stay. `404.html` uses root-absolute paths because Pages serves it at any address. `thanks.html`
   is where the waitlist's confirmation link lands; like `404.html` it is `noindex` and left out of
@@ -26,7 +28,7 @@ Write as if a customer, a competitor and a regulator are all reading it.
   the default branch changes a page or the sitemap; the key file at the root
   (`215276cdcc8e0adb2abad608094eece5.txt`) proves the site is ours. The key is public by design,
   not a secret; keep the file, and change the workflow with it if the key ever changes.
-- Dutch and Italian versions of the page and the notice are in `nl/` and `it/`. See
+- Dutch and Italian versions of the pages and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
   github.io address. Pages publishes every file on the branch, this one included.
@@ -37,8 +39,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
 ## Languages
 
 - English is the default at `/`; Dutch is at `/nl/` and Italian at `/it/`. The translated pages
-  mirror `index.html` line for line, so `diff index.html nl/index.html` shows only wording. Make
-  every change in all three files in the same commit.
+  mirror their English pages line for line, so `diff problem.html nl/problem.html` shows only
+  wording and paths. Make every change in all three languages in the same commit.
 - Every page lists all languages in its `hreflang` links and in the language switcher, which is
   plain links with no script. The form's messages come from its `data-msg-*` attributes.
 - A translation says what the English says and never more. The wording table below applies in
@@ -365,10 +367,19 @@ stand until the founder changes them:
   section is gone. The demo is labelled "Output" with a footnote
   (`#demo-footnote`) saying the results are Quantsiv's own on a demo repository. Keep these until
   measured detection improves and the founder says so.
-- The page reads in order (the founder's ask, 19 Oct 2026): the menu and each section carry a
-  number (01 to 05), each section ends with a round chevron link pointing down to the following
-  one (its name is in `aria-label`, no visible text, since 20 Oct 2026), and a thin bar
-  under the header shows how far the page has been read where the browser supports it. The
+- The site reads in order (the founder's ask, 19 Oct 2026): the menu and each chapter carry a
+  number (01 to 05), each chapter ends with a round chevron link to the following one (its name
+  is in `aria-label`, no visible text, since 20 Oct 2026), and a thin bar under the header shows
+  how far the page has been read where the browser supports it.
+- One page per chapter (23 Oct 2026; a non-technical reader found the one page too long and
+  asked for a short summary per menu tab with the full content on its own page). The home page
+  keeps the hero, the standards banner, the intro, then one row per chapter (number, menu name,
+  a two-sentence summary; the whole row opens the chapter's page), then "Get in Touch" with the
+  form. Each chapter page holds the chapter exactly as it was on the one page, with its kicker
+  as the page's `h1`; its round link points right to the next chapter's page (the last one down
+  to its contact band), and the contact band's button leads to the form on the home page. The
+  menu links to the pages and marks the current one with `aria-current`. The summaries follow
+  "What the page may say" and the chapters: change a summary when its chapter changes. The
   deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past and
   future dates and places a "Today" marker. The features are cards that open one by one, two
   with chips of the languages and CI systems they cover (`assets/logos/`, Simple Icons, CC0;

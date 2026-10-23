@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Navigation links are plain anchors: style.css scrolls smoothly unless the
-    // visitor asks for reduced motion, and the browser moves focus and the URL.
+    // The menu links to each chapter's own page, and each page marks its own link with
+    // aria-current, so the menu needs no script beyond the burger below.
 
     // Small screens: the burger button opens the menu panel. style.css shows the button
     // only there; noscript.css shows the menu as rows when this script cannot run.
@@ -30,28 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 menuToggle.focus();
             }
         });
-    }
-
-    // Header menu: fill in the link of the section in view. The hero has no link,
-    // so scrolling back to the top clears the menu.
-    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-    const navTargets = [document.querySelector('.hero')].concat(
-        navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); })
-    ).filter(Boolean);
-    if ('IntersectionObserver' in window && navLinks.length) {
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                navLinks.forEach(function (a) {
-                    if (entry.target.id && a.getAttribute('href') === '#' + entry.target.id) {
-                        a.setAttribute('aria-current', 'true');
-                    } else {
-                        a.removeAttribute('aria-current');
-                    }
-                });
-            });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        navTargets.forEach(function (el) { observer.observe(el); });
     }
 
     // Motion: one button pauses the hero drawing, by swapping in its still frame, and the
