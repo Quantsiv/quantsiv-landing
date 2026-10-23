@@ -83,6 +83,8 @@ html {
 }
 
 body {
+    /* script.js keeps the view still itself when a chapter above the reader opens or shuts */
+    overflow-anchor: none;
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.65;
@@ -153,7 +155,7 @@ a {
     justify-self: center;
 }
 
-/* The menu sits in one pill bar; the current chapter's page is filled in purple. */
+/* The menu sits in one pill bar; the open chapter's link is filled in purple. */
 .nav-list {
     display: flex;
     gap: 2px;
@@ -580,21 +582,9 @@ a {
     color: var(--muted);
 }
 
-/* Each chapter opens with its number and its name in the menu, and ends with a link to the
-   next one, so the page reads in order */
-.section-kicker {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 1.125rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
+/* Chapters: one row per chapter (number, name, a short summary and a round chevron). Each row
+   is a <details> that opens in place onto the whole chapter; script.js slides it open and shut
+   and keeps one open at a time. */
 .section-num {
     display: inline-block;
     padding: 0.125rem 0.4375rem;
@@ -607,70 +597,38 @@ a {
     background-color: var(--accent-1);
 }
 
-.next-section {
-    display: grid;
-    place-items: center;
-    width: 3rem;
-    height: 3rem;
-    margin: 4rem auto 0;
-    border-radius: 50%;
-    color: var(--text);
-    box-shadow: inset 0 0 0 1px var(--line-strong);
-}
-
-.next-section:hover {
-    box-shadow: inset 0 0 0 1px var(--text);
-}
-
-.next-section:focus-visible {
-    border-radius: 50%;
-}
-
-/* The chevron pointing down to the next section; its name is in aria-label */
-.next-section::after {
-    content: '';
-    width: 0.5625rem;
-    height: 0.5625rem;
-    margin-top: -0.25rem;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: rotate(45deg);
-}
-
-/* On a chapter's own page the round link leads to the next chapter's page, so its chevron
-   points right */
-.next-page::after {
-    margin-top: 0;
-    margin-left: -0.25rem;
-    transform: rotate(-45deg);
-}
-
-/* On a chapter's own page the kicker is the page's h1 */
-h1.section-kicker {
-    line-height: inherit;
-}
-
-/* Home page overview: one row per chapter, the whole row opens the chapter's page */
 .overview {
-    padding: 0 var(--gutter) 6rem;
+    max-width: calc(1200px + 2 * 1.5rem);
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
 }
 
-.overview-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    list-style: none;
+.chapter {
+    border-top: 1px solid var(--line);
+}
+
+.chapter:last-child {
     border-bottom: 1px solid var(--line);
 }
 
 .overview-item {
-    position: relative;
     display: grid;
     grid-template-columns: auto minmax(0, 15rem) minmax(0, 1fr) auto;
     grid-template-areas: "num title text arrow";
     align-items: center;
     gap: 1rem 2rem;
     padding: 2rem 1rem;
-    border-top: 1px solid var(--line);
+    border-radius: var(--radius);
+    list-style: none;
+    cursor: pointer;
+}
+
+.overview-item::-webkit-details-marker {
+    display: none;
+}
+
+.overview-item:focus-visible {
+    outline-offset: -2px;
 }
 
 .overview-item > .section-num {
@@ -682,28 +640,7 @@ h1.section-kicker {
     font-size: clamp(1.5rem, 2.4vw, 2rem);
     font-weight: 300;
     letter-spacing: -0.03em;
-}
-
-.overview-title a {
     color: var(--text);
-    text-decoration: none;
-}
-
-/* The link covers the whole row */
-.overview-title a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius);
-}
-
-.overview-title a:focus-visible {
-    outline: 0;
-}
-
-.overview-title a:focus-visible::after {
-    outline: 2px solid var(--focus);
-    outline-offset: -2px;
 }
 
 .overview-text {
@@ -712,8 +649,8 @@ h1.section-kicker {
     color: var(--muted);
 }
 
+/* The row's round chevron points down, and up once the chapter is open */
 .overview-arrow {
-    grid-area: arrow;
     display: grid;
     place-items: center;
     width: 3rem;
@@ -723,30 +660,58 @@ h1.section-kicker {
     box-shadow: inset 0 0 0 1px var(--line-strong);
 }
 
+.overview-arrow {
+    grid-area: arrow;
+}
+
 .overview-arrow::after {
     content: '';
     width: 0.5625rem;
     height: 0.5625rem;
-    margin-left: -0.25rem;
+    margin-top: -0.25rem;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
+}
+
+.chapter[open]:not(.is-closing) > .overview-item .overview-arrow::after {
+    margin-top: 0.25rem;
+    transform: rotate(225deg);
 }
 
 .overview-item:hover {
     background-color: var(--bg-alt);
 }
 
-.overview-item:hover .overview-arrow {
+.overview-item:hover .overview-arrow,
+.chapter[open]:not(.is-closing) > .overview-item .overview-arrow {
     color: var(--on-accent-1);
     background-color: var(--accent-1);
     box-shadow: none;
 }
 
+/* The open chapter: its section sits inside the row, without the band it had as a section of
+   its own. The section carries the chapter's bottom space, inside the body, so the body can
+   slide down to zero. */
+.chapter-body {
+    padding: 0 1rem;
+}
+
+.chapter.is-sliding > .chapter-body {
+    overflow: hidden;
+}
+
+.chapter .section {
+    padding: 1rem 0 3rem;
+    border-top: 0;
+    background: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .overview-item,
-    .overview-arrow {
-        transition: background-color 0.2s ease, color 0.2s ease;
+    .overview-arrow,
+    .overview-arrow::after {
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.3s ease, margin 0.3s ease;
     }
 }
 
@@ -2583,6 +2548,10 @@ footer a {
         padding: 1.5rem 0.25rem;
     }
 
+    .chapter-body {
+        padding: 0 0.25rem;
+    }
+
     .hero {
         padding-top: 4rem;
     }
@@ -2624,10 +2593,6 @@ footer a {
 
     .deadline details > p {
         padding-left: 0.25rem;
-    }
-
-    .next-section {
-        margin-top: 3rem;
     }
 
     .process-steps,

@@ -2,153 +2,19 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
-    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <!-- Each chapter had its own page from 23 Oct 2026 for a few hours; it now opens in place on
+         the home page. This address sends visitors there. -->
+    <meta http-equiv="refresh" content="0; url=./#compliance">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Datums van de VS en de EU voor het vervangen van quantumkwetsbare cryptografie, van de NIST-standaarden van 13 aug 2024 tot deadlines tussen 2030 en 2035.">
     <title>Deadlines voor de post-quantummigratie - Quantsiv</title>
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Quantsiv">
-    <meta property="og:title" content="Deadlines voor de post-quantummigratie - Quantsiv">
-    <meta property="og:description" content="Datums van de VS en de EU voor het vervangen van quantumkwetsbare cryptografie, van de NIST-standaarden van 13 aug 2024 tot deadlines tussen 2030 en 2035.">
-    <meta property="og:url" content="https://quantsiv.com/nl/deadlines.html">
-    <meta property="og:image" content="https://quantsiv.com/assets/social-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Quantsiv. See tomorrow. Secure today.">
-    <meta property="og:locale" content="nl_NL">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="it_IT">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://quantsiv.com/nl/deadlines.html">
-    <link rel="alternate" hreflang="en" href="https://quantsiv.com/deadlines.html">
-    <link rel="alternate" hreflang="nl" href="https://quantsiv.com/nl/deadlines.html">
-    <link rel="alternate" hreflang="it" href="https://quantsiv.com/it/deadlines.html">
-    <link rel="alternate" hreflang="x-default" href="https://quantsiv.com/deadlines.html">
-    <link rel="preload" href="../assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="canonical" href="https://quantsiv.com/nl/">
+    <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
-    <noscript><link rel="stylesheet" href="../noscript.css"></noscript>
 </head>
 <body>
-    <!-- Header with three-part layout -->
-    <header class="site-header">
-        <div class="brand-center"><a href="./"><img src="../assets/logo-horizontal-light-360.png" alt="Quantsiv, startpagina" class="logo" width="360" height="90"></a></div>
-        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu"><span class="menu-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span></button>
-        <div class="site-menu" id="site-menu">
-        <nav class="nav-center" aria-label="Hoofdmenu">
-            <ul class="nav-list">
-                <li><a href="problem.html" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Het probleem</a></li>
-                <li><a href="deadlines.html" class="nav-link" aria-current="page"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
-                <li><a href="how-it-works.html" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Hoe het werkt</a></li>
-                <li><a href="features.html" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Functies</a></li>
-                <li><a href="roadmap.html" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
-            </ul>
-        </nav>
-        <nav class="lang-switch" aria-label="Taal">
-            <ul>
-                <li><a href="../deadlines.html" lang="en" hreflang="en">English</a></li>
-                <li><a href="deadlines.html" lang="nl" hreflang="nl" aria-current="page">Nederlands</a></li>
-                <li><a href="../it/deadlines.html" lang="it" hreflang="it">Italiano</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <main id="main">
-    <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
-         the section stays short. script.js marks the dates already past and puts a "today"
-         marker on the line; without scripts the dates still open and close. -->
-    <section id="compliance" class="section">
-        <h1 class="section-kicker"><span class="section-num">02</span> Deadlines</h1>
-        <h2>De deadlines staan al vast</h2>
-        <p class="section-subheading">Dit zijn geen voorspellingen. In de VS en de EU hebben instellingen richtlijnen en eisen gepubliceerd met vaste datums voor het vervangen van kwetsbare cryptografie.</p>
-
-        <ol class="deadlines" data-label-now="Vandaag">
-            <li class="deadline" data-date="2024-08-13">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">13 aug 2024</span> <h3 class="deadline-title">NIST publiceert de nieuwe standaarden</h3></summary>
-                    <p>Het Amerikaanse standaardeninstituut publiceert drie nieuwe standaarden: FIPS 203 (ML-KEM), om de sleutels af te spreken waarmee gegevens worden versleuteld, en FIPS 204 (ML-DSA) en FIPS 205 (SLH-DSA), voor digitale handtekeningen. Er zijn dus alternatieven voor de huidige algoritmen beschikbaar.</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2024-11-01">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">nov 2024</span> <h3 class="deadline-title">NIST stelt deadlines voor om de huidige algoritmen uit te faseren</h3></summary>
-                    <p>In het eerste openbare concept van NIST IR 8547 staan alle quantumkwetsbare publieke-sleutelalgoritmen, ook P-256, na 2035 als niet meer toegestaan (<span lang="en">disallowed</span>).</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2026-06-22">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">22 jun 2026</span> <h3 class="deadline-title">Executive Order 14412</h3></summary>
-                    <p>Het decreet gaat in op het risico dat bekendstaat als &ldquo;<span lang="en">harvest now, decrypt later</span>&rdquo;. Voor high-value assets en systemen met hoge impact stelt het 31 dec 2030 als deadline voor post-quantum sleuteluitwisseling en 31 dec 2031 voor digitale handtekeningen.</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2026-06-24">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">24 jun 2026</span> <h3 class="deadline-title">OMB M-26-15: een federale migratie in fasen</h3></summary>
-                    <p>Federale instanties moeten een geautomatiseerde inventaris bouwen waarvan de gegevens &ldquo;<span lang="en">should populate a central Cryptographic Bill of Materials</span>&rdquo; (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. De migratie verloopt in vijf fasen, van 2026 tot 2035.</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2026-12-19">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">Rond dec 2026</span> <h3 class="deadline-title">Een voorgestelde regel voor federale opdrachtnemers</h3></summary>
-                    <p>EO 14412 geeft de FAR Council 180 dagen, tot rond 19 dec 2026, om een regel voor te stellen onder de Federal Acquisition Regulation (FAR). Die regel zou betrokken opdrachtnemers verplichten om uiterlijk 31 dec 2030 te voldoen aan de FIPS-standaarden van NIST, ook die op basis van post-quantumalgoritmen.</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2027-03-19">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">Rond mrt 2027</span> <h3 class="deadline-title">Richtlijnen over wat een CBOM zou moeten bevatten</h3></summary>
-                    <p>Binnen 270 dagen na EO 14412, rond maart 2027, publiceert CISA in afstemming met NIST richtlijnen over de minimumelementen die een CBOM zou moeten bevatten.</p>
-                </details>
-            </li>
-            <li class="deadline" data-date="2030-12-31">
-                <details name="deadlines">
-                    <summary><span class="deadline-date">2030 tot 2035</span> <h3 class="deadline-title">De migratiedeadlines</h3></summary>
-                    <p>Onder EO 14412 moet post-quantum sleuteluitwisseling uiterlijk 31 dec 2030 zijn ingevoerd, en digitale handtekeningen uiterlijk 31 dec 2031, op high-value assets en systemen met hoge impact. Wordt de FAR-regel waar het decreet om vraagt aangenomen, dan moeten betrokken opdrachtnemers uiterlijk 31 dec 2030 voldoen. NSA CNSA 2.0 stelt datums voor exclusief gebruik tussen 2030 en 2033, afhankelijk van de categorie. In de EU vraagt de roadmap van de NIS-samenwerkingsgroep van 23 jun 2025, een aanbeveling, de lidstaten om nationale strategieën tegen eind 2026, toepassingen met hoog risico tegen eind 2030 en zoveel systemen als haalbaar tegen 2035.</p>
-                </details>
-            </li>
-        </ol>
-
-        <p class="sources">
-            Bronnen:
-            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
-            <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in het Federal Register</a>;
-            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
-            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
-            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
-            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
-            <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
-            <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" target="_blank" rel="noopener">roadmap van de NIS-samenwerkingsgroep (EU)</a>.
-        </p>
-
-        <a class="next-section next-page" href="how-it-works.html" aria-label="Volgende: Hoe het werkt"></a>
-    </section>
-
-    <!-- Contact: the waitlist form is on the home page -->
-    <section class="newsletter" id="contact">
-        <h2>Neem contact op</h2>
-        <p>Ontvang updates over deadlines voor de post-quantummigratie, standaarden en releases van Quantsiv.</p>
-        <div class="hero-buttons">
-            <a href="./#contact" class="cta-primary">Zet je op de wachtlijst</a>
-            <a href="mailto:hello@quantsiv.com" class="cta-secondary">hello@quantsiv.com</a>
-        </div>
-    </section>
-
+    <main class="legal">
+        <p>Dit onderdeel staat nu op de <a href="./#compliance">startpagina</a>.</p>
     </main>
-
-    <!-- Footer -->
-    <footer itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Quantsiv">
-        <link itemprop="url" href="https://quantsiv.com/">
-        <link itemprop="logo" href="https://quantsiv.com/assets/apple-touch-icon.png">
-        <meta itemprop="email" content="hello@quantsiv.com">
-        <div class="footer-tagline" lang="en">See tomorrow. Secure today.</div>
-        <div>&copy; 2026 Quantsiv. Alle rechten voorbehouden.</div>
-        <div><a href="mailto:hello@quantsiv.com">hello@quantsiv.com</a></div>
-        <div><a href="privacy.html">Privacyverklaring</a></div>
-        <div>Stealth-modus</div>
-    </footer>
-
 </body>
 </html>
