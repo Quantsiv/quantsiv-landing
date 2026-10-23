@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /CLAUDE.md
 Disallow: /ROADMAP.md
+Disallow: /README.md
 
 Sitemap: https://quantsiv.com/sitemap.xml

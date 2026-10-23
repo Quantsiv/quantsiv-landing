@@ -17,7 +17,14 @@ Write as if a customer, a competitor and a regulator are all reading it.
   see one address per page. The home pages carry WebSite microdata (the site name in search
   results) and the footer Organization microdata; keep them as microdata, because the
   Content-Security-Policy allows no inline scripts. `ROADMAP.md` is the website's own roadmap
-  (done and left), public like everything here.
+  (done and left), public like everything here. `README.md` is what the repository page on
+  GitHub shows: the meta description and a link to the site.
+- Search engines (23 Oct 2026): Google reads the sitemap through Search Console, where the
+  founder verified the domain. Bing and the other IndexNow engines hear of changes from
+  `.github/workflows/indexnow.yml`, which sends the sitemap's pages to IndexNow when a push to
+  the default branch changes a page or the sitemap; the key file at the root
+  (`215276cdcc8e0adb2abad608094eece5.txt`) proves the site is ours. The key is public by design,
+  not a secret; keep the file, and change the workflow with it if the key ever changes.
 - Dutch and Italian versions of the page and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
