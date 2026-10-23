@@ -10,8 +10,9 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 - One page, `index.html`, and a privacy notice, `privacy.html`, with `style.css`, `script.js`,
   `noscript.css` and `assets/`. No build step, no framework, no package manager. `.nojekyll` must
-  stay. `404.html` uses root-absolute paths because Pages serves it at any address. `robots.txt` and
-  `sitemap.xml` list every page; add a page to the sitemap, with its language alternates, when you
+  stay. `404.html` uses root-absolute paths because Pages serves it at any address. `thanks.html`
+  is where the waitlist's confirmation link lands; like `404.html` it is `noindex` and left out of
+  the sitemap. `robots.txt` and `sitemap.xml` list every other page; add a page to the sitemap, with its language alternates, when you
   add one, and change a page's `lastmod` when its content changes. Internal links point at the
   address in the canonical tag (`./`, `nl/`, `../it/`), never at `index.html`, so search engines
   see one address per page. The home pages carry WebSite microdata (the site name in search
@@ -253,8 +254,11 @@ stand until the founder changes them:
   top of the page), sends the same post into a hidden frame with the `sandbox` attribute, created only
   at sign-up, so the page stays put and the `data-msg-sent` confirmation replaces the form. The script
   never reads Brevo's reply, and the sandbox runs none of its scripts. No Brevo script or stylesheet is
-  loaded. Brevo's double opt-in sends the confirmation email, and the confirmation page redirects to
-  https://quantsiv.com/.
+  loaded. Brevo's double opt-in sends the confirmation email. Since 23 Oct 2026 (a reader expected a
+  thank-you instead of the home page) its confirmation link is meant to land on
+  https://quantsiv.com/thanks.html, which thanks the visitor and says what they will receive, with
+  `nl/` and `it/` versions through the language switch. The redirect is a setting in Brevo's form,
+  changed by the founder; until it is, the link lands on https://quantsiv.com/.
 - The privacy notice (`privacy.html`, 11 Oct 2026) is linked from the form and the footer. Its
   contact is privacy@quantsiv.com. It names the controller, Ludovico Corsini, and covers visits
   (GitHub Pages) and email to privacy@ (Zoho Corporation B.V., EU data centres, support access
