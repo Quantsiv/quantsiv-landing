@@ -2240,6 +2240,68 @@ footer a {
     text-decoration-color: var(--accent-1);
 }
 
+/* Thank-you page: where the waitlist's confirmation link lands */
+.thanks {
+    display: grid;
+    place-items: center;
+    min-height: 70vh;
+    padding: 5rem var(--gutter) 6rem;
+}
+
+.thanks-card {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    width: min(100%, 40rem);
+    padding: 3.5rem 2rem;
+    border-radius: 16px;
+    background-color: var(--surface);
+    box-shadow: inset 0 0 0 1px var(--line);
+    text-align: center;
+}
+
+.thanks-card h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.thanks-card p {
+    max-width: 32rem;
+    color: var(--muted);
+}
+
+.thanks-card .thanks-lead {
+    font-size: 1.125rem;
+    color: var(--text-soft);
+}
+
+.thanks-card .hero-buttons {
+    margin-top: 1rem;
+}
+
+/* A white check mark on a purple disc */
+.thanks-mark {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--accent-1);
+}
+
+.thanks-mark::after {
+    content: '';
+    width: 0.75rem;
+    height: 1.375rem;
+    margin-top: -0.25rem;
+    border-right: 3px solid var(--on-accent-1);
+    border-bottom: 3px solid var(--on-accent-1);
+    transform: rotate(45deg);
+}
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
