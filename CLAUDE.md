@@ -377,13 +377,19 @@ stand until the founder changes them:
   hero, the standards banner, the intro, then one row per chapter (number, menu name, a
   two-sentence summary), then "Get in Touch" with the form. Each row is a `<details>` whose
   `<summary>` is the row and whose body is the chapter exactly as it was on the one page,
-  without its kicker (the row names it). One chapter is open at a time. An open chapter ends
-  with round chevrons up to the previous chapter and down to the next (the last one down to the
-  contact section; names in `aria-label`, no visible text). The menu, the hero's first button
-  and the chevrons are plain links to a chapter's id (`#threat`, `#compliance`,
-  `#how-it-works`, `#capabilities`, `#roadmap`); `script.js` opens the chapter they point to,
-  slides it open and closed, keeps the address on its id and marks its menu link with
-  `aria-current`. An address with a chapter's id opens that chapter. With reduced motion the
+  without its kicker (the row names it). A click opens one chapter at a time: it slides open,
+  the one that was open slides shut, and the page scrolls to the row. The menu and the hero's
+  first button are plain links to a chapter's id (`#threat`, `#compliance`, `#how-it-works`,
+  `#capabilities`, `#roadmap`); `script.js` opens the chapter they point to, keeps the address
+  on its id and marks its menu link with `aria-current`. An address with a chapter's id opens
+  that chapter. Once a chapter has been opened, reading is continuous (the founder's choice on
+  23 Oct 2026, from five previewed options): when the next row reaches the baseline, 55% down
+  the screen, its chapter opens; scrolling back up reopens the one before; a chapter that has
+  left the screen shuts, with the scroll position adjusted so the view stays still
+  (`overflow-anchor: none` on `body`, or the browser would adjust it a second time). Scrolling
+  alone never opens the first chapter, so the home page keeps its short overview, and closing a
+  chapter by its row ends the continuous reading until the next click. No chevrons end a chapter
+  (the first version of #39 had them; dropped as overkill on his word). With reduced motion the
   chapter opens without sliding; without scripts the rows still open and close. The summaries
   follow "What the page may say" and the chapters: change a summary when its chapter changes.
   The deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past

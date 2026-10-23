@@ -83,6 +83,8 @@ html {
 }
 
 body {
+    /* script.js keeps the view still itself when a chapter above the reader opens or shuts */
+    overflow-anchor: none;
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.65;
@@ -647,11 +649,8 @@ a {
     color: var(--muted);
 }
 
-/* The round chevrons: the row's own points down, and up once the chapter is open; at the end
-   of a chapter one points up to the previous chapter and one down to the next. Their names are
-   in aria-label. */
-.overview-arrow,
-.chapter-step {
+/* The row's round chevron points down, and up once the chapter is open */
+.overview-arrow {
     display: grid;
     place-items: center;
     width: 3rem;
@@ -665,8 +664,7 @@ a {
     grid-area: arrow;
 }
 
-.overview-arrow::after,
-.chapter-step::after {
+.overview-arrow::after {
     content: '';
     width: 0.5625rem;
     height: 0.5625rem;
@@ -676,8 +674,7 @@ a {
     transform: rotate(45deg);
 }
 
-.chapter[open]:not(.is-closing) > .overview-item .overview-arrow::after,
-.chapter-prev::after {
+.chapter[open]:not(.is-closing) > .overview-item .overview-arrow::after {
     margin-top: 0.25rem;
     transform: rotate(225deg);
 }
@@ -693,16 +690,9 @@ a {
     box-shadow: none;
 }
 
-.chapter-step:hover {
-    box-shadow: inset 0 0 0 1px var(--text);
-}
-
-.chapter-step:focus-visible {
-    border-radius: 50%;
-}
-
 /* The open chapter: its section sits inside the row, without the band it had as a section of
-   its own */
+   its own. The section carries the chapter's bottom space, inside the body, so the body can
+   slide down to zero. */
 .chapter-body {
     padding: 0 1rem;
 }
@@ -712,18 +702,9 @@ a {
 }
 
 .chapter .section {
-    padding: 1rem 0 0;
+    padding: 1rem 0 3rem;
     border-top: 0;
     background: none;
-}
-
-/* The chapter's last element carries its bottom space, so the body can slide down to zero */
-.chapter-nav {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 4rem;
-    padding-bottom: 3.5rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2612,11 +2593,6 @@ footer a {
 
     .deadline details > p {
         padding-left: 0.25rem;
-    }
-
-    .chapter-nav {
-        margin-top: 3rem;
-        padding-bottom: 3rem;
     }
 
     .process-steps,
