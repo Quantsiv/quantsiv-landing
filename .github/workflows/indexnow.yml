@@ -1,0 +1,50 @@
+# Tells Bing and the other IndexNow search engines that the site's pages changed,
+# so they recrawl them instead of waiting to find them. Google does not take part in
+# IndexNow; it reads the sitemap through Search Console.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+      - '*.txt'
+      - '.github/workflows/indexnow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: 215276cdcc8e0adb2abad608094eece5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait until Pages serves the key file
+        run: |
+          for i in $(seq 1 30); do
+            if [ "$(curl -fsS "https://quantsiv.com/$INDEXNOW_KEY.txt" 2>/dev/null)" = "$INDEXNOW_KEY" ]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "The key file is not live at https://quantsiv.com/$INDEXNOW_KEY.txt" >&2
+          exit 1
+      - name: Submit the sitemap's pages
+        run: |
+          test "$(cat "$INDEXNOW_KEY.txt")" = "$INDEXNOW_KEY"
+          urls=$(grep -o '<loc>https://quantsiv.com/[^<]*</loc>' sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##')
+          body=$(jq -n --arg key "$INDEXNOW_KEY" --args \
+            '{host: "quantsiv.com", key: $key, keyLocation: ("https://quantsiv.com/" + $key + ".txt"), urlList: $ARGS.positional}' \
+            $urls)
+          echo "$body"
+          status=$(curl -sS -o response.txt -w '%{http_code}' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$body" https://api.indexnow.org/indexnow)
+          cat response.txt
+          echo "IndexNow answered $status"
+          # 200: accepted. 202: accepted, key check still pending.
+          case "$status" in 200|202) ;; *) exit 1 ;; esac
