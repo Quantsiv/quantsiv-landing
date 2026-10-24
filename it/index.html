@@ -63,7 +63,7 @@
     <section class="hero">
         <div class="hero-copy">
             <p class="hero-kicker" lang="en">See tomorrow. Secure today.</p>
-            <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">trova la crittografia che i computer quantistici potrebbero violare</span></h1>
+            <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">trova vulnerabilità violabili da computer quantistici</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Missione</a>
                 <a href="#contact" class="cta-secondary">Contattaci</a>
@@ -162,8 +162,8 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>Un computer quantistico potrebbe violare la crittografia a chiave pubblica oggi di uso comune.<br>I governi hanno pubblicato le date per sostituirla.<br>Sostituirla comincia dal sapere dove si trova.</p>
-        <p>Ed è qui che entriamo in gioco noi. Scansioniamo il tuo codice a ogni build e ti mostriamo cosa è esposto, per quanto tempo resta esposto e verso cosa migrare.</p>
+        <p>La crittografia di oggi non guiderà il futuro quantistico.<br>Con le scadenze governative ormai fissate, la migrazione post-quantum deve iniziare oggi.<br>Non puoi proteggere ciò che non vedi.</p>
+        <p>È qui che entra in gioco Quantsiv. Scansioniamo il tuo codice a ogni build, mappiamo le vulnerabilità crittografiche, tracciamo i tempi di esposizione e ti guidiamo passo dopo passo verso algoritmi sicuri.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -176,13 +176,13 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">01</span>
                 <h2 class="overview-title">Il problema</h2>
-                <span class="overview-text">I dati cifrati possono essere intercettati oggi e decifrati quando i computer quantistici saranno abbastanza potenti, e le firme digitali possono essere falsificate. Il nuovo codice, anche quello scritto con gli assistenti di IA, può aumentare il rischio.</span>
+                <span class="overview-text">I tuoi dati cifrati possono essere intercettati oggi e decifrati domani, non appena i computer quantistici saranno abbastanza potenti. Stesso discorso per le firme digitali che rischiano di essere falsificate. Inoltre, codice generato da assistenti IA può amplificare la superficie d'attacco.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
                 <!-- The Threat section -->
                 <section class="section">
-                    <h2>Due minacce quantistiche, e nuovo codice che le alimenta</h2>
+                    <h2>Due minacce quantistiche</h2>
 
                     <div class="threat-grid">
                         <div class="threat-card">
@@ -191,11 +191,11 @@
                         </div>
                         <div class="threat-card">
                             <h3>Falsificazione delle firme digitali</h3>
-                            <p>Le firme digitali permettono di verificare l'autenticità di software, certificati, documenti e transazioni. Un computer quantistico potrebbe ricavare le chiavi private a partire da quelle pubbliche e, di conseguenza, falsificare le firme. Chiavi e firme devono restare affidabili, anche nei dispositivi, nelle autorità di certificazione e nei registri permanenti. Nel caso dei wallet di cripto-attività, l'esposizione on-chain di una chiave pubblica potrebbe rendere possibili trasferimenti non autorizzati.</p>
+                            <p>Le firme digitali permettono di verificare l'autenticità di software, certificati, documenti e transazioni. Un computer quantistico potrebbe ricavare le chiavi private a partire da quelle pubbliche e, di conseguenza, falsificare le firme. Chiavi e firme devono restare sempre affidabili. Nel caso dei wallet di cripto-attività, l'esposizione on-chain di una chiave pubblica potrebbe rendere possibili trasferimenti non autorizzati.</p>
                         </div>
                         <div class="threat-card">
                             <h3>Agenti AI erronei</h3>
-                            <p>Quando generano codice, gli assistenti di programmazione tendono a ricorrere a schemi e impostazioni predefiniti che conoscono già. Se questi pattern si basano su algoritmi vulnerabili, il codice può funzionare correttamente e superare i test, pur restando esposto al rischio. In uno studio controllato, gli sviluppatori che usavano un assistente IA hanno scritto codice meno sicuro (Perry, Srivastava, Kumar e Boneh, ACM CCS 2023).</p>
+                            <p>Quando generano codice, gli assistenti di programmazione tendono a ricorrere a pattern comuni. Questi pattern spesso si basano su algoritmi vulnerabili. <strong>Il codice AI può funzionare correttamente e superare i test, pur restando esposto ai rischi.</strong> In uno studio controllato, gli sviluppatori che usavano un assistente IA hanno scritto codice meno sicuro (Perry, Srivastava, Kumar e Boneh, ACM CCS 2023).</p>
                         </div>
                     </div>
 
@@ -299,7 +299,7 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">03</span>
                 <h2 class="overview-title">Come funziona</h2>
-                <span class="overview-text">Quantsiv trova la crittografia nel tuo codice, classifica ogni rilevamento in base a quanto a lungo i dati devono restare segreti o una firma affidabile, indica lo standard verso cui migrare e genera una CBOM CycloneDX 1.6. Un esempio mostra ogni passaggio.</span>
+                <span class="overview-text">Quantsiv mappa la crittografia nel tuo codice e classifica ogni rilevamento in base alla “vita” del dato: per quanto tempo le informazioni devono rimanere segrete o una firma deve restare affidabile. Successivamente indica lo standard post-quantum verso cui migrare, genera una CBOM in formato CycloneDX 1.6 e un agente IA facoltativo propone correzioni che una persona approva.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
@@ -309,22 +309,23 @@
                     <p class="section-subheading">Quattro passi, dalla scansione del tuo codice a un registro standard (CBOM CycloneDX 1.6).</p>
                     <div class="process-steps">
                         <div class="step">
-                            <h3>1. Individuare</h3>
-                            <p>Quantsiv cerca gli elementi crittografici nel tuo codice sorgente. Le scansioni vengono eseguite di default nella tua CI, così il codice resta nel tuo ambiente e Quantsiv riceve la CBOM e i dettagli dei rilevamenti soltanto se decidi di caricarli. Puoi anche far scansionare a Quantsiv un repository pubblico sui suoi server; i repository privati non vengono scansionati lì.</p>
+                            <h3>1. Individua</h3>
+                            <p>Le scansioni vengono eseguite di default nella tua CI, così il codice resta nel tuo ambiente e Quantsiv riceve la CBOM e i dettagli dei rilevamenti soltanto se decidi di caricarli. Quantsiv scansiona repository pubbliche sui suoi server.<a href="#hosted-note" class="footnote-ref" aria-label="Nota sulle repository private">*</a></p>
                         </div>
                         <div class="step">
-                            <h3>2. Analizzare</h3>
-                            <p>Ogni rilevamento viene confrontato con gli algoritmi vulnerabili ad attacchi quantistici e classificato in base al periodo di conservazione.</p>
+                            <h3>2. Analizza</h3>
+                            <p>Ogni rilevamento viene confrontato con le vulnerabilità quantistiche e classificato in base al periodo di conservazione.</p>
                         </div>
                         <div class="step">
-                            <h3>3. Classificare</h3>
-                            <p>Per ogni rilevamento, Quantsiv spiega il motivo della priorità assegnata e, quando l'utilizzo è sufficientemente chiaro, indica lo standard verso cui migrare.</p>
+                            <h3>3. Classifica</h3>
+                            <p>Per ogni rilevamento, Quantsiv motiva la priorità assegnata e indica lo standard verso cui migrare se necessario.</p>
                         </div>
                         <div class="step">
-                            <h3>4. Documentare</h3>
-                            <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Inoltre gli agenti di IA possono utilizzare queste informazioni per suggerire alternative resistenti agli attacchi quantistici e aiutare a pianificare le modifiche. Quantsiv confronta i risultati di ogni build con l'ultima build del ramo principale, segnalando le regressioni.</p>
+                            <h3>4. Documenta</h3>
+                            <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Inoltre gli agenti di IA possono suggerire alternative resistenti agli attacchi quantistici e aiutare a pianificare le modifiche.</p>
                         </div>
                     </div>
+                    <p class="section-footnote" id="hosted-note">*Le repository private non vengono scansionate esternamente.</p>
 
                     <!-- Product preview. The scan, the ranking, the checks and the gate result are Quantsiv's
                          real output for a sample repository written for this page (the footnote under the
@@ -588,7 +589,7 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">04</span>
                 <h2 class="overview-title">Le funzionalità</h2>
-                <span class="overview-text">Trova le API crittografiche più comuni in molti linguaggi, i file di chiavi e certificati, i file di configurazione dell'infrastruttura e il codice dei wallet. A ogni build segnala gli elementi crittografici vulnerabili introdotti da una modifica, e un agente IA facoltativo propone correzioni che una persona approva.</span>
+                <span class="overview-text">Costruito per l'era quantistica.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
@@ -597,7 +598,6 @@
                      simple-icons paths (CC0), recoloured; the trademarks belong to their owners. A name
                      without a logo has no logo we may safely show. -->
                 <section class="section">
-                    <h2>Costruito per l'era quantistica.</h2>
                     <div class="capabilities-grid">
                         <details class="capability-item">
                             <summary><h3>Supporto per più linguaggi</h3></summary>
@@ -606,7 +606,7 @@
                         </details>
                         <details class="capability-item">
                             <summary><h3>Inventario dei componenti crittografici (CBOM)</h3></summary>
-                            <p>Crea automaticamente una CBOM standard in formato CycloneDX 1.6 con gli elementi crittografici individuati nei repository o importa CBOM generate da altri strumenti.</p>
+                            <p>Creazione automatica di una CBOM standard in formato CycloneDX 1.6 o importazione di CBOM generate da altri strumenti.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Valutazione del rischio</h3></summary>
@@ -614,11 +614,11 @@
                         </details>
                         <details class="capability-item">
                             <summary><h3>Controlli a ogni build</h3></summary>
-                            <p>Segnala automaticamente, a ogni build, gli elementi crittografici vulnerabili introdotti da una modifica. Integra i controlli nelle pull request per fornire un riscontro tempestivo.</p>
+                            <p>Controlli automatici nelle pull request, per fornire un riscontro tempestivo e un confronto a ogni build.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Integrazione CI/CD semplice</h3></summary>
-                            <p>Compatibile con GitHub Actions, GitLab, Jenkins e Azure DevOps. Esegui le scansioni sul tuo computer o all'interno della pipeline che già utilizzi.</p>
+                            <p>Compatibile con GitHub Actions, GitLab, Jenkins e Azure DevOps. Esegue scansioni sul tuo computer o all'interno della pipeline che già utilizzi.</p>
                             <ul class="tool-list" aria-label="Sistemi di CI"><li><img src="../assets/logos/githubactions.svg" alt="" width="16" height="16" loading="lazy">GitHub Actions</li><li><img src="../assets/logos/gitlab.svg" alt="" width="16" height="16" loading="lazy">GitLab</li><li>Jenkins</li><li>Azure DevOps</li></ul>
                         </details>
                         <details class="capability-item">
@@ -627,30 +627,26 @@
                         </details>
                         <details class="capability-item">
                             <summary><h3>Configurazioni dell'infrastruttura</h3></summary>
-                            <p>Individua le configurazioni vulnerabili relative a chiavi e TLS nei file Terraform, Kubernetes, CloudFormation e nei file di configurazione di web server, OpenSSL e OpenSSH presenti nel repository.</p>
+                            <p>Individuazione di configurazioni vulnerabili relative a chiavi e TLS nei file Terraform, Kubernetes, CloudFormation e web server, OpenSSL e OpenSSH presenti nel repository.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Supporto per portafogli crypto</h3></summary>
-                            <p>Analizza il codice, non la blockchain. Individua chiavi di firma secp256k1 ed Ed25519, firme Schnorr e scambio di chiavi ECDH ed ECIES nelle librerie per wallet più comuni. Fornisce indicazioni per la migrazione fino a quando la blockchain non supporta firme post-quantum.</p>
+                            <p>Individuazione delle chiavi di firma secp256k1, Ed25519, firme Schnorr e scambio di chiavi ECDH ed ECIES nelle librerie per wallet più comuni.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Supporto con MCPs</h3></summary>
-                            <p>Tramite un connettore MCP in sola lettura, consente agli assistenti di IA di verificare le regole crittografiche mentre generano codice.</p>
+                            <p>Connettore MCP in sola lettura, per consentire agli assistenti di IA di verificare le regole crittografiche mentre generano codice.</p>
                         </details>
                         <details class="capability-item">
-                            <summary><h3>Suggerimenti per la migrazione post-quantum</h3></summary>
+                            <summary><h3>Aggiornamento per la migrazione costante</h3></summary>
                             <p>Suggerisce lo standard più adatto: ML-KEM, ML-DSA o SLH-DSA o l'uso di uno scambio di chiavi ibrido.</p>
                         </details>
                         <details class="capability-item">
-                            <summary><h3>Scansione offline</h3></summary>
-                            <p>Per impostazione predefinita, le scansioni vengono eseguite offline nella tua CI e il codice sorgente rimane nel tuo ambiente. I risultati vengono inviati a Quantsiv soltanto se scegli di caricarli. Anche i repository pubblici possono essere scansionati sui server di Quantsiv; quelli privati no.</p>
-                        </details>
-                        <details class="capability-item">
                             <summary><h3>Analisi con agenti IA</h3></summary>
-                            <p>Un agente IA analizza ogni rilevamento nel suo contesto e propone una correzione. Si collega al modello che scegli tramite il suo endpoint chat-completions, per esempio ChatGPT, Claude, DeepSeek o Grok, oppure uno ospitato da te. Nessuna modifica viene integrata senza l'approvazione dell'utente.</p>
+                            <p>Siv. Un agente IA che analizza ogni rilevamento nel suo contesto e propone una correzione. Compatibile con il modello che scegli tramite il suo endpoint chat-completions (ChatGPT, Claude, DeepSeek, Grok o uno ospitato da te). Nessuna modifica viene integrata senza l'approvazione dell'utente.</p>
                         </details>
                     </div>
-                    <p class="section-footnote" id="coverage-note">*Il livello di copertura varia in base al linguaggio. Il riconoscimento per pattern non rileva le chiamate con alias o dinamiche, il codice vendorizzato e le dipendenze, e non legge i servizi cloud di gestione delle chiavi.</p>
+                    <p class="section-footnote" id="coverage-note">*Il livello di copertura varia in base al linguaggio. Il riconoscimento per pattern non rileva le chiamate con alias o dinamiche e il codice di terze parti, e non legge i servizi cloud di gestione delle chiavi.</p>
                 </section>
             </div>
         </details>

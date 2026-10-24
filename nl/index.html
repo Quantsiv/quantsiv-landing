@@ -63,7 +63,7 @@
     <section class="hero">
         <div class="hero-copy">
             <p class="hero-kicker" lang="en">See tomorrow. Secure today.</p>
-            <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">vindt de cryptografie die quantumcomputers zouden kunnen kraken</span></h1>
+            <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">vindt de cryptografische kwetsbaarheden die quantumcomputers zouden kunnen kraken</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Waarom het ertoe doet</a>
                 <a href="#contact" class="cta-secondary">Neem contact op</a>
@@ -163,7 +163,7 @@
     <!-- Security statement -->
     <section class="security-statement">
         <p>Een quantumcomputer zou de publieke-sleutelcryptografie kunnen kraken die vandaag breed wordt gebruikt.<br>Overheden hebben datums gepubliceerd om die te vervangen.<br>Vervangen begint met weten waar ze zit.</p>
-        <p>Daar komen wij in beeld. We scannen je code bij elke build en laten je zien wat blootligt, hoe lang het blootligt en waarnaar je moet overstappen.</p>
+        <p>Daar komen wij in beeld. We scannen je code bij elke build en laten je de blootliggende kwetsbaarheden zien, hoe lang ze blootliggen en de stappen om ze te verhelpen.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -176,13 +176,13 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">01</span>
                 <h2 class="overview-title">Het probleem</h2>
-                <span class="overview-text">Versleutelde gegevens kunnen vandaag worden opgenomen en worden ontsleuteld zodra quantumcomputers krachtig genoeg zijn, en digitale handtekeningen kunnen worden vervalst. Nieuwe code, ook code die met AI-assistenten is geschreven, kan het risico vergroten.</span>
+                <span class="overview-text">Versleutelde gegevens kunnen vandaag worden opgenomen en worden ontsleuteld zodra quantumcomputers krachtig genoeg zijn, en digitale handtekeningen kunnen worden vervalst. Nieuwe code, ook code die met AI-assistenten is geschreven, kan dit risico vergroten.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
                 <!-- The Threat section -->
                 <section class="section">
-                    <h2>Twee quantumdreigingen, en nieuwe code die ze vergroot</h2>
+                    <h2>Twee quantumdreigingen</h2>
 
                     <div class="threat-grid">
                         <div class="threat-card">
@@ -195,7 +195,7 @@
                         </div>
                         <div class="threat-card">
                             <h3>Foutgevoelige AI-agents</h3>
-                            <p>Wanneer AI-agents code genereren, vallen ze vaak terug op patronen en standaardinstellingen die ze al kennen. Berusten die patronen op kwetsbare algoritmen, dan kan de code goed werken en de tests doorstaan en toch blootliggen. In een gecontroleerde studie schreven ontwikkelaars met een AI-assistent minder veilige code (Perry, Srivastava, Kumar en Boneh, ACM CCS 2023).</p>
+                            <p>Wanneer AI-agents code genereren, vallen ze vaak terug op patronen en standaardinstellingen die ze al kennen. Die patronen berusten vaak op kwetsbare algoritmen. <strong>Code van een AI-assistent kan goed werken en de tests doorstaan en toch blootliggen.</strong> In een gecontroleerde studie schreven ontwikkelaars met een AI-assistent minder veilige code (Perry, Srivastava, Kumar en Boneh, ACM CCS 2023).</p>
                         </div>
                     </div>
 
@@ -299,7 +299,7 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">03</span>
                 <h2 class="overview-title">Hoe het werkt</h2>
-                <span class="overview-text">Quantsiv vindt de cryptografie in je code, rangschikt elke bevinding naar hoe lang de gegevens geheim of een handtekening betrouwbaar moeten blijven, noemt de standaard om naar over te stappen en maakt een CycloneDX 1.6 CBOM. Een voorbeeldbevinding laat elke stap zien.</span>
+                <span class="overview-text">Quantsiv ontdekt automatisch de cryptografie in je code en rangschikt elke bevinding naar de houdbaarheid van de gegevens: hoe lang ze geheim moeten blijven, of een digitale handtekening betrouwbaar moet blijven. Daarna noemt het de post-quantumstandaard om naar over te stappen, maakt het een standaard CycloneDX 1.6 CBOM, en stelt een optionele AI-agent oplossingen voor die een mens goedkeurt.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
@@ -310,7 +310,7 @@
                     <div class="process-steps">
                         <div class="step">
                             <h3>1. Ontdekken</h3>
-                            <p>Quantsiv zoekt cryptografie in je broncode. Scans draaien standaard in je CI, zodat je code in je eigen omgeving blijft en Quantsiv de CBOM en de details van de bevindingen alleen ontvangt als je ze uploadt. Je kunt Quantsiv ook een openbare repository op zijn eigen servers laten scannen; private repositories worden daar niet gescand.</p>
+                            <p>Quantsiv draait standaard in je CI, zodat je code in je eigen omgeving blijft en Quantsiv de CBOM en de details van de bevindingen alleen ontvangt als je ze uploadt. Quantsiv scant ook openbare repositories op zijn eigen servers.<a href="#hosted-note" class="footnote-ref" aria-label="Noot over private repositories">*</a></p>
                         </div>
                         <div class="step">
                             <h3>2. Analyseren</h3>
@@ -322,9 +322,10 @@
                         </div>
                         <div class="step">
                             <h3>4. Documenteren</h3>
-                            <p>Quantsiv maakt een CycloneDX 1.6 CBOM, een SARIF-bestand dat werkt met code-analysetools, en een rapport met de bevindingen op prioriteit gerangschikt. Een AI-agent gebruikt deze informatie om quantumveilige alternatieven voor te stellen en de wijzigingen te helpen plannen. Quantsiv vergelijkt de resultaten van elke build met de laatste build van de hoofdbranch en markeert terugval.</p>
+                            <p>Quantsiv maakt een CycloneDX 1.6 CBOM, een SARIF-bestand dat werkt met code-analysetools, en een rapport met de bevindingen op prioriteit gerangschikt. Een AI-agent gebruikt deze informatie om quantumveilige alternatieven voor te stellen en de wijzigingen te helpen plannen.</p>
                         </div>
                     </div>
+                    <p class="section-footnote" id="hosted-note">*Private repositories worden niet extern gescand.</p>
 
                     <!-- Product preview. The scan, the ranking, the checks and the gate result are Quantsiv's
                          real output for a sample repository written for this page; the agent's analysis
@@ -587,7 +588,7 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">04</span>
                 <h2 class="overview-title">Functies</h2>
-                <span class="overview-text">Vindt gangbare cryptografische API's in veel talen, sleutel- en certificaatbestanden, configuratiebestanden van je infrastructuur en walletcode. Markeert bij elke build de kwetsbare cryptografie die een wijziging toevoegt, en een optionele AI-agent stelt oplossingen voor die een mens goedkeurt.</span>
+                <span class="overview-text">Gebouwd voor het quantumtijdperk.</span>
                 <span class="overview-arrow" aria-hidden="true"></span>
             </summary>
             <div class="chapter-body">
@@ -596,7 +597,6 @@
                      paths (CC0), recoloured; the trademarks belong to their owners. A name without a logo
                      has no logo we may safely show. -->
                 <section class="section">
-                    <h2>Gebouwd voor het quantumtijdperk.</h2>
                     <div class="capabilities-grid">
                         <details class="capability-item">
                             <summary><h3>Ondersteuning voor veel talen</h3></summary>
@@ -605,7 +605,7 @@
                         </details>
                         <details class="capability-item">
                             <summary><h3>Cryptografische inventaris (CBOM)</h3></summary>
-                            <p>Maakt automatisch een standaard CycloneDX 1.6 CBOM van de cryptografie die in je repository's is gevonden, of importeert CBOM's van andere tools.</p>
+                            <p>Maakt automatisch een standaard CycloneDX 1.6 CBOM of importeert CBOM's van andere tools.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Risicobeoordeling</h3></summary>
@@ -626,11 +626,11 @@
                         </details>
                         <details class="capability-item">
                             <summary><h3>Infrastructuurconfiguratie</h3></summary>
-                            <p>Vindt kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes- en CloudFormation-bestanden, en in configuratiebestanden van webservers, OpenSSL en OpenSSH in je repository.</p>
+                            <p>Vindt kwetsbare sleutel- en TLS-instellingen in Terraform-, Kubernetes-, CloudFormation-, webserver-, OpenSSL- en OpenSSH-configuratie in je repository.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>Ondersteuning voor cryptowallets</h3></summary>
-                            <p>Analyseert de code, niet de blockchain. Vindt secp256k1- en Ed25519-ondertekeningssleutels, Schnorr-handtekeningen en ECDH- en ECIES-sleuteluitwisseling in gangbare walletbibliotheken. Geeft migratieaanwijzingen tot de blockchain post-quantumhandtekeningen ondersteunt.</p>
+                            <p>Vindt secp256k1- en Ed25519-ondertekeningssleutels, Schnorr-handtekeningen en ECDH- en ECIES-sleuteluitwisseling in gangbare walletbibliotheken.</p>
                         </details>
                         <details class="capability-item">
                             <summary><h3>MCP-ondersteuning</h3></summary>
@@ -641,15 +641,11 @@
                             <p>Stelt de best passende standaard voor: ML-KEM, ML-DSA of SLH-DSA, of een hybride sleuteluitwisseling.</p>
                         </details>
                         <details class="capability-item">
-                            <summary><h3>Offline scannen</h3></summary>
-                            <p>Standaard draaien scans offline in je CI en blijft je broncode in je eigen omgeving. Resultaten bereiken Quantsiv alleen als je ze uploadt. Openbare repositories kunnen ook op de servers van Quantsiv worden gescand; private niet.</p>
-                        </details>
-                        <details class="capability-item">
                             <summary><h3>Analyse door een AI-agent</h3></summary>
-                            <p>Een AI-agent analyseert elke bevinding in haar context en stelt een oplossing voor. Hij maakt verbinding met het model dat je kiest via zijn chat-completions-endpoint, bijvoorbeeld ChatGPT, Claude, DeepSeek of Grok, of een model dat je zelf host. Geen wijziging wordt gemerged zonder goedkeuring van de gebruiker.</p>
+                            <p>Siv. Een AI-agent die elke bevinding in haar context analyseert en een oplossing voorstelt. Hij maakt verbinding met het model dat je kiest via zijn chat-completions-endpoint, bijvoorbeeld ChatGPT, Claude, DeepSeek of Grok, of een model dat je zelf host. Geen wijziging wordt gemerged zonder goedkeuring van de gebruiker.</p>
                         </details>
                     </div>
-                    <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal. Patroonherkenning mist aanroepen via een alias of dynamische aanroepen, meegeleverde code en afhankelijkheden, en leest clouddiensten voor sleutelbeheer niet.</p>
+                    <p class="section-footnote" id="coverage-note">*De dekking verschilt per taal. Patroonherkenning mist aanroepen via een alias of dynamische aanroepen en code van derden, en leest clouddiensten voor sleutelbeheer niet.</p>
                 </section>
             </div>
         </details>

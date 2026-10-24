@@ -1895,9 +1895,6 @@ a {
 }
 
 /* The features headline has no subheading, so the grid keeps the subheading's space */
-.section h2 + .capabilities-grid {
-    margin-top: 3rem;
-}
 
 .capability-item {
     padding: 1.5rem 1.5rem 1.625rem;
@@ -1916,6 +1913,8 @@ a {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
     gap: 1rem;
+    /* Two title lines high, so the closed cards are the same size whether a title wraps or not. */
+    min-height: 4rem;
     list-style: none;
     cursor: pointer;
 }
