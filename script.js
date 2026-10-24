@@ -33,49 +33,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Chapters: each row of the overview is a <details> holding the whole chapter. A click on a
-    // row, or on a link to it, slides the chapter open, shuts the one that was open, and scrolls
-    // to the row; the menu marks the chapter being read. From then on reading is continuous:
-    // when the next row reaches the baseline (55% down the screen) its chapter opens, scrolling
-    // back up reopens the one before, and a chapter that has left the screen shuts, with the
-    // scroll position adjusted so the view stays still (style.css turns the browser's own
-    // scroll anchoring off, or it would adjust a second time). Scrolling alone never opens the
-    // first chapter, and shutting a chapter by its row ends the continuous reading until the
-    // next click. Without this script the rows still open and close, and the links jump to them.
+    // row, or on a link to it, slides the chapter open, slides the one that was open shut and
+    // scrolls to the row; a click on the open row shuts it. The menu marks the open chapter and
+    // the address names it. Nothing opens or shuts as the page scrolls. Without this script the
+    // rows still open and close, and the links jump to them.
     const chapters = Array.from(document.querySelectorAll('.chapter'));
     if (chapters.length) {
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         const menuLinks = Array.from(document.querySelectorAll('.nav-link'));
-        const BASELINE = 0.55;
-        let reading = false;
-        // A scroll the reader did not make (to a row, or to an address) is "settling" until it
-        // comes to rest; a keyboard focus move is quiet for a moment
-        let settling = false;
-        let settleTimer = 0;
-        let quietUntil = 0;
-        let lastY = window.scrollY;
-        let down = true;
-        let ticking = false;
 
         const isOpen = function (chapter) {
             return chapter.open && !chapter.classList.contains('is-closing');
         };
-        const rowTop = function (chapter) {
-            return chapter.querySelector('summary').getBoundingClientRect().top;
-        };
-        const baseline = function () {
-            return window.innerHeight * BASELINE;
-        };
-
-        // The chapter being read: of the open ones, the last whose row is above the baseline,
-        // else the first
-        const current = function () {
-            const open = chapters.filter(isOpen);
-            const above = open.filter(function (c) { return rowTop(c) <= baseline(); });
-            return above.length ? above[above.length - 1] : open[0];
-        };
 
         const markMenu = function () {
-            const open = current();
+            const open = chapters.find(isOpen);
             menuLinks.forEach(function (a) {
                 if (open && a.getAttribute('href') === '#' + open.id) a.setAttribute('aria-current', 'true');
                 else a.removeAttribute('aria-current');
@@ -106,16 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 chapter.classList.remove('is-sliding', 'is-closing');
                 if (!open) chapter.open = false;
                 markMenu();
-                // The page may have moved while it slid: look again
-                readOn();
             };
             animation.oncancel = function () {
                 chapter.classList.remove('is-sliding');
             };
         };
 
-        // Scroll so the row lands under the header, allowing for the open chapters above it,
-        // which shut while the page scrolls
+        // Scroll so the row lands under the header, allowing for the open chapter above it,
+        // which shuts while the page scrolls (style.css turns the browser's own scroll
+        // anchoring off, or it would allow for it a second time)
         const scrollToRow = function (chapter, closing) {
             let top = chapter.getBoundingClientRect().top + window.scrollY;
             closing.forEach(function (c) {
@@ -127,23 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({ top: top - offset, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
         };
 
-        // Once the page has come to rest, it is read as if the reader had scrolled down to it
-        const settle = function () {
-            settling = true;
-            clearTimeout(settleTimer);
-            settleTimer = setTimeout(function () {
-                settling = false;
-                lastY = window.scrollY;
-                down = true;
-                readOn();
-            }, 200);
-        };
-
         const openChapter = function (chapter) {
-            // While reading on, two chapters can be open as one hands over to the next
             const closing = chapters.filter(function (c) { return c !== chapter && isOpen(c); });
-            reading = true;
-            settle();
             scrollToRow(chapter, closing);
             closing.forEach(function (c) { slide(c, false); });
             if (!isOpen(chapter)) slide(chapter, true);
@@ -155,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
             chapter.querySelector('summary').addEventListener('click', function (e) {
                 e.preventDefault();
                 if (isOpen(chapter)) {
-                    reading = false;
                     slide(chapter, false);
                     history.replaceState(null, '', window.location.pathname + window.location.search);
                     markMenu();
@@ -183,92 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!chapter) return;
             // The browser may already have opened it; shut the others either way
             chapters.forEach(function (c) { c.open = c === chapter; });
-            reading = true;
-            settle();
             markMenu();
             target.scrollIntoView();
         };
-
-        // The reader's own wheel, touch or keys end a settling scroll at once
-        ['wheel', 'touchmove', 'keydown'].forEach(function (type) {
-            window.addEventListener(type, function () {
-                if (!settling) return;
-                clearTimeout(settleTimer);
-                settling = false;
-            }, { passive: true });
-        });
-        // Moving the keyboard focus scrolls the page too; a keyboard reader opens rows with
-        // Enter instead. Focus that follows a click or a tap is not the keyboard's.
-        let pointerAt = 0;
-        document.addEventListener('pointerdown', function () {
-            pointerAt = Date.now();
-        }, true);
-        document.addEventListener('focusin', function () {
-            if (Date.now() - pointerAt > 500) quietUntil = Date.now() + 600;
-        });
-
-        // Continuous reading, as described above. A change of height above the reader is
-        // compensated in one step, which must not be smooth. The position is set from the
-        // document's change of height, not scrolled by it: near the end of the page the
-        // browser already pulls the view up as soon as the page gets shorter, and a relative
-        // scroll would move it a second time.
-        const keepStill = function (change) {
-            const root = document.documentElement;
-            const y = window.scrollY;
-            const height = root.scrollHeight;
-            change();
-            const was = root.style.scrollBehavior;
-            root.style.scrollBehavior = 'auto';
-            window.scrollTo(0, y + root.scrollHeight - height);
-            root.style.scrollBehavior = was;
-            // Only the reader's own scrolling tells the direction
-            lastY = window.scrollY;
-        };
-        function readOn() {
-            const y = window.scrollY;
-            if (y !== lastY) down = y > lastY;
-            lastY = y;
-            if (!reading || settling || Date.now() < quietUntil || ticking) return;
-            // Past either end of the page (a touch screen's bounce) nothing opens or shuts
-            if (y < 0 || y > document.documentElement.scrollHeight - window.innerHeight) return;
-            ticking = true;
-            requestAnimationFrame(function () {
-                ticking = false;
-                let target = null;
-                chapters.forEach(function (c) { if (rowTop(c) <= baseline()) target = c; });
-                if (target && !target.open) {
-                    if (down) {
-                        // Reached from above: it unfolds under its row
-                        slide(target, true);
-                    } else {
-                        // Reached from below: it opens above the reader, and the view stays
-                        keepStill(function () { target.open = true; });
-                        if (!reducedMotion.matches) {
-                            target.querySelector('.chapter-body').animate({ opacity: [0, 1] }, { duration: 350 });
-                        }
-                    }
-                }
-                chapters.forEach(function (c) {
-                    if (c === target || !c.open || c.classList.contains('is-sliding')) return;
-                    const r = c.getBoundingClientRect();
-                    if (r.bottom < 0) {
-                        keepStill(function () { c.open = false; });
-                    } else if (r.top > window.innerHeight) {
-                        c.open = false;
-                    }
-                });
-                markMenu();
-                // The address names the chapter being read
-                const now = current();
-                if (window.location.hash !== (now ? '#' + now.id : '')) {
-                    history.replaceState(null, '', now ? '#' + now.id : window.location.pathname + window.location.search);
-                }
-            });
-        }
-        window.addEventListener('scroll', function () {
-            if (settling) settle();
-            else readOn();
-        }, { passive: true });
         fromAddress();
         window.addEventListener('hashchange', fromAddress);
     }

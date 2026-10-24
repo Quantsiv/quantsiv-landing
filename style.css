@@ -83,7 +83,7 @@ html {
 }
 
 body {
-    /* script.js keeps the view still itself when a chapter above the reader opens or shuts */
+    /* script.js scrolls to a row itself when the chapter above it shuts, so the browser must not adjust too */
     overflow-anchor: none;
     font-family: var(--font-body);
     font-size: 1rem;

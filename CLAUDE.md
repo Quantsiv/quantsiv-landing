@@ -382,19 +382,14 @@ stand until the founder changes them:
   first button are plain links to a chapter's id (`#threat`, `#compliance`, `#how-it-works`,
   `#capabilities`, `#roadmap`); `script.js` opens the chapter they point to, keeps the address
   on its id and marks its menu link with `aria-current`. An address with a chapter's id opens
-  that chapter. Once a chapter has been opened, reading is continuous (the founder's choice on
-  23 Oct 2026, from five previewed options): when the next row reaches the baseline, 55% down
-  the screen, its chapter opens; scrolling back up reopens the one before; a chapter that has
-  left the screen shuts, with the scroll position adjusted so the view stays still
-  (`overflow-anchor: none` on `body`, or the browser would adjust it a second time). The
-  adjustment sets the position from the page's change of height instead of scrolling by it:
-  near the end of the page the browser pulls the view up as soon as the page gets shorter, and
-  scrolling by the same amount again sent the reader back to the first chapter (the founder's
-  report, 24 Oct 2026). Nothing opens or shuts while a touch screen bounces past either end.
-  Scrolling alone never opens the first chapter, so the home page keeps its short overview, and
-  closing a chapter by its row ends the continuous reading until the next click. No chevrons end a chapter
-  (the first version of #39 had them; dropped as overkill on his word). With reduced motion the
-  chapter opens without sliding; without scripts the rows still open and close. The summaries
+  that chapter. Nothing opens or shuts as the page scrolls (the founder's word, 24 Oct 2026).
+  From 23 Oct 2026 the next chapter opened when its row reached a baseline 55% down the screen,
+  and chapters that left the screen shut (landing #39, #41: his pick from five previewed options).
+  It jumped the page near the end and flickered when scrolling fast, so he asked for it to be
+  removed in favour of plain dropdowns; keep it out. The browser's own scroll anchoring is off
+  (`overflow-anchor: none` on `body`) because `script.js` scrolls to a row itself, allowing for
+  the chapter above that shuts. No chevrons end a chapter (dropped as overkill on his word). With
+  reduced motion the chapter opens without sliding; without scripts the rows still open and close. The summaries
   follow "What the page may say" and the chapters: change a summary when its chapter changes.
   The deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past
   and future dates and places a "Today" marker. The features are cards that open one by one, two
