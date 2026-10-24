@@ -386,9 +386,13 @@ stand until the founder changes them:
   23 Oct 2026, from five previewed options): when the next row reaches the baseline, 55% down
   the screen, its chapter opens; scrolling back up reopens the one before; a chapter that has
   left the screen shuts, with the scroll position adjusted so the view stays still
-  (`overflow-anchor: none` on `body`, or the browser would adjust it a second time). Scrolling
-  alone never opens the first chapter, so the home page keeps its short overview, and closing a
-  chapter by its row ends the continuous reading until the next click. No chevrons end a chapter
+  (`overflow-anchor: none` on `body`, or the browser would adjust it a second time). The
+  adjustment sets the position from the page's change of height instead of scrolling by it:
+  near the end of the page the browser pulls the view up as soon as the page gets shorter, and
+  scrolling by the same amount again sent the reader back to the first chapter (the founder's
+  report, 24 Oct 2026). Nothing opens or shuts while a touch screen bounces past either end.
+  Scrolling alone never opens the first chapter, so the home page keeps its short overview, and
+  closing a chapter by its row ends the continuous reading until the next click. No chevrons end a chapter
   (the first version of #39 had them; dropped as overkill on his word). With reduced motion the
   chapter opens without sliding; without scripts the rows still open and close. The summaries
   follow "What the page may say" and the chapters: change a summary when its chapter changes.
