@@ -320,7 +320,8 @@ stand until the founder changes them:
   On 19 Oct 2026 the grid's headline became "Find and rank the cryptography you need to
   replace. Built for the quantum era." (it was "Powerful cryptographic security. Built for the
   quantum era.", which read as a "Quantsiv secures" claim), and the limits note says depth
-  varies by language.
+  varies by language. On 24 Oct 2026 the features section lost its heading: the Features
+  card's summary says "Built for the quantum era." and the chapter opens on the grid.
   He wants Quantsiv presented as AI-powered once it is. Since 19 Oct 2026 the agent card is
   the AI capability on the page; calling the whole product "AI-powered" waits for his word,
   because the agent is optional and everything else is pattern rules and fixed checks.
@@ -344,27 +345,42 @@ stand until the founder changes them:
   `nl/` and `it/`. Change them only with his word. On his word of 21 Oct 2026 (the review's
   fixes) the fourth step says "with the latest main-branch build", which is what the change
   check does, instead of "with the previous one"; the Italian says "segnalando le regressioni",
-  because the check flags.
+  because the check flags. On 24 Oct 2026 he removed that comparison sentence from the fourth
+  step in all three languages, so the change check is named only on the "Checks on every
+  build" card.
 - The threat section (21 Oct 2026, the review's fixes on the founder's word): its heading is
   "Two quantum threats, and new code that adds to them", because the section has three cards,
   and the third card, "Error-prone AI agents", ends with the one sourced sentence on the page
   outside the deadlines: in a controlled study, developers using an AI assistant wrote less
   secure code (Perry, Srivastava, Kumar and Boneh, "Do Users Write More Insecure Code with AI
   Assistants?", ACM CCS 2023). Keep the citation with the card; it is the card's only source.
+  On 24 Oct 2026 the founder shortened the heading back to "Two quantum threats" and rewrote
+  the third card: the patterns "often rely on vulnerable algorithms" (his draft had no "often";
+  the word keeps the sentence true), then his bold sentence "AI assistant code can work
+  correctly and pass its tests while still being exposed.", then the sourced sentence. His
+  draft put the bold sentence in quotation marks with the citation; it is not a quotation from
+  the paper, so it is bold without quotation marks and the citation stays on the study's
+  finding. Never attribute a sentence to a source that does not contain it.
 - The keys card says "probes the TLS connections of the servers you name with one handshake"
   (21 Oct 2026), never "checks", because one handshake is a probe (see "What the page may say").
 - The agent card says the agent "connects to the model you choose through its chat-completions
   endpoint, for example ChatGPT, Claude, DeepSeek or Grok, or one you host yourself" (21 Oct
   2026): the names are examples of endpoints, not tested models. Write no "works with" or
-  "tested with" a named model until a run against it exists.
+  "tested with" a named model until a run against it exists. Since 24 Oct 2026 (the founder's
+  copy) the card opens with the agent's name, "Siv.", and says the agent analyzes each finding
+  in its context and proposes a fix; the model line and "No change is merged without the
+  user's approval" stay. The product's claims sheet does not name the agent yet; the founder
+  carries the name there. The Italian draft's "di proprietà" is left out, because a translation
+  says no more than the English.
 - The Dutch page was rebuilt from the English on 21 Oct 2026, because it had kept the copy
   from before landing #29; its demo block keeps the earlier translation. From then on the three
   pages mirror again, and every change goes into all three in the same commit.
 - Detection limits (the founder's pick, 19 Oct 2026; shortened on his ask, 20 Oct 2026; the
   limits sentence restored on his word in the review thread, 21 Oct 2026): the language card
   does not list Rust, and the limits are one footnote under the features (`#coverage-note`):
-  coverage varies by language, and pattern matching misses aliased and dynamic calls, vendored
-  code and dependencies, and does not read cloud key-management services. The separate limits
+  coverage varies by language, and pattern matching misses aliased and dynamic calls and
+  third-party code (the founder's word, 24 Oct 2026; "vendored code and dependencies" before),
+  and does not read cloud key-management services. The separate limits
   section is gone. The demo is labelled "Output" with a footnote
   (`#demo-footnote`) saying the results are Quantsiv's own on a demo repository. Keep these until
   measured detection improves and the founder says so.
@@ -416,11 +432,26 @@ stand until the founder changes them:
   with no inline scripts or styles. `form-action` allows this site and Brevo's form address
   (c58bed8a.sibforms.com), and `frame-src` allows only that address, for the hidden frame the
   sign-up posts into; change both if the form moves to another service.
-- The source-code sentences (step 1 and the "Offline scanning" card, 22 Oct 2026, the founder's
-  word) say that scans run in your CI by default and that public repositories can also be scanned
-  on Quantsiv's servers, private ones not, because the hosted service clones public repositories.
-  Keep that caveat wherever "only if you upload" appears; the decks and the product's claims sheet
-  say the same.
+- The source-code sentence (step 1, 22 Oct 2026, the founder's word) says that scans run in
+  your CI by default and that public repositories can also be scanned on Quantsiv's servers,
+  private ones not, because the hosted service clones public repositories. Since 24 Oct 2026
+  (his copy) the "Offline scanning" card is gone and step 1 carries the sentence alone, with the
+  private-repository caveat as a footnote under the steps (`#hosted-note`: "Private repositories
+  are not scanned externally."). Keep that caveat wherever "only if you upload" appears; the
+  decks and the product's claims sheet say the same.
+
+- The founder's copy of 24 Oct 2026 (English and Italian, mirrored in Dutch): the hero reads
+  "Quantsiv finds the cryptographic vulnerabilities quantum computers could break"; the intro's
+  second line says "to show you exposed vulnerabilities, their duration, and the steps to
+  remediate them" (his "exact steps" lost "exact", which is in the wording table); the Italian
+  intro is his own three lines and does not mirror the English; the summaries of cards 01 and 03
+  are his, with "calculating exactly", "the exact post-quantum standard", "intelligent agents"
+  and "instant hotfixes" replaced by the backed wording (lifetimes are declared, the standard is
+  named, the agent is optional and a person approves); the Italian step titles are in the
+  indicative ("Individua"); the CBOM, infrastructure and wallet cards are shorter; the Italian
+  migration card is titled "Aggiornamento per la migrazione costante"; the language card is
+  unchanged. The closed feature cards share one height (`.capability-item summary` is two title
+  lines high) because he asked for cards of the same size; an open card grows alone.
 
 ## Before every commit
 
