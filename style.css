@@ -80,11 +80,11 @@ html {
     font-size: 100%;
     background-color: var(--bg);
     scroll-padding-top: 5rem;
+    /* The page keeps its scrollbar's room while an open chapter stops it scrolling, so nothing shifts */
+    scrollbar-gutter: stable;
 }
 
 body {
-    /* script.js scrolls to a row itself when the chapter above it shuts, so the browser must not adjust too */
-    overflow-anchor: none;
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.65;
@@ -582,9 +582,11 @@ a {
     color: var(--muted);
 }
 
-/* Chapters: one row per chapter (number, name, a short summary and a round chevron). Each row
-   is a <details> that opens in place onto the whole chapter; script.js slides it open and shut
-   and keeps one open at a time. */
+/* Chapters: a stack of cards, one per chapter (number, name, a short summary and a round
+   arrow). Each card is a <details> whose body is the whole chapter. The cards stick under the
+   header, each a little lower than the one before, and shrink and dim as the next card covers
+   them. script.js grows a card into a full-screen chapter (the sheet, at the end of this file)
+   and shrinks it back; without the script the cards stay put and open in place (noscript.css). */
 .section-num {
     display: inline-block;
     padding: 0.125rem 0.4375rem;
@@ -600,25 +602,46 @@ a {
 .overview {
     max-width: calc(1200px + 2 * 1.5rem);
     margin: 0 auto;
-    padding: 0 1.5rem 6rem;
+    padding: 0 1.5rem 8rem;
 }
 
+/* One colour per chapter, from the palette, and its place in the stack */
+.chapter:nth-child(1) { --i: 0; --ch-bg: var(--card-1); --ch-fg: var(--card-1-fg); --ch-muted: #b9b9be; }
+.chapter:nth-child(2) { --i: 1; --ch-bg: var(--card-2); --ch-fg: var(--card-2-fg); --ch-muted: #4a4a50; }
+.chapter:nth-child(3) { --i: 2; --ch-bg: var(--accent-1); --ch-fg: #ffffff; --ch-muted: rgba(255, 255, 255, 0.94); }
+.chapter:nth-child(4) { --i: 3; --ch-bg: var(--accent-2); --ch-fg: #0c0c0d; --ch-muted: rgba(12, 12, 13, 0.78); }
+.chapter:nth-child(5) { --i: 4; --ch-bg: var(--accent-3); --ch-fg: #0c0c0d; --ch-muted: rgba(12, 12, 13, 0.78); }
+
+/* --stack-top is the header's height plus a little, measured by script.js; --cover, from 0 to
+   1, is how far the next card has climbed over this one, set by script.js as the page scrolls */
 .chapter {
-    border-top: 1px solid var(--line);
-}
-
-.chapter:last-child {
-    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: calc(var(--stack-top, 5.25rem) + var(--i, 0) * 0.875rem);
+    margin: 0 0 3rem;
+    border-radius: 1.75rem;
+    background-color: var(--ch-bg);
+    color: var(--ch-fg);
+    transform-origin: 50% 0;
+    transform: scale(calc(1 - var(--cover, 0) * 0.06));
+    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.35);
+    will-change: transform;
 }
 
 .overview-item {
+    position: relative;
+    isolation: isolate;
     display: grid;
-    grid-template-columns: auto minmax(0, 15rem) minmax(0, 1fr) auto;
-    grid-template-areas: "num title text arrow";
-    align-items: center;
-    gap: 1rem 2rem;
-    padding: 2rem 1rem;
-    border-radius: var(--radius);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "num arrow"
+        "title title"
+        "text text";
+    align-content: space-between;
+    align-items: start;
+    gap: 1.5rem;
+    min-height: min(66vh, 33rem);
+    padding: 2.25rem 2.5rem 2.5rem;
+    border-radius: inherit;
     list-style: none;
     cursor: pointer;
 }
@@ -631,74 +654,79 @@ a {
     outline-offset: -2px;
 }
 
+/* The dimming of a covered card: a layer whose opacity follows the cover, so the card itself
+   is never repainted */
+.overview-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background-color: #0c0c0d;
+    opacity: calc(var(--cover, 0) * 0.55);
+    pointer-events: none;
+    will-change: opacity;
+}
+
 .overview-item > .section-num {
     grid-area: num;
+    justify-self: start;
+    color: var(--ch-bg);
+    background-color: var(--ch-fg);
 }
 
 .overview-title {
     grid-area: title;
-    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    align-self: end;
+    font-size: clamp(3.25rem, 10vw, 8.5rem);
     font-weight: 300;
-    letter-spacing: -0.03em;
-    color: var(--text);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    color: var(--ch-fg);
 }
 
 .overview-text {
     grid-area: text;
-    max-width: 44rem;
-    color: var(--muted);
+    max-width: 36rem;
+    font-size: 1.125rem;
+    color: var(--ch-muted);
 }
 
-/* The row's round chevron points down, and up once the chapter is open */
-.overview-arrow {
-    display: grid;
-    place-items: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    color: var(--text);
-    box-shadow: inset 0 0 0 1px var(--line-strong);
-}
-
+/* The card's arrow: large and filled, in the card's own text colour, so it reads as the
+   second thing after the title (the founder's pick, 24 Oct 2026, over a plain chevron) */
 .overview-arrow {
     grid-area: arrow;
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    color: var(--ch-bg);
+    background-color: var(--ch-fg);
 }
 
 .overview-arrow::after {
     content: '';
-    width: 0.5625rem;
-    height: 0.5625rem;
-    margin-top: -0.25rem;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: rotate(45deg);
-}
-
-.chapter[open]:not(.is-closing) > .overview-item .overview-arrow::after {
-    margin-top: 0.25rem;
-    transform: rotate(225deg);
-}
-
-.overview-item:hover {
-    background-color: var(--bg-alt);
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.375rem 0 0;
+    border-right: 2.5px solid currentColor;
+    border-bottom: 2.5px solid currentColor;
+    transform: rotate(-45deg);
 }
 
 .overview-item:hover .overview-arrow,
-.chapter[open]:not(.is-closing) > .overview-item .overview-arrow {
-    color: var(--on-accent-1);
-    background-color: var(--accent-1);
-    box-shadow: none;
+.overview-item:focus-visible .overview-arrow {
+    transform: scale(1.1);
 }
 
-/* The open chapter: its section sits inside the row, without the band it had as a section of
-   its own. The section carries the chapter's bottom space, inside the body, so the body can
-   slide down to zero. */
+.overview-item:hover .overview-arrow::after {
+    transform: translate(0.125rem, -0.125rem) rotate(-45deg);
+}
+
+/* The open chapter's own section, without the band it had as a section of its own */
 .chapter-body {
     padding: 0 1rem;
-}
-
-.chapter.is-sliding > .chapter-body {
-    overflow: hidden;
 }
 
 .chapter .section {
@@ -708,10 +736,29 @@ a {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .overview-item,
-    .overview-arrow,
+    .overview-item {
+        transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .chapter:hover > .overview-item {
+        transform: translateY(-6px);
+    }
+
+    .overview-arrow {
+        transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
     .overview-arrow::after {
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.3s ease, margin 0.3s ease;
+        transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chapter {
+        position: relative;
+        top: auto;
+        transform: none;
+        will-change: auto;
     }
 }
 
@@ -2514,17 +2561,9 @@ footer a {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .overview-item {
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        grid-template-areas:
-            "num title arrow"
-            ". text .";
-        gap: 0.75rem 1.25rem;
-    }
-
     .overview-arrow {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }
 
@@ -2538,18 +2577,41 @@ footer a {
     }
 
     .overview {
-        padding: 0 1.25rem 4.5rem;
+        padding: 0 1.25rem 6rem;
     }
 
     .overview-item {
-        grid-template-areas:
-            "num title arrow"
-            "text text text";
-        padding: 1.5rem 0.25rem;
+        min-height: min(62vh, 30rem);
+        padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .overview-text {
+        font-size: 1rem;
     }
 
     .chapter-body {
         padding: 0 0.25rem;
+    }
+
+    .sheet-bar {
+        gap: 0.625rem;
+    }
+
+    .sheet-step {
+        width: 1.5rem;
+    }
+
+    .sheet-step[aria-current] {
+        width: 2.25rem;
+    }
+
+    .sheet-ink,
+    .sheet-next {
+        padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .sheet-ink-text {
+        font-size: 1rem;
     }
 
     .hero {
@@ -2742,4 +2804,322 @@ footer a {
     .banner-track {
         animation: none;
     }
+}
+
+/* The chapter sheet: the full-screen chapter a card grows into. script.js moves the chapter's
+   body into .sheet-body, fills the bar and the end card, and uses the ink (a coloured layer
+   that carries the card's number, title and summary while they travel) and the float (the
+   title and number on their way between the ink and the bar). Hidden without the script. */
+.sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+}
+
+.sheet[hidden] {
+    display: none;
+}
+
+.sheet-card {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background-color: var(--bg);
+    clip-path: inset(0 0 0 0 round 0);
+}
+
+.sheet-page {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sheet-bar {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.625rem max(1rem, env(safe-area-inset-right, 0px)) 0.625rem max(1rem, env(safe-area-inset-left, 0px));
+    border-bottom: 1px solid var(--line);
+    background-color: var(--header-bg);
+}
+
+.sheet-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* The chapters, as a row of steps that can be pressed */
+.sheet-steps {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.sheet-step {
+    position: relative;
+    flex: none;
+    width: 2rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    cursor: pointer;
+}
+
+.sheet-step::before {
+    content: '';
+    position: absolute;
+    left: 0.1875rem;
+    right: 0.1875rem;
+    top: 50%;
+    height: 0.25rem;
+    margin-top: -0.125rem;
+    border-radius: 999px;
+    background-color: var(--line-strong);
+}
+
+.sheet-step.is-done::before {
+    background-color: var(--accent-1);
+}
+
+.sheet-step[aria-current] {
+    width: 3rem;
+}
+
+.sheet-step[aria-current]::before,
+.sheet-step:hover::before {
+    background-color: var(--text);
+}
+
+.sheet-step:focus-visible {
+    outline: 2px solid var(--accent-1);
+    outline-offset: -2px;
+}
+
+.sheet-close {
+    position: relative;
+    flex: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 50%;
+    color: var(--text);
+    background: none;
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+    cursor: pointer;
+}
+
+.sheet-close::before,
+.sheet-close::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.0625rem;
+    height: 2px;
+    margin: -1px 0 0 -0.53125rem;
+    background-color: currentColor;
+    transform: rotate(45deg);
+}
+
+.sheet-close::after {
+    transform: rotate(-45deg);
+}
+
+.sheet-close:hover {
+    color: var(--on-accent-1);
+    background-color: var(--accent-1);
+    box-shadow: none;
+    transform: rotate(90deg);
+}
+
+.sheet-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.sheet-body {
+    max-width: calc(1200px + 2 * 1.5rem);
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+}
+
+/* The chapter's own rules, which are written for the row it opens from */
+.sheet-body .section {
+    padding: 1rem 0 3rem;
+    border-top: 0;
+    background: none;
+}
+
+.sheet-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    pointer-events: none;
+}
+
+.sheet-progress span {
+    display: block;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background-color: var(--accent-1);
+}
+
+/* The next chapter, as a card that ends this one, laid out like the cards of the stack */
+.sheet-next {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: 'num arrow' 'label label' 'title title';
+    align-content: space-between;
+    align-items: start;
+    gap: 0.75rem 1.5rem;
+    max-width: calc(1200px + 2 * 1.5rem);
+    min-height: min(50vh, 24rem);
+    margin: 1rem auto 0;
+    padding: 2.25rem 2.5rem;
+    border-radius: 1.75rem 1.75rem 0 0;
+    color: var(--ch-fg);
+    background-color: var(--ch-bg);
+    text-decoration: none;
+}
+
+.sheet-next:hover {
+    transform: translateY(-0.5rem);
+}
+
+.sheet-next-num {
+    grid-area: num;
+    justify-self: start;
+    color: var(--ch-bg);
+    background-color: var(--ch-fg);
+}
+
+.sheet-next-label {
+    grid-area: label;
+    align-self: end;
+    margin-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ch-muted);
+}
+
+.sheet-next-title {
+    grid-area: title;
+    font-size: clamp(3.25rem, 10vw, 8.5rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.sheet-next-arrow {
+    grid-area: arrow;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: var(--ch-fg);
+    box-shadow: inset 0 0 0 1.5px var(--ch-line);
+}
+
+.sheet-next-arrow::after {
+    content: '';
+    width: 0.5625rem;
+    height: 0.5625rem;
+    margin: 0 0.25rem 0 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.sheet-next:hover .sheet-next-arrow {
+    color: var(--ch-bg);
+    background-color: var(--ch-fg);
+    box-shadow: none;
+    transform: scale(1.08);
+}
+
+/* The coloured layer that covers the sheet while a chapter opens, closes or hands over to the
+   next; it carries the card's number, title and summary while they travel */
+.sheet-ink {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
+    padding: 2.25rem 2.5rem 2.5rem;
+    color: var(--ink-fg, #fff);
+    background-color: var(--ink-bg, var(--accent-1));
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.sheet-ink.on {
+    visibility: visible;
+}
+
+.sheet-ink .section-num {
+    justify-self: start;
+    color: var(--ink-bg, var(--accent-1));
+    background-color: var(--ink-fg, #fff);
+}
+
+.sheet-ink .section-num[hidden] {
+    display: inline-block;
+    visibility: hidden;
+}
+
+.sheet-ink-title {
+    align-self: end;
+    font-size: clamp(3.25rem, 10vw, 8.5rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.sheet-ink-text {
+    max-width: 36rem;
+    font-size: 1.125rem;
+    color: var(--ink-muted, rgba(255, 255, 255, 0.94));
+}
+
+/* The sheet's small transitions, only where motion is welcome */
+@media (prefers-reduced-motion: no-preference) {
+    .sheet-step { transition: width 0.4s ease; }
+    .sheet-step::before { transition: background-color 0.3s ease; }
+    .sheet-close { transition: background-color 0.2s ease, color 0.2s ease, transform 0.3s ease; }
+    .sheet-next { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+    .sheet-next-arrow { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.2s ease, color 0.2s ease; }
+}
+
+/* The title and number on their way between the ink and the bar */
+.sheet-float {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sheet-float .sheet-ink-title {
+    font-weight: 300;
+    letter-spacing: -0.055em;
 }

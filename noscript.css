@@ -39,3 +39,24 @@
 .demo-panel + .demo-panel {
     padding-top: 0;
 }
+
+/* Chapters: without the script a card cannot grow into its chapter, so the cards stay in
+   place and the open one turns into a plain panel with the chapter inside it. */
+.chapter {
+    position: static;
+    transform: none;
+}
+
+.chapter[open] {
+    --ch-bg: var(--surface);
+    --ch-fg: var(--text);
+    --ch-muted: var(--muted);
+}
+
+.overview-item::after {
+    display: none;
+}
+
+.sheet {
+    display: none !important;
+}
