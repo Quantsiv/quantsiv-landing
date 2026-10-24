@@ -207,20 +207,30 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Date.now() - pointerAt > 500) quietUntil = Date.now() + 600;
         });
 
-        // Continuous reading, as described above. A height change above the reader is
-        // compensated in one step, which must not be smooth.
-        const stillScroll = function (delta) {
+        // Continuous reading, as described above. A change of height above the reader is
+        // compensated in one step, which must not be smooth. The position is set from the
+        // document's change of height, not scrolled by it: near the end of the page the
+        // browser already pulls the view up as soon as the page gets shorter, and a relative
+        // scroll would move it a second time.
+        const keepStill = function (change) {
             const root = document.documentElement;
+            const y = window.scrollY;
+            const height = root.scrollHeight;
+            change();
             const was = root.style.scrollBehavior;
             root.style.scrollBehavior = 'auto';
-            window.scrollBy(0, delta);
+            window.scrollTo(0, y + root.scrollHeight - height);
             root.style.scrollBehavior = was;
+            // Only the reader's own scrolling tells the direction
+            lastY = window.scrollY;
         };
         function readOn() {
             const y = window.scrollY;
             if (y !== lastY) down = y > lastY;
             lastY = y;
             if (!reading || settling || Date.now() < quietUntil || ticking) return;
+            // Past either end of the page (a touch screen's bounce) nothing opens or shuts
+            if (y < 0 || y > document.documentElement.scrollHeight - window.innerHeight) return;
             ticking = true;
             requestAnimationFrame(function () {
                 ticking = false;
@@ -232,9 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         slide(target, true);
                     } else {
                         // Reached from below: it opens above the reader, and the view stays
-                        const before = target.getBoundingClientRect().bottom;
-                        target.open = true;
-                        stillScroll(target.getBoundingClientRect().bottom - before);
+                        keepStill(function () { target.open = true; });
                         if (!reducedMotion.matches) {
                             target.querySelector('.chapter-body').animate({ opacity: [0, 1] }, { duration: 350 });
                         }
@@ -244,9 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (c === target || !c.open || c.classList.contains('is-sliding')) return;
                     const r = c.getBoundingClientRect();
                     if (r.bottom < 0) {
-                        const h = c.querySelector('.chapter-body').offsetHeight;
-                        c.open = false;
-                        stillScroll(-h);
+                        keepStill(function () { c.open = false; });
                     } else if (r.top > window.innerHeight) {
                         c.open = false;
                     }
