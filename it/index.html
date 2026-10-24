@@ -166,11 +166,11 @@
         <p>Ed è qui che entriamo in gioco noi. Scansioniamo il tuo codice a ogni build e ti mostriamo cosa è esposto, per quanto tempo resta esposto e verso cosa migrare.</p>
     </section>
 
-    <!-- Chapters: one row per chapter, with its number, name and a short summary. Each row is a
-         <details> that holds the whole chapter and opens in place. script.js slides it open,
-         scrolls to it, lets the menu and the hero button open their chapter, and from then on
-         opens the next chapter as the reader scrolls to it; without scripts the rows still open
-         and the links jump to them. -->
+    <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
+         whole chapter. script.js grows a card into a full-screen chapter (the sheet at the end
+         of the page), hands over to the next chapter from its end card, and shrinks it back;
+         the menu and the hero button open their chapter the same way. Nothing opens as the
+         page scrolls. Without scripts the cards stay put and open in place. -->
     <div class="overview">
         <details class="chapter" id="threat">
             <summary class="overview-item">
@@ -737,5 +737,26 @@
         <div>Modalità stealth</div>
     </footer>
 
+    <!-- The chapter sheet: script.js moves the open chapter in here and grows it out of its card.
+         Its labels come from the data-label-* attributes. Hidden without scripts. -->
+    <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden data-label-chapter="Capitolo %n: %t" data-label-next="Prossimo capitolo" data-label-after="Prossimo passo" data-label-waitlist="Entra in lista d'attesa">
+        <div class="sheet-card">
+            <div class="sheet-page">
+                <header class="sheet-bar">
+                    <span class="section-num" id="sheet-num" aria-hidden="true"></span>
+                    <p class="sheet-title" id="sheet-title"></p>
+                    <nav class="sheet-steps" id="sheet-steps" aria-label="Capitoli"></nav>
+                    <button type="button" class="sheet-close" id="sheet-close" aria-label="Chiudi capitolo"></button>
+                </header>
+                <div class="sheet-scroll" id="sheet-scroll">
+                    <div class="sheet-body" id="sheet-body"></div>
+                    <a class="sheet-next" id="sheet-next" href="#contact"><span class="section-num sheet-next-num" aria-hidden="true"></span><span class="sheet-next-arrow" aria-hidden="true"></span><span class="sheet-next-label"></span><span class="sheet-next-title"></span></a>
+                </div>
+                <div class="sheet-progress" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="sheet-ink" aria-hidden="true"><span class="section-num"></span><p class="sheet-ink-title"></p><p class="sheet-ink-text"></p></div>
+            <div class="sheet-float" aria-hidden="true"></div>
+        </div>
+    </div>
 </body>
 </html>

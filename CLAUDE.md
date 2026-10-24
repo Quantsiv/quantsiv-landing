@@ -371,31 +371,36 @@ stand until the founder changes them:
 - The site reads in order (the founder's ask, 19 Oct 2026): the menu and each chapter carry a
   number (01 to 05), and a thin bar under the header shows how far the page has been read where
   the browser supports it.
-- Chapters open in place (23 Oct 2026). A non-technical reader found the one page too long; the
-  founder first tried one page per chapter (landing #38), then asked the same day for the single
-  page back, with each chapter opening in place as a smooth dropdown. The home page keeps the
-  hero, the standards banner, the intro, then one row per chapter (number, menu name, a
-  two-sentence summary), then "Get in Touch" with the form. Each row is a `<details>` whose
-  `<summary>` is the row and whose body is the chapter exactly as it was on the one page,
-  without its kicker (the row names it). A click opens one chapter at a time: it slides open,
-  the one that was open slides shut, and the page scrolls to the row. The menu and the hero's
-  first button are plain links to a chapter's id (`#threat`, `#compliance`, `#how-it-works`,
-  `#capabilities`, `#roadmap`); `script.js` opens the chapter they point to, keeps the address
-  on its id and marks its menu link with `aria-current`. An address with a chapter's id opens
-  that chapter. Once a chapter has been opened, reading is continuous (the founder's choice on
-  23 Oct 2026, from five previewed options): when the next row reaches the baseline, 55% down
-  the screen, its chapter opens; scrolling back up reopens the one before; a chapter that has
-  left the screen shuts, with the scroll position adjusted so the view stays still
-  (`overflow-anchor: none` on `body`, or the browser would adjust it a second time). The
-  adjustment sets the position from the page's change of height instead of scrolling by it:
-  near the end of the page the browser pulls the view up as soon as the page gets shorter, and
-  scrolling by the same amount again sent the reader back to the first chapter (the founder's
-  report, 24 Oct 2026). Nothing opens or shuts while a touch screen bounces past either end.
-  Scrolling alone never opens the first chapter, so the home page keeps its short overview, and
-  closing a chapter by its row ends the continuous reading until the next click. No chevrons end a chapter
-  (the first version of #39 had them; dropped as overkill on his word). With reduced motion the
-  chapter opens without sliding; without scripts the rows still open and close. The summaries
-  follow "What the page may say" and the chapters: change a summary when its chapter changes.
+- Chapters are a stack of cards (24 Oct 2026). A non-technical reader found the one page too
+  long; the founder first tried one page per chapter (landing #38), then the single page back
+  with each chapter opening in place as a dropdown (#39), with a scroll-driven reading he had
+  removed the next day because it jumped and flickered (keep it out: nothing opens or shuts as
+  the page scrolls). Then he pointed at incredibles.dev for the fluidity and card transitions
+  he wants, picked "stacked cards" from four previewed concepts and asked for it to be refined
+  and taken live (24 Oct 2026). The home page keeps the hero, the standards banner, the intro,
+  then one card per chapter (number, menu name, a two-sentence summary, a large filled arrow:
+  his pick from five previewed cues, because a plain chevron went unnoticed), then "Get in
+  Touch" with the form. Each card is a `<details>` whose `<summary>` is the card and whose body
+  is the chapter exactly as it was on the one page, without its kicker. The cards stick under
+  the header, each a little lower than the one before, and shrink and dim as the next card
+  covers them (`--cover`, set by `script.js` as the page scrolls; transform and opacity only, so
+  the page's height never changes while scrolling). A click on a card, or on a link to it (the
+  menu, the hero's first button, `#threat`, `#compliance`, `#how-it-works`, `#capabilities`,
+  `#roadmap`), grows the card into a full-screen chapter, the sheet at the end of each home
+  page: the card's number, title and summary travel to their places, the title shrinks into the
+  sheet's bar, and the content arrives in turn. The sheet is a modal dialog (the page behind is
+  `inert` and cannot scroll; `scrollbar-gutter: stable` keeps its width). The card at the end of
+  a chapter grows into the next chapter the same way; the five steps in the bar are buttons,
+  the arrow keys and a sideways swipe move between chapters; Esc, the cross or the chapter's own
+  card shrinks it back, after the page behind has settled on that card's slot. The last end card
+  lands on "Get in Touch". The address names the open chapter (`replaceState`, no history
+  entries), and an address with a chapter's id opens it at once when the page loads, which is
+  where the old chapter pages redirect. The sheet's labels come from its `data-label-*`
+  attributes and its `aria-label`s, translated on `nl/` and `it/`. With reduced motion the cards
+  do not stick and the chapter opens without motion; without scripts the cards stay put and open
+  in place as plain panels (`noscript.css`). Tested in Chromium only; the founder looks at Safari
+  and iPhone. Tunables are the `T` durations in `script.js`. The summaries follow "What the page
+  may say" and the chapters: change a summary when its chapter changes.
   The deadlines are a timeline of dropdowns (`<details>`), one per date; `script.js` marks past
   and future dates and places a "Today" marker. The features are cards that open one by one, two
   with chips of the languages and CI systems they cover (`assets/logos/`, Simple Icons, CC0;
