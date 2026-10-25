@@ -1885,13 +1885,13 @@ a {
     color: var(--crit-text);
 }
 
-/* Capabilities: separate cards, each led by a short coloured dash. A card grows on its own
-   when it opens, so its neighbours keep their size. */
+/* Capabilities: separate cards, each led by a short coloured dash. The cards in a row share
+   one height, open or closed, so an open card does not leave gaps beside it. */
 .capabilities-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* The features headline has no subheading, so the grid keeps the subheading's space */

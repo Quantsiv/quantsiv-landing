@@ -452,7 +452,9 @@ stand until the founder changes them:
   indicative ("Individua"); the CBOM, infrastructure and wallet cards are shorter; the Italian
   migration card is titled "Aggiornamento per la migrazione costante"; the language card is
   unchanged. The closed feature cards share one height (`.capability-item summary` is two title
-  lines high) because he asked for cards of the same size; an open card grows alone.
+  lines high) because he asked for cards of the same size. On 25 Oct 2026 he asked that the cards
+  in a row keep one height when open too, so `.capabilities-grid` stretches its rows; the AI agent
+  card alone keeps the full width of its row.
 
 ## Before every commit
 
