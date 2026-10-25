@@ -394,7 +394,7 @@ stand until the founder changes them:
   the page scrolls). Then he pointed at incredibles.dev for the fluidity and card transitions
   he wants, picked "stacked cards" from four previewed concepts and asked for it to be refined
   and taken live (24 Oct 2026). The home page keeps the hero, the standards banner, the intro,
-  then one card per chapter (number, menu name, a two-sentence summary, a large filled arrow:
+  then one card per chapter (number, menu name, a short summary (one line since 24 Oct 2026), a large filled arrow:
   his pick from five previewed cues, because a plain chevron went unnoticed), then "Get in
   Touch" with the form. Each card is a `<details>` whose `<summary>` is the card and whose body
   is the chapter exactly as it was on the one page, without its kicker. The cards stick under
@@ -424,6 +424,7 @@ stand until the founder changes them:
   the founder chose layout B (cards that open) and removed the Swift, openssl, ssh-keygen and
   keytool chips; the card's sentence still names them. Since then the features section has no
   sentence under its heading. In Italian the hero's first button reads "Missione".
+- The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases planned for the years ahead." Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles.
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
