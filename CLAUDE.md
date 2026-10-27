@@ -394,8 +394,10 @@ stand until the founder changes them:
   the page scrolls). Then he pointed at incredibles.dev for the fluidity and card transitions
   he wants, picked "stacked cards" from four previewed concepts and asked for it to be refined
   and taken live (24 Oct 2026). The home page keeps the hero, the standards banner, the intro,
-  then one card per chapter (number, menu name, a short summary (one line since 24 Oct 2026), a large filled arrow:
-  his pick from five previewed cues, because a plain chevron went unnoticed), then "Get in
+  then one card per chapter (number, menu name, a short summary (one line since 24 Oct 2026), and a
+  "Learn more" button under it (27 Oct 2026, his ask: the large filled arrow he picked on 24 Oct did
+  not read as clickable, and a labelled call to action does; the button is a styled span inside the
+  summary, so the summary stays the one control)), then "Get in
   Touch" with the form. Each card is a `<details>` whose `<summary>` is the card and whose body
   is the chapter exactly as it was on the one page, without its kicker. The cards stick under
   the header, each a little lower than the one before, and shrink and dim as the next card
@@ -454,7 +456,10 @@ stand until the founder changes them:
   unchanged. The closed feature cards share one height (`.capability-item summary` is two title
   lines high) because he asked for cards of the same size. On 25 Oct 2026 he asked that the cards
   in a row keep one height when open too, so `.capabilities-grid` stretches its rows; the AI agent
-  card alone keeps the full width of its row.
+  card alone keeps the full width of its row. On 27 Oct 2026 the intro's line "A quantum computer
+  could break the public-keys widely used today." replaced "...the public-key cryptography in wide
+  use today." in English and Dutch, with "widely use" corrected to "widely used" (flagged to him).
+  The Italian intro is his own three lines and has no matching sentence, so it was left as it was.
 
 ## Before every commit
 
