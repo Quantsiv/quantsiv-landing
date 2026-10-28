@@ -277,9 +277,10 @@ stand until the founder changes them:
 - "When we contact you" (25 Oct 2026, all three notices, drafted for the founder's review) covers
   outreach we start by email or LinkedIn: what is used, its sources, legitimate interest (Art.
   6(1)(f)), Zoho, 6 months' retention, a do-not-contact list, and objection by replying "no". The
-  notice also gives the postal address, a private mailbox in Houston (US Global Mail, free month
-  ending about 23 Nov 2026). When the mailbox changes, change the address in the notices, in the
-  same commit as every outreach footer. Merge only on his word.
+  notice also gives the postal address, a private mailbox in Houston. When the mailbox changes, change the address in the notices, in the
+  same commit as every outreach footer. Merged on his word on 28 Oct 2026, with a line on where the
+  contact list is kept (a Google spreadsheet, Google Ireland, US processing under the EU-US Data
+  Privacy Framework).
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
   notice. Since 19 Oct 2026 (the founder's ask), the last section of the page is "Get in Touch"
   (`#contact`), and the hero's second button points to it. On his later ask the same day it
