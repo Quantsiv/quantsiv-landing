@@ -288,6 +288,10 @@ stand until the founder changes them:
   line under it), then hello@quantsiv.com; the line inviting visitors to see what Quantsiv finds in
   their own code is gone. Since 20 Oct 2026 the waitlist line is one sentence: "Get updates on
   post-quantum migration deadlines, standards, and Quantsiv releases."
+  Since 28 Oct 2026 (the founder's ask) a line right above hello@quantsiv.com invites design
+  partners: "Interested in becoming a design partner? Contact us:" ("Wil je design partner
+  worden? Neem contact met ons op:", "Ti interessa diventare design partner? Contattaci:").
+  It is an invitation, not a capability: what a partner receives stays off this site.
   The privacy notice already covers email to any quantsiv.com address ("When you write to us").
 - "How Quantsiv Works" ends with "What a finding looks like", an interactive preview (19 Oct
   2026, the founder's brief): a scan overview, three findings, and three tabs each (the finding,
