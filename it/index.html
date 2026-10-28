@@ -164,6 +164,7 @@
     <section class="security-statement">
         <p>La crittografia di oggi non guiderà il futuro quantistico.<br>Con le scadenze governative ormai fissate, la migrazione post-quantum deve iniziare oggi.<br>Non puoi proteggere ciò che non vedi.</p>
         <p>È qui che entra in gioco Quantsiv. Scansioniamo il tuo codice a ogni build, mappiamo le vulnerabilità crittografiche, tracciamo i tempi di esposizione e ti guidiamo passo dopo passo verso algoritmi sicuri.</p>
+        <p>Quantsiv è nato per supportare i software del settore regolamentato durante le migrazioni crittografiche. Una migrazione alla volta, nella tua CI.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -261,6 +262,12 @@
                                 <p>Le agenzie federali dovranno creare un inventario automatizzato, i cui dati dovrebbero confluire in un inventario centrale dei componenti crittografici (CBOM, <span lang="en">Cryptographic Bill of Materials</span>). I piani delle agenzie dovranno essere presentati entro il 22 ottobre 2026. La migrazione è articolata in cinque fasi, dal 2026 al 2035.</p>
                             </details>
                         </li>
+                        <li class="deadline" data-date="2026-10-27">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">Ottobre 2026</span> <h3 class="deadline-title">Il NIST conferma le date di dismissione</h3></summary>
+                                <p>La versione definitiva del documento NIST IR 8547 dichiara che tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici devono essere deprecati dopo il 2030 e non più consentiti all'uso dopo il 2035, ovvero le firme RSA ed ECDSA da 112 bit in su, EdDSA da 128 bit in su, e lo scambio di chiavi vulnerabile. Il NIST raccomanda ML-KEM-768 come impostazione predefinita e indica TLS come priorità iniziale della migrazione. Per un team software è la roadmap della transizione: quattro anni alla prima data, prima lo scambio di chiavi ibrido e TLS, le firme sul loro orologio.</p>
+                            </details>
+                        </li>
                         <li class="deadline" data-date="2026-12-19">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">Dicembre 2026 circa</span> <h3 class="deadline-title">Una proposta normativa per i contraenti federali</h3></summary>
@@ -276,7 +283,7 @@
                         <li class="deadline" data-date="2030-12-31">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">Dal 2030 al 2035</span> <h3 class="deadline-title">Le scadenze per la migrazione</h3></summary>
-                                <p>In base all'EO 14412, lo scambio di chiavi post-quantum dovrà essere adottato entro il 31 dicembre 2030 e le firme digitali entro il 31 dicembre 2031 per gli asset di alto valore e i sistemi ad alto impatto. Se verrà adottata la norma FAR prevista dall'ordine, i contraenti interessati dovranno adeguarsi entro il 31 dicembre 2030. Il programma NSA CNSA 2.0 prevede scadenze per l'uso esclusivo comprese tra il 2030 e il 2033, a seconda della categoria. Nell'UE, la roadmap del Gruppo di cooperazione NIS del 23 giugno 2025 &mdash; una raccomandazione &mdash; invita gli Stati membri a definire strategie nazionali entro la fine del 2026, a intervenire sui casi d'uso ad alto rischio entro la fine del 2030 e a migrare il maggior numero possibile di sistemi entro il 2035.</p>
+                                <p>In base all'EO 14412, lo scambio di chiavi post-quantum dovrà essere adottato entro il 31 dicembre 2030 e le firme digitali entro il 31 dicembre 2031 per gli asset di alto valore e i sistemi ad alto impatto. Se verrà adottata la norma FAR prevista dall'ordine, i contraenti interessati dovranno adeguarsi entro il 31 dicembre 2030. In base alla versione definitiva del NIST IR 8547 (ottobre 2026), tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici sono deprecati dopo il 2030 e non più consentiti dopo il 2035. Il programma NSA CNSA 2.0 prevede scadenze per l'uso esclusivo comprese tra il 2030 e il 2033, a seconda della categoria. Nell'UE, la roadmap del Gruppo di cooperazione NIS del 23 giugno 2025 &mdash; una raccomandazione &mdash; invita gli Stati membri a definire strategie nazionali entro la fine del 2026, a intervenire sui casi d'uso ad alto rischio entro la fine del 2030 e a migrare il maggior numero possibile di sistemi entro il 2035.</p>
                             </details>
                         </li>
                     </ol>
@@ -286,7 +293,7 @@
                         <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
                         <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 nel Federal Register</a>;
                         <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
-                        <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
+                        <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547 (ottobre 2026)</a> e <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">la prima bozza pubblica (novembre 2024)</a>;
                         <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener" lang="en">CISA Post-Quantum Cryptography Initiative</a>;
                         <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
                         <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
@@ -670,6 +677,7 @@
                             <p>Mostrare dove ogni applicazione usa la crittografia, dall'interno della sua build.</p>
                             <h4 class="phase-label">In sviluppo</h4>
                             <ul class="phase-list">
+                                <li>Validazione della migrazione dei servizi Java come primo stack</li>
                                 <li>Training dell'agente IA, che impara dalle modifiche approvate dal team</li>
                                 <li>Crittografia post-quantum e ibrida</li>
                                 <li>Codice COBOL sui mainframe</li>
@@ -680,7 +688,7 @@
                         <article class="roadmap-phase">
                             <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migrazione</h3>
-                            <p>Test coverage e suggerimenti con revisione manuale con obiettivo di migrazione con scambio di chiavi ibrido come impostazione predefinita.</p>
+                            <p>Implementazione progressiva delle migrazioni. Scambio di chiavi ibrido come impostazione predefinita.</p>
                         </article>
 
                         <article class="roadmap-phase">
