@@ -449,8 +449,11 @@ stand until the founder changes them:
   one positioning line ("built for software teams that sell to regulated customers and have a
   cryptographic migration to make: one migration at a time, in your own CI"); roadmap Phase 1 lists
   migration validation for Java services first, and Phase 2 says "Complete and prove one migration at
-  a time". All in the future tense where the code is not merged: the validation harness is a plan,
-  never a capability, until the product repository merges it. The demo's "Authority" lines still say
+  a time". On his concern of the same day (well-funded rivals read the site) those two lines name
+  the direction only: the harness design (old and new clients, downgrade paths, data and signature
+  continuity, a release record) stays in the private deck and roadmap, never on the page. All in the
+  future tense where the code is not merged: the validation harness is a plan, never a capability,
+  until the product repository merges it. The demo's "Authority" lines still say
   "NIST IR 8547 (ipd)" because they are scanner output; they change when the scanner's explainer
   does and the sample is run again.
 - The founder's copy of 24 Oct 2026 (English and Italian, mirrored in Dutch): the hero reads
