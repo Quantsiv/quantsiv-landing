@@ -274,6 +274,12 @@ stand until the founder changes them:
   anonymous open and click tracking is on (Brevo's setting; if it is switched off the notice is wrong).
   Updated 19 Oct 2026 with the founder's approval. Unconfirmed sign-ups stay in Brevo's logs until the
   founder deletes them, and the notice promises that after the 30-day link expiry.
+- "When we contact you" (25 Oct 2026, all three notices, drafted for the founder's review) covers
+  outreach we start by email or LinkedIn: what is used, its sources, legitimate interest (Art.
+  6(1)(f)), Zoho, 6 months' retention, a do-not-contact list, and objection by replying "no". The
+  notice also gives the postal address, a private mailbox in Houston (US Global Mail, free month
+  ending about 23 Nov 2026). When the mailbox changes, change the address in the notices, in the
+  same commit as every outreach footer. Merge only on his word.
 - The footer carries no personal handle. Its contacts are hello@quantsiv.com and the privacy
   notice. Since 19 Oct 2026 (the founder's ask), the last section of the page is "Get in Touch"
   (`#contact`), and the hero's second button points to it. On his later ask the same day it
