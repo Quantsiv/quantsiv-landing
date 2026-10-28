@@ -2261,6 +2261,12 @@ a {
     opacity: 0.55;
 }
 
+/* The design-partner line above the email address, set apart from the form */
+.newsletter .newsletter-partner {
+    margin-top: 1.5rem;
+    color: var(--text);
+}
+
 .newsletter .form-note {
     font-size: 0.875rem;
 }
