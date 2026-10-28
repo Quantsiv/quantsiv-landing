@@ -419,7 +419,7 @@
                                                 <div><dt>Why it ranks here</dt><dd>Protects data that must stay confidential for 25 years.</dd></div>
                                                 <div><dt>The risk</dt><dd>RSA-based public-key cryptography is vulnerable to sufficiently capable quantum computers. Data intercepted today may become decryptable in the future if the relevant encryption or key-establishment mechanisms are compromised.</dd></div>
                                                 <div><dt>Move to</dt><dd>Replace RSA encryption/key transport with ML-KEM (FIPS 203) plus an AEAD.</dd></div>
-                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030. NIST IR 8547 (ipd): 112-bit RSA/ECC/DH deprecated after 2030, all quantum-vulnerable public-key algorithms disallowed after 2035.</dd></div>
+                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030. NIST IR 8547 (Oct 2026): quantum-vulnerable key establishment deprecated after 2030 and disallowed after 2035.</dd></div>
                                             </dl>
                                         </section>
                                         <section class="demo-panel demo-agent" data-panel="agent" id="demo-f1-agent" aria-labelledby="demo-f1-agent-title">
@@ -547,7 +547,7 @@
                                                 <div><dt>Why it ranks here</dt><dd>Signatures must stay trusted for 10 years; deadline 31 Dec 2031.</dd></div>
                                                 <div><dt>The risk</dt><dd>A quantum computer could derive the signing key from its public key and issue tokens that every service accepts. Nothing has to be recorded first: the public key is public by design.</dd></div>
                                                 <div><dt>Move to</dt><dd>Migrate to ML-DSA (FIPS 204) or SLH-DSA (FIPS 205). Prioritise long-lived signing keys: code/firmware signing, CA and token-issuer keys.</dd></div>
-                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum digital signatures on high-value assets and high-impact systems by 31 Dec 2031. NIST IR 8547 (ipd): disallowed after 2035.</dd></div>
+                                                <div><dt>Authority</dt><dd>EO 14412 (22 Jun 2026): post-quantum digital signatures on high-value assets and high-impact systems by 31 Dec 2031. NIST IR 8547 (Oct 2026): quantum-vulnerable signatures deprecated after 2030 and disallowed after 2035.</dd></div>
                                             </dl>
                                         </section>
                                         <section class="demo-panel demo-agent" data-panel="agent" id="demo-f3-agent" aria-labelledby="demo-f3-agent-title">
