@@ -164,7 +164,7 @@
     <section class="security-statement">
         <p>La crittografia di oggi non guiderà il futuro quantistico.<br>Con le scadenze governative ormai fissate, la migrazione post-quantum deve iniziare oggi.<br>Non puoi proteggere ciò che non vedi.</p>
         <p>È qui che entra in gioco Quantsiv. Scansioniamo il tuo codice a ogni build, mappiamo le vulnerabilità crittografiche, tracciamo i tempi di esposizione e ti guidiamo passo dopo passo verso algoritmi sicuri.</p>
-        <p>Quantsiv è pensato per i team software che vendono a clienti regolamentati e hanno una migrazione crittografica da fare: una migrazione alla volta, nella tua CI.</p>
+        <p>Quantsiv è nato per supportare i software del settore regolamentato durante le migrazioni crittografiche. Una migrazione alla volta, nella tua CI.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -265,7 +265,7 @@
                         <li class="deadline" data-date="2026-10-27">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">Ottobre 2026</span> <h3 class="deadline-title">Il NIST conferma le date di dismissione</h3></summary>
-                                <p>La versione definitiva del documento NIST IR 8547 dichiara tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici deprecati dopo il 2030 e non più consentiti dopo il 2035: le firme RSA ed ECDSA da 112 bit di sicurezza in su, EdDSA da 128 bit in su, e lo scambio di chiavi vulnerabile. Nella bozza del novembre 2024 erano deprecati dopo il 2030 solo i parametri a 112 bit come RSA-2048. Il NIST raccomanda ML-KEM-768 come impostazione predefinita e indica TLS come priorità iniziale della migrazione.</p>
+                                <p>La versione definitiva del documento NIST IR 8547 dichiara che tutti gli algoritmi a chiave pubblica vulnerabili agli attacchi quantistici devono essere deprecati dopo il 2030 e non più consentiti all'uso dopo il 2035, ovvero le firme RSA ed ECDSA da 112 bit in su, EdDSA da 128 bit in su, e lo scambio di chiavi vulnerabile. Il NIST raccomanda ML-KEM-768 come impostazione predefinita e indica TLS come priorità iniziale della migrazione. Per un team software è la roadmap della transizione: quattro anni alla prima data, prima lo scambio di chiavi ibrido e TLS, le firme sul loro orologio.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-12-19">
@@ -677,7 +677,7 @@
                             <p>Mostrare dove ogni applicazione usa la crittografia, dall'interno della sua build.</p>
                             <h4 class="phase-label">In sviluppo</h4>
                             <ul class="phase-list">
-                                <li>Validazione della migrazione per il primo stack, i servizi Java</li>
+                                <li>Validazione della migrazione dei servizi Java come primo stack</li>
                                 <li>Training dell'agente IA, che impara dalle modifiche approvate dal team</li>
                                 <li>Crittografia post-quantum e ibrida</li>
                                 <li>Codice COBOL sui mainframe</li>
@@ -688,7 +688,7 @@
                         <article class="roadmap-phase">
                             <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migrazione</h3>
-                            <p>Completare e dimostrare una migrazione alla volta. Gli obiettivi di migrazione usano per impostazione predefinita lo scambio di chiavi ibrido.</p>
+                            <p>Implementazione progressiva delle migrazioni. Scambio di chiavi ibrido come impostazione predefinita.</p>
                         </article>
 
                         <article class="roadmap-phase">

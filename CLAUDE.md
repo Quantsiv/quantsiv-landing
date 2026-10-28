@@ -446,10 +446,12 @@ stand until the founder changes them:
 - The reshape of 28 Oct 2026 (the memo "Quantsiv: where the moat could be", on the founder's ask,
   pending his merge): the deadlines timeline gains an "October 2026" entry for the final NIST IR 8547
   and the 2030-2035 entry quotes it; the sources link the final PDF and the draft; the intro gains
-  one positioning line ("built for software teams that sell to regulated customers and have a
-  cryptographic migration to make: one migration at a time, in your own CI"); roadmap Phase 1 lists
-  migration validation for Java services first, and Phase 2 says "Complete and prove one migration at
-  a time". On his concern of the same day (well-funded rivals read the site) those two lines name
+  one positioning line (his copy of 28 Oct 2026: "Quantsiv is built for regulated-sector software
+  dealing with cryptographic migrations. One migration at a time, in your own CI."; the Italian is his,
+  the Dutch mirrors them) and the October 2026 entry ends with one sentence that reads IR 8547 as the
+  transition roadmap (four years to the first date, hybrid key exchange and TLS first, signatures on
+  their own clock); roadmap Phase 1 opens with "Validated migration of Java services as the first
+  stack" and Phase 2 says "Validating one migration at a time, iteratively" (his copy, 28 Oct 2026). On his concern of the same day (well-funded rivals read the site) those two lines name
   the direction only: the harness design (old and new clients, downgrade paths, data and signature
   continuity, a release record) stays in the private deck and roadmap, never on the page. All in the
   future tense where the code is not merged: the validation harness is a plan, never a capability,

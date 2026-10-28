@@ -164,7 +164,7 @@
     <section class="security-statement">
         <p>Een quantumcomputer zou de publieke sleutels die vandaag breed worden gebruikt kunnen kraken.<br>Overheden hebben datums gepubliceerd om die te vervangen.<br>Vervangen begint met weten waar ze zit.</p>
         <p>Daar komen wij in beeld. We scannen je code bij elke build en laten je de blootliggende kwetsbaarheden zien, hoe lang ze blootliggen en de stappen om ze te verhelpen.</p>
-        <p>Quantsiv is gebouwd voor softwareteams die aan gereguleerde klanten leveren en een cryptografische migratie voor de boeg hebben: één migratie tegelijk, in je eigen CI.</p>
+        <p>Quantsiv is gebouwd voor software in gereguleerde sectoren die met cryptografische migraties te maken heeft. Eén migratie tegelijk, in je eigen CI.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -265,7 +265,7 @@
                         <li class="deadline" data-date="2026-10-27">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">okt 2026</span> <h3 class="deadline-title">NIST bevestigt de datums voor het uitfaseren</h3></summary>
-                                <p>De definitieve NIST IR 8547 stelt alle quantumkwetsbare publieke-sleutelalgoritmen na 2030 als afgeraden (<span lang="en">deprecated</span>) en na 2035 als niet meer toegestaan (<span lang="en">disallowed</span>): RSA- en ECDSA-handtekeningen vanaf 112 bits beveiliging, EdDSA vanaf 128 bits, en quantumkwetsbare sleuteluitwisseling. In het concept van november 2024 werden na 2030 alleen 112-bitparameters zoals RSA-2048 afgeraden. NIST beveelt ML-KEM-768 aan als standaard en noemt TLS een vroege prioriteit voor de migratie.</p>
+                                <p>De definitieve NIST IR 8547 stelt dat alle quantumkwetsbare publieke-sleutelalgoritmen na 2030 worden afgeraden (<span lang="en">deprecated</span>) en na 2035 niet meer zijn toegestaan (<span lang="en">disallowed</span>): RSA- en ECDSA-handtekeningen vanaf 112 bits beveiliging, EdDSA vanaf 128 bits, en quantumkwetsbare sleuteluitwisseling. NIST beveelt ML-KEM-768 aan als standaard en noemt TLS een vroege prioriteit voor de migratie. Voor een softwareteam is dat de routekaart van de transitie: vier jaar tot de eerste datum, eerst hybride sleuteluitwisseling en TLS, de handtekeningen op hun eigen klok.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-12-19">
@@ -676,7 +676,7 @@
                             <p>Laten zien waar elke applicatie cryptografie gebruikt, vanuit haar eigen build.</p>
                             <h4 class="phase-label">In ontwikkeling</h4>
                             <ul class="phase-list">
-                                <li>Migratievalidatie voor de eerste stack, Java-services</li>
+                                <li>Gevalideerde migratie van Java-services als eerste stack</li>
                                 <li>De AI-agent trainen om te leren van de wijzigingen die het team goedkeurt</li>
                                 <li>Post-quantum- en hybride cryptografie</li>
                                 <li>COBOL-code op mainframes</li>
@@ -687,7 +687,7 @@
                         <article class="roadmap-phase">
                             <span class="phase-tag">Fase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migreren</h3>
-                            <p>Eén migratie tegelijk afronden en aantonen. Migratiedoelen gebruiken standaard hybride sleuteluitwisseling.</p>
+                            <p>Eén migratie tegelijk valideren, stap voor stap. Hybride sleuteluitwisseling als standaard.</p>
                         </article>
 
                         <article class="roadmap-phase">

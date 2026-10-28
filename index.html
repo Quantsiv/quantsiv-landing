@@ -164,7 +164,7 @@
     <section class="security-statement">
         <p>A quantum computer could break the public-keys widely used today.<br>Governments have published dates for replacing it.<br>Replacement starts with knowing where it is.</p>
         <p>This is where we come in. We scan your code on every build to show you exposed vulnerabilities, their duration, and the steps to remediate them.</p>
-        <p>Quantsiv is built for software teams that sell to regulated customers and have a cryptographic migration to make: one migration at a time, in your own CI.</p>
+        <p>Quantsiv is built for regulated-sector software dealing with cryptographic migrations. One migration at a time, in your own CI.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -265,7 +265,7 @@
                         <li class="deadline" data-date="2026-10-27">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">October 2026</span> <h3 class="deadline-title">NIST confirms the retirement dates</h3></summary>
-                                <p>The final NIST IR 8547 deprecates all quantum-vulnerable public-key algorithms after 2030 and disallows them after 2035: RSA and ECDSA signatures from 112 bits of security, EdDSA from 128 bits, and quantum-vulnerable key establishment. The draft of November 2024 had deprecated only 112-bit parameters such as RSA-2048 after 2030. NIST recommends ML-KEM-768 as the default and names TLS an early priority for the migration.</p>
+                                <p>The final NIST IR 8547 deprecates all quantum-vulnerable public-key algorithms after 2030 and disallows them after 2035: RSA and ECDSA signatures from 112 bits of security, EdDSA from 128 bits, and quantum-vulnerable key establishment. NIST recommends ML-KEM-768 as the default and names TLS an early priority for the migration. For a software team that is the transition roadmap: four years to the first date, hybrid key exchange and TLS first, signatures on their own clock.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-12-19">
@@ -677,7 +677,7 @@
                             <p>Show where each application uses cryptography, from inside its build.</p>
                             <h4 class="phase-label">In development</h4>
                             <ul class="phase-list">
-                                <li>Migration validation for the first stack, Java services</li>
+                                <li>Validated migration of Java services as the first stack</li>
                                 <li>Training the AI agent to learn from the changes the team approves</li>
                                 <li>Post-quantum and hybrid cryptography</li>
                                 <li>COBOL code on mainframes</li>
@@ -688,7 +688,7 @@
                         <article class="roadmap-phase">
                             <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migrate</h3>
-                            <p>Complete and prove one migration at a time. Migration targets default to hybrid key exchange.</p>
+                            <p>Validating one migration at a time, iteratively. Targets default to hybrid key exchange.</p>
                         </article>
 
                         <article class="roadmap-phase">
