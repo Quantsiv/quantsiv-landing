@@ -164,6 +164,7 @@
     <section class="security-statement">
         <p>A quantum computer could break the public-keys widely used today.<br>Governments have published dates for replacing it.<br>Replacement starts with knowing where it is.</p>
         <p>This is where we come in. We scan your code on every build to show you exposed vulnerabilities, their duration, and the steps to remediate them.</p>
+        <p>Quantsiv is built for software teams that sell to regulated customers and have a cryptographic migration to make: one migration at a time, in your own CI.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
@@ -261,6 +262,12 @@
                                 <p>Federal agencies must build an automated inventory whose data &ldquo;should populate a central Cryptographic Bill of Materials&rdquo; (CBOM). Agency plans are due by 22 October 2026. The migration runs in five phases, from 2026 to 2035.</p>
                             </details>
                         </li>
+                        <li class="deadline" data-date="2026-10-27">
+                            <details name="deadlines">
+                                <summary><span class="deadline-date">October 2026</span> <h3 class="deadline-title">NIST confirms the retirement dates</h3></summary>
+                                <p>The final NIST IR 8547 deprecates all quantum-vulnerable public-key algorithms after 2030 and disallows them after 2035: RSA and ECDSA signatures from 112 bits of security, EdDSA from 128 bits, and quantum-vulnerable key establishment. The draft of November 2024 had deprecated only 112-bit parameters such as RSA-2048 after 2030. NIST recommends ML-KEM-768 as the default and names TLS an early priority for the migration.</p>
+                            </details>
+                        </li>
                         <li class="deadline" data-date="2026-12-19">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">About December 2026</span> <h3 class="deadline-title">A proposed rule for federal contractors</h3></summary>
@@ -276,7 +283,7 @@
                         <li class="deadline" data-date="2030-12-31">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">2030 to 2035</span> <h3 class="deadline-title">The migration deadlines</h3></summary>
-                                <p>Under EO 14412, post-quantum key establishment must be adopted by 31 December 2030, and digital signatures by 31 December 2031, on high-value assets and high-impact systems. If the FAR rule the order calls for is adopted, covered contractors must comply by 31 December 2030. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap of 23 June 2025, a recommendation, asks member states to set national strategies by the end of 2026, address high-risk use cases by the end of 2030 and migrate as many systems as feasible by 2035.</p>
+                                <p>Under EO 14412, post-quantum key establishment must be adopted by 31 December 2030, and digital signatures by 31 December 2031, on high-value assets and high-impact systems. If the FAR rule the order calls for is adopted, covered contractors must comply by 31 December 2030. Under the final NIST IR 8547 (October 2026), all quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035. NSA CNSA 2.0 sets exclusive-use dates between 2030 and 2033, depending on the category. In the EU, the NIS Cooperation Group roadmap of 23 June 2025, a recommendation, asks member states to set national strategies by the end of 2026, address high-risk use cases by the end of 2030 and migrate as many systems as feasible by 2035.</p>
                             </details>
                         </li>
                     </ol>
@@ -286,7 +293,7 @@
                         <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
                         <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in the Federal Register</a>;
                         <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
-                        <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>;
+                        <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547 (October 2026)</a> and <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">its initial public draft (November 2024)</a>;
                         <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
                         <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
                         <a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">NIST FIPS 203</a>;
@@ -670,6 +677,7 @@
                             <p>Show where each application uses cryptography, from inside its build.</p>
                             <h4 class="phase-label">In development</h4>
                             <ul class="phase-list">
+                                <li>Migration validation for the first stack, Java services: old and new clients tested against a change, downgrade paths caught, stored data and existing signatures checked, and a release record of what changed</li>
                                 <li>Training the AI agent to learn from the changes the team approves</li>
                                 <li>Post-quantum and hybrid cryptography</li>
                                 <li>COBOL code on mainframes</li>
@@ -680,7 +688,7 @@
                         <article class="roadmap-phase">
                             <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migrate</h3>
-                            <p>Test coverage and suggestions with human review, with migration targets that default to hybrid key exchange.</p>
+                            <p>Complete and prove one migration at a time: the change drafted and verified, old and new clients tested, data and signatures still valid, and a release record of what changed. Migration targets default to hybrid key exchange.</p>
                         </article>
 
                         <article class="roadmap-phase">

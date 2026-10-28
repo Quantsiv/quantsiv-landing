@@ -133,7 +133,7 @@ document first.
 | Authority | What it says |
 | --- | --- |
 | NIST FIPS 203, 204, 205 | Published 13 Aug 2024: ML-KEM, ML-DSA and SLH-DSA |
-| NIST IR 8547, initial public draft, Nov 2024 | 112-bit-strength RSA, ECC and DH, such as RSA-2048, are deprecated after 2030. All quantum-vulnerable public-key algorithms, including P-256, are disallowed after 2035 |
+| NIST IR 8547, final, October 2026 (NIST news release 27 Oct 2026) | All quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035: RSA and ECDSA signatures at 112 bits of security and up, EdDSA at 128 bits and up, and all quantum-vulnerable key establishment (Tables 2 and 4). A hybrid key establishment with one approved input can be FIPS 140-validated. ML-KEM-768 is the recommended default. TLS is "an early priority". Its initial public draft (Nov 2024) deprecated only 112-bit parameters such as RSA-2048 after 2030; quote the draft only as history |
 | Executive Order 14412, 22 Jun 2026 | Post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030, and signatures by 31 Dec 2031. Within 180 days, about 19 Dec 2026, the FAR Council proposes a rule requiring covered contractors to comply by 31 Dec 2030 with NIST's FIPS, including those incorporating post-quantum algorithms (Sec. 6(c); 91 FR 38483, 25 Jun 2026). CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days, about Mar 2027 |
 | OMB M-26-15, 24 Jun 2026 | Five phases from 2026 to 2035. Agency plans due 22 Oct 2026. An automated inventory whose data "should populate a central Cryptographic Bill of Materials" |
 | EU NIS Cooperation Group roadmap, 23 Jun 2025, a recommendation | National strategies by end-2026, high-risk use cases by end-2030, as many systems as feasible by 2035 |
@@ -443,6 +443,16 @@ stand until the founder changes them:
   are not scanned externally."). Keep that caveat wherever "only if you upload" appears; the
   decks and the product's claims sheet say the same.
 
+- The reshape of 28 Oct 2026 (the memo "Quantsiv: where the moat could be", on the founder's ask,
+  pending his merge): the deadlines timeline gains an "October 2026" entry for the final NIST IR 8547
+  and the 2030-2035 entry quotes it; the sources link the final PDF and the draft; the intro gains
+  one positioning line ("built for software teams that sell to regulated customers and have a
+  cryptographic migration to make: one migration at a time, in your own CI"); roadmap Phase 1 lists
+  migration validation for Java services first, and Phase 2 says "Complete and prove one migration at
+  a time". All in the future tense where the code is not merged: the validation harness is a plan,
+  never a capability, until the product repository merges it. The demo's "Authority" lines still say
+  "NIST IR 8547 (ipd)" because they are scanner output; they change when the scanner's explainer
+  does and the sample is run again.
 - The founder's copy of 24 Oct 2026 (English and Italian, mirrored in Dutch): the hero reads
   "Quantsiv finds the cryptographic vulnerabilities quantum computers could break"; the intro's
   second line says "to show you exposed vulnerabilities, their duration, and the steps to
