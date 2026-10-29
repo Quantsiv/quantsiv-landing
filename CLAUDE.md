@@ -437,7 +437,7 @@ stand until the founder changes them:
   the founder chose layout B (cards that open) and removed the Swift, openssl, ssh-keygen and
   keytool chips; the card's sentence still names them. Since then the features section has no
   sentence under its heading. In Italian the hero's first button reads "Missione".
-- The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases planned for the years ahead." Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles.
+- The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases, one tailored journey." (29 Oct 2026, from his line "All in one tailored journey"; it was "Four phases planned for the years ahead."). Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles.
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
@@ -486,6 +486,21 @@ stand until the founder changes them:
   could break the public-keys widely used today." replaced "...the public-key cryptography in wide
   use today." in English and Dutch, with "widely use" corrected to "widely used" (flagged to him).
   The Italian intro is his own three lines and has no matching sentence, so it was left as it was.
+
+- The roadmap chapter of 29 Oct 2026 (the founder's three lines: "Build a working migrated copy of
+  your code", "Abstract your crypto migration end to end", "All in one tailored journey", with his
+  word that under "How it works" they would oversell the product and that the roadmap is the place,
+  "a good compromise"): the card summary is "Four phases, one tailored journey.", the section
+  subheading "All in one tailored journey, planned for the years ahead.", Phase 1's first line
+  "Build a working copy of your code with the migration applied and tested, Java services first"
+  ("working migrated copy" softened: the copy is tested, never promised to work), and Phase 2 opens
+  "Abstract your cryptographic migration end to end, one migration at a time: from the code to the
+  keys, certificates and clients around it." ("crypto" written out; "one migration at a time" kept
+  from 28 Oct). Dutch and Italian mirror them; "abstraheren" and "astrarre" are literal. These are
+  roadmap lines: never move them into "How it works" or the capability grid until the product
+  repository's claims sheet carries them. The product repository merged a rehearsal mode on 29 Oct
+  2026 (a declared migration tried in a working copy, in the customer's CI); outside the roadmap the
+  page still says nothing about it, on the founder's 28 Oct concern about funded rivals.
 
 ## Before every commit
 
