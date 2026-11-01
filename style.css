@@ -1096,6 +1096,11 @@ a {
     background-color: var(--bg-alt);
 }
 
+/* The fifth step, where Siv and the harness work, takes the last row on its own */
+.step:nth-child(5):last-child {
+    grid-column: 1 / -1;
+}
+
 .step::before {
     content: '';
     display: block;

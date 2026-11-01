@@ -63,7 +63,7 @@
     <section class="hero">
         <div class="hero-copy">
             <p class="hero-kicker" lang="en">See tomorrow. Secure today.</p>
-            <h1><span class="hero-brand">Quantsiv</span> <span class="hero-accent">trova vulnerabilità violabili da computer quantistici</span></h1>
+            <h1><span class="hero-accent">Dalle vulnerabilità quantistiche ai test di migrazione,</span> <span class="hero-brand">Quantsiv</span> <span class="hero-accent">è la tua guida</span></h1>
             <div class="hero-buttons">
                 <a href="#threat" class="cta-primary">Missione</a>
                 <a href="#contact" class="cta-secondary">Contattaci</a>
@@ -163,7 +163,7 @@
     <!-- Security statement -->
     <section class="security-statement">
         <p>La crittografia di oggi non guiderà il futuro quantistico.<br>Con le scadenze governative ormai fissate, la migrazione post-quantum deve iniziare oggi.<br>Non puoi proteggere ciò che non vedi.</p>
-        <p>È qui che entra in gioco Quantsiv. Scansioniamo il tuo codice a ogni build, mappiamo le vulnerabilità crittografiche, tracciamo i tempi di esposizione e ti guidiamo passo dopo passo verso algoritmi sicuri.</p>
+        <p>È qui che entra in gioco Quantsiv. Scansioniamo il tuo codice a ogni build, mappiamo le vulnerabilità e tracciamo i tempi di esposizione. Il nostro agente Siv propone le modifiche, e l'harness mette alla prova la migrazione del cambiamento effettivo.</p>
         <p>Quantsiv è nato per supportare i software del settore regolamentato durante le migrazioni crittografiche. Una migrazione alla volta, nella tua CI.</p>
     </section>
 
@@ -306,14 +306,14 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">03</span>
                 <h2 class="overview-title">Come funziona</h2>
-                <span class="overview-text">Un processo semplice in quattro passi.</span>
+                <span class="overview-text">Cinque passi facili.</span>
                 <span class="overview-cta">Scopri di più</span>
             </summary>
             <div class="chapter-body">
                 <!-- How it works section -->
                 <section class="section">
                     <h2>Come funziona Quantsiv</h2>
-                    <p class="section-subheading">Quattro passi, dalla scansione del tuo codice a un registro standard (CBOM CycloneDX 1.6).</p>
+                    <p class="section-subheading">Cinque passi, dalla scansione del tuo codice a una migrazione messa alla prova in una sua copia di lavoro.</p>
                     <div class="process-steps">
                         <div class="step">
                             <h3>1. Individua</h3>
@@ -329,7 +329,11 @@
                         </div>
                         <div class="step">
                             <h3>4. Documenta</h3>
-                            <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Inoltre gli agenti di IA possono suggerire alternative resistenti agli attacchi quantistici e aiutare a pianificare le modifiche.</p>
+                            <p>Quantsiv genera una CBOM in formato CycloneDX 1.6, un file SARIF compatibile con gli strumenti di analisi del codice e un report con i risultati ordinati per priorità. Siv, l'agente di Quantsiv, suggerisce alternative resistenti agli attacchi quantistici e aiuta a pianificare le modifiche.</p>
+                        </div>
+                        <div class="step">
+                            <h3>5. Migra</h3>
+                            <p>Siv legge ogni rilevamento nel suo contesto e propone la modifica, con il modello che scegli, nella tua CI. L'harness mette poi alla prova la migrazione in una copia di lavoro del tuo codice, con i token e le firme della build precedente ancora validi e i prerequisiti della piattaforma al loro posto.</p>
                         </div>
                     </div>
                     <p class="section-footnote" id="hosted-note">*Le repository private non vengono scansionate esternamente.</p>
@@ -649,8 +653,12 @@
                             <p>Suggerisce lo standard più adatto: ML-KEM, ML-DSA o SLH-DSA o l'uso di uno scambio di chiavi ibrido.</p>
                         </details>
                         <details class="capability-item">
-                            <summary><h3>Analisi con agenti IA</h3></summary>
+                            <summary><h3>Siv, l'agente di Quantsiv</h3></summary>
                             <p>Siv. Un agente IA che analizza ogni rilevamento nel suo contesto e propone una correzione. Compatibile con il modello che scegli tramite il suo endpoint chat-completions (ChatGPT, Claude, DeepSeek, Grok o uno ospitato da te). Nessuna modifica viene integrata senza l'approvazione dell'utente.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Test di migrazione</h3></summary>
+                            <p>L'harness prova l'intera migrazione in una copia di lavoro del tuo codice, con le proposte di Siv applicate, senza toccare il tuo checkout. Il risultato viaggia nel CBOM e compare nel commento alla pull request.</p>
                         </details>
                     </div>
                     <p class="section-footnote" id="coverage-note">*Il livello di copertura varia in base al linguaggio. Il riconoscimento per pattern non rileva le chiamate con alias o dinamiche e il codice di terze parti, e non legge i servizi cloud di gestione delle chiavi.</p>
@@ -677,7 +685,7 @@
                             <p>Mostrare dove ogni applicazione usa la crittografia, dall'interno della sua build.</p>
                             <h4 class="phase-label">In sviluppo</h4>
                             <ul class="phase-list">
-                                <li>Costruire una copia funzionante del tuo codice con la migrazione applicata e testata, prima i servizi Java</li>
+                                <li>Test di migrazione per altri stack dopo i servizi Java</li>
                                 <li>Training dell'agente IA, che impara dalle modifiche approvate dal team</li>
                                 <li>Crittografia post-quantum e ibrida</li>
                                 <li>Codice COBOL sui mainframe</li>
