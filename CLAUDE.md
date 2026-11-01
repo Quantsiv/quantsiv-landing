@@ -515,9 +515,10 @@ stand until the founder changes them:
 
 - The new narrative of 1 Nov 2026 (the founder's lines and his edits of a copy preview, thread
   "Reshape Quantsiv around the moat", merged on his "go ahead with those changes live"): the hero reads
-  "From quantum vulnerabilities to migration testing, Quantsiv is your guide", the brand in its muted
-  span mid-sentence (Italian "Dalle vulnerabilità quantistiche ai test di migrazione, Quantsiv è la tua
-  guida", Dutch "Van quantumkwetsbaarheden tot migratietests: Quantsiv is je gids"); the intro paragraph
+  "From quantum vulnerabilities to migration, Quantsiv is your guide", the brand in its muted span
+  mid-sentence (Italian "Dalle vulnerabilità quantistiche alla migrazione, Quantsiv è la tua guida",
+  Dutch "Van quantumkwetsbaarheden tot migratie: Quantsiv is je gids"; his message of 1 Nov said
+  "migration testing", and later that day he chose "migration" on a decision card); the intro paragraph
   says we show the exposed cryptography and how long it stays exposed for, "Our Quantsiv agent, Siv,
   drafts the changes, and the harness tests the migration in a working copy of your code before anyone
   touches the real one" (his Italian has the harness "mette alla prova la migrazione del cambiamento
