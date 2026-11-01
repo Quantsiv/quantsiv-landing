@@ -163,7 +163,7 @@
     <!-- Security statement -->
     <section class="security-statement">
         <p>A quantum computer could break the public-keys widely used today.<br>Governments have published dates for replacing it.<br>Replacement starts with knowing where it is.</p>
-        <p>This is where we come in. We scan your code on every build to show you exposed vulnerabilities, their duration, and the steps to remediate them.</p>
+        <p>This is where we come in. We scan your code on every build to show you the exposed cryptography and how long it stays exposed for. Our Quantsiv agent, Siv, drafts the changes, and the harness tests the migration in a working copy of your code before anyone touches the real one.</p>
         <p>Quantsiv is built for regulated-sector software dealing with cryptographic migrations. One migration at a time, in your own CI.</p>
     </section>
 
@@ -306,14 +306,14 @@
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">03</span>
                 <h2 class="overview-title">How it works</h2>
-                <span class="overview-text">An easy four-step process.</span>
+                <span class="overview-text">An easy five-step process.</span>
                 <span class="overview-cta">Learn more</span>
             </summary>
             <div class="chapter-body">
                 <!-- How it works section -->
                 <section class="section">
                     <h2>How Quantsiv Works</h2>
-                    <p class="section-subheading">Four steps, from scanning your code to a standard record (a CycloneDX 1.6 CBOM).</p>
+                    <p class="section-subheading">Five steps, from scanning your code to a migration tested in a working copy of it.</p>
                     <div class="process-steps">
                         <div class="step">
                             <h3>1. Discover</h3>
@@ -329,7 +329,11 @@
                         </div>
                         <div class="step">
                             <h3>4. Document</h3>
-                            <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. An AI agent uses this information to suggest quantum-safe alternatives and help plan the changes.</p>
+                            <p>Quantsiv generates a CycloneDX 1.6 CBOM, a SARIF file that works with code-analysis tools, and a report with the findings ranked by priority. Siv, the Quantsiv agent, uses this information to suggest quantum-safe alternatives and help plan the changes.</p>
+                        </div>
+                        <div class="step">
+                            <h3>5. Migrate</h3>
+                            <p>Siv reads each finding in its context and drafts the change, on a model you choose, in your CI. The harness then tests the migration in a working copy of your code: old and new clients against the changed service, the tokens and signatures of the previous build still valid, the platform's prerequisites in place.</p>
                         </div>
                     </div>
                     <p class="section-footnote" id="hosted-note">*Private repositories are not scanned externally.</p>
@@ -649,8 +653,12 @@
                             <p>Suggests the best-fitting standard: ML-KEM, ML-DSA or SLH-DSA, or a hybrid key exchange.</p>
                         </details>
                         <details class="capability-item">
-                            <summary><h3>AI agent analysis</h3></summary>
+                            <summary><h3>Siv, the Quantsiv agent</h3></summary>
                             <p>Siv. An AI agent able to analyze each finding in its context, proposing a fix. It connects to the model of your choosing through its chat-completions endpoint, for example ChatGPT, Claude, DeepSeek or Grok, or one you host yourself. No change is merged without the user's approval.</p>
+                        </details>
+                        <details class="capability-item">
+                            <summary><h3>Migration testing</h3></summary>
+                            <p>Our harness tries the whole migration in a working copy of your code, with Siv's drafts applied, without touching your checkout. The result travels in the CBOM and appears in the pull request comment.</p>
                         </details>
                     </div>
                     <p class="section-footnote" id="coverage-note">*Coverage varies by language. Pattern matching misses aliased and dynamic calls and third-party code, and does not read cloud key-management services.</p>
@@ -677,7 +685,7 @@
                             <p>Show where each application uses cryptography, from inside its build.</p>
                             <h4 class="phase-label">In development</h4>
                             <ul class="phase-list">
-                                <li>Build a working copy of your code with the migration applied and tested, Java services first</li>
+                                <li>Migration testing for more stacks after Java services</li>
                                 <li>Training the AI agent to learn from the changes the team approves</li>
                                 <li>Post-quantum and hybrid cryptography</li>
                                 <li>COBOL code on mainframes</li>

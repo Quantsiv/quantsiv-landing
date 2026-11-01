@@ -113,7 +113,7 @@ Search the page for every phrase in the first column before each commit.
 | "EU-hosted" or any hosting region | Not true until it is live | Leave out until the founder confirms |
 | Any customer, logo, testimonial or quote | None to show | Leave out |
 | "cryptographic posture management" | Not our category | "cryptographic change control and CBOM evidence" |
-| "AI-powered", "intelligent analysis", "entire software stack", "agentic AI" outside the agent card | Finding, ranking and the change check are pattern rules and fixed checks. The one AI capability is an optional agent that drafts fixes in your build, and the scanner reads code, keys and repository files, not a whole stack | Say what it finds. The "Agentic AI analysis" card says what the agent does, in the words of "What the page may say" |
+| "AI-powered", "intelligent analysis", "entire software stack", "agentic AI" outside the agent card | Finding, ranking and the change check are pattern rules and fixed checks. The one AI capability is an optional agent that drafts fixes in your build, and the scanner reads code, keys and repository files, not a whole stack | Say what it finds. The agent card ("Siv, the Quantsiv agent" since 1 Nov 2026) says what the agent does, in the words of "What the page may say" |
 | "quantum-safe wallet", "protects your funds", "secures your crypto" | A post-quantum account depends on each chain; Quantsiv finds and ranks the code | "finds wallet and custody cryptography" |
 | Names of chains, wallets, exchanges or wallet libraries | Names of other products | "wallet and custody code", "secp256k1 and Ed25519 signing keys" |
 | Which keys are exposed on-chain, coins at risk, any on-chain statistic | The scanner reads code, not chains, and no figure is measured and sourced | Leave out |
@@ -187,6 +187,17 @@ them. Do not add to them without the founder.
   no real model's results are measured yet. Learning from approved changes is not
   built: roadmap only, in the future. Added on 19 Oct 2026, when the agent's code merged, under
   the founder's rule of 18 Oct 2026.
+- Migration testing, the harness (the founder's copy, 1 Nov 2026; the product merged `quantsiv
+  validate` on 28 Oct 2026 and the rehearsal mode on 29 Oct 2026): the harness tries the whole
+  migration in a working copy of your code, with Siv's drafts applied, without touching your
+  checkout; it tests old and new clients against the changed service, the tokens and signatures
+  of the previous build still valid, and the platform's prerequisites; the result travels in the
+  CBOM and appears in the pull request comment. Write "tests" or "tries in a working copy", never
+  "proves", "validates", "simulates", "migrates" or "guarantees", and never a pass rate or a run
+  time. It has run on Java services only; the page does not name a stack, on the founder's choice
+  of 1 Nov 2026, so never add one it has not run on. Nothing from a harness run reaches Quantsiv
+  except the CBOM's validation entry, and only if you upload. No harness run is in the demo yet:
+  showing one means running the sample repository through the product and pasting its output.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
@@ -482,7 +493,7 @@ stand until the founder changes them:
   unchanged. The closed feature cards share one height (`.capability-item summary` is two title
   lines high) because he asked for cards of the same size. On 25 Oct 2026 he asked that the cards
   in a row keep one height when open too, so `.capabilities-grid` stretches its rows; the AI agent
-  card alone keeps the full width of its row. On 27 Oct 2026 the intro's line "A quantum computer
+  card alone kept the full width of its row until 1 Nov 2026, when the "Migration testing" card joined it there. On 27 Oct 2026 the intro's line "A quantum computer
   could break the public-keys widely used today." replaced "...the public-key cryptography in wide
   use today." in English and Dutch, with "widely use" corrected to "widely used" (flagged to him).
   The Italian intro is his own three lines and has no matching sentence, so it was left as it was.
@@ -502,15 +513,30 @@ stand until the founder changes them:
   2026 (a declared migration tried in a working copy, in the customer's CI); outside the roadmap the
   page still says nothing about it, on the founder's 28 Oct concern about funded rivals.
 
-- The hero headline since 1 Nov 2026 (the founder's line, thread "Reshape Quantsiv around the moat",
-  pending his merge): "From quantum vulnerabilities to migration testing, Quantsiv is your guide", the
-  brand in its muted span mid-sentence; Italian "Dalle vulnerabilità quantistiche ai test di migrazione,
-  Quantsiv è la tua guida", Dutch "Van quantumkwetsbaarheden tot migratietests: Quantsiv is je gids". It
-  opens the new narrative he asked for that day: the harness (`quantsiv validate`, merged in the product
-  repository on 28 Oct 2026) and Siv on the page, present tense, from the claims sheet. The rest of that
-  copy is a preview for his review; until he approves it, the page below the hero keeps the earlier
-  wording, and the 28 Oct line about keeping the harness design off the page stands for the design
-  (old and new clients, downgrade paths, continuity, the record), not for the harness's existence.
+- The new narrative of 1 Nov 2026 (the founder's lines and his edits of a copy preview, thread
+  "Reshape Quantsiv around the moat", merged on his "go ahead with those changes live"): the hero reads
+  "From quantum vulnerabilities to migration testing, Quantsiv is your guide", the brand in its muted
+  span mid-sentence (Italian "Dalle vulnerabilità quantistiche ai test di migrazione, Quantsiv è la tua
+  guida", Dutch "Van quantumkwetsbaarheden tot migratietests: Quantsiv is je gids"); the intro paragraph
+  says we show the exposed cryptography and how long it stays exposed for, "Our Quantsiv agent, Siv,
+  drafts the changes, and the harness tests the migration in a working copy of your code before anyone
+  touches the real one" (his Italian has the harness "mette alla prova la migrazione del cambiamento
+  effettivo"; his "simula" was replaced, because the copy is tested, not simulated); "How Quantsiv
+  Works" has five steps (card "An easy five-step process.", Italian "Cinque passi facili."): step 4 ends
+  with "Siv, the Quantsiv agent, uses this information to suggest quantum-safe alternatives and help
+  plan the changes" and the fifth, "5. Migrate", where Siv drafts the change and the harness tests the
+  migration in a working copy, takes the last row of the step grid on its own; his Italian step 5 does
+  not name the old and new clients, the English and Dutch do; the agent card is titled "Siv, the
+  Quantsiv agent" with its body unchanged (his choice: the title only, for now); the "Migration testing"
+  card ("Our harness tries the whole migration in a working copy of your code, with Siv's drafts
+  applied, without touching your checkout. The result travels in the CBOM and appears in the pull
+  request comment.") shares the last row with it; roadmap Phase 1 opens with "Migration testing for
+  more stacks after Java services". He dropped from the preview: a new search title and description,
+  a release-record card, a rewritten agent body, "Java services first" on the page, and the harness's
+  design on the card (what it tests is named in step 5 only). The 28 Oct line about keeping the harness
+  design off the page now covers the downgrade paths, the continuity checks and the record, which stay
+  in the private deck and roadmap. His note "a screenshot of the migration copy in the output" is a
+  follow-up: the demo is tool output, so it needs a real run of the sample repository.
 
 ## Before every commit
 
