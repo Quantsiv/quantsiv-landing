@@ -502,6 +502,16 @@ stand until the founder changes them:
   2026 (a declared migration tried in a working copy, in the customer's CI); outside the roadmap the
   page still says nothing about it, on the founder's 28 Oct concern about funded rivals.
 
+- The hero headline since 1 Nov 2026 (the founder's line, thread "Reshape Quantsiv around the moat",
+  pending his merge): "From quantum vulnerabilities to migration testing, Quantsiv is your guide", the
+  brand in its muted span mid-sentence; Italian "Dalle vulnerabilità quantistiche ai test di migrazione,
+  Quantsiv è la tua guida", Dutch "Van quantumkwetsbaarheden tot migratietests: Quantsiv is je gids". It
+  opens the new narrative he asked for that day: the harness (`quantsiv validate`, merged in the product
+  repository on 28 Oct 2026) and Siv on the page, present tense, from the claims sheet. The rest of that
+  copy is a preview for his review; until he approves it, the page below the hero keeps the earlier
+  wording, and the 28 Oct line about keeping the harness design off the page stands for the design
+  (old and new clients, downgrade paths, continuity, the record), not for the harness's existence.
+
 ## Before every commit
 
 1. Search the page for each phrase in the wording table.
