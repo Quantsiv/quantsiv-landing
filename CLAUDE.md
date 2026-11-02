@@ -133,7 +133,7 @@ document first.
 | Authority | What it says |
 | --- | --- |
 | NIST FIPS 203, 204, 205 | Published 13 Aug 2024: ML-KEM, ML-DSA and SLH-DSA |
-| NIST IR 8547, final, October 2026 (NIST news release 27 Oct 2026) | All quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035: RSA and ECDSA signatures at 112 bits of security and up, EdDSA at 128 bits and up, and all quantum-vulnerable key establishment (Tables 2 and 4). A hybrid key establishment with one approved input can be FIPS 140-validated. ML-KEM-768 is the recommended default. TLS is "an early priority". Its initial public draft (Nov 2024) deprecated only 112-bit parameters such as RSA-2048 after 2030; quote the draft only as history |
+| NIST IR 8547, final, October 2026 (NIST news release 27 Oct 2026) | All quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035: RSA and ECDSA signatures at 112 bits of security and up, EdDSA at 128 bits and up, and all quantum-vulnerable key establishment (Tables 2 and 4). A hybrid key establishment with one approved input can be FIPS 140-validated. ML-KEM-768 is the recommended default. TLS is "an early priority". Its initial public draft (Nov 2024) deprecated only 112-bit parameters such as RSA-2048 after 2030; quote the draft only as history. Section 3, on the page's migration timeline since 2 Nov 2026 as "past cryptographic migrations have taken over a decade", checked against the final PDF on 2 Nov 2026: "Past cryptographic migrations have taken over a decade, and this more complex migration will likely take at least that long." |
 | Executive Order 14412, 22 Jun 2026 | Post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030, and signatures by 31 Dec 2031. Within 180 days, about 19 Dec 2026, the FAR Council proposes a rule requiring covered contractors to comply by 31 Dec 2030 with NIST's FIPS, including those incorporating post-quantum algorithms (Sec. 6(c); 91 FR 38483, 25 Jun 2026). CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days, about Mar 2027 |
 | OMB M-26-15, 24 Jun 2026 | Five phases from 2026 to 2035. Agency plans due 22 Oct 2026. An automated inventory whose data "should populate a central Cryptographic Bill of Materials" |
 | EU NIS Cooperation Group roadmap, 23 Jun 2025, a recommendation | National strategies by end-2026, high-risk use cases by end-2030, as many systems as feasible by 2035 |
@@ -198,6 +198,17 @@ them. Do not add to them without the founder.
   of 1 Nov 2026, so never add one it has not run on. Nothing from a harness run reaches Quantsiv
   except the CBOM's validation entry, and only if you upload. No harness run is in the demo yet:
   showing one means running the sample repository through the product and pasting its output.
+- The migration timeline (2 Nov 2026, his pick on a decision card: "Timeline, no numbers of ours"):
+  the same five phases by hand (inventory, priorities, changes, testing, evidence, each with a
+  plain by-hand line) and in your CI (a CBOM on every build; each finding ranked by data lifetime
+  or trust in the signature; Siv drafts the change if you turn it on, passed by Quantsiv's checks
+  and your tests; the harness tests a migration you declare in a working copy; a release record),
+  with what stays with people (the decision, the approval and the deployment) and a footnote that
+  no time saved is quoted. The years on the by-hand side are the sources' (OMB M-26-15's five
+  phases from 2026 to 2035, NIST IR 8547's "over a decade"), never a customer's: write no
+  "project of years", no duration or percentage with Quantsiv, no "faster". Our own measured
+  times (scan speed, the 12 s test, the rehearsals) stay off the page on his pick of 2 Nov 2026,
+  and OMB M-23-02 (annual inventories "until 2035") stays off until he confirms it.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
@@ -539,6 +550,15 @@ stand until the founder changes them:
   design off the page now covers the downgrade paths, the continuity checks and the record, which stay
   in the private deck and roadmap. His note "a screenshot of the migration copy in the output" is a
   follow-up: the demo is tool output, so it needs a real run of the sample repository.
+- The migration timeline (2 Nov 2026, from his ask to show "a years long process estimation with
+  and without Quantsiv" and his pick "Timeline, no numbers of ours" on a decision card): a section
+  under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the heading "The
+  same migration, by hand and in your CI", a lead with the two sourced durations, a "By hand" row of
+  five phases (`<ol>`, numbered by CSS counter) and a "With Quantsiv" row of the same five in your
+  CI with a dashed box for what stays with people, and the footnote on no time saved. The phases
+  go two to a row under 900 px and one under 480 px. Its copy is in "What the page may say"; the
+  measured-times variant and the two-card strip he did not pick are in the project's preview doc
+  of 2 Nov 2026, not on the page.
 
 ## Before every commit
 

@@ -167,6 +167,38 @@
         <p>Quantsiv is built for regulated-sector software dealing with cryptographic migrations. One migration at a time, in your own CI.</p>
     </section>
 
+    <!-- The same migration by hand and in CI: a timeline under the intro (2 Nov 2026) -->
+    <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">The same migration, by hand and in your CI</h2>
+        <p class="timeline-lead">Governments plan this migration in phases over years. The US federal plan runs five phases from 2026 to 2035 (OMB M-26-15, 24 Jun 2026), and NIST writes that past cryptographic migrations have taken over a decade (NIST IR 8547, October 2026).</p>
+        <div class="tl">
+            <div class="tl-row tl-hand">
+                <h3 class="tl-label">By hand <span>one phase after the other</span></h3>
+                <ol class="tl-phases">
+                <li><strong>Inventory</strong><span>out of date at the next commit</span></li>
+                <li><strong>Priorities</strong><span>argued in meetings</span></li>
+                <li><strong>Changes</strong><span>written and reviewed from scratch</span></li>
+                <li><strong>Testing</strong><span>a setup built per migration</span></li>
+                <li><strong>Evidence</strong><span>written up afterwards for the auditor</span></li>
+                </ol>
+            </div>
+            <div class="tl-row tl-ci">
+                <h3 class="tl-label">With Quantsiv <span>in your CI</span></h3>
+                <div class="tl-build">
+                    <ul class="tl-stack">
+                        <li><strong>Inventory</strong><span>a CBOM of what is there and what each change adds, on every build</span></li>
+                        <li><strong>Priorities</strong><span>each finding ranked by how long its data must stay secret, or its signature stay trusted</span></li>
+                        <li><strong>Changes</strong><span>Siv drafts the change, if you turn it on; Quantsiv's checks and your tests pass it first</span></li>
+                        <li><strong>Testing</strong><span>the harness tests a migration you declare in a working copy of your code</span></li>
+                        <li><strong>Evidence</strong><span>a release record of what changed, what was tested and what remains</span></li>
+                    </ul>
+                    <p class="tl-people">What stays with people: the decision, the approval and the deployment.</p>
+                </div>
+            </div>
+        </div>
+        <p class="section-footnote">No time saved is quoted: it has not been measured. The first design partners will measure the time from first finding to tested migration.</p>
+    </section>
+
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
          whole chapter. script.js grows a card into a full-screen chapter (the sheet at the end
          of the page), hands over to the next chapter from its end card, and shrinks it back;

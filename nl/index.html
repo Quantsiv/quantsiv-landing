@@ -167,6 +167,38 @@
         <p>Quantsiv is gebouwd voor software in gereguleerde sectoren die met cryptografische migraties te maken heeft. Eén migratie tegelijk, in je eigen CI.</p>
     </section>
 
+    <!-- The same migration by hand and in CI: a timeline under the intro (2 Nov 2026) -->
+    <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">Dezelfde migratie, met de hand en in je CI</h2>
+        <p class="timeline-lead">Overheden plannen deze migratie in fasen over jaren. Het Amerikaanse federale plan telt vijf fasen van 2026 tot 2035 (OMB M-26-15, 24 jun 2026), en NIST schrijft dat eerdere cryptografische migraties meer dan tien jaar hebben geduurd (NIST IR 8547, oktober 2026).</p>
+        <div class="tl">
+            <div class="tl-row tl-hand">
+                <h3 class="tl-label">Met de hand <span>de ene fase na de andere</span></h3>
+                <ol class="tl-phases">
+                <li><strong>Inventaris</strong><span>verouderd bij de volgende commit</span></li>
+                <li><strong>Prioriteiten</strong><span>bediscussieerd in vergaderingen</span></li>
+                <li><strong>Wijzigingen</strong><span>telkens vanaf nul geschreven en beoordeeld</span></li>
+                <li><strong>Testen</strong><span>een opstelling per migratie gebouwd</span></li>
+                <li><strong>Bewijs</strong><span>achteraf uitgeschreven voor de auditor</span></li>
+                </ol>
+            </div>
+            <div class="tl-row tl-ci">
+                <h3 class="tl-label">Met Quantsiv <span>in je CI</span></h3>
+                <div class="tl-build">
+                    <ul class="tl-stack">
+                        <li><strong>Inventaris</strong><span>een CBOM van wat er is en wat elke wijziging toevoegt, bij elke build</span></li>
+                        <li><strong>Prioriteiten</strong><span>elke bevinding gerangschikt naar hoe lang de data geheim moet blijven, of de handtekening vertrouwd</span></li>
+                        <li><strong>Wijzigingen</strong><span>Siv stelt de wijziging op, als je dat aanzet; de controles van Quantsiv en je tests keuren die eerst goed</span></li>
+                        <li><strong>Testen</strong><span>de harness test een migratie die je declareert in een werkkopie van je code</span></li>
+                        <li><strong>Bewijs</strong><span>een releaseverslag van wat er veranderd is, wat getest is en wat overblijft</span></li>
+                    </ul>
+                    <p class="tl-people">Wat bij mensen blijft: de beslissing, de goedkeuring en de uitrol.</p>
+                </div>
+            </div>
+        </div>
+        <p class="section-footnote">We noemen geen bespaarde tijd: die is niet gemeten. De eerste design partners gaan de tijd meten van de eerste bevinding tot een geteste migratie.</p>
+    </section>
+
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
          whole chapter. script.js grows a card into a full-screen chapter (the sheet at the end
          of the page), hands over to the next chapter from its end card, and shrinks it back;
