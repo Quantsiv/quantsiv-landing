@@ -526,8 +526,9 @@ stand until the founder changes them:
   Works" has five steps (card "An easy five-step process.", Italian "Cinque passi facili."): step 4 ends
   with "Siv, the Quantsiv agent, uses this information to suggest quantum-safe alternatives and help
   plan the changes" and the fifth, "5. Migrate", where Siv drafts the change and the harness tests the
-  migration in a working copy, takes the last row of the step grid on its own; his Italian step 5 does
-  not name the old and new clients, the English and Dutch do; the agent card is titled "Siv, the
+  migration in a working copy, takes the last row of the step grid on its own; step 5 names the
+  previous build's tokens and signatures and the platform's prerequisites, not the old and new clients
+  (his "Drop them", 2 Nov 2026, so the client matrix stays off the page); the agent card is titled "Siv, the
   Quantsiv agent" with its body unchanged (his choice: the title only, for now); the "Migration testing"
   card ("Our harness tries the whole migration in a working copy of your code, with Siv's drafts
   applied, without touching your checkout. The result travels in the CBOM and appears in the pull
