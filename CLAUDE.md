@@ -72,6 +72,10 @@ Write as if a customer, a competitor and a regulator are all reading it.
   2026 and updated with his approval on 11 Oct 2026, with its translations in `nl/` and `it/`,
   approved on 13 Oct 2026. Change them only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
+  The one exception, on the founder's instruction of 2 Nov 2026: the migration timeline's
+  estimates, each labelled "estimate" with its basis (the US federal plan's phases, OMB
+  M-26-15) and its assumptions on the page. Keep the label and the basis with every such figure,
+  and put no estimate anywhere else without his word.
 
 If in doubt, leave it out and ask the founder.
 
@@ -198,17 +202,22 @@ them. Do not add to them without the founder.
   of 1 Nov 2026, so never add one it has not run on. Nothing from a harness run reaches Quantsiv
   except the CBOM's validation entry, and only if you upload. No harness run is in the demo yet:
   showing one means running the sample repository through the product and pasting its output.
-- The migration timeline (2 Nov 2026, his pick on a decision card: "Timeline, no numbers of ours"):
-  the same five phases by hand (inventory, priorities, changes, testing, evidence, each with a
-  plain by-hand line) and in your CI (a CBOM on every build; each finding ranked by data lifetime
-  or trust in the signature; Siv drafts the change if you turn it on, passed by Quantsiv's checks
-  and your tests; the harness tests a migration you declare in a working copy; a release record),
-  with what stays with people (the decision, the approval and the deployment) and a footnote that
-  no time saved is quoted. The years on the by-hand side are the sources' (OMB M-26-15's five
-  phases from 2026 to 2035, NIST IR 8547's "over a decade"), never a customer's: write no
-  "project of years", no duration or percentage with Quantsiv, no "faster". Our own measured
-  times (scan speed, the 12 s test, the rehearsals) stay off the page on his pick of 2 Nov 2026,
-  and OMB M-23-02 (annual inventories "until 2035") stays off until he confirms it.
+- The migration timeline (2 Nov 2026; his pick "Timeline, no numbers of ours" on a decision card,
+  then his instruction the same evening to give the by-hand length in years and an estimated
+  shortening, labelled): the lead quotes NIST IR 8547 (past migrations "over a decade", this one
+  "at least that long") and the US federal plan's nine years in five phases (OMB M-26-15, 24 Jun
+  2026). The "By hand" row is the plan's phases with their years, verbatim from the memo's
+  Section 3.D: Strategy, Planning and Discovery 2026-2027 (on the page "Inventory and
+  assessment"), Pilots and Early Migration 2027-2028, Prioritized Migration 2028-2030 (key
+  establishment), Signature Migration 2031, Full Migration 2035. The "With Quantsiv" row is the
+  same five in your CI (the first build for the CBOM and the ranking; weeks for a pilot with Siv's
+  draft and the harness's test in a working copy; build by build after that), and the estimate
+  paragraph says "about half the calendar time comes off, 40 to 60 percent", with its basis: two
+  of nine years become weeks, and a quarter to a half of the other seven (writing, testing,
+  evidence) run as builds. Every figure of ours carries the "estimate" label and the footnote
+  with the sources and the assumptions. No measured time of ours is on the page, no customer
+  migration has been measured, and OMB M-23-02 stays off until he confirms it. Write no "faster",
+  "guarantees" or "proves" around the estimate, and change the numbers only together with the deck.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
@@ -551,14 +560,17 @@ stand until the founder changes them:
   in the private deck and roadmap. His note "a screenshot of the migration copy in the output" is a
   follow-up: the demo is tool output, so it needs a real run of the sample repository.
 - The migration timeline (2 Nov 2026, from his ask to show "a years long process estimation with
-  and without Quantsiv" and his pick "Timeline, no numbers of ours" on a decision card): a section
-  under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the heading "The
-  same migration, by hand and in your CI", a lead with the two sourced durations, a "By hand" row of
-  five phases (`<ol>`, numbered by CSS counter) and a "With Quantsiv" row of the same five in your
-  CI with a dashed box for what stays with people, and the footnote on no time saved. The phases
-  go two to a row under 900 px and one under 480 px. Its copy is in "What the page may say"; the
-  measured-times variant and the two-card strip he did not pick are in the project's preview doc
-  of 2 Nov 2026, not on the page.
+  and without Quantsiv", his pick "Timeline, no numbers of ours" on a decision card, and his
+  instruction that evening to give the by-hand length in years and an estimated shortening): a
+  section under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the
+  heading "The same migration, by hand and in your CI", a lead with the sourced durations, a "By
+  hand" row of the federal plan's five phases with their years (`<ol>`, numbered by CSS counter),
+  a "With Quantsiv" row of the same five in your CI, the estimate paragraph (`.tl-estimate`) and
+  the footnote with the label, the sources and the assumptions. Earlier the same day the row had
+  no years, a dashed box on what stays with people and a footnote that no time saved is quoted;
+  he had them replaced. The phases go two to a row under 900 px and one under 480 px. Its copy is
+  in "What the page may say"; the deck's benefit slide carries the same numbers, so change them
+  together.
 
 ## Before every commit
 
