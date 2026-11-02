@@ -204,18 +204,19 @@ them. Do not add to them without the founder.
   showing one means running the sample repository through the product and pasting its output.
 - The migration timeline (2 Nov 2026; his pick "Timeline, no numbers of ours" on a decision card,
   then his instruction the same evening to give the by-hand length in years and an estimated
-  shortening, labelled): the lead quotes NIST IR 8547 (past migrations "over a decade", this one
-  "at least that long") and the US federal plan's nine years in five phases (OMB M-26-15, 24 Jun
-  2026). The "By hand" row is the plan's phases with their years, verbatim from the memo's
+  shortening, labelled): the lead quotes NIST IR 8547 (Section 1, "10 to 20 years" from standardization to
+  integration; Section 3, this migration "at least that long") and the US federal plan's nine
+  years in five phases (OMB M-26-15, 24 Jun 2026). The "By hand" row is the plan's phases with their years, verbatim from the memo's
   Section 3.D: Strategy, Planning and Discovery 2026-2027 (on the page "Inventory and
   assessment"), Pilots and Early Migration 2027-2028, Prioritized Migration 2028-2030 (key
   establishment), Signature Migration 2031, Full Migration 2035. The "With Quantsiv" row is the
   same five in your CI (the first build for the CBOM and the ranking; weeks for a pilot with Siv's
   draft and the harness's test in a working copy; build by build after that), and the estimate
-  paragraph says "about half the calendar time comes off, 40 to 60 percent", with its basis: two
-  of nine years become weeks, and a quarter to a half of the other seven (writing, testing,
-  evidence) run as builds. Every figure of ours carries the "estimate" label and the footnote
-  with the sources and the assumptions. No measured time of ours is on the page, no customer
+  paragraph says "from the first inventory to a tested pilot, the federal plan allots two years,
+  2026 to 2028. In your CI that stretch takes weeks: over 90 percent shorter. The years after it
+  run build by build." (the same figure and basis as the deck's benefit slide, settled on 2 Nov
+  2026; an earlier draft said 40 to 60 percent of the whole migration). Every figure of ours
+  carries the "estimate" label and the footnote with the sources and the basis. No measured time of ours is on the page, no customer
   migration has been measured, and OMB M-23-02 stays off until he confirms it. Write no "faster",
   "guarantees" or "proves" around the estimate, and change the numbers only together with the deck.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
