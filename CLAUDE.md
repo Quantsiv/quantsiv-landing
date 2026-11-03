@@ -636,7 +636,7 @@ stand until the founder changes them:
   His review of the live page (3 Nov 2026, 16:08 UTC, "we have a wording repeating over and over
   again"): card 01's summary without "which Siv helps fix"; chapter 02 is "How it works" again
   (menu and card) and opens straight on the five steps, with no heading and no subheading, as
-  chapter 04 does; step 1 is his hosted sentence alone (the inventory sentence is gone); the
+  chapter 04 does; step 1 is his hosted sentence alone (the inventory sentence is gone; on his line of 16:51 UTC it reads "Quantsiv runs in your CI by default, so your code stays in your environment. It receives the CBOM and the finding details only if you choose to upload them, and scans public repositories on its own servers.", his words with a full stop and an "and"; the Italian is his own and he reviewed it); the
   timeline's lead is the one sentence above. The hero button "Start the journey", the intro and
   the other chapters stay. He reviews the Italian himself.
 
