@@ -167,6 +167,41 @@
         <p>Quantsiv is built for regulated-sector software dealing with cryptographic migrations. One migration at a time, in your own CI.</p>
     </section>
 
+    <!-- The same migration by hand and in CI: a timeline under the intro (2 Nov 2026), with the
+         by-hand years from the US federal plan and our estimate, labelled as such -->
+    <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">The same migration, by hand and in your CI</h2>
+        <p class="timeline-lead">NIST writes that the journey from a new standard to its integration in information systems can take 10 to 20 years, and that this more complex migration will likely take at least as long as past ones (NIST IR 8547, October 2026). The US federal plan gives it nine years, 2026 to 2035, in five phases (OMB M-26-15, 24 Jun 2026). The inventory recurs: the 2022 memo directed agencies to submit a prioritised inventory of the systems with quantum-vulnerable cryptography by 4 May 2023 and every year after until 2035 (OMB M-23-02, 18 Nov 2022); the 2026 plan calls for one maintained through automated tools wherever possible (OMB M-26-15).</p>
+        <div class="tl">
+            <div class="tl-hand">
+                <h3 class="tl-label">By hand <span>the US federal plan (OMB M-26-15), 2026 to 2035</span></h3>
+                <div class="tl-track">
+                <ol class="tl-ms">
+                <li class="tl-y2026"><span class="tl-when">2026 to 2027</span><span class="tl-what">Strategy, planning and discovery</span></li>
+                <li class="tl-y2027"><span class="tl-when">2027 to 2028</span><span class="tl-what">Pilots and early migration</span></li>
+                <li class="tl-y2028"><span class="tl-when">2028 to 2030</span><span class="tl-what">Prioritised migration</span></li>
+                <li class="tl-y2031"><span class="tl-when">2031</span><span class="tl-what">Signature migration</span></li>
+                <li class="tl-y2035"><span class="tl-when">2035</span><span class="tl-what">Full migration</span></li>
+                </ol>
+                <ol class="tl-axis" aria-hidden="true"><li>2026</li><li>2027</li><li>2028</li><li>2029</li><li>2030</li><li>2031</li><li>2032</li><li>2033</li><li>2034</li><li>2035</li></ol>
+                </div>
+            </div>
+            <div class="tl-under">
+                <div class="tl-zoom">
+                <h3 class="tl-label tl-label-ci">With Quantsiv <span>the first weeks*, zoomed in: audit to migration copy</span></h3>
+                <ol class="tl-steps">
+                <li><strong>Audit</strong><span>the first build: a CBOM of what is there, each finding ranked on its own clock</span></li>
+                <li><strong>Siv drafts</strong><span>each finding read in context, a fix drafted where the target is clear</span></li>
+                <li><strong>The harness tests</strong><span>the migration in a working copy of your code</span></li>
+                <li><strong>Migration copy</strong><span>the change tested, a pilot ready</span></li>
+                </ol>
+                </div>
+                <p class="tl-estimate"><span class="tl-est-label">Estimate* · inventory to pilot</span><span class="tl-est-line">two years by the plan, weeks in your CI</span><strong class="tl-est-big">over 90% shorter</strong></p>
+            </div>
+        </div>
+        <p class="section-footnote">*Estimate. The years are the US federal plan's phases (OMB M-26-15, 24 Jun 2026) and NIST IR 8547 (October 2026); the weeks are our estimate for the inventory, the ranking and a tested pilot, against the plan's two years for the same work, 2026 to 2028.</p>
+    </section>
+
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
          whole chapter. script.js grows a card into a full-screen chapter (the sheet at the end
          of the page), hands over to the next chapter from its end card, and shrinks it back;
@@ -259,7 +294,7 @@
                         <li class="deadline" data-date="2026-06-24">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">24 June 2026</span> <h3 class="deadline-title">OMB M-26-15: a phased federal migration</h3></summary>
-                                <p>Federal agencies must build an automated inventory whose data &ldquo;should populate a central Cryptographic Bill of Materials&rdquo; (CBOM). Agency plans are due by 22 October 2026. The migration runs in five phases, from 2026 to 2035.</p>
+                                <p>The foundation of each agency&rsquo;s plan is an inventory of its cryptographic assets, maintained through automated tools wherever possible, whose data &ldquo;should populate a central Cryptographic Bill of Materials&rdquo; (CBOM). Agency plans were due 120 days later, by 22 October 2026. The migration runs in five phases, from 2026 to 2035.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-10-27">
@@ -293,6 +328,7 @@
                         <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
                         <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in the Federal Register</a>;
                         <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+                        <a href="https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-23-02</a>;
                         <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547 (October 2026)</a> and <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">its initial public draft (November 2024)</a>;
                         <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
                         <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;

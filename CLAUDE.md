@@ -72,6 +72,10 @@ Write as if a customer, a competitor and a regulator are all reading it.
   2026 and updated with his approval on 11 Oct 2026, with its translations in `nl/` and `it/`,
   approved on 13 Oct 2026. Change them only with the founder's approval.
 - Numbers that were not measured and sourced: scan times, counts, accuracy, savings, waitlist size.
+  The one exception, on the founder's instruction of 2 Nov 2026: the migration timeline's
+  estimates, each labelled "estimate" with its basis (the US federal plan's phases, OMB
+  M-26-15) and its assumptions on the page. Keep the label and the basis with every such figure,
+  and put no estimate anywhere else without his word.
 
 If in doubt, leave it out and ask the founder.
 
@@ -133,9 +137,10 @@ document first.
 | Authority | What it says |
 | --- | --- |
 | NIST FIPS 203, 204, 205 | Published 13 Aug 2024: ML-KEM, ML-DSA and SLH-DSA |
-| NIST IR 8547, final, October 2026 (NIST news release 27 Oct 2026) | All quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035: RSA and ECDSA signatures at 112 bits of security and up, EdDSA at 128 bits and up, and all quantum-vulnerable key establishment (Tables 2 and 4). A hybrid key establishment with one approved input can be FIPS 140-validated. ML-KEM-768 is the recommended default. TLS is "an early priority". Its initial public draft (Nov 2024) deprecated only 112-bit parameters such as RSA-2048 after 2030; quote the draft only as history |
+| NIST IR 8547, final, October 2026 (NIST news release 27 Oct 2026) | All quantum-vulnerable public-key algorithms are deprecated after 2030 and disallowed after 2035: RSA and ECDSA signatures at 112 bits of security and up, EdDSA at 128 bits and up, and all quantum-vulnerable key establishment (Tables 2 and 4). A hybrid key establishment with one approved input can be FIPS 140-validated. ML-KEM-768 is the recommended default. TLS is "an early priority". Its initial public draft (Nov 2024) deprecated only 112-bit parameters such as RSA-2048 after 2030; quote the draft only as history. Section 3, on the page's migration timeline since 2 Nov 2026 as "past cryptographic migrations have taken over a decade", checked against the final PDF on 2 Nov 2026: "Past cryptographic migrations have taken over a decade, and this more complex migration will likely take at least that long." |
 | Executive Order 14412, 22 Jun 2026 | Post-quantum key establishment on high-value assets and high-impact systems by 31 Dec 2030, and signatures by 31 Dec 2031. Within 180 days, about 19 Dec 2026, the FAR Council proposes a rule requiring covered contractors to comply by 31 Dec 2030 with NIST's FIPS, including those incorporating post-quantum algorithms (Sec. 6(c); 91 FR 38483, 25 Jun 2026). CISA, in coordination with NIST, publishes guidance on CBOM minimum elements within 270 days, about Mar 2027 |
-| OMB M-26-15, 24 Jun 2026 | Five phases from 2026 to 2035. Agency plans due 22 Oct 2026. An automated inventory whose data "should populate a central Cryptographic Bill of Materials" |
+| OMB M-26-15, 24 Jun 2026 | Five phases, Section 3.D (checked against the PDF on 3 Nov 2026): Strategy, Planning, and Discovery 2026-2027; Pilots and Early Migration 2027-2028; Prioritized Migration 2028-2030 (key establishment); Signature Migration 2031; Full Migration 2035. Agency plans due "no later than 120 days from the date of this memorandum", 22 Oct 2026 by arithmetic. The inventory (Appendix A, Section 6) is "the foundation of the migration plan", to be "created and maintained through automated tools wherever possible", and its data "should populate a central Cryptographic Bill of Materials"; the memo sets no interval for it, does not mention M-23-02 and rescinds nothing. No sentence gives the migration's length: "nine years" on the page is 2035 minus 2026. TLS 1.3 by 2 Jan 2030 (Appendix A, Section 4) |
+| OMB M-23-02, 18 Nov 2022 | Section II.A (checked against the PDF on 3 Nov 2026): "By May 4, 2023, and annually thereafter until 2035, or as directed by superseding guidance, agencies are directed to submit a prioritized inventory of information systems and assets, excluding national security systems, that contain CRQC-vulnerable cryptographic systems" to ONCD and CISA. It calls itself transitional guidance until NIST's standards were final, and no later memo names it as superseded. On the page since 3 Nov 2026 (the founder's "Confirm OMB"), in the timeline's lead only |
 | EU NIS Cooperation Group roadmap, 23 Jun 2025, a recommendation | National strategies by end-2026, high-risk use cases by end-2030, as many systems as feasible by 2035 |
 | NSA CNSA 2.0 | Exclusive-use dates between 2030 and 2033, depending on the category. Verify against the current NSA advisory before quoting a single year |
 
@@ -198,6 +203,31 @@ them. Do not add to them without the founder.
   of 1 Nov 2026, so never add one it has not run on. Nothing from a harness run reaches Quantsiv
   except the CBOM's validation entry, and only if you upload. No harness run is in the demo yet:
   showing one means running the sample repository through the product and pasting its output.
+- The migration timeline (2 Nov 2026; his pick "Timeline, no numbers of ours" on a decision card,
+  then his instruction the same evening to give the by-hand length in years and an estimated
+  shortening, labelled): the lead quotes NIST IR 8547 (Section 1, "10 to 20 years" from standardization to
+  integration; Section 3, this migration "at least that long") and the US federal plan's nine
+  years in five phases (OMB M-26-15, 24 Jun 2026). The "By hand" track is the plan's five phases with their years, verbatim from the memo's
+  Section 3.D (Strategy, planning and discovery 2026 to 2027, Pilots and early migration 2027 to
+  2028, Prioritised migration 2028 to 2030, Signature migration 2031, Full migration 2035; Italian
+  "Migrazione finale" and Dutch "Eindmigratie" for the last, because "completa" and "volledig" are
+  in the wording table), as milestones on a 2026 to 2035 axis since 3 Nov 2026 (design F, his pick
+  for the deck's slide 5, "pass it to landing"). Under the axis's start the "With Quantsiv" zoom
+  panel shows "the first weeks*, zoomed in: audit to migration copy" (his label) in four steps:
+  Audit (the first build: a CBOM of what is there, each finding ranked on its own clock), Siv
+  drafts (each finding read in context, a fix drafted where the target is clear: most findings get
+  guidance, not a diff, by design), The harness tests (the migration in a
+  working copy of your code), Migration copy (the change tested, a pilot ready); no measured time
+  and no client matrix, which stay on the deck. The estimate is one small block: "Estimate* ·
+  inventory to pilot", "two years by the plan, weeks in your CI", "over 90% shorter" (the same
+  figure and basis as the deck's slide, settled on 2 Nov 2026; an earlier draft said 40 to 60
+  percent of the whole migration, and until 3 Nov the page carried the estimate as a paragraph).
+  Every figure of ours carries the "estimate" label and the footnote with the sources and the
+  basis. No measured time of ours is on the page and no customer migration has been measured.
+  Since 3 Nov 2026 (his "Confirm OMB") the lead's third sentence gives the inventory's recurrence
+  from both memos, OMB M-23-02's "by 4 May 2023 and every year after until 2035" and M-26-15's
+  inventory "maintained through automated tools wherever possible". Write no "faster",
+  "guarantees" or "proves" around the estimate, and change the numbers only together with the deck.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
@@ -539,6 +569,29 @@ stand until the founder changes them:
   design off the page now covers the downgrade paths, the continuity checks and the record, which stay
   in the private deck and roadmap. His note "a screenshot of the migration copy in the output" is a
   follow-up: the demo is tool output, so it needs a real run of the sample repository.
+- The migration timeline (2 Nov 2026, from his ask to show "a years long process estimation with
+  and without Quantsiv", his pick "Timeline, no numbers of ours" on a decision card, and his
+  instruction that evening to give the by-hand length in years and an estimated shortening): a
+  section under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the
+  heading "The same migration, by hand and in your CI", a lead with the sourced durations, since 3 Nov
+  2026 (design F) a "By hand" card with the plan's five phases as milestones on a 2026 to 2035 axis
+  (`.tl-ms`, each at its year's share of the axis, labels staggered on three levels by `--stem`;
+  the year ticks `.tl-axis` are decorative; under 760 px the milestones become a vertical list and
+  the axis is hidden), a glowing window at 2026 joined by a connector to the "With Quantsiv" zoom
+  panel (`.tl-zoom`, four steps `.tl-steps`, two to a row under 900 px and one under 480 px), the
+  estimate block (`.tl-estimate`, beside the panel, under it below 900 px) and the one-paragraph
+  footnote with the label, the sources and the assumptions. On 2 Nov the block was two rows of
+  five (an `<ol>` numbered by CSS counter and a list) with the estimate as a paragraph. Earlier the same day the row had
+  no years, a dashed box on what stays with people and a footnote that no time saved is quoted;
+  he had them replaced. Its copy is
+  in "What the page may say"; the deck's benefit slide carries the same numbers, so change them
+  together.
+  On 3 Nov 2026, on his "Confirm OMB", every OMB citation was checked against the two memos: the
+  lead gained the inventory's recurrence (M-23-02 yearly, M-26-15 automated wherever possible), the
+  sources list links M-23-02, and the M-26-15 deadlines entry now reads "The foundation of each
+  agency's plan is an inventory of its cryptographic assets, maintained through automated tools
+  wherever possible" (it said "must build an automated inventory", stronger than the memo's "should")
+  and "Agency plans were due 120 days later, by 22 October 2026".
 
 ## Before every commit
 
