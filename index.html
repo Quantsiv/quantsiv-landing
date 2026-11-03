@@ -6,8 +6,8 @@
     <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quantsiv finds quantum-vulnerable cryptography in your code, ranks what to fix first by how long your data must stay secret, and writes a CycloneDX CBOM.">
-    <title>Quantsiv - Find quantum-vulnerable cryptography in your code</title>
+    <meta name="description" content="Quantsiv finds quantum-vulnerable cryptography in your code, ranks what to fix first, drafts the changes and tests the migration in a working copy.">
+    <title>Quantsiv - From quantum vulnerabilities to a tested migration</title>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Quantsiv">
     <meta property="og:title" content="Quantsiv - See tomorrow. Secure today.">
@@ -41,10 +41,10 @@
         <div class="site-menu" id="site-menu">
         <nav class="nav-center" aria-label="Main">
             <ul class="nav-list">
-                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>The problem</a></li>
-                <li><a href="#compliance" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Deadlines</a></li>
-                <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>How it works</a></li>
-                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Features</a></li>
+                <li><a href="#threat" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>Why now</a></li>
+                <li><a href="#how-it-works" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Your guide</a></li>
+                <li><a href="#timeline" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Weeks, not years</a></li>
+                <li><a href="#capabilities" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Under the hood</a></li>
                 <li><a href="#roadmap" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Roadmap</a></li>
             </ul>
         </nav>
@@ -65,7 +65,7 @@
             <p class="hero-kicker">See tomorrow. Secure today.</p>
             <h1><span class="hero-accent">From quantum vulnerabilities to migration,</span> <span class="hero-brand">Quantsiv</span> <span class="hero-accent">is your guide</span></h1>
             <div class="hero-buttons">
-                <a href="#threat" class="cta-primary">Why it matters</a>
+                <a href="#how-it-works" class="cta-primary">Start the journey</a>
                 <a href="#contact" class="cta-secondary">Get in touch</a>
             </div>
         </div>
@@ -162,45 +162,11 @@
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>A quantum computer could break the public-keys widely used today.<br>Governments have published dates for replacing it.<br>Replacement starts with knowing where it is.</p>
-        <p>This is where we come in. We scan your code on every build to show you the exposed cryptography and how long it stays exposed for. Our Quantsiv agent, Siv, drafts the changes, and the harness tests the migration in a working copy of your code before anyone touches the real one.</p>
+        <p>A quantum computer could break the public keys widely used today.<br>Governments have published the dates for replacing them.<br>Finding them is the start. The migration is the work.</p>
+        <p>This is where we come in. Quantsiv walks you from the audit to a tested migration copy, hand in hand through each vulnerability, in your own CI. Every build shows the exposed cryptography and how long it stays exposed. Siv, the Quantsiv agent, drafts the changes. The harness tests the migration in a working copy of your code before anyone touches the real one.</p>
         <p>Quantsiv is built for regulated-sector software dealing with cryptographic migrations. One migration at a time, in your own CI.</p>
     </section>
 
-    <!-- The same migration by hand and in CI: a timeline under the intro (2 Nov 2026), with the
-         by-hand years from the US federal plan and our estimate, labelled as such -->
-    <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
-        <h2 id="timeline-heading">The same migration, by hand and in your CI</h2>
-        <p class="timeline-lead">NIST writes that the journey from a new standard to its integration in information systems can take 10 to 20 years, and that this more complex migration will likely take at least as long as past ones (NIST IR 8547, October 2026). The US federal plan gives it nine years, 2026 to 2035, in five phases (OMB M-26-15, 24 Jun 2026). The inventory recurs: the 2022 memo directed agencies to submit a prioritised inventory of the systems with quantum-vulnerable cryptography by 4 May 2023 and every year after until 2035 (OMB M-23-02, 18 Nov 2022); the 2026 plan calls for one maintained through automated tools wherever possible (OMB M-26-15).</p>
-        <div class="tl">
-            <div class="tl-hand">
-                <h3 class="tl-label">By hand <span>the US federal plan (OMB M-26-15), 2026 to 2035</span></h3>
-                <div class="tl-track">
-                <ol class="tl-ms">
-                <li class="tl-y2026"><span class="tl-when">2026 to 2027</span><span class="tl-what">Strategy, planning and discovery</span></li>
-                <li class="tl-y2027"><span class="tl-when">2027 to 2028</span><span class="tl-what">Pilots and early migration</span></li>
-                <li class="tl-y2028"><span class="tl-when">2028 to 2030</span><span class="tl-what">Prioritised migration</span></li>
-                <li class="tl-y2031"><span class="tl-when">2031</span><span class="tl-what">Signature migration</span></li>
-                <li class="tl-y2035"><span class="tl-when">2035</span><span class="tl-what">Full migration</span></li>
-                </ol>
-                <ol class="tl-axis" aria-hidden="true"><li>2026</li><li>2027</li><li>2028</li><li>2029</li><li>2030</li><li>2031</li><li>2032</li><li>2033</li><li>2034</li><li>2035</li></ol>
-                </div>
-            </div>
-            <div class="tl-under">
-                <div class="tl-zoom">
-                <h3 class="tl-label tl-label-ci">With Quantsiv <span>the first weeks*, zoomed in: audit to migration copy</span></h3>
-                <ol class="tl-steps">
-                <li><strong>Audit</strong><span>the first build: a CBOM of what is there, each finding ranked on its own clock</span></li>
-                <li><strong>Siv drafts</strong><span>each finding read in context, a fix drafted where the target is clear</span></li>
-                <li><strong>The harness tests</strong><span>the migration in a working copy of your code</span></li>
-                <li><strong>Migration copy</strong><span>the change tested, a pilot ready</span></li>
-                </ol>
-                </div>
-                <p class="tl-estimate"><span class="tl-est-label">Estimate* · inventory to pilot</span><span class="tl-est-line">two years by the plan, weeks in your CI</span><strong class="tl-est-big">over 90% shorter</strong></p>
-            </div>
-        </div>
-        <p class="section-footnote">*Estimate. The years are the US federal plan's phases (OMB M-26-15, 24 Jun 2026) and NIST IR 8547 (October 2026); the weeks are our estimate for the inventory, the ranking and a tested pilot, against the plan's two years for the same work, 2026 to 2028.</p>
-    </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
          whole chapter. script.js grows a card into a full-screen chapter (the sheet at the end
@@ -211,7 +177,7 @@
         <details class="chapter" id="threat">
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">01</span>
-                <h2 class="overview-title">The problem</h2>
+                <h2 class="overview-title">Why now</h2>
                 <span class="overview-text">Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix.</span>
                 <span class="overview-cta">Learn more</span>
             </summary>
@@ -254,22 +220,8 @@
                             <p>Data encrypted with RSA or ECC becomes readable, and digital signatures can be forged.</p>
                         </div>
                     </div>
-                </section>
-            </div>
-        </details>
-        <details class="chapter" id="compliance">
-            <summary class="overview-item">
-                <span class="section-num" aria-hidden="true">02</span>
-                <h2 class="overview-title">Deadlines</h2>
-                <span class="overview-text">US and EU executive orders and recommendations.</span>
-                <span class="overview-cta">Learn more</span>
-            </summary>
-            <div class="chapter-body">
-                <!-- Regulatory section. Each date is a <details> on a vertical line: closed by default, so
-                     the section stays short. script.js marks the dates already past and puts a "today"
-                     marker on the line; without scripts the dates still open and close. -->
-                <section class="section">
-                    <h2>The deadlines are already set</h2>
+
+                    <h2 id="compliance">The dates are already set</h2>
                     <p class="section-subheading">These are not just predictions. In the US and the EU, institutions have published guidance and requirements with set dates for replacing vulnerable cryptography.</p>
 
                     <ol class="deadlines" data-label-now="Today">
@@ -340,28 +292,28 @@
         </details>
         <details class="chapter" id="how-it-works">
             <summary class="overview-item">
-                <span class="section-num" aria-hidden="true">03</span>
-                <h2 class="overview-title">How it works</h2>
+                <span class="section-num" aria-hidden="true">02</span>
+                <h2 class="overview-title">Your guide</h2>
                 <span class="overview-text">An easy five-step process.</span>
                 <span class="overview-cta">Learn more</span>
             </summary>
             <div class="chapter-body">
                 <!-- How it works section -->
                 <section class="section">
-                    <h2>How Quantsiv Works</h2>
-                    <p class="section-subheading">Five steps, from scanning your code to a migration tested in a working copy of it.</p>
+                    <h2>From the audit to the migration copy, hand in hand</h2>
+                    <p class="section-subheading">Five steps in your CI. Quantsiv finds each vulnerability, ranks it, drafts the change and tests it in a working copy of your code, before anyone touches the real one.</p>
                     <div class="process-steps">
                         <div class="step">
-                            <h3>1. Discover</h3>
-                            <p>Quantsiv runs in your CI by default, so your code stays in your environment, and Quantsiv receives the CBOM and the finding details only if you choose to upload them. Quantsiv also scans public repositories on its own servers.<a href="#hosted-note" class="footnote-ref" aria-label="Note on private repositories">*</a></p>
+                            <h3>1. Audit</h3>
+                            <p>Quantsiv runs in your CI by default, so your code stays in your environment, and Quantsiv receives the CBOM and the finding details only if you choose to upload them. Quantsiv also scans public repositories on its own servers.<a href="#hosted-note" class="footnote-ref" aria-label="Note on private repositories">*</a> The first build gives you the inventory: the quantum-vulnerable cryptography in your code, keys, certificates and configuration.</p>
                         </div>
                         <div class="step">
-                            <h3>2. Analyze</h3>
-                            <p>Each finding is checked against quantum-vulnerable algorithms and ranked by its retention period.</p>
+                            <h3>2. Rank</h3>
+                            <p>Each finding goes on its own clock: encryption and key exchange by how long the data must stay secret, signatures by how long they must stay trusted. The most urgent come first.</p>
                         </div>
                         <div class="step">
-                            <h3>3. Rank</h3>
-                            <p>For each finding, Quantsiv explains the priority and the standard to migrate to.</p>
+                            <h3>3. Plan</h3>
+                            <p>For each finding, where the use is clear, Quantsiv names the standard to move to: ML-KEM, ML-DSA or SLH-DSA, with hybrid key exchange during the transition.</p>
                         </div>
                         <div class="step">
                             <h3>4. Document</h3>
@@ -382,7 +334,7 @@
                          steps into controls. -->
                     <figure class="demo" id="demo" aria-labelledby="demo-title">
                         <figcaption class="demo-caption">
-                            <h3 id="demo-title">Example finding</h3>
+                            <h3 id="demo-title">One finding, from the audit to the tested change</h3>
                             <p class="demo-output-label">Output<a href="#demo-footnote" class="footnote-ref" aria-label="Note on the results">*</a></p>
                         </figcaption>
                         <div class="demo-window">
@@ -632,10 +584,54 @@
                 </section>
             </div>
         </details>
+        <details class="chapter" id="timeline">
+            <summary class="overview-item">
+                <span class="section-num" aria-hidden="true">03</span>
+                <h2 class="overview-title">Weeks, not years</h2>
+                <span class="overview-text">The plan's first two years, in weeks in your CI: our estimate.</span>
+                <span class="overview-cta">Learn more</span>
+            </summary>
+            <div class="chapter-body">
+                <!-- The same migration by hand and in CI (2 Nov 2026): the by-hand years from the US federal
+                     plan and our estimate, labelled as such; a chapter of its own since 3 Nov 2026 -->
+                <section class="section timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">The same migration, by hand and in your CI</h2>
+        <p class="timeline-lead">NIST writes that the journey from a new standard to its integration in information systems can take 10 to 20 years, and that this more complex migration will likely take at least as long as past ones (NIST IR 8547, October 2026). The US federal plan gives it nine years, 2026 to 2035, in five phases (OMB M-26-15, 24 Jun 2026). The inventory recurs: the 2022 memo directed agencies to submit a prioritised inventory of the systems with quantum-vulnerable cryptography by 4 May 2023 and every year after until 2035 (OMB M-23-02, 18 Nov 2022); the 2026 plan calls for one maintained through automated tools wherever possible (OMB M-26-15).</p>
+        <div class="tl">
+            <div class="tl-hand">
+                <h3 class="tl-label">By hand <span>the US federal plan (OMB M-26-15), 2026 to 2035</span></h3>
+                <div class="tl-track">
+                <ol class="tl-ms">
+                <li class="tl-y2026"><span class="tl-when">2026 to 2027</span><span class="tl-what">Strategy, planning and discovery</span></li>
+                <li class="tl-y2027"><span class="tl-when">2027 to 2028</span><span class="tl-what">Pilots and early migration</span></li>
+                <li class="tl-y2028"><span class="tl-when">2028 to 2030</span><span class="tl-what">Prioritised migration</span></li>
+                <li class="tl-y2031"><span class="tl-when">2031</span><span class="tl-what">Signature migration</span></li>
+                <li class="tl-y2035"><span class="tl-when">2035</span><span class="tl-what">Full migration</span></li>
+                </ol>
+                <ol class="tl-axis" aria-hidden="true"><li>2026</li><li>2027</li><li>2028</li><li>2029</li><li>2030</li><li>2031</li><li>2032</li><li>2033</li><li>2034</li><li>2035</li></ol>
+                </div>
+            </div>
+            <div class="tl-under">
+                <div class="tl-zoom">
+                <h3 class="tl-label tl-label-ci">With Quantsiv <span>the first weeks*, zoomed in: audit to migration copy</span></h3>
+                <ol class="tl-steps">
+                <li><strong>Audit</strong><span>the first build: a CBOM of what is there, each finding ranked on its own clock</span></li>
+                <li><strong>Siv drafts</strong><span>each finding read in context, a fix drafted where the target is clear</span></li>
+                <li><strong>The harness tests</strong><span>the migration in a working copy of your code</span></li>
+                <li><strong>Migration copy</strong><span>the change tested, a pilot ready</span></li>
+                </ol>
+                </div>
+                <p class="tl-estimate"><span class="tl-est-label">Estimate* · inventory to pilot</span><span class="tl-est-line">two years by the plan, weeks in your CI</span><strong class="tl-est-big">over 90% shorter</strong></p>
+            </div>
+        </div>
+        <p class="section-footnote">*Estimate. The years are the US federal plan's phases (OMB M-26-15, 24 Jun 2026) and NIST IR 8547 (October 2026); the weeks are our estimate for the inventory, the ranking and a tested pilot, against the plan's two years for the same work, 2026 to 2028.</p>
+                </section>
+            </div>
+        </details>
         <details class="chapter" id="capabilities">
             <summary class="overview-item">
                 <span class="section-num" aria-hidden="true">04</span>
-                <h2 class="overview-title">Features</h2>
+                <h2 class="overview-title">Under the hood</h2>
                 <span class="overview-text">Built for the quantum era.</span>
                 <span class="overview-cta">Learn more</span>
             </summary>

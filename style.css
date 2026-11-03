@@ -773,8 +773,13 @@ a {
 /* The same migration by hand and in CI (2 Nov 2026): since 3 Nov 2026 a milestone timeline on a
    year axis with the plan's phases by hand, and a zoom panel under its start for Quantsiv's first
    weeks (design F, the founder's pick for the deck's slide 5, mirrored here) */
-.timeline {
-    padding-top: 4rem;
+.chapter-body .timeline {
+    padding-top: 0;
+}
+
+/* The dates follow the threats in chapter 01 (3 Nov 2026) */
+.hndl-timeline + h2 {
+    margin-top: 3.5rem;
 }
 
 .timeline h2 {

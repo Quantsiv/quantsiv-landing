@@ -358,8 +358,12 @@ stand until the founder changes them:
 - The search title and description (the founder's pick, 19 Oct 2026) name what Quantsiv finds,
   because the tagline names no product category: `<title>` "Quantsiv - Find quantum-vulnerable
   cryptography in your code" and a description of about 155 characters, translated in `nl/` and
-  `it/`. Keep each description short enough not to be cut mid-sentence, and mapped to "What the
-  page may say". The Open Graph tags keep the tagline and the longer description.
+  `it/`. Since the narrative rework of 3 Nov 2026 (his "yes to the options") the title is
+  "Quantsiv - From quantum vulnerabilities to a tested migration" and the description names the
+  journey: finds, ranks what to fix first, drafts the changes and tests the migration in a working
+  copy (Dutch and Italian likewise). Keep each description short enough not to be cut
+  mid-sentence, and mapped to "What the page may say". The Open Graph tags keep the tagline and
+  the longer description.
 - The page is written for non-technical readers first (17 Oct 2026): each heading and first
   sentence says what happens in plain words, and the technical terms follow, explained once.
   Keep that order when adding copy, and keep each plain sentence mapped to "What the page may
@@ -477,8 +481,10 @@ stand until the founder changes them:
   the marks belong to their owners; a name without a usable icon is a text chip). On 20 Oct 2026
   the founder chose layout B (cards that open) and removed the Swift, openssl, ssh-keygen and
   keytool chips; the card's sentence still names them. Since then the features section has no
-  sentence under its heading. In Italian the hero's first button reads "Missione".
-- The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases, one tailored journey." (29 Oct 2026, from his line "All in one tailored journey"; it was "Four phases planned for the years ahead."). Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles.
+  sentence under its heading. In Italian the hero's first button read "Missione" until the
+  narrative rework of 3 Nov 2026, when the first button became "Start the journey" ("Begin de
+  reis", "Inizia il percorso"), pointing at chapter 02.
+- The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases, one tailored journey." (29 Oct 2026, from his line "All in one tailored journey"; it was "Four phases planned for the years ahead."). Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles. Since the narrative rework of 3 Nov 2026 (his "The card summaries stays the same") the summaries are unchanged under the new chapter titles, the Deadlines card is gone (its chapter sits inside chapter 01) and the new chapter 03 reads "The plan's first two years, in weeks in your CI: our estimate."; see that entry.
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
@@ -572,7 +578,9 @@ stand until the founder changes them:
 - The migration timeline (2 Nov 2026, from his ask to show "a years long process estimation with
   and without Quantsiv", his pick "Timeline, no numbers of ours" on a decision card, and his
   instruction that evening to give the by-hand length in years and an estimated shortening): a
-  section under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the
+  section under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`), and
+  since the narrative rework of 3 Nov 2026 chapter 03, "Weeks, not years" (the `<details>` carries
+  `id="timeline"`): the
   heading "The same migration, by hand and in your CI", a lead with the sourced durations, since 3 Nov
   2026 (design F) a "By hand" card with the plan's five phases as milestones on a 2026 to 2035 axis
   (`.tl-ms`, each at its year's share of the axis, labels staggered on three levels by `--stem`;
@@ -592,6 +600,36 @@ stand until the founder changes them:
   agency's plan is an inventory of its cryptographic assets, maintained through automated tools
   wherever possible" (it said "must build an automated inventory", stronger than the memo's "should")
   and "Agency plans were due 120 days later, by 22 October 2026".
+- The narrative rework of 3 Nov 2026 (his decision, 04:58 UTC, that the site still read as "a
+  simple PQC tool that produces a CBOM and finds crypto vulnerabilities", and must tell the
+  end-to-end journey: the problem, "we guide you from audit to migration copy, hand in hand
+  through each vulnerability", "weeks instead of years"; his answers of 05:29 on the English
+  preview: "The card summaries stays the same, no change 5 of chapter 2, and yes to the
+  options"): the menu reads 01 Why now (`#threat`), 02 Your guide (`#how-it-works`), 03 Weeks,
+  not years (`#timeline`), 04 Under the hood (`#capabilities`), 05 Roadmap; the hero's first
+  button is "Start the journey" and opens chapter 02; the intro's third line is "Finding them is
+  the start. The migration is the work." and its second paragraph "This is where we come in.
+  Quantsiv walks you from the audit to a tested migration copy, hand in hand through each
+  vulnerability, in your own CI. Every build shows the exposed cryptography and how long it stays
+  exposed. Siv, the Quantsiv agent, drafts the changes. The harness tests the migration in a
+  working copy of your code before anyone touches the real one." (the Italian keeps his first two
+  lines and takes the third and the paragraph in translation); chapter 01 holds the two threats
+  and then the deadlines under "The dates are already set" (`<h2 id="compliance">`, so the old
+  links and `deadlines.html` still open the chapter), in the same `.section` so the stagger runs;
+  chapter 02's heading is "From the audit to the migration copy, hand in hand", its subheading
+  "Five steps in your CI. Quantsiv finds each vulnerability, ranks it, drafts the change and tests
+  it in a working copy of your code, before anyone touches the real one.", steps 1 to 3 are Audit
+  (his hosted sentence, then "The first build gives you the inventory: the quantum-vulnerable
+  cryptography in your code, keys, certificates and configuration."), Rank (the two clocks) and
+  Plan (the standard to move to, where the use is clear), and steps 4 "Document" and 5 "Migrate"
+  are his 1 Nov text unchanged (his "no change 5 of chapter 2"; the preview had split Siv's
+  drafting into step 4, which would have said it twice next to his step 5, so step 4 went back
+  too); the demo's heading is "One finding, from the audit to the tested change"; chapter 03 is
+  the timeline; chapter 04 is "Under the hood" with its cards as they were. The card summaries
+  stay. Kept off the page, as before: measured times, the client matrix, the downgrade paths, the
+  continuity checks and the release record; "a fix drafted where the target is clear", never a
+  fix for each finding. The preview branch's "The problem" title and summary changes, the
+  "Siv drafts" step and the CBOM card's SARIF sentence were dropped on his answers.
 
 ## Before every commit
 
