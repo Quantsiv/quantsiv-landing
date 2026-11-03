@@ -207,21 +207,25 @@ them. Do not add to them without the founder.
   then his instruction the same evening to give the by-hand length in years and an estimated
   shortening, labelled): the lead quotes NIST IR 8547 (Section 1, "10 to 20 years" from standardization to
   integration; Section 3, this migration "at least that long") and the US federal plan's nine
-  years in five phases (OMB M-26-15, 24 Jun 2026). The "By hand" row is the plan's phases with their years, verbatim from the memo's
-  Section 3.D: Strategy, Planning and Discovery 2026-2027 (on the page "Inventory and
-  assessment"), Pilots and Early Migration 2027-2028, Prioritized Migration 2028-2030 (key
-  establishment), Signature Migration 2031, Full Migration 2035. The "With Quantsiv" row is the
-  same five in your CI (the first build for the CBOM and the ranking; weeks for a pilot with Siv's
-  draft and the harness's test in a working copy; build by build after that), and the estimate
-  paragraph says "from the first inventory to a tested pilot, the federal plan allots two years,
-  2026 to 2028. In your CI that stretch takes weeks: over 90 percent shorter. The years after it
-  run build by build." (the same figure and basis as the deck's benefit slide, settled on 2 Nov
-  2026; an earlier draft said 40 to 60 percent of the whole migration). Every figure of ours
-  carries the "estimate" label and the footnote with the sources and the basis. No measured time of ours is on the page and no customer
-  migration has been measured. Since 3 Nov 2026 (his "Confirm OMB") the lead's third sentence gives the
-  inventory's recurrence from both memos, OMB M-23-02's "by 4 May 2023 and every year after until 2035"
-  and M-26-15's inventory "maintained through automated tools wherever possible", and the Quantsiv row's
-  inventory item says "the first build, and every build after". Write no "faster",
+  years in five phases (OMB M-26-15, 24 Jun 2026). The "By hand" track is the plan's five phases with their years, verbatim from the memo's
+  Section 3.D (Strategy, planning and discovery 2026 to 2027, Pilots and early migration 2027 to
+  2028, Prioritised migration 2028 to 2030, Signature migration 2031, Full migration 2035; Italian
+  "Migrazione finale" and Dutch "Eindmigratie" for the last, because "completa" and "volledig" are
+  in the wording table), as milestones on a 2026 to 2035 axis since 3 Nov 2026 (design F, his pick
+  for the deck's slide 5, "pass it to landing"). Under the axis's start the "With Quantsiv" zoom
+  panel shows "the first weeks*, zoomed in: audit to migration copy" (his label) in four steps:
+  Audit (the first build: a CBOM of what is there, each finding ranked on its own clock), Siv
+  drafts (each finding read in context, a fix drafted), The harness tests (the migration in a
+  working copy of your code), Migration copy (the change tested, a pilot ready); no measured time
+  and no client matrix, which stay on the deck. The estimate is one small block: "Estimate* ·
+  inventory to pilot", "two years by the plan, weeks in your CI", "over 90% shorter" (the same
+  figure and basis as the deck's slide, settled on 2 Nov 2026; an earlier draft said 40 to 60
+  percent of the whole migration, and until 3 Nov the page carried the estimate as a paragraph).
+  Every figure of ours carries the "estimate" label and the footnote with the sources and the
+  basis. No measured time of ours is on the page and no customer migration has been measured.
+  Since 3 Nov 2026 (his "Confirm OMB") the lead's third sentence gives the inventory's recurrence
+  from both memos, OMB M-23-02's "by 4 May 2023 and every year after until 2035" and M-26-15's
+  inventory "maintained through automated tools wherever possible". Write no "faster",
   "guarantees" or "proves" around the estimate, and change the numbers only together with the deck.
 - Finds secp256k1 and Ed25519 signing keys, Schnorr signatures, and ECDH and ECIES key transport
   in common wallet libraries, and names the curve in the CBOM. On-chain signing keys get wallet
@@ -568,12 +572,17 @@ stand until the founder changes them:
   and without Quantsiv", his pick "Timeline, no numbers of ours" on a decision card, and his
   instruction that evening to give the by-hand length in years and an estimated shortening): a
   section under the intro, before the chapter cards (`#timeline`, `.tl-*` in `style.css`): the
-  heading "The same migration, by hand and in your CI", a lead with the sourced durations, a "By
-  hand" row of the federal plan's five phases with their years (`<ol>`, numbered by CSS counter),
-  a "With Quantsiv" row of the same five in your CI, the estimate paragraph (`.tl-estimate`) and
-  the footnote with the label, the sources and the assumptions. Earlier the same day the row had
+  heading "The same migration, by hand and in your CI", a lead with the sourced durations, since 3 Nov
+  2026 (design F) a "By hand" card with the plan's five phases as milestones on a 2026 to 2035 axis
+  (`.tl-ms`, each at its year's share of the axis, labels staggered on three levels by `--stem`;
+  the year ticks `.tl-axis` are decorative; under 760 px the milestones become a vertical list and
+  the axis is hidden), a glowing window at 2026 joined by a connector to the "With Quantsiv" zoom
+  panel (`.tl-zoom`, four steps `.tl-steps`, two to a row under 900 px and one under 480 px), the
+  estimate block (`.tl-estimate`, beside the panel, under it below 900 px) and the one-paragraph
+  footnote with the label, the sources and the assumptions. On 2 Nov the block was two rows of
+  five (an `<ol>` numbered by CSS counter and a list) with the estimate as a paragraph. Earlier the same day the row had
   no years, a dashed box on what stays with people and a footnote that no time saved is quoted;
-  he had them replaced. The phases go two to a row under 900 px and one under 480 px. Its copy is
+  he had them replaced. Its copy is
   in "What the page may say"; the deck's benefit slide carries the same numbers, so change them
   together.
   On 3 Nov 2026, on his "Confirm OMB", every OMB citation was checked against the two memos: the

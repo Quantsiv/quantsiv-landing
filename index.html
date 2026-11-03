@@ -173,29 +173,33 @@
         <h2 id="timeline-heading">The same migration, by hand and in your CI</h2>
         <p class="timeline-lead">NIST writes that the journey from a new standard to its integration in information systems can take 10 to 20 years, and that this more complex migration will likely take at least as long as past ones (NIST IR 8547, October 2026). The US federal plan gives it nine years, 2026 to 2035, in five phases (OMB M-26-15, 24 Jun 2026). The inventory recurs: the 2022 memo directed agencies to submit a prioritised inventory of the systems with quantum-vulnerable cryptography by 4 May 2023 and every year after until 2035 (OMB M-23-02, 18 Nov 2022); the 2026 plan calls for one maintained through automated tools wherever possible (OMB M-26-15).</p>
         <div class="tl">
-            <div class="tl-row tl-hand">
-                <h3 class="tl-label">By hand <span>nine years, phase by phase, as the US federal plan lays them out</span></h3>
-                <ol class="tl-phases">
-                <li><strong>Inventory and assessment</strong><span>a year, 2026 to 2027</span></li>
-                <li><strong>Pilots and early migrations</strong><span>a year, 2027 to 2028</span></li>
-                <li><strong>Prioritised migration</strong><span>two years, 2028 to 2030, for key establishment</span></li>
-                <li><strong>Signatures</strong><span>2031</span></li>
-                <li><strong>The rest</strong><span>by 2035</span></li>
+            <div class="tl-hand">
+                <h3 class="tl-label">By hand <span>the US federal plan (OMB M-26-15), 2026 to 2035</span></h3>
+                <div class="tl-track">
+                <ol class="tl-ms">
+                <li class="tl-y2026"><span class="tl-when">2026 to 2027</span><span class="tl-what">Strategy, planning and discovery</span></li>
+                <li class="tl-y2027"><span class="tl-when">2027 to 2028</span><span class="tl-what">Pilots and early migration</span></li>
+                <li class="tl-y2028"><span class="tl-when">2028 to 2030</span><span class="tl-what">Prioritised migration</span></li>
+                <li class="tl-y2031"><span class="tl-when">2031</span><span class="tl-what">Signature migration</span></li>
+                <li class="tl-y2035"><span class="tl-when">2035</span><span class="tl-what">Full migration</span></li>
                 </ol>
+                <ol class="tl-axis" aria-hidden="true"><li>2026</li><li>2027</li><li>2028</li><li>2029</li><li>2030</li><li>2031</li><li>2032</li><li>2033</li><li>2034</li><li>2035</li></ol>
+                </div>
             </div>
-            <div class="tl-row tl-ci">
-                <h3 class="tl-label">With Quantsiv <span>in your CI, our estimate*</span></h3>
-                <ul class="tl-stack">
-                    <li><strong>Inventory and ranking</strong><span>the first build, and every build after: a CBOM of what is there, each finding ranked on its own clock</span></li>
-                    <li><strong>Pilots</strong><span>weeks: Siv drafts the change and the harness tests the migration in a working copy of your code</span></li>
-                    <li><strong>Prioritised migration</strong><span>build by build: each change gated, each declared migration tested, the release record written</span></li>
-                    <li><strong>Signatures</strong><span>the same cycle, on the signature clock</span></li>
-                    <li><strong>The rest</strong><span>the same cycle, to the last system</span></li>
-                </ul>
+            <div class="tl-under">
+                <div class="tl-zoom">
+                <h3 class="tl-label tl-label-ci">With Quantsiv <span>the first weeks*, zoomed in: audit to migration copy</span></h3>
+                <ol class="tl-steps">
+                <li><strong>Audit</strong><span>the first build: a CBOM of what is there, each finding ranked on its own clock</span></li>
+                <li><strong>Siv drafts</strong><span>each finding read in context, a fix drafted</span></li>
+                <li><strong>The harness tests</strong><span>the migration in a working copy of your code</span></li>
+                <li><strong>Migration copy</strong><span>the change tested, a pilot ready</span></li>
+                </ol>
+                </div>
+                <p class="tl-estimate"><span class="tl-est-label">Estimate* · inventory to pilot</span><span class="tl-est-line">two years by the plan, weeks in your CI</span><strong class="tl-est-big">over 90% shorter</strong></p>
             </div>
         </div>
-        <p class="tl-estimate">Our estimate*: from the first inventory to a tested pilot, the federal plan allots two years, 2026 to 2028. In your CI that stretch takes weeks: over 90 percent shorter. The years after it run build by build.</p>
-        <p class="section-footnote">*Estimates. By hand: the US federal plan's phases (OMB M-26-15, 24 Jun 2026) and NIST's record of past migrations (NIST IR 8547, October 2026). With Quantsiv: our estimate, weeks for the inventory, the ranking and a tested pilot, against the plan's two years for the same work.</p>
+        <p class="section-footnote">*Estimate. The years are the US federal plan's phases (OMB M-26-15, 24 Jun 2026) and NIST IR 8547 (October 2026); the weeks are our estimate for the inventory, the ranking and a tested pilot, against the plan's two years for the same work, 2026 to 2028.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the

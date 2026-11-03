@@ -173,29 +173,33 @@
         <h2 id="timeline-heading">Dezelfde migratie, met de hand en in je CI</h2>
         <p class="timeline-lead">NIST schrijft dat de weg van een nieuwe standaard tot de invoering in de informatiesystemen 10 tot 20 jaar kan duren, en dat deze complexere migratie waarschijnlijk minstens zo lang duurt als eerdere (NIST IR 8547, oktober 2026). Het Amerikaanse federale plan geeft er negen jaar voor, van 2026 tot 2035, in vijf fasen (OMB M-26-15, 24 jun 2026). De inventaris komt terug: het memorandum van 2022 droeg de instanties op uiterlijk 4 mei 2023 en daarna elk jaar tot 2035 een geprioriteerde inventaris in te dienen van de systemen met cryptografie die voor quantumcomputers kwetsbaar is (OMB M-23-02, 18 nov 2022); het plan van 2026 vraagt om een inventaris die waar mogelijk met geautomatiseerde tools wordt bijgehouden (OMB M-26-15).</p>
         <div class="tl">
-            <div class="tl-row tl-hand">
-                <h3 class="tl-label">Met de hand <span>negen jaar, fase voor fase, zoals het Amerikaanse federale plan ze uitzet</span></h3>
-                <ol class="tl-phases">
-                <li><strong>Inventaris en beoordeling</strong><span>een jaar, 2026 tot 2027</span></li>
-                <li><strong>Pilots en eerste migraties</strong><span>een jaar, 2027 tot 2028</span></li>
-                <li><strong>Migratie op prioriteit</strong><span>twee jaar, 2028 tot 2030, voor sleuteluitwisseling</span></li>
-                <li><strong>Handtekeningen</strong><span>2031</span></li>
-                <li><strong>De rest</strong><span>uiterlijk 2035</span></li>
+            <div class="tl-hand">
+                <h3 class="tl-label">Met de hand <span>het Amerikaanse federale plan (OMB M-26-15), 2026 tot 2035</span></h3>
+                <div class="tl-track">
+                <ol class="tl-ms">
+                <li class="tl-y2026"><span class="tl-when">2026 tot 2027</span><span class="tl-what">Strategie, planning en verkenning</span></li>
+                <li class="tl-y2027"><span class="tl-when">2027 tot 2028</span><span class="tl-what">Pilots en eerste migraties</span></li>
+                <li class="tl-y2028"><span class="tl-when">2028 tot 2030</span><span class="tl-what">Migratie op prioriteit</span></li>
+                <li class="tl-y2031"><span class="tl-when">2031</span><span class="tl-what">Migratie van handtekeningen</span></li>
+                <li class="tl-y2035"><span class="tl-when">2035</span><span class="tl-what">Eindmigratie</span></li>
                 </ol>
+                <ol class="tl-axis" aria-hidden="true"><li>2026</li><li>2027</li><li>2028</li><li>2029</li><li>2030</li><li>2031</li><li>2032</li><li>2033</li><li>2034</li><li>2035</li></ol>
+                </div>
             </div>
-            <div class="tl-row tl-ci">
-                <h3 class="tl-label">Met Quantsiv <span>in je CI, onze schatting*</span></h3>
-                <ul class="tl-stack">
-                    <li><strong>Inventaris en rangschikking</strong><span>de eerste build, en elke build erna: een CBOM van wat er is, elke bevinding gerangschikt op haar eigen klok</span></li>
-                    <li><strong>Pilots</strong><span>weken: Siv stelt de wijziging op en de harness test de migratie in een werkkopie van je code</span></li>
-                    <li><strong>Migratie op prioriteit</strong><span>build na build: elke wijziging door de gate, elke gedeclareerde migratie getest, het releaseverslag geschreven</span></li>
-                    <li><strong>Handtekeningen</strong><span>dezelfde cyclus, op de klok van de handtekeningen</span></li>
-                    <li><strong>De rest</strong><span>dezelfde cyclus, tot het laatste systeem</span></li>
-                </ul>
+            <div class="tl-under">
+                <div class="tl-zoom">
+                <h3 class="tl-label tl-label-ci">Met Quantsiv <span>de eerste weken*, ingezoomd: van audit tot migratiekopie</span></h3>
+                <ol class="tl-steps">
+                <li><strong>Audit</strong><span>de eerste build: een CBOM van wat er is, elke bevinding gerangschikt op haar eigen klok</span></li>
+                <li><strong>Siv stelt op</strong><span>elke bevinding in haar context gelezen, een fix opgesteld</span></li>
+                <li><strong>De harness test</strong><span>de migratie in een werkkopie van je code</span></li>
+                <li><strong>Migratiekopie</strong><span>de wijziging getest, een pilot klaar</span></li>
+                </ol>
+                </div>
+                <p class="tl-estimate"><span class="tl-est-label">Schatting* · van inventaris tot pilot</span><span class="tl-est-line">twee jaar volgens het plan, weken in je CI</span><strong class="tl-est-big">meer dan 90% korter</strong></p>
             </div>
         </div>
-        <p class="tl-estimate">Onze schatting*: van de eerste inventaris tot een geteste pilot trekt het federale plan twee jaar uit, 2026 tot 2028. In je CI kost dat stuk weken: meer dan 90 procent korter. De jaren erna lopen build na build.</p>
-        <p class="section-footnote">*Schattingen. Met de hand: de fasen van het Amerikaanse federale plan (OMB M-26-15, 24 jun 2026) en wat NIST over eerdere migraties vastlegt (NIST IR 8547, oktober 2026). Met Quantsiv: onze schatting, weken voor de inventaris, de rangschikking en een geteste pilot, tegenover de twee jaar van het plan voor hetzelfde werk.</p>
+        <p class="section-footnote">*Schatting. De jaren zijn de fasen van het Amerikaanse federale plan (OMB M-26-15, 24 jun 2026) en NIST IR 8547 (oktober 2026); de weken zijn onze schatting voor de inventaris, de rangschikking en een geteste pilot, tegenover de twee jaar van het plan voor hetzelfde werk, 2026 tot 2028.</p>
     </section>
 
     <!-- Chapters: a stack of cards, one per chapter. Each card is a <details> that holds the
