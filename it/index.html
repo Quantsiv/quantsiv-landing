@@ -171,7 +171,7 @@
          by-hand years from the US federal plan and our estimate, labelled as such -->
     <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
         <h2 id="timeline-heading">La stessa migrazione, a mano e nella tua CI</h2>
-        <p class="timeline-lead">Il NIST scrive che il percorso da un nuovo standard alla sua integrazione nei sistemi informativi può richiedere da 10 a 20 anni, e che questa migrazione, più complessa, richiederà probabilmente almeno quanto le precedenti (NIST IR 8547, ottobre 2026). Il piano federale statunitense le dà nove anni, dal 2026 al 2035, in cinque fasi (OMB M-26-15, 24 giu 2026).</p>
+        <p class="timeline-lead">Il NIST scrive che il percorso da un nuovo standard alla sua integrazione nei sistemi informativi può richiedere da 10 a 20 anni, e che questa migrazione, più complessa, richiederà probabilmente almeno quanto le precedenti (NIST IR 8547, ottobre 2026). Il piano federale statunitense le dà nove anni, dal 2026 al 2035, in cinque fasi (OMB M-26-15, 24 giu 2026). L&rsquo;inventario si ripete: il memorandum del 2022 ha disposto che le agenzie presentassero un inventario con priorità dei sistemi con crittografia vulnerabile ai computer quantistici entro il 4 mag 2023 e poi ogni anno fino al 2035 (OMB M-23-02, 18 nov 2022); il piano del 2026 ne chiede uno mantenuto con strumenti automatizzati ove possibile (OMB M-26-15).</p>
         <div class="tl">
             <div class="tl-row tl-hand">
                 <h3 class="tl-label">A mano <span>nove anni, fase per fase, come le dispone il piano federale statunitense</span></h3>
@@ -186,7 +186,7 @@
             <div class="tl-row tl-ci">
                 <h3 class="tl-label">Con Quantsiv <span>nella tua CI, la nostra stima*</span></h3>
                 <ul class="tl-stack">
-                    <li><strong>Inventario e classificazione</strong><span>la prima build: una CBOM di ciò che c'è, ogni rilevamento classificato sul proprio orologio</span></li>
+                    <li><strong>Inventario e classificazione</strong><span>la prima build, e ogni build successiva: una CBOM di ciò che c'è, ogni rilevamento classificato sul proprio orologio</span></li>
                     <li><strong>Piloti</strong><span>settimane: Siv propone la modifica e l'harness mette alla prova la migrazione in una copia di lavoro del tuo codice</span></li>
                     <li><strong>Migrazione prioritaria</strong><span>build dopo build: ogni modifica passa dal gate, ogni migrazione dichiarata viene testata, il registro di rilascio viene scritto</span></li>
                     <li><strong>Firme</strong><span>lo stesso ciclo, sull'orologio delle firme</span></li>
@@ -290,7 +290,7 @@
                         <li class="deadline" data-date="2026-06-24">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">24 giugno 2026</span> <h3 class="deadline-title">OMB M-26-15: migrazione federale per fasi</h3></summary>
-                                <p>Le agenzie federali dovranno creare un inventario automatizzato, i cui dati dovrebbero confluire in un inventario centrale dei componenti crittografici (CBOM, <span lang="en">Cryptographic Bill of Materials</span>). I piani delle agenzie dovranno essere presentati entro il 22 ottobre 2026. La migrazione è articolata in cinque fasi, dal 2026 al 2035.</p>
+                                <p>La base del piano di ogni agenzia è un inventario dei suoi componenti crittografici, mantenuto con strumenti automatizzati ove possibile, i cui dati dovrebbero confluire in un inventario centrale dei componenti crittografici (CBOM, <span lang="en">Cryptographic Bill of Materials</span>). I piani delle agenzie andavano presentati 120 giorni dopo, entro il 22 ottobre 2026. La migrazione è articolata in cinque fasi, dal 2026 al 2035.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-10-27">
@@ -324,6 +324,7 @@
                         <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
                         <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 nel Federal Register</a>;
                         <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+                        <a href="https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-23-02</a>;
                         <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547 (ottobre 2026)</a> e <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">la prima bozza pubblica (novembre 2024)</a>;
                         <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener" lang="en">CISA Post-Quantum Cryptography Initiative</a>;
                         <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;

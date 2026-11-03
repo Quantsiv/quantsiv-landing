@@ -171,7 +171,7 @@
          by-hand years from the US federal plan and our estimate, labelled as such -->
     <section class="section timeline" id="timeline" aria-labelledby="timeline-heading">
         <h2 id="timeline-heading">Dezelfde migratie, met de hand en in je CI</h2>
-        <p class="timeline-lead">NIST schrijft dat de weg van een nieuwe standaard tot de invoering in de informatiesystemen 10 tot 20 jaar kan duren, en dat deze complexere migratie waarschijnlijk minstens zo lang duurt als eerdere (NIST IR 8547, oktober 2026). Het Amerikaanse federale plan geeft er negen jaar voor, van 2026 tot 2035, in vijf fasen (OMB M-26-15, 24 jun 2026).</p>
+        <p class="timeline-lead">NIST schrijft dat de weg van een nieuwe standaard tot de invoering in de informatiesystemen 10 tot 20 jaar kan duren, en dat deze complexere migratie waarschijnlijk minstens zo lang duurt als eerdere (NIST IR 8547, oktober 2026). Het Amerikaanse federale plan geeft er negen jaar voor, van 2026 tot 2035, in vijf fasen (OMB M-26-15, 24 jun 2026). De inventaris komt terug: het memorandum van 2022 droeg de instanties op uiterlijk 4 mei 2023 en daarna elk jaar tot 2035 een geprioriteerde inventaris in te dienen van de systemen met cryptografie die voor quantumcomputers kwetsbaar is (OMB M-23-02, 18 nov 2022); het plan van 2026 vraagt om een inventaris die waar mogelijk met geautomatiseerde tools wordt bijgehouden (OMB M-26-15).</p>
         <div class="tl">
             <div class="tl-row tl-hand">
                 <h3 class="tl-label">Met de hand <span>negen jaar, fase voor fase, zoals het Amerikaanse federale plan ze uitzet</span></h3>
@@ -186,7 +186,7 @@
             <div class="tl-row tl-ci">
                 <h3 class="tl-label">Met Quantsiv <span>in je CI, onze schatting*</span></h3>
                 <ul class="tl-stack">
-                    <li><strong>Inventaris en rangschikking</strong><span>de eerste build: een CBOM van wat er is, elke bevinding gerangschikt op haar eigen klok</span></li>
+                    <li><strong>Inventaris en rangschikking</strong><span>de eerste build, en elke build erna: een CBOM van wat er is, elke bevinding gerangschikt op haar eigen klok</span></li>
                     <li><strong>Pilots</strong><span>weken: Siv stelt de wijziging op en de harness test de migratie in een werkkopie van je code</span></li>
                     <li><strong>Migratie op prioriteit</strong><span>build na build: elke wijziging door de gate, elke gedeclareerde migratie getest, het releaseverslag geschreven</span></li>
                     <li><strong>Handtekeningen</strong><span>dezelfde cyclus, op de klok van de handtekeningen</span></li>
@@ -290,7 +290,7 @@
                         <li class="deadline" data-date="2026-06-24">
                             <details name="deadlines">
                                 <summary><span class="deadline-date">24 jun 2026</span> <h3 class="deadline-title">OMB M-26-15: een federale migratie in fasen</h3></summary>
-                                <p>Federale instanties moeten een geautomatiseerde inventaris bouwen waarvan de gegevens &ldquo;<span lang="en">should populate a central Cryptographic Bill of Materials</span>&rdquo; (een centrale CBOM zouden moeten vullen). De plannen van de instanties moeten uiterlijk 22 okt 2026 zijn ingediend. De migratie verloopt in vijf fasen, van 2026 tot 2035.</p>
+                                <p>De basis van het plan van elke instantie is een inventaris van haar cryptografische middelen, waar mogelijk bijgehouden met geautomatiseerde tools, waarvan de gegevens &ldquo;<span lang="en">should populate a central Cryptographic Bill of Materials</span>&rdquo; (een centrale CBOM zouden moeten vullen). De plannen van de instanties moesten 120 dagen later zijn ingediend, uiterlijk 22 okt 2026. De migratie verloopt in vijf fasen, van 2026 tot 2035.</p>
                             </details>
                         </li>
                         <li class="deadline" data-date="2026-10-27">
@@ -324,6 +324,7 @@
                         <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>;
                         <a href="https://www.federalregister.gov/documents/2026/06/25/2026-12909/securing-the-nation-against-advanced-cryptographic-attacks" target="_blank" rel="noopener">EO 14412 in het Federal Register</a>;
                         <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>;
+                        <a href="https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-23-02</a>;
                         <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547 (oktober 2026)</a> en <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">het eerste openbare concept (november 2024)</a>;
                         <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>;
                         <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>;
