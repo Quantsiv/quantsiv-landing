@@ -215,7 +215,8 @@ them. Do not add to them without the founder.
   for the deck's slide 5, "pass it to landing"). Under the axis's start the "With Quantsiv" zoom
   panel shows "the first weeks*, zoomed in: audit to migration copy" (his label) in four steps:
   Audit (the first build: a CBOM of what is there, each finding ranked on its own clock), Siv
-  drafts (each finding read in context, a fix drafted), The harness tests (the migration in a
+  drafts (each finding read in context, a fix drafted where the target is clear: most findings get
+  guidance, not a diff, by design), The harness tests (the migration in a
   working copy of your code), Migration copy (the change tested, a pilot ready); no measured time
   and no client matrix, which stay on the deck. The estimate is one small block: "Estimate* ·
   inventory to pilot", "two years by the plan, weeks in your CI", "over 90% shorter" (the same
