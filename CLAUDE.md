@@ -639,6 +639,18 @@ stand until the founder changes them:
   chapter 04 does; step 1 is his hosted sentence alone (the inventory sentence is gone; on his line of 16:51 UTC it reads "Quantsiv runs in your CI by default, so your code stays in your environment. It receives the CBOM and the finding details only if you choose to upload them, and scans public repositories on its own servers.", his words with a full stop and an "and"; the Italian is his own and he reviewed it); the
   timeline's lead is the one sentence above. The hero button "Start the journey", the intro and
   the other chapters stay. He reviews the Italian himself.
+  His Italian copy of that evening (21:13 UTC, Italian only): the hero reads "Da vulnerabilità
+  quantistiche a migrazione. Quantsiv è la tua guida.", the intro's first paragraph "La
+  crittografia di oggi non guiderà il futuro quantistico. Con le scadenze governative ormai
+  fissate, i processi di migrazione devono iniziare oggi. Trovare le vulnerabilità è solo
+  l'inizio. Il vero lavoro è migrare." and the second "È qui che entra in gioco Quantsiv. Ti
+  accompagna dall'audit ad una copia di migrazione del tuo codice. Ogni build mostra per quanto
+  tempo la crittografia resta esposta. Siv, l'agente di Quantsiv, propone le modifiche. ..."
+  (his "è stata esposta?" applied as "resta esposta", because the page shows how long the
+  cryptography stays exposed, not a past exposure, and "SIV" as "Siv"); the Italian menu and
+  cards read 01 "Il problema" and 04 "Funzionalità" while English and Dutch keep "Why now"
+  and "Under the hood", and the Italian card 03 says "Anni di migrazione pianificata in sole
+  poche settimane: la nostra stima." (his line, with the estimate label kept).
 
 ## Before every commit
 
