@@ -33,6 +33,7 @@
     --btn2-bg: #1a1a1c;
     --control-bg: #d4d4d0;
     --header-bg: rgba(12, 12, 13, 0.94);
+    --header-glass: rgba(12, 12, 13, 0.42);
     --link: #b4a3ff;
     --focus: #b4a3ff;
     --error: #ff9479;
@@ -127,7 +128,9 @@ a {
     border-radius: 4px;
 }
 
-/* Header */
+/* Header: glass over the page, like the cards (the founder's ask, 4 Nov 2026), so the purple
+   glow and the content scrolling under it show through blurred; solid where the browser cannot
+   blur or the reader prefers less transparency. The sheet's bar wears the same glass. */
 .site-header {
     position: sticky;
     top: 0;
@@ -137,8 +140,26 @@ a {
     align-items: center;
     gap: 2rem;
     padding: 0.875rem var(--gutter);
-    background-color: var(--header-bg);
+    background-color: var(--header-glass);
     border-bottom: 1px solid var(--line);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    backdrop-filter: blur(24px) saturate(1.2);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .site-header,
+    .sheet-bar {
+        background-color: var(--header-bg);
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .site-header,
+    .sheet-bar {
+        background-color: var(--header-bg);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
 }
 
 .brand-center a {
@@ -3321,7 +3342,9 @@ footer a {
     gap: 1rem;
     padding: 0.625rem max(1rem, env(safe-area-inset-right, 0px)) 0.625rem max(1rem, env(safe-area-inset-left, 0px));
     border-bottom: 1px solid var(--line);
-    background-color: var(--header-bg);
+    background-color: var(--header-glass);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    backdrop-filter: blur(24px) saturate(1.2);
 }
 
 .sheet-title {
