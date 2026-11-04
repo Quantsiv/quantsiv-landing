@@ -49,8 +49,11 @@
 
 .chapter[open] {
     --ch-bg: var(--surface);
+    --ch-glass: var(--surface);
     --ch-fg: var(--text);
     --ch-muted: var(--muted);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 }
 
 .overview-item::after {
