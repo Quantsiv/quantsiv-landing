@@ -507,6 +507,11 @@ stand until the founder changes them:
   repository, writes the two files with its `--transparent` option (an alpha mask feathers
   the edges where the vignette was) and the page shows through; the brand copies and the
   deck cover keep the black ground. Regenerate both files with that option, never by hand.
+  The header is the same glass since the same day (his "make the header transparent", 16:36
+  UTC: solid black looked off over the glow): `--header-glass` with a blur, the sheet's bar
+  too, solid `--header-bg` where the browser cannot blur or the reader prefers less
+  transparency; the phone's open menu panel stays solid, because it hangs under the header and
+  cannot blur what is behind it, so a tint would let the hero's text show through.
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
