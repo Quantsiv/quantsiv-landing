@@ -48,8 +48,7 @@
 }
 
 .chapter[open] {
-    --ch-bg: var(--text);
-    --ch-on: var(--bg);
+    --ch-bg: var(--surface);
     --ch-glass: var(--surface);
     --ch-fg: var(--text);
     --ch-muted: var(--muted);

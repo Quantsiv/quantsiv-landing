@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const cs = getComputedStyle(chapters[i]);
             return {
                 bg: cs.getPropertyValue('--ch-bg').trim(),
-                on: cs.getPropertyValue('--ch-on').trim(),
                 glass: cs.getPropertyValue('--ch-glass').trim(),
                 fg: cs.getPropertyValue('--ch-fg').trim(),
                 muted: cs.getPropertyValue('--ch-muted').trim()
@@ -202,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 nextLabel.textContent = labels.labelNext || 'Next chapter';
                 nextTitle.textContent = n.title;
                 next.style.setProperty('--ch-bg', c.bg);
-                next.style.setProperty('--ch-on', c.on);
                 next.style.setProperty('--ch-glass', c.glass);
                 next.style.setProperty('--ch-fg', c.fg);
                 next.style.setProperty('--ch-muted', c.muted);
@@ -214,10 +212,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 nextLabel.textContent = labels.labelAfter || 'Next step';
                 nextTitle.textContent = labels.labelWaitlist || 'Join the waitlist';
                 next.style.setProperty('--ch-bg', 'var(--accent-1)');
-                next.style.setProperty('--ch-on', 'var(--on-accent-1)');
-                next.style.setProperty('--ch-glass', 'rgba(106, 72, 245, 0.36)');
-                next.style.setProperty('--ch-fg', 'var(--text)');
-                next.style.setProperty('--ch-muted', 'rgba(244, 244, 241, 0.8)');
+                next.style.setProperty('--ch-glass', 'rgba(106, 72, 245, 0.78)');
+                next.style.setProperty('--ch-fg', '#ffffff');
+                next.style.setProperty('--ch-muted', 'rgba(255, 255, 255, 0.94)');
             }
             scroller.scrollTop = 0;
             progress.style.transform = 'scaleX(0)';
