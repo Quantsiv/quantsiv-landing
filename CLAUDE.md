@@ -501,6 +501,12 @@ stand until the founder changes them:
   background is still, so it needs no pause control; a drifting one would need the play/pause
   button below. Renders of the four designs and of the result are in the product folder
   (`product/website/previews-2026-11-04/`, not in this repository).
+  The hero drawing (`assets/hero-flow.svg` and its still frame) has had no ground of its own
+  since the same day, on his screenshot of the drawing's black box over the glow: the glow is
+  fixed to the window and the drawing scrolls up into it. Its generator, kept outside this
+  repository, writes the two files with its `--transparent` option (an alpha mask feathers
+  the edges where the vignette was) and the page shows through; the brand copies and the
+  deck cover keep the black ground. Regenerate both files with that option, never by hand.
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on
