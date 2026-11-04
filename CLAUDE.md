@@ -488,6 +488,19 @@ stand until the founder changes them:
   narrative rework of 3 Nov 2026, when the first button became "Start the journey" ("Begin de
   reis", "Inizia il percorso"), pointing at chapter 02.
 - The chapter summaries (24 Oct 2026, the founder's lines in all three languages; the Italian and Dutch are translations): the problem: "Harvest now, decrypt later, digital forge later and AI assistant prompt mistakes, which Siv helps fix." (25 Oct 2026, his choice of option B, with the name Siv: "AI assistant" means outside coding assistants, and Siv only drafts fixes a person approves, so Siv is never the source of the mistakes.) Deadlines: "US and EU executive orders and recommendations." (his wording, 24 Oct 2026, plural in all three languages, as he chose after a question about it). Our authority table has one US executive order (EO 14412) and one EU recommendation (NIS Cooperation Group, not law): the line names "EU executive orders" although the EU item is not one. Before any new deadline line, check it against the table; never write "laws" or "required" for the EU item. How it works: "An easy four-step process." Roadmap: "Four phases, one tailored journey." (29 Oct 2026, from his line "All in one tailored journey"; it was "Four phases planned for the years ahead."). Features keeps "Built for the quantum era." His "creep" and "assistance" were applied as "decrypt" and "assistant", to match the card titles. Since the narrative rework of 3 Nov 2026 (his "The card summaries stays the same") the summaries are unchanged under the new chapter titles, the Deadlines card is gone (its chapter sits inside chapter 01) and the new chapter 03 reads "The plan's first two years, in weeks in your CI: our estimate." (without ": our estimate" since 4 Nov 2026, his word); see that entry. On his review of the live page that afternoon the first card's line lost "which Siv helps fix".
+- Glass cards (4 Nov 2026, the founder's ask for "a glass background effect to the card and perhaps
+  a cool background", his pick of A's cards on B's background from four rendered designs): the
+  chapter cards and the contact box are frosted glass (`backdrop-filter`, a light tint of the
+  chapter's colour, a 1px edge and a top highlight) over a page background fixed behind everything
+  (`body::before`): a faint isometric grid like the hero's drawing, a purple glow at the top and a
+  teal one at the bottom, fading towards the edges. The type on every card is light; the chapter's
+  colour is worn by the number pill and the button (`--ch-bg` with `--ch-on`), and the card's tint
+  is `--ch-glass`; `script.js` copies the three to the sheet's end card, which wears the same
+  glass. Where the browser cannot blur, or the reader prefers reduced transparency, the cards are
+  solid; without scripts an open chapter's panel is solid too (`noscript.css`). The background is
+  still, so it needs no pause control; a drifting one would need the play/pause button below.
+  Renders of the four designs and of the mix are in the product folder
+  (`product/website/previews-2026-11-04/`, not in this repository).
 - One play/pause button at the hero pauses both the hero animation and the standards banner
   (WCAG success criterion 2.2.2, Pause, Stop, Hide). It shows only when motion is allowed, and
   its labels come from `data-label-pause` and `data-label-play`. The banner also pauses on

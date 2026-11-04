@@ -605,26 +605,78 @@ a {
     padding: 0 1.5rem 8rem;
 }
 
-/* One colour per chapter, from the palette, and its place in the stack */
-.chapter:nth-child(1) { --i: 0; --ch-bg: var(--card-1); --ch-fg: var(--card-1-fg); --ch-muted: #b9b9be; }
-.chapter:nth-child(2) { --i: 1; --ch-bg: var(--card-2); --ch-fg: var(--card-2-fg); --ch-muted: #4a4a50; }
-.chapter:nth-child(3) { --i: 2; --ch-bg: var(--accent-1); --ch-fg: #ffffff; --ch-muted: rgba(255, 255, 255, 0.94); }
-.chapter:nth-child(4) { --i: 3; --ch-bg: var(--accent-2); --ch-fg: #0c0c0d; --ch-muted: rgba(12, 12, 13, 0.78); }
-.chapter:nth-child(5) { --i: 4; --ch-bg: var(--accent-3); --ch-fg: #0c0c0d; --ch-muted: rgba(12, 12, 13, 0.78); }
+/* One colour per chapter, from the palette, and its place in the stack. Since 4 Nov 2026 the
+   cards are frosted glass (the founder's pick, design A): --ch-bg is the chapter's colour, worn by
+   the number and the button and copied to the sheet's end card, --ch-on the text on it, --ch-glass
+   the card's tint over the aurora behind the page, and the type on every card is light */
+.chapter:nth-child(1) { --i: 0; --ch-bg: var(--text); --ch-on: var(--bg); --ch-glass: rgba(244, 244, 241, 0.06); }
+.chapter:nth-child(2) { --i: 1; --ch-bg: var(--accent-4); --ch-on: var(--card-2-fg); --ch-glass: rgba(232, 229, 216, 0.18); }
+.chapter:nth-child(3) { --i: 2; --ch-bg: var(--accent-1); --ch-on: var(--on-accent-1); --ch-glass: rgba(106, 72, 245, 0.36); }
+.chapter:nth-child(4) { --i: 3; --ch-bg: var(--accent-2); --ch-on: var(--on-accent-2); --ch-glass: rgba(255, 122, 89, 0.3); }
+.chapter:nth-child(5) { --i: 4; --ch-bg: var(--accent-3); --ch-on: var(--on-accent-2); --ch-glass: rgba(47, 181, 156, 0.3); }
+
+/* Behind the whole page, fixed: a faint isometric grid like the hero's drawing, a purple glow
+   at the top and a teal one at the bottom, fading out towards the edges, so the glass has
+   something to show through (the founder's pick, 4 Nov 2026: A's cards on B's background).
+   Still, so it needs no pause control. */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(50% 42% at 50% 0%, color-mix(in srgb, var(--accent-1) 38%, transparent) 0%, transparent 100%),
+        radial-gradient(40% 36% at 100% 100%, color-mix(in srgb, var(--accent-3) 22%, transparent) 0%, transparent 100%),
+        repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.075) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(-60deg, rgba(255, 255, 255, 0.075) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 64px),
+        var(--bg);
+    -webkit-mask-image: radial-gradient(95% 85% at 50% 35%, #000 35%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0.2) 100%);
+    mask-image: radial-gradient(95% 85% at 50% 35%, #000 35%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0.2) 100%);
+}
 
 /* --stack-top is the header's height plus a little, measured by script.js; --cover, from 0 to
    1, is how far the next card has climbed over this one, set by script.js as the page scrolls */
 .chapter {
+    --ch-fg: var(--text);
+    --ch-muted: rgba(244, 244, 241, 0.8);
     position: sticky;
     top: calc(var(--stack-top, 5.25rem) + var(--i, 0) * 0.875rem);
     margin: 0 0 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 1.75rem;
-    background-color: var(--ch-bg);
+    background-color: var(--surface-2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0.02)),
+        var(--ch-glass);
     color: var(--ch-fg);
     transform-origin: 50% 0;
     transform: scale(calc(1 - var(--cover, 0) * 0.06));
-    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 -16px 40px rgba(0, 0, 0, 0.35), 0 40px 80px -40px rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(26px) saturate(1.5);
+    backdrop-filter: blur(26px) saturate(1.5);
     will-change: transform;
+}
+
+/* Where the glass cannot blur, or the reader asked for less transparency, the card is solid */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .chapter {
+        background: color-mix(in srgb, var(--ch-bg) 22%, var(--surface));
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .chapter {
+        background: color-mix(in srgb, var(--ch-bg) 22%, var(--surface));
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
 }
 
 .overview-item {
@@ -672,8 +724,8 @@ a {
 .overview-item > .section-num {
     grid-area: num;
     justify-self: start;
-    color: var(--ch-bg);
-    background-color: var(--ch-fg);
+    color: var(--ch-on);
+    background-color: var(--ch-bg);
 }
 
 .overview-title {
@@ -706,8 +758,8 @@ a {
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--ch-bg);
-    background-color: var(--ch-fg);
+    color: var(--ch-on);
+    background-color: var(--ch-bg);
 }
 
 .overview-cta::after {
@@ -2546,8 +2598,25 @@ a {
     padding: 4.5rem 2rem;
     border-radius: 16px;
     background-color: var(--surface);
-    box-shadow: inset 0 0 0 1px var(--line);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(26px) saturate(1.5);
+    backdrop-filter: blur(26px) saturate(1.5);
     text-align: center;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .newsletter {
+        background: var(--surface);
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .newsletter {
+        background: var(--surface);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
 }
 
 .newsletter h2 {
@@ -3409,9 +3478,16 @@ footer a {
     min-height: min(50vh, 24rem);
     margin: 1rem auto 0;
     padding: 2.25rem 2.5rem;
+    --ch-line: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 0;
     border-radius: 1.75rem 1.75rem 0 0;
     color: var(--ch-fg);
-    background-color: var(--ch-bg);
+    background-color: var(--surface-2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0.02)),
+        var(--ch-glass);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
     text-decoration: none;
 }
 
@@ -3422,8 +3498,8 @@ footer a {
 .sheet-next-num {
     grid-area: num;
     justify-self: start;
-    color: var(--ch-bg);
-    background-color: var(--ch-fg);
+    color: var(--ch-on);
+    background-color: var(--ch-bg);
 }
 
 .sheet-next-label {
@@ -3467,8 +3543,8 @@ footer a {
 }
 
 .sheet-next:hover .sheet-next-arrow {
-    color: var(--ch-bg);
-    background-color: var(--ch-fg);
+    color: var(--ch-on);
+    background-color: var(--ch-bg);
     box-shadow: none;
     transform: scale(1.08);
 }
