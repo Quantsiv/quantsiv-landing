@@ -62,6 +62,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
 ## Never put in this repository
 
 - Product source code, configuration, infrastructure details, credentials or secrets.
+- Internal design detail, or anything written for rivals to read. Every file here is public on
+  GitHub, and until the Pages source is set to GitHub Actions (see Publishing), quantsiv.com too.
 - Strategy, pricing, packaging, customer or partner names, logos or numbers, fundraising,
   internal plans, audit or security findings.
 - Names of, or comparisons with, other companies or products. Neutral references to standards,
@@ -93,6 +95,12 @@ CLAUDE.md and claims sheet, report the differences, and edit only this repositor
   Pages publishes it.
 - UTF-8, no BOM, LF line endings.
 - Commit messages are public: plain and short, no internal detail.
+- Publishing: `.github/workflows/pages.yml` builds the site from a list of files, so `CLAUDE.md`,
+  `ROADMAP.md` and `README.md` stay in the repository and off quantsiv.com. It goes live when the
+  founder sets Settings > Pages > Source to "GitHub Actions" and the repository variable
+  `PAGES_FROM_ACTIONS` to `true`; the first site deploy is then a manual run of the workflow. Until
+  then Pages serves the branch as before. A new top-level file must be added to the workflow's list
+  or its exclusions, or the build fails.
 - Keep the page accessible: `lang` on the root element, alt text on images, heading order, visible
   keyboard focus, and the scrolling banner must respect `prefers-reduced-motion`.
 - The standards banner holds two identical halves so the loop is seamless. Edit both together.
@@ -536,9 +544,7 @@ stand until the founder changes them:
   the Dutch mirrors them) and the October 2026 entry ends with one sentence that reads IR 8547 as the
   transition roadmap (four years to the first date, hybrid key exchange and TLS first, signatures on
   their own clock); roadmap Phase 1 opens with "Validated migration of Java services as the first
-  stack" and Phase 2 says "Validating one migration at a time, iteratively" (his copy, 28 Oct 2026). On his concern of the same day (well-funded rivals read the site) those two lines name
-  the direction only: the harness design (old and new clients, downgrade paths, data and signature
-  continuity, a release record) stays in the private deck and roadmap, never on the page. All in the
+  stack" and Phase 2 says "Validating one migration at a time, iteratively" (his copy, 28 Oct 2026). Those two lines name the direction only; internal design stays out of this repository. All in the
   future tense where the code is not merged: the validation harness is a plan, never a capability,
   until the product repository merges it. The demo's "Authority" lines still say
   "NIST IR 8547 (ipd)" because they are scanner output; they change when the scanner's explainer
@@ -574,7 +580,7 @@ stand until the founder changes them:
   roadmap lines: never move them into "How it works" or the capability grid until the product
   repository's claims sheet carries them. The product repository merged a rehearsal mode on 29 Oct
   2026 (a declared migration tried in a working copy, in the customer's CI); outside the roadmap the
-  page still says nothing about it, on the founder's 28 Oct concern about funded rivals.
+  page still says nothing about it.
 
 - The new narrative of 1 Nov 2026 (the founder's lines and his edits of a copy preview, thread
   "Reshape Quantsiv around the moat", merged on his "go ahead with those changes live"): the hero reads
@@ -598,9 +604,7 @@ stand until the founder changes them:
   request comment.") shares the last row with it; roadmap Phase 1 opens with "Migration testing for
   more stacks after Java services". He dropped from the preview: a new search title and description,
   a release-record card, a rewritten agent body, "Java services first" on the page, and the harness's
-  design on the card (what it tests is named in step 5 only). The 28 Oct line about keeping the harness
-  design off the page now covers the downgrade paths, the continuity checks and the record, which stay
-  in the private deck and roadmap. His note "a screenshot of the migration copy in the output" is a
+  design on the card (what it tests is named in step 5 only). Internal design stays out of this repository. His note "a screenshot of the migration copy in the output" is a
   follow-up: the demo is tool output, so it needs a real run of the sample repository.
 - The migration timeline (2 Nov 2026, from his ask to show "a years long process estimation with
   and without Quantsiv", his pick "Timeline, no numbers of ours" on a decision card, and his
@@ -653,8 +657,7 @@ stand until the founder changes them:
   drafting into step 4, which would have said it twice next to his step 5, so step 4 went back
   too); the demo's heading is "One finding, from the audit to the tested change"; chapter 03 is
   the timeline; chapter 04 is "Under the hood" with its cards as they were. The card summaries
-  stay. Kept off the page, as before: measured times, the client matrix, the downgrade paths, the
-  continuity checks and the release record; "a fix drafted where the target is clear", never a
+  stay. Kept off the page, as before: measured times and internal design; "a fix drafted where the target is clear", never a
   fix for each finding. The preview branch's "The problem" title and summary changes, the
   "Siv drafts" step and the CBOM card's SARIF sentence were dropped on his answers.
   His review of the live page (3 Nov 2026, 16:08 UTC, "we have a wording repeating over and over

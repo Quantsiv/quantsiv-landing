@@ -1,3 +1,9 @@
+// Clickjacking: a copy of this site framed by another page shows nothing. GitHub Pages cannot
+// send X-Frame-Options, and the Content-Security-Policy is a meta tag, which ignores frame-ancestors.
+if (window.top !== window.self) {
+    document.documentElement.hidden = true;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // The menu and the hero's first button are plain links to a chapter's card; the chapter code
     // below opens the chapter they point to.

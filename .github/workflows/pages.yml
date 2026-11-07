@@ -1,0 +1,67 @@
+# Publishes the site through GitHub Pages' Actions source, so only the files the site serves go
+# live. The repository is public, and Pages publishes every file on the branch it serves, which
+# would put CLAUDE.md, ROADMAP.md and README.md on quantsiv.com. Nothing changes on the domain
+# until the founder sets Settings > Pages > Source to "GitHub Actions" and the repository variable
+# PAGES_FROM_ACTIONS to "true" (CLAUDE.md, "Publishing").
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Runs for every change. It fails when a top-level file is neither published nor excluded,
+    # so a new file cannot reach the site unnoticed.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage the published site
+        run: |
+          set -euo pipefail
+          rm -rf _site && mkdir _site
+          cp -r 404.html deadlines.html features.html how-it-works.html index.html privacy.html \
+            problem.html roadmap.html thanks.html robots.txt sitemap.xml script.js style.css \
+            noscript.css CNAME .nojekyll 215276cdcc8e0adb2abad608094eece5.txt assets it nl _site/
+          for entry in $(ls -A); do
+            case "$entry" in
+              .git|.github|_site) continue ;;
+              CLAUDE.md|ROADMAP.md|README.md) continue ;;
+            esac
+            if [ ! -e "_site/$entry" ]; then
+              echo "::error::$entry is neither published nor excluded. Add it to the cp list or to the exclusions in pages.yml." >&2
+              exit 1
+            fi
+          done
+          for entry in CLAUDE.md ROADMAP.md README.md; do
+            if [ -e "_site/$entry" ]; then
+              echo "::error::$entry must not be published" >&2
+              exit 1
+            fi
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && vars.PAGES_FROM_ACTIONS == 'true')
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
