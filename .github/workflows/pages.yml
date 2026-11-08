@@ -1,8 +1,8 @@
 # Publishes the site through GitHub Pages' Actions source, so only the files the site serves go
 # live. The repository is public, and Pages publishes every file on the branch it serves, which
-# would put CLAUDE.md, ROADMAP.md and README.md on quantsiv.com. Nothing changes on the domain
-# until the founder sets Settings > Pages > Source to "GitHub Actions" and the repository variable
-# PAGES_FROM_ACTIONS to "true" (CLAUDE.md, "Publishing").
+# would put CLAUDE.md, ROADMAP.md and README.md on quantsiv.com. Since 8 Nov 2026 the Pages source
+# is "GitHub Actions" and the repository variable PAGES_FROM_ACTIONS is "true", so a push to main
+# deploys; without the variable only a manual run deploys (CLAUDE.md, "Publishing").
 name: Pages
 
 on:
