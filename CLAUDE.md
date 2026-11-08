@@ -3,7 +3,7 @@
 The public marketing site for Quantsiv: static HTML, CSS and JavaScript, served by GitHub Pages.
 
 **Everything in this repository is public**: every file, every branch and every commit message.
-Pages publishes the branch it is configured to serve, normally the default branch, within minutes.
+A push to the default branch goes live on quantsiv.com within minutes (see Publishing).
 Write as if a customer, a competitor and a regulator are all reading it.
 
 ## What this repository is
@@ -32,7 +32,8 @@ Write as if a customer, a competitor and a regulator are all reading it.
 - Dutch and Italian versions of the pages and the notice are in `nl/` and `it/`. See
   "Languages" below.
 - The site's address is https://quantsiv.com (`CNAME`). Use it in every link and never the
-  github.io address. Pages publishes every file on the branch, this one included.
+  github.io address. Pages publishes only the files `.github/workflows/pages.yml` lists, so this
+  one stays off the site, but it is public on GitHub.
 - Pre-launch. The waitlist form posts to Brevo and the page collects nothing else. Use the present tense for what the product
   does today and never for what is planned. Say "Join the waitlist", never "Get started", "Sign up",
   "Download" or "Free trial".
@@ -63,7 +64,7 @@ Write as if a customer, a competitor and a regulator are all reading it.
 
 - Product source code, configuration, infrastructure details, credentials or secrets.
 - Internal design detail, or anything written for rivals to read. Every file here is public on
-  GitHub, and until the Pages source is set to GitHub Actions (see Publishing), quantsiv.com too.
+  GitHub, whether or not the site publishes it.
 - Strategy, pricing, packaging, customer or partner names, logos or numbers, fundraising,
   internal plans, audit or security findings.
 - Names of, or comparisons with, other companies or products. Neutral references to standards,
@@ -96,11 +97,11 @@ CLAUDE.md and claims sheet, report the differences, and edit only this repositor
 - UTF-8, no BOM, LF line endings.
 - Commit messages are public: plain and short, no internal detail.
 - Publishing: `.github/workflows/pages.yml` builds the site from a list of files, so `CLAUDE.md`,
-  `ROADMAP.md` and `README.md` stay in the repository and off quantsiv.com. It goes live when the
-  founder sets Settings > Pages > Source to "GitHub Actions" and the repository variable
-  `PAGES_FROM_ACTIONS` to `true`; the first site deploy is then a manual run of the workflow. Until
-  then Pages serves the branch as before. A new top-level file must be added to the workflow's list
-  or its exclusions, or the build fails.
+  `ROADMAP.md` and `README.md` stay in the repository and off quantsiv.com. Since 8 Nov 2026 the
+  Pages source is "GitHub Actions" and the repository variable `PAGES_FROM_ACTIONS` is `true`, so
+  each push to the default branch deploys the site, and a manual run of the workflow deploys it
+  too. The custom domain is a Pages setting; the `CNAME` file is kept but no longer decides it. A
+  new top-level file must be added to the workflow's list or its exclusions, or the build fails.
 - Keep the page accessible: `lang` on the root element, alt text on images, heading order, visible
   keyboard focus, and the scrolling banner must respect `prefers-reduced-motion`.
 - The standards banner holds two identical halves so the loop is seamless. Edit both together.
