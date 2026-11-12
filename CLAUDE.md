@@ -152,6 +152,7 @@ document first.
 | OMB M-23-02, 18 Nov 2022 | Section II.A (checked against the PDF on 3 Nov 2026): "By May 4, 2023, and annually thereafter until 2035, or as directed by superseding guidance, agencies are directed to submit a prioritized inventory of information systems and assets, excluding national security systems, that contain CRQC-vulnerable cryptographic systems" to ONCD and CISA. It calls itself transitional guidance until NIST's standards were final, and no later memo names it as superseded. Quoted in the timeline's lead from 3 Nov 2026 (the founder's "Confirm OMB") until his cut of the lead that afternoon; since then only linked in the deadlines' sources |
 | EU NIS Cooperation Group roadmap, 23 Jun 2025, a recommendation | National strategies by end-2026, high-risk use cases by end-2030, as many systems as feasible by 2035 |
 | NSA CNSA 2.0 | Exclusive-use dates between 2030 and 2033, depending on the category. Verify against the current NSA advisory before quoting a single year |
+| "Post-quantum questions to ask your vendors: Evaluating third-party readiness for post-quantum cryptography", the Australian Signals Directorate's Australian Cyber Security Centre in partnership with CISA and NSA, November 2026 | Guidance for buyers, not a rule (checked against the PDF the founder supplied, 12 Nov 2026): questions an organisation can put to its vendors in procurement, contract renewals or ongoing vendor assurance, in five phases (Locate, Assess, Triage, Implement, Communicate). The first asks for a current inventory of cryptographic dependencies, "such as cryptographic bills of materials (CBOM) or equivalent artefacts". © Commonwealth of Australia 2026, CC BY 4.0. The page names it by author and month and quotes nothing from it; a quotation or a link needs the founder's word and a checked address |
 
 ## What the page may say
 
@@ -245,6 +246,16 @@ them. Do not add to them without the founder.
   guidance: moving to ML-DSA needs the chain's support, so until then avoid address reuse and keep
   signing behind one interface. It reads code, not the chain, so it cannot tell which keys are
   already exposed on-chain.
+- The buyers' questions sheet (12 Nov 2026, when the product merged it): buyers can now send
+  their software vendors a list of post-quantum questions (the guide in the authorities table,
+  November 2026). Quantsiv puts what your build shows under each question, in a sheet you
+  complete with your own answers. The sheet holds counts from the build's CBOM; some questions
+  are the vendor's alone, and the sheet says so under each. Write "what your build shows under
+  each question" or "a starting point for your answers", never "answers the questionnaire",
+  "compliant", "certified", "audit-ready", "proof" or "passes", and never "required" or
+  "must" for the guide, which is guidance. The sheet is not signed, Quantsiv assesses no
+  answer, and the guide's authors do not endorse Quantsiv: never suggest they do. Print no count
+  of questions a build bears on, because it changes with each build.
 - Flags test code instead of hiding it.
 - States its limits on the page: pattern matching misses aliased and dynamic calls, vendored code
   and dependencies. No separate limits document is public, so never write "we publish" or link to
@@ -683,6 +694,18 @@ stand until the founder changes them:
   the label: "The plan's first two years, in weeks in your CI.", "De eerste twee jaar van het
   plan, in weken in je CI.", "Anni di migrazione pianificata in sole poche settimane." The
   estimate label, the basis and the footnote stay inside the chapter, where the figures are.
+- The buyers' questions card (12 Nov 2026, on the founder's word of that night: "Built and
+  merge whatever you can [...], no need my permission, but make sure to keep the landing [...]
+  aligned"; he reviews it after the merge): a thirteenth card ends the features grid, after
+  "Migration testing", and takes the
+  last row on its own. English: "Buyers' post-quantum questions", "Buyers can now send their
+  software vendors a list of post-quantum questions (Australian Cyber Security Centre, with CISA
+  and NSA, November 2026). Quantsiv puts what your build shows under each question, in a sheet
+  you complete with your own answers." Dutch "Post-quantumvragen van je klanten" and Italian
+  "Le domande post-quantum dei tuoi clienti" are translations he has not reviewed yet; the
+  agency's name stays in English (`lang="en"`). The card is the only place the sheet is named:
+  no deadlines entry, no roadmap line and no change to a chapter summary, the search title or
+  the description. Its wording rules are in "What the page may say".
 
 ## Before every commit
 
