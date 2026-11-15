@@ -432,7 +432,7 @@ stand until the founder changes them:
   and the third card, "Error-prone AI agents", ends with the one sourced sentence on the page
   outside the deadlines: in a controlled study, developers using an AI assistant wrote less
   secure code (Perry, Srivastava, Kumar and Boneh, "Do Users Write More Insecure Code with AI
-  Assistants?", ACM CCS 2023). Keep the citation with the card; it is the card's only source.
+  Assistants?", ACM CCS 2023). Keep the citation with the card.
   On 24 Oct 2026 the founder shortened the heading back to "Two quantum threats" and rewrote
   the third card: the patterns "often rely on vulnerable algorithms" (his draft had no "often";
   the word keeps the sentence true), then his bold sentence "AI assistant code can work
@@ -440,6 +440,13 @@ stand until the founder changes them:
   draft put the bold sentence in quotation marks with the citation; it is not a quotation from
   the paper, so it is bold without quotation marks and the citation stays on the study's
   finding. Never attribute a sentence to a source that does not contain it.
+  On 15 Nov 2026 (the founder's approval of the draft) the card opens with a second sourced
+  sentence: by the end of 2024, AI wrote an estimated 29% of the Python functions US developers
+  committed to public GitHub projects (Daniotti, Wachs, Feng and Neffke, "Who is using AI to
+  code? Global diffusion and impact of generative AI", Science 391(6787), 2026). The figure is
+  a classifier's estimate on public GitHub commits: never "AI-assisted", "most new code",
+  "every commit" or a separate figure for one European country. The patterns sentence ends
+  "so vulnerable cryptography is not only a legacy problem: new code can add more."
 - The keys card says "probes the TLS connections of the servers you name with one handshake"
   (21 Oct 2026), never "checks", because one handshake is a probe (see "What the page may say").
 - The agent card says the agent "connects to the model you choose through its chat-completions
