@@ -447,6 +447,8 @@ stand until the founder changes them:
   a classifier's estimate on public GitHub commits: never "AI-assisted", "most new code",
   "every commit" or a separate figure for one European country. The patterns sentence ends
   "so vulnerable cryptography is not only a legacy problem: new code can add more."
+  Later on 15 Nov 2026 the founder removed the Perry sentence in all three languages, so the
+  card ends on his bold sentence and its one source is the Science study.
 - The keys card says "probes the TLS connections of the servers you name with one handshake"
   (21 Oct 2026), never "checks", because one handshake is a probe (see "What the page may say").
 - The agent card says the agent "connects to the model you choose through its chat-completions
