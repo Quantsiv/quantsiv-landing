@@ -449,6 +449,12 @@ stand until the founder changes them:
   "so vulnerable cryptography is not only a legacy problem: new code can add more."
   Later on 15 Nov 2026 the founder removed the Perry sentence in all three languages, so the
   card ends on his bold sentence and its one source is the Science study.
+  His Italian of 15 Nov 2026 (Italian only, his own wording, not mirrored): the AI card reads "gli
+  agenti" and ends its patterns sentence "quindi il nuovo codice può aumentare la superficie di
+  attacco" (his "aggiungere aumentare" and "attaco" corrected); chapter 03's menu and card title
+  are "La Soluzione" (summary and content unchanged); card 01's summary says "degli assistenti
+  AI"; roadmap Phase 2 opens "Una migrazione alla volta end to end: dal codice alle chiavi, ai
+  certificati e ai client intorno."
 - The keys card says "probes the TLS connections of the servers you name with one handshake"
   (21 Oct 2026), never "checks", because one handshake is a probe (see "What the page may say").
 - The agent card says the agent "connects to the model you choose through its chat-completions
