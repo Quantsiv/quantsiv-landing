@@ -200,8 +200,9 @@ them. Do not add to them without the founder.
   list of models a customer can pick (ChatGPT, Claude, DeepSeek, Grok, or one they host) is the
   founder's (19-20 Oct 2026); the agent calls any chat-completions endpoint the customer sets, and
   no real model's results are measured yet. Learning from approved changes is not
-  built: roadmap only, in the future. Added on 19 Oct 2026, when the agent's code merged, under
-  the founder's rule of 18 Oct 2026.
+  built and no model is trained; since 15 Nov 2026 the roadmap says instead that Siv uses your
+  team's earlier decisions when it drafts a change (see the roadmap's "Built" lists below).
+  Added on 19 Oct 2026, when the agent's code merged, under the founder's rule of 18 Oct 2026.
 - Migration testing, the harness (the founder's copy, 1 Nov 2026; the product merged `quantsiv
   validate` on 28 Oct 2026 and the rehearsal mode on 29 Oct 2026): the harness tries the whole
   migration in a working copy of your code, with Siv's drafts applied, without touching your
@@ -256,6 +257,16 @@ them. Do not add to them without the founder.
   "must" for the guide, which is guidance. The sheet is not signed, Quantsiv assesses no
   answer, and the guide's authors do not endorse Quantsiv: never suggest they do. Print no count
   of questions a build bears on, because it changes with each build.
+- The roadmap's "Built" lists (15 Nov 2026, the founder's "Yes push" on the draft): under Phase 1,
+  post-quantum and hybrid cryptography recognised in code, certificates and configuration (a
+  post-quantum name counts only where code uses it; hybrid certificates and hybrid TLS groups are
+  named), and the CBOM signed with your own keys (ML-DSA-65 and Ed25519; the customer's keys, in
+  their CI); under Phase 2, migration testing in a working copy of your code, on Java services;
+  Siv using your team's earlier decisions when it drafts a change (recorded by a person in the
+  customer's repository); and each migration you declare, followed in Quantsiv from found to
+  released. Write "signed with your own keys", never "tamper-proof", "certified" or "attested by
+  Quantsiv"; "uses your team's earlier decisions", never "learns", "trains" or
+  "self-improving"; and never that the sheet or the release record is signed by Quantsiv.
 - Flags test code instead of hiding it.
 - States its limits on the page: pattern matching misses aliased and dynamic calls, vendored code
   and dependencies. No separate limits document is public, so never write "we publish" or link to
@@ -410,8 +421,9 @@ stand until the founder changes them:
   each finding in context, drafts a fix, revises a draft the checks reject, shows only fixes that
   pass, runs as an optional step in your build on a model you choose; nothing merges without a
   person's approval. Keep that last clause, and never stretch "revises" into "self-healing",
-  "autonomous" or "auto-fix". Learning from approved changes is the first Phase 1 roadmap line,
-  in the future, until it is built. Name no other vendor than the founder's example list above.
+  "autonomous" or "auto-fix". Learning from approved changes was the first Phase 1 roadmap line
+  until 15 Nov 2026, when it gave way to the "Built" line on Siv using your team's earlier
+  decisions. Name no other vendor than the founder's example list above.
 - The narrative line "Two quantum threats, two clocks. Quantsiv ranks your cryptography against
   both, on every build." (the founder, 18 Oct 2026) is a narrative line, not the tagline. On 19
   Oct 2026 the founder removed the threat section's intro paragraph that carried it, so the
@@ -722,6 +734,19 @@ stand until the founder changes them:
   agency's name stays in English (`lang="en"`). The card is the only place the sheet is named:
   no deadlines entry, no roadmap line and no change to a chapter summary, the search title or
   the description. Its wording rules are in "What the page may say".
+- The roadmap of 15 Nov 2026 (the founder's ask that day: the site's roadmap lagged the deck,
+  because some later-phase work is already built, "without expose too much our actual plan"; his
+  "Yes push" on the draft): the four phases, their dates, the subheading and Phases 3 and 4 are
+  unchanged. Phase 1 and Phase 2 gain a "Built" list ("Già realizzato", "Al gebouwd";
+  `.phase-label.is-built`, the brand purple) above any "In development" list. Phase 1's "In
+  development" now reads: migration testing for more stacks after Java services, migration
+  progress counted across code, keys, certificates and configuration, cryptography in third-party
+  dependencies, COBOL code on mainframes, and CycloneDX 1.7 with CISA's guidance on CBOM minimum
+  elements once published (EO 14412, 22 Jun 2026). Its line "Training the AI agent to learn from
+  the changes the team approves" is gone, because no model is trained. Kept off on purpose:
+  pilot and partner numbers, supplier exchange, how drafts become pull requests, staged
+  rollouts, an air-gapped option, runtime and cloud import, the client census, the migration
+  exam and the daily domain probe. Phases 3 and 4 keep a title and one line each.
 
 ## Before every commit
 

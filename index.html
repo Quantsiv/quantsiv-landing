@@ -718,13 +718,18 @@
                             <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
                             <h3>Audit</h3>
                             <p>Show where each application uses cryptography, from inside its build.</p>
+                            <h4 class="phase-label is-built">Built</h4>
+                            <ul class="phase-list">
+                                <li>Post-quantum and hybrid cryptography recognised in code, certificates and configuration</li>
+                                <li>The CBOM signed with your own keys (ML-DSA-65 and Ed25519)</li>
+                            </ul>
                             <h4 class="phase-label">In development</h4>
                             <ul class="phase-list">
                                 <li>Migration testing for more stacks after Java services</li>
-                                <li>Training the AI agent to learn from the changes the team approves</li>
-                                <li>Post-quantum and hybrid cryptography</li>
+                                <li>Migration progress counted across code, keys, certificates and configuration</li>
+                                <li>Cryptography in third-party dependencies</li>
                                 <li>COBOL code on mainframes</li>
-                                <li>CycloneDX 1.7</li>
+                                <li>CycloneDX 1.7, and CISA's guidance on CBOM minimum elements once published (EO 14412, 22 Jun 2026)</li>
                             </ul>
                         </article>
 
@@ -732,6 +737,12 @@
                             <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
                             <h3>Migrate</h3>
                             <p>Abstract your cryptographic migration end to end, one migration at a time: from the code to the keys, certificates and clients around it. Targets default to hybrid key exchange.</p>
+                            <h4 class="phase-label is-built">Built</h4>
+                            <ul class="phase-list">
+                                <li>Migration testing in a working copy of your code, on Java services</li>
+                                <li>Siv uses your team's earlier decisions when it drafts a change</li>
+                                <li>Each migration you declare, followed in Quantsiv from found to released</li>
+                            </ul>
                         </article>
 
                         <article class="roadmap-phase">

@@ -2582,7 +2582,7 @@ body::before {
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
-/* "In development": a second list inside a phase, under its own label */
+/* "Built" and "In development": lists inside a phase, each under its own label */
 .phase-label {
     display: inline-block;
     margin-top: 1.25rem;
@@ -2595,6 +2595,12 @@ body::before {
     text-transform: uppercase;
     color: var(--bg);
     background-color: var(--accent-3);
+}
+
+/* "Built": what a phase already has, in the brand colour */
+.phase-label.is-built {
+    color: var(--on-accent-1);
+    background-color: var(--accent-1);
 }
 
 .phase-label + .phase-list {
